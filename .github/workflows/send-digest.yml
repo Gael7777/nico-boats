@@ -1,0 +1,41 @@
+name: Send digest
+
+on:
+  workflow_dispatch:
+    inputs:
+      subject:
+        description: Email subject
+        required: true
+        type: string
+      recipients:
+        description: Optional comma-separated override; if empty, the MAIL_RECIPIENTS secret is used
+        required: false
+        type: string
+        default: ""
+      body_path:
+        description: Path to the HTML body in the repository
+        required: false
+        type: string
+        default: digest/latest.html
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Send email via Infomaniak SMTP
+        env:
+          SMTP_HOST: mail.infomaniak.com
+          SMTP_PORT: "587"
+          SMTP_USERNAME: info@gmc-works.com
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: info@gmc-works.com
+          SMTP_EHLO: gmc-works.com
+          MAIL_SUBJECT: ${{ inputs.subject }}
+          MAIL_RECIPIENTS: ${{ inputs.recipients != '' && inputs.recipients || secrets.MAIL_RECIPIENTS }}
+          MAIL_BODY_PATH: ${{ inputs.body_path }}
+        run: python3 scripts/send_email.py
