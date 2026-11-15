@@ -1,0 +1,579 @@
+{
+  "version": 1,
+  "id": "filtre_global",
+  "updated": "2026-11-15",
+  "label": "Filtre global",
+  "description": "Sélection de bateaux hors-bord adaptés à une place d’amarrage sur le Léman, avec priorité aux lacs suisses romands.",
+  "criteria": {
+    "engine_types": [
+      "outboard"
+    ],
+    "include_categories": [
+      "open",
+      "motor",
+      "inflatable"
+    ],
+    "exclude_categories": [
+      "sail",
+      "small"
+    ],
+    "exclude_keywords": [
+      "pedalo",
+      "pédalo",
+      "tretboot",
+      "aviron",
+      "ruderboot",
+      "weidling",
+      "optimist",
+      "deriveur",
+      "dériveur",
+      "rowing",
+      "kayak",
+      "canoe",
+      "canoë",
+      "jet ski",
+      "jetski"
+    ],
+    "hp_min": 40,
+    "hp_max": 90,
+    "width_m_max": 2.3,
+    "length_m_max": 7.0,
+    "price_chf_max": 15000,
+    "unknown_policy": "a_verifier"
+  },
+  "zones": {
+    "max_km_to_shore": 12,
+    "lakes": [
+      {
+        "id": "leman",
+        "name": "Lac Léman",
+        "towns": [
+          "geneve",
+          "geneva",
+          "genf",
+          "versoix",
+          "celigny",
+          "coppet",
+          "tannay",
+          "mies",
+          "chambesy",
+          "bellevue",
+          "genthod",
+          "pregny",
+          "cologny",
+          "collonge-bellerive",
+          "collonge",
+          "hermance",
+          "anieres",
+          "corsier",
+          "nyon",
+          "prangins",
+          "crans-pres-celigny",
+          "crans",
+          "eysins",
+          "gland",
+          "luins",
+          "bursinel",
+          "rolle",
+          "perroy",
+          "allaman",
+          "aubonne",
+          "saint-prex",
+          "st-prex",
+          "st prex",
+          "morges",
+          "tolochenaz",
+          "preverenges",
+          "saint-sulpice",
+          "st-sulpice",
+          "ecublens",
+          "lausanne",
+          "ouchy",
+          "pully",
+          "paudex",
+          "lutry",
+          "cully",
+          "rivaz",
+          "saint-saphorin",
+          "st-saphorin",
+          "vevey",
+          "la tour-de-peilz",
+          "la tour de peilz",
+          "corseaux",
+          "chardonne",
+          "montreux",
+          "clarens",
+          "territet",
+          "villeneuve",
+          "noville",
+          "vouvry",
+          "port-valais",
+          "le bouveret",
+          "bouveret",
+          "saint-gingolph",
+          "st-gingolph",
+          "chessel",
+          "roche vd",
+          "jongny",
+          "blonay",
+          "la conversion"
+        ],
+        "postcode_prefixes": [
+          "120",
+          "121",
+          "122",
+          "123",
+          "1245",
+          "1246",
+          "1260",
+          "1261",
+          "1195",
+          "1196",
+          "1197",
+          "1180",
+          "1162",
+          "1166",
+          "1110",
+          "1020",
+          "1022",
+          "1025",
+          "1028",
+          "1000",
+          "1001",
+          "1002",
+          "1003",
+          "1004",
+          "1005",
+          "1006",
+          "1007",
+          "1090",
+          "1091",
+          "1095",
+          "1096",
+          "1800",
+          "1814",
+          "1815",
+          "1816",
+          "1817",
+          "1818",
+          "1820",
+          "1822",
+          "1844",
+          "1845",
+          "1846",
+          "1847",
+          "1897",
+          "1898"
+        ],
+        "cantons_hint": [
+          "GE",
+          "VD",
+          "VS"
+        ],
+        "shore_points": [
+          [
+            46.207,
+            6.151
+          ],
+          [
+            46.22,
+            6.19
+          ],
+          [
+            46.257,
+            6.175
+          ],
+          [
+            46.283,
+            6.166
+          ],
+          [
+            46.29,
+            6.24
+          ],
+          [
+            46.383,
+            6.239
+          ],
+          [
+            46.42,
+            6.27
+          ],
+          [
+            46.458,
+            6.336
+          ],
+          [
+            46.507,
+            6.498
+          ],
+          [
+            46.51,
+            6.557
+          ],
+          [
+            46.506,
+            6.626
+          ],
+          [
+            46.5,
+            6.686
+          ],
+          [
+            46.495,
+            6.729
+          ],
+          [
+            46.458,
+            6.843
+          ],
+          [
+            46.431,
+            6.91
+          ],
+          [
+            46.431,
+            6.925
+          ],
+          [
+            46.395,
+            6.927
+          ],
+          [
+            46.387,
+            6.859
+          ],
+          [
+            46.393,
+            6.805
+          ]
+        ]
+      },
+      {
+        "id": "neuchatel",
+        "name": "Lac de Neuchâtel",
+        "towns": [
+          "neuchatel",
+          "neuchâtel",
+          "auvernier",
+          "colombier",
+          "boudry",
+          "cortaillod",
+          "bevaix",
+          "saint-aubin-sauges",
+          "st-aubin",
+          "gorgier",
+          "vaumarcus",
+          "concise",
+          "grandson",
+          "yverdon-les-bains",
+          "yverdon",
+          "yvonand",
+          "cheyres",
+          "estavayer-le-lac",
+          "estavayer",
+          "portalban",
+          "gletterens",
+          "delley",
+          "cudrefin",
+          "marin-epagnier",
+          "marin",
+          "saint-blaise",
+          "st-blaise",
+          "hauterive",
+          "cressier ne",
+          "le landeron"
+        ],
+        "postcode_prefixes": [
+          "2000",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2022",
+          "2024",
+          "2025",
+          "2027",
+          "1426",
+          "1422",
+          "1425",
+          "1400",
+          "1462",
+          "1468",
+          "1470",
+          "1562",
+          "1567",
+          "1588",
+          "2074",
+          "2072",
+          "2075"
+        ],
+        "cantons_hint": [
+          "NE",
+          "VD",
+          "FR"
+        ],
+        "shore_points": [
+          [
+            46.778,
+            6.638
+          ],
+          [
+            46.809,
+            6.646
+          ],
+          [
+            46.85,
+            6.719
+          ],
+          [
+            46.892,
+            6.726
+          ],
+          [
+            46.929,
+            6.815
+          ],
+          [
+            46.943,
+            6.844
+          ],
+          [
+            46.967,
+            6.863
+          ],
+          [
+            46.99,
+            6.926
+          ],
+          [
+            47.013,
+            6.988
+          ],
+          [
+            47.01,
+            6.999
+          ],
+          [
+            46.956,
+            7.056
+          ],
+          [
+            46.922,
+            6.953
+          ],
+          [
+            46.849,
+            6.847
+          ],
+          [
+            46.815,
+            6.787
+          ],
+          [
+            46.8,
+            6.746
+          ]
+        ]
+      },
+      {
+        "id": "morat",
+        "name": "Lac de Morat",
+        "towns": [
+          "morat",
+          "murten",
+          "meyriez",
+          "muntelier",
+          "haut-vully",
+          "bas-vully",
+          "vully",
+          "sugiez",
+          "praz",
+          "faoug",
+          "greng",
+          "salavaux",
+          "vallamand",
+          "courgevaux",
+          "mont-vully",
+          "clerens"
+        ],
+        "postcode_prefixes": [
+          "3280",
+          "3286",
+          "1786",
+          "1787",
+          "1583",
+          "1584",
+          "1585",
+          "1586",
+          "1587",
+          "1589"
+        ],
+        "cantons_hint": [
+          "FR",
+          "VD"
+        ],
+        "shore_points": [
+          [
+            46.928,
+            7.117
+          ],
+          [
+            46.918,
+            7.107
+          ],
+          [
+            46.938,
+            7.128
+          ],
+          [
+            46.955,
+            7.085
+          ],
+          [
+            46.908,
+            7.078
+          ],
+          [
+            46.917,
+            7.023
+          ],
+          [
+            46.94,
+            7.05
+          ]
+        ]
+      },
+      {
+        "id": "bienne",
+        "name": "Lac de Bienne",
+        "towns": [
+          "bienne",
+          "biel",
+          "biel/bienne",
+          "nidau",
+          "port",
+          "ipsach",
+          "tuescherz",
+          "tuscherz",
+          "twann",
+          "ligerz",
+          "la neuveville",
+          "erlach",
+          "tauffelen",
+          "taeuffelen",
+          "gerolfingen",
+          "moerigen",
+          "morigen",
+          "sutz",
+          "sutz-lattrigen",
+          "bellmund",
+          "brugg be",
+          "aegerten",
+          "le landeron",
+          "luescherz",
+          "luscherz",
+          "vinelz",
+          "tscherz"
+        ],
+        "postcode_prefixes": [
+          "2500",
+          "2501",
+          "2502",
+          "2503",
+          "2504",
+          "2505",
+          "2560",
+          "2562",
+          "2563",
+          "2512",
+          "2513",
+          "2520",
+          "2523",
+          "2525",
+          "2572",
+          "2575",
+          "2576",
+          "2577",
+          "2578",
+          "3266",
+          "3267",
+          "3268",
+          "3234",
+          "3235"
+        ],
+        "cantons_hint": [
+          "BE",
+          "NE"
+        ],
+        "shore_points": [
+          [
+            47.132,
+            7.247
+          ],
+          [
+            47.125,
+            7.24
+          ],
+          [
+            47.115,
+            7.235
+          ],
+          [
+            47.144,
+            7.198
+          ],
+          [
+            47.095,
+            7.156
+          ],
+          [
+            47.084,
+            7.143
+          ],
+          [
+            47.065,
+            7.094
+          ],
+          [
+            47.042,
+            7.097
+          ],
+          [
+            47.066,
+            7.154
+          ],
+          [
+            47.053,
+            7.068
+          ],
+          [
+            47.047,
+            7.151
+          ],
+          [
+            47.104,
+            7.218
+          ],
+          [
+            47.12,
+            7.2
+          ]
+        ]
+      }
+    ]
+  },
+  "opportunite": {
+    "peer_length_m": 1.2,
+    "peer_hp": 20,
+    "min_peers": 3,
+    "price_vs_median": 0.8,
+    "price_vs_median_with_trailer": 0.9,
+    "recent_year_from": 2008
+  },
+  "dedup": {
+    "baseline_sent_on": "2026-11-15"
+  }
+}

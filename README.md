@@ -1,83 +1,88 @@
 # Nico Boats
 
-Daily digest of used boats for sale across Switzerland (asking up to CHF 30'000, or free), aimed at a Léman mooring in Geneva.
+Digest quotidien de bateaux d’occasion en Suisse (jusqu’à CHF 30’000, ou gratuits), pensé pour une place d’amarrage au Léman, à Genève.
 
-The box that builds the digest **cannot** reach outbound SMTP. GitHub Actions runners can: the HTML is committed here and a workflow sends it through Infomaniak. The same data is published as a live table and map on GitHub Pages: **https://gael7777.github.io/nico-boats/**
+La machine qui prépare le digest **ne peut pas** joindre un serveur SMTP. Les runners GitHub Actions le peuvent : le HTML est déposé ici, puis un workflow l’envoie via Infomaniak. Les mêmes données sont publiées en tableau vivant : **https://gael7777.github.io/nico-boats/**
 
-## How a morning run works
+## Filtre global
 
-1. `python3 report/build.py` scrapes the marketplaces, merges into the master store, writes today's HTML digest, refreshes the site data, and (optionally) takes PNG previews.
-2. [`publish_and_send.sh`](publish_and_send.sh) copies the HTML to `digest/latest.html` and `digest/YYYY-MM-DD.html`, pushes to `main`, then dispatches the send workflow.
-3. [`.github/workflows/send-digest.yml`](.github/workflows/send-digest.yml) checks out the repo and runs [`scripts/send_email.py`](scripts/send_email.py) over SMTP STARTTLS.
+Les règles de sélection sont enregistrées et versionnées dans [`config/filtre_global.json`](config/filtre_global.json) (version 1, 15 novembre 2026). Le site les applique **par défaut** (bouton « Filtre global ON/OFF » pour tout afficher). Le digest quotidien et la sélection initiale s’appuient sur le même fichier.
 
-There is **no cron** in the send workflow. Nothing is emailed unless the routine (or a manual dispatch) triggers it. Pushing changes under `site/` or `data/` deploys the Pages site.
+| Critère | Règle |
+| --- | --- |
+| Type | Hors-bord uniquement. Pas de voiliers, annexes, pédalos ni bateaux à rames. Les pneumatiques / semi-rigides hors-bord sont conservés s’ils correspondent au reste. |
+| Puissance | 40 à 90 CV |
+| Largeur max. | 2,30 m |
+| Longueur max. | 7,00 m |
+| Prix max. | CHF 15’000 |
+| Zone 1 (prioritaire) | Bateaux situés sur ou près des lacs Léman, de Neuchâtel, de Morat et de Bienne (communes, codes postaux, et distance à la rive si les coordonnées sont connues, rayon 12 km). |
+| Zone 2 | Reste de la Suisse, présentée à part. Mention « Très bonne opportunité » si le prix est nettement sous des bateaux comparables (longueur / puissance / année), s’il y a une remorque, un moteur récent, etc. On reste ouvert au plus loin si ça vaut le déplacement. |
 
-## Daily command sequence
+**Valeurs manquantes (N/A).** Si la puissance, la largeur ou la longueur n’est pas indiquée, le bateau **n’est pas écarté automatiquement**. Il reste visible dans le seau « À vérifier », pour autant que les autres critères correspondent et qu’il ne soit pas clairement hors sujet (très petit pneumatique, « sans permis », épave à donner, moteur in-bord, etc.).
 
-From `/workspace/projects/nico-boats`, with `GITHUB_NICO_BOATS_TOKEN` in the environment:
+Le dépôt conserve **toutes** les annonces dans `data/listings.json`. Le filtre ne fait que choisir la vue par défaut et le contenu du digest.
+
+## Déroulement d’une matinée
+
+1. `python3 report/build.py` parcourt les sites, fusionne dans le magasin, écrit le digest du jour (uniquement les **nouveaux** bateaux qui passent le filtre), met à jour les données du site et, au besoin, les aperçus PNG.
+2. [`publish_and_send.sh`](publish_and_send.sh) copie le HTML vers `digest/latest.html` et `digest/YYYY-MM-DD.html`, pousse `main`, puis déclenche le workflow d’envoi.
+3. [`.github/workflows/send-digest.yml`](.github/workflows/send-digest.yml) envoie le message via SMTP STARTTLS (Infomaniak).
+
+Il n’y a **pas de cron** sur l’envoi. Rien ne part sans le script (ou un déclenchement manuel). Un push sur `site/`, `data/` ou `config/` redéploie le site Pages.
+
+## Commandes du quotidien
+
+Depuis `/workspace/projects/nico-boats`, avec `GITHUB_NICO_BOATS_TOKEN` dans l’environnement :
 
 ```bash
-# 1. Scrape, merge, write digest + site data + previews (~10 min the first time; later runs reuse cached ad pages)
+# 1. Collecte, fusion, digest filtré du jour, données du site
 python3 report/build.py
 
-# Rebuild from the last scrape without hitting the network:
+# Recalcul sans retourner sur les sites (à partir du dernier scrape) :
 # python3 report/build.py --no-collect
 
-# 2. Commit the digest, push, and dispatch the email (default recipients come from the MAIL_RECIPIENTS secret)
+# 2. Commit, push, et envoi (destinataires = secret MAIL_RECIPIENTS)
 ./publish_and_send.sh --html report/digest/latest.html --subject "Nico Boats – $(TZ=Europe/Zurich date +'%d %b %Y')"
 ```
 
-Preview the publish step without pushing or sending:
+Aperçu sans push ni envoi :
 
 ```bash
 ./publish_and_send.sh --dry-run --html report/digest/latest.html --subject "Nico Boats – $(TZ=Europe/Zurich date +'%d %b %Y')"
 ```
 
-Other useful flags: `--no-mark` (do not mark boats as sent), `--no-shots` (skip PNG previews).
+Options utiles : `--no-mark` (ne pas marquer les bateaux comme envoyés), `--no-shots` (pas d’aperçus PNG), `--no-enrich` (ne pas retravailler les fiches incomplètes), `--selection-initiale` (produire la sélection complète du jour, à ne pas envoyer).
 
-### Dedup / sent tracking
+### Déduplication
 
-The digest contains only **active** boats whose `sent_in_digest` is `N/A` (never mailed) or **today** (so a same-day rerun produces the same email). After the digest is written, each of those boats is marked `sent_in_digest = <date>` in `data/listings.json`. The first run is a baseline of every active listing. Later mornings only include boats that appeared since the last marked digest. Price changes on already-sent boats still show in a "Price changes" box.
+Le digest quotidien ne contient que les bateaux **actifs** qui passent le filtre et dont `sent_in_digest` vaut encore `N/A` (jamais envoyés). La première édition non filtrée du **15 novembre 2026** (912 bateaux, e-mail de test) sert de base : ces bateaux restent marqués `2026-11-15` et ne reparaissent pas dans un digest quotidien, même le jour même. Un relancement le jour J d’un digest déjà filtré reste possible (les bateaux marqués aujourd’hui, hors cette date de base, sont repris). Les baisses de prix d’un bateau déjà envoyé apparaissent dans une encadré « changements de prix » lorsqu’il y en a.
 
-## Recipients and SMTP
+Une **sélection initiale** unique, en français, de *tous* les bateaux actuellement en ligne qui passent le filtre (indépendamment du marquage) se trouve dans `report/digest/selection-initiale-2026-11-15.html`. Elle n’est pas envoyée automatiquement : à relire avant tout envoi éventuel.
 
-Because this repository is public, recipient addresses are **not** stored in files.
+## Destinataires et SMTP
 
-| Item | Value |
+Le dépôt est public : les adresses des destinataires **ne figurent dans aucun fichier**.
+
+| Élément | Valeur |
 | --- | --- |
-| Recipients | repo Actions secret **`MAIL_RECIPIENTS`** (comma-separated) |
-| From / SMTP user | `info@gmc-works.com` |
-| Host | `mail.infomaniak.com:587` (STARTTLS, EHLO `gmc-works.com`) |
-| Password | repo Actions secret **`SMTP_PASSWORD`** |
+| Destinataires | secret Actions **`MAIL_RECIPIENTS`** (liste séparée par des virgules) |
+| Expéditeur / utilisateur SMTP | `info@gmc-works.com` |
+| Serveur | `mail.infomaniak.com:587` (STARTTLS, EHLO `gmc-works.com`) |
+| Mot de passe | secret Actions **`SMTP_PASSWORD`** |
 
-Optionally override recipients for a single run with the `recipients` workflow input. Leave that input empty to use the secret. The token used by `publish_and_send.sh` (`GITHUB_NICO_BOATS_TOKEN`) needs **Contents**, **Actions**, and **Workflows** read/write; never commit it or print it.
+On peut remplacer les destinataires pour un envoi ponctuel avec l’entrée `recipients` du workflow. La laisser vide utilise le secret. Le jeton `GITHUB_NICO_BOATS_TOKEN` a besoin des droits **Contents**, **Actions** et **Workflows** ; ne jamais le commiter ni l’afficher.
 
-Gmail clips HTML above about 102 KB. Large days therefore show a summary, the best eight matches per category, and a button to the live table; quiet days list every new boat. The file stays under ~95 KB.
+Gmail coupe le HTML au-delà d’environ 102 Ko. Les gros jours restent donc sous ~95 Ko (résumé, meilleurs choix, bouton vers le tableau vivant). Les jours calmes listent tous les nouveaux bateaux.
 
-## Master store and site
+## Magasin et site
 
-| Path | Role |
+| Chemin | Rôle |
 | --- | --- |
-| `data/listings.json` | **Source of truth** — one record per boat |
-| `data/listings.csv` | Flat export, rewritten every build |
-| `site/` | Static GitHub Pages app (table, cards, map) |
-| `site/data/listings.json` / `listings.js` | Copy of the master store (`listings.js` is the `file://` fallback) |
-| `report/digest/latest.html` | Today's email body (also dated `YYYY-MM-DD.html`) |
+| `config/filtre_global.json` | Filtre global versionné (source de vérité des règles) |
+| `data/listings.json` | **Magasin maître** — une fiche par bateau (toutes les annonces) |
+| `data/listings.csv` | Export plat, réécrit à chaque run |
+| `site/` | Application statique GitHub Pages (tableau, fiches, carte), en français |
+| `site/data/listings.json` | Copie du magasin **plus** les champs `_filtre` (zone, seau, opportunité) |
+| `report/digest/latest.html` | Corps de l’e-mail du jour |
 
-The Pages workflow copies `data/listings.json` into `site/data/` on each deploy, then publishes `./site`. The app loads `data/listings.json` with a path that works under `/nico-boats/`.
-
-Details of sources, classification, merge rules and the record schema are in [`report/README.md`](report/README.md).
-
-## Layout
-
-```
-.github/workflows/send-digest.yml   # email, workflow_dispatch only
-.github/workflows/pages.yml         # GitHub Pages from ./site
-data/listings.json                  # master store
-data/listings.csv
-report/build.py                     # scrape → merge → digest → site data
-report/digest/YYYY-MM-DD.html
-site/                               # live table
-publish_and_send.sh                 # commit digest + dispatch email
-scripts/send_email.py
-```
+Le détail des sources, du classement et du schéma est dans [`report/README.md`](report/README.md).

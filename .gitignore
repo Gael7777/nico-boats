@@ -23,3 +23,6 @@ Thumbs.db
 report/cache/
 report/data/raw_today.json
 report/preview/
+
+# Local English backup of the 912-boat test digest; do not commit
+report/digest/latest-912-en.html

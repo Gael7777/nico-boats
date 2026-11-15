@@ -6,6 +6,7 @@ on:
     paths:
       - "site/**"
       - "data/**"
+      - "config/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
@@ -28,11 +29,10 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Sync master store into the site
+      - name: Copy filter config into the site
         run: |
           mkdir -p site/data
-          cp data/listings.json site/data/listings.json
-          python3 -c "from pathlib import Path; p=Path('data/listings.json'); Path('site/data/listings.js').write_text('window.__LISTINGS__ = ' + p.read_text() + ';\\n')"
+          cp config/filtre_global.json site/data/filtre_global.json
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

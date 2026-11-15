@@ -1,4 +1,24 @@
-# Nico Boats: daily digest + master store
+# Nico Boats : digest quotidien et magasin
+
+Les textes destinés à Gael (digest, site, ce chapitre sur le filtre) sont en **français**. Le détail technique ci-dessous reste utile pour relancer le pipeline.
+
+## Filtre global (`../config/filtre_global.json`)
+
+Fichier versionné (aujourd’hui version 1). `build.py` s’en sert pour le score / la classification, le digest, et les valeurs par défaut du site.
+
+- **Type :** hors-bord seulement (bateaux ouverts, à cabine ou semi-rigides avec hors-bord). Pas de voiliers, annexes, pédalos, aviron. Un RIB / semi-rigide hors-bord qui respecte le reste est conservé.
+- **Puissance :** 40 à 90 CV. **Largeur max. 2,30 m. Longueur max. 7,00 m. Prix max. CHF 15’000.**
+- **Zone 1 (prioritaire) :** sur ou près des lacs Léman, de Neuchâtel, de Morat et de Bienne (listes de communes et de codes postaux dans le JSON, plus distance à la rive ≤ 12 km si l’on a les coordonnées).
+- **Zone 2 :** reste de la Suisse, dans une section à part, avec un badge « Très bonne opportunité » si le prix est clairement sous des bateaux comparables (longueur / puissance / année), s’il y a une remorque ou un moteur récent.
+- **Valeurs manquantes :** une puissance, une largeur ou une longueur en N/A ne fait **pas** écarter le bateau en silence. Il va dans le seau **« À vérifier »** si le reste correspond, sauf s’il est clairement hors sujet (très petit pneumatique, « sans permis », à donner, moteur in-bord, etc.).
+- **Déduplication :** les 912 bateaux de la première édition restent marqués `sent_in_digest = 2026-11-15`. Le digest quotidien suivant ne contient que les nouveaux bateaux encore en `N/A` qui passent le filtre. La sélection initiale (`digest/selection-initiale-YYYY-MM-DD.html`) liste *tous* les correspondants actuels, déjà envoyés ou non, et **n’est pas envoyée** automatiquement.
+
+Pour régénérer sans recollecter :
+
+```bash
+python3 build.py --no-collect --selection-initiale
+```
+
 
 Daily scan of used boats for sale across Switzerland (asking up to CHF 30'000, or free), for a Léman mooring in Geneva.
 This folder builds the HTML email and updates the master store; `../site/` is the static web table.

@@ -120,11 +120,12 @@ def box(title, items, col=NAVY, bg="#EEF2F7"):
             f'<div style="font:900 13px/1.3 {SANS};color:{NAVY};margin-bottom:6px;">{title}</div><ul style="margin:0;padding-left:18px;font:400 12.5px/1.45 {SANS};color:{INK};">{lis}</ul></td></tr></table>')
 
 
-def cta(label="Open the full live table &amp; map →"):
+def cta(label="Open the full live table &amp; map →", caption="Every active boat, with filters, a map and CSV export"):
+    cap = (f'<div style="font:400 12px/1.45 {SANS};color:{MUTED};margin-top:8px;">{caption}</div>' if caption else "")
     return (f'<tr><td align="center" style="padding:18px 24px 6px 24px;" class="pad">'
             f'<a href="{SITE_URL}" style="display:inline-block;background:{ORANGE};color:#FFFFFF;font:900 15px/1.1 {SANS};'
             f'padding:14px 24px;border-radius:8px;text-decoration:none;letter-spacing:.02em;">{label}</a>'
-            f'<div style="font:400 12px/1.45 {SANS};color:{MUTED};margin-top:8px;">Every active boat, with filters, a map and CSV export</div></td></tr>')
+            f'{cap}</td></tr>')
 
 def dist_of(r):
     d = r.get("distance_km_from_geneva")

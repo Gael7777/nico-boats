@@ -4,11 +4,11 @@
   python3 build.py --no-collect    # reuse report/data/raw_today.json (no network scraping)
   python3 build.py --no-mark       # build digest without marking boats as sent
   python3 build.py --no-shots      # skip PNG previews
-Digest contains only active boats whose sent_in_digest is N/A (or today, so same-day reruns are idempotent)."""
+Daily digest (French, filtre global): only matching boats not yet sent (the 2026-11-15 baseline is excluded)."""
 import argparse, json, shutil, subprocess, sys
 from datetime import date
 from pathlib import Path
-import store, digest
+import store, digest, digest_fr, filtre
 
 REPORT = Path(__file__).resolve().parent
 PROJECT = REPORT.parent
@@ -28,8 +28,14 @@ def shot(html_path, png_path, width, height=16000):
         print("trim skipped:", ex, file=sys.stderr)
 
 def main():
-    ap = argparse.ArgumentParser(); ap.add_argument("--no-collect", action="store_true"); ap.add_argument("--no-mark", action="store_true")
-    ap.add_argument("--no-shots", action="store_true"); ap.add_argument("--date", default=date.today().isoformat())
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--no-collect", action="store_true")
+    ap.add_argument("--no-mark", action="store_true")
+    ap.add_argument("--no-shots", action="store_true")
+    ap.add_argument("--no-enrich", action="store_true")
+    ap.add_argument("--selection-initiale", action="store_true",
+                    help="Write a one-time French digest of ALL current matches, ignoring sent marks (do not send).")
+    ap.add_argument("--date", default=date.today().isoformat())
     a = ap.parse_args(); today = a.date
     raw_p = REPORT / "data" / "raw_today.json"
     if not a.no_collect:
@@ -66,38 +72,55 @@ def main():
     st = store.load()
     changes, removed = store.merge(st, rows, status, today)
     active = [r for r in st["records"].values() if r["status"] == "active"]
-    # First edition until a previous day's digest has been marked; same-day reruns stay idempotent.
-    first_run = not any(r.get("sent_in_digest") not in (store.NA, today) for r in st["records"].values())
-    todays = [r for r in active if r["sent_in_digest"] in (store.NA, today)]
-    if first_run:
-        todays = active
-    chg = [st["records"][i] for i in changes if st["records"][i]["status"] == "active"]
-    htm = digest.render(todays, active, status, today, chg, len(removed), first_run)
-    out = REPORT / "digest" / f"{today}.html"; out.parent.mkdir(exist_ok=True); out.write_text(htm)
+    cfg = filtre.load_config()
+    if not a.no_enrich:
+        filtre.enrich_records(active, fetch_missing=True, limit_fetches=40, cfg=cfg)
+    daily = filtre.daily_candidates(active, today, cfg)
+    htm = digest_fr.render_filtre(daily, active, status, today, mode="daily")
+    out = REPORT / "digest" / f"{today}.html"
+    out.parent.mkdir(exist_ok=True)
+    out.write_text(htm)
     (REPORT / "digest" / "latest.html").write_text(htm)
     root_digest = PROJECT / "digest"
     root_digest.mkdir(exist_ok=True)
     (root_digest / f"{today}.html").write_text(htm)
     (root_digest / "latest.html").write_text(htm)
+    sel_info = None
+    if a.selection_initiale:
+        sel = filtre.selection_candidates(active, cfg)
+        sel_htm = digest_fr.render_filtre(sel, active, status, today, mode="selection")
+        sel_path = REPORT / "digest" / f"selection-initiale-{today}.html"
+        sel_path.write_text(sel_htm)
+        sel_info = {"path": str(sel_path), "bytes": len(sel_htm.encode()), "counts": filtre.counts(sel)}
+        if not a.no_shots:
+            pv = REPORT / "preview"; pv.mkdir(exist_ok=True)
+            shot(sel_path, pv / f"selection-initiale-{today}-desktop.png", 760)
+            shot(sel_path, pv / f"selection-initiale-{today}-mobile.png", 390)
+            sel_info["previews"] = [str(pv / f"selection-initiale-{today}-desktop.png"),
+                                    str(pv / f"selection-initiale-{today}-mobile.png")]
     if not a.no_mark:
-        for r in todays: r["sent_in_digest"] = today
+        for r, _ in daily:
+            r["sent_in_digest"] = today
     store.save(st)
-    # site data (GitHub Pages serves site/; it fetches data/listings.json, listings.js is the file:// fallback)
+    # Site payload: all records, plus _filtre for the default view (master store stays clean)
+    classified = filtre.classify_all(list(st["records"].values()), cfg)
+    site_store = {k: v for k, v in st.items() if k != "records"}
+    site_store["filtre_global"] = {"version": cfg.get("version"), "updated": cfg.get("updated"), "label": cfg.get("label")}
+    site_store["records"] = {rid: filtre.attach(rec, classified[rid]) for rid, rec in st["records"].items()}
     (SITE / "data").mkdir(parents=True, exist_ok=True)
-    shutil.copy(store.STORE, SITE / "data" / "listings.json")
-    (SITE / "data" / "listings.js").write_text("window.__LISTINGS__ = " + store.STORE.read_text() + ";\n")
-    for lock in (SITE / "data").glob(".~lock*"):
-        lock.unlink()
-    for lock in store.STORE.parent.glob(".~lock*"):
+    payload = json.dumps(site_store, ensure_ascii=False, indent=1)
+    (SITE / "data" / "listings.json").write_text(payload)
+    (SITE / "data" / "listings.js").write_text("window.__LISTINGS__ = " + payload + ";\n")
+    shutil.copy(filtre.CONFIG_PATH, SITE / "data" / "filtre_global.json")
+    for lock in list((SITE / "data").glob(".~lock*")) + list(store.STORE.parent.glob(".~lock*")):
         lock.unlink()
     if not a.no_shots:
         pv = REPORT / "preview"; pv.mkdir(exist_ok=True)
-        shot(out, pv / f"{today}-desktop.png", 760); shot(out, pv / f"{today}-mobile.png", 390)
-    by_src, by_cat = {}, {}
-    for r in todays:
-        by_src[r["source"]] = by_src.get(r["source"], 0) + 1; by_cat[r["category"]] = by_cat.get(r["category"], 0) + 1
-    print(json.dumps({"digest": str(out), "bytes": len(htm.encode()), "in_digest": len(todays), "active": len(active), "price_changes": len(changes),
-                      "removed": len(removed), "by_source": by_src, "by_category": by_cat,
+        shot(out, pv / f"{today}-desktop.png", 760)
+        shot(out, pv / f"{today}-mobile.png", 390)
+    print(json.dumps({"digest": str(out), "bytes": len(htm.encode()), "in_digest": len(daily),
+                      "active": len(active), "price_changes": len(changes), "removed": len(removed),
+                      "filtre": filtre.counts(daily), "selection_initiale": sel_info,
                       "status": {k: (v.get("ok"), v.get("error")) for k, v in status.items()}}, indent=1))
 
 if __name__ == "__main__":
