@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nico Boats · Used boats across Switzerland</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker"><span class="dot"></span>Nico Boats · Live table</div>
+    <h1>Affordable used boats across Switzerland</h1>
+    <p class="sub">Every boat collected by the daily scan, with road distance from Geneva, for a Léman mooring. <span id="updated"></span></p>
+  </div>
+</header>
+<div class="rule"></div>
+<main class="wrap">
+  <section class="kpis" id="kpis"></section>
+
+  <section class="panel filters">
+    <div class="row">
+      <input id="q" type="search" placeholder="Search title, brand, town, description…" aria-label="Search">
+      <select id="f-source" aria-label="Source"><option value="">All sources</option></select>
+      <select id="f-canton" aria-label="Canton"><option value="">All cantons</option></select>
+      <select id="f-status" aria-label="Status"><option value="active">Active only</option><option value="all">Active + removed</option><option value="removed">Removed only</option></select>
+      <select id="f-new" aria-label="Seen"><option value="">Any first-seen date</option><option value="1">New in last 24 h</option><option value="7">New in last 7 days</option></select>
+      <button id="reset" class="btn ghost" type="button">Reset</button>
+    </div>
+    <div class="row chips" id="cats"></div>
+    <div class="row sliders">
+      <div class="range" id="r-price"><label>Price CHF <b class="val"></b></label><div class="dual"><input type="range" class="lo"><input type="range" class="hi"></div></div>
+      <div class="range" id="r-dist"><label>Distance from Geneva <b class="val"></b></label><div class="dual"><input type="range" class="lo"><input type="range" class="hi"></div></div>
+      <div class="range" id="r-len"><label>Length m <b class="val"></b></label><div class="dual"><input type="range" class="lo"><input type="range" class="hi"></div></div>
+      <div class="range" id="r-hp"><label>Engine CV <b class="val"></b></label><div class="dual"><input type="range" class="lo"><input type="range" class="hi"></div></div>
+      <div class="range" id="r-year"><label>Year <b class="val"></b></label><div class="dual"><input type="range" class="lo"><input type="range" class="hi"></div></div>
+    </div>
+    <div class="row toggles">
+      <label class="chk"><input type="checkbox" id="t-na" checked> Keep boats with unknown length / CV / year</label>
+      <label class="chk"><input type="checkbox" id="t-nolic"> No licence needed on the Léman (≤10 CV stated)</label>
+      <label class="chk"><input type="checkbox" id="t-trailer"> With trailer</label>
+    </div>
+  </section>
+
+  <nav class="tabs" id="tabs">
+    <button data-view="table" class="on">Table</button><button data-view="cards">Cards</button><button data-view="cats">By category</button><button data-view="map">Map</button>
+    <span class="count" id="count"></span>
+    <details class="cols" id="colsbox"><summary>Columns</summary><div id="cols"></div></details>
+    <button class="btn ghost small" id="csv" type="button">Download CSV</button>
+  </nav>
+
+  <section id="v-table" class="view panel nopad"><div class="tablewrap"><table id="tbl"><thead></thead><tbody></tbody></table></div></section>
+  <section id="v-cards" class="view hidden"><div class="grid" id="grid"></div></section>
+  <section id="v-cats" class="view hidden"></section>
+  <section id="v-map" class="view hidden panel nopad"><div id="map"></div></section>
+
+  <section class="panel note">
+    <h4>⚓ Before you buy for a Léman mooring in Geneva</h4>
+    <ul>
+      <li>Licence needed above 6 kW engine or 15 m² sail on Swiss waters; on Lake Geneva the motor limit is 10 CV (<a href="https://www.bav.admin.ch/fr/navigation-de-plaisance">OFT</a>, <a href="https://www.ge.ch/obtenir-permis-conduire-bateaux">ge.ch</a>).</li>
+      <li>A boat kept in a Geneva port is registered in Geneva (OCV, CHF 105); a change of canton or owner needs a new navigation permit (<a href="https://www.ge.ch/immatriculer-bateau">ge.ch</a>).</li>
+      <li>Technical inspection before registration for motorboats over 9 years old last checked more than 4 years ago (sail/rowing: more than 7 years).</li>
+    </ul>
+  </section>
+  <footer class="foot" id="foot"></footer>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="data/listings.js" onerror="void 0"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

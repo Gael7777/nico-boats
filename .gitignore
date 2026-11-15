@@ -17,3 +17,9 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+.~lock*
+
+# Report pipeline: heavy caches, raw scrape, and optional previews
+report/cache/
+report/data/raw_today.json
+report/preview/
