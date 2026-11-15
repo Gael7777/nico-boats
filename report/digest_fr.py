@@ -6,7 +6,9 @@ from digest import (NAVY, TEAL, ORANGE, GREY, LGREY, GREEN, RED, INK, MUTED, PAP
 
 CAT_LABEL_FR = {"sail": "Voiliers", "motor": "Bateaux à cabine", "open": "Bateaux ouverts et day-cruisers",
                 "inflatable": "Pneumatiques et semi-rigides", "small": "Annexes, aviron et petits bateaux", "other": "Autres"}
-SRC_LABEL_FR = {"tutti": "tutti.ch", "anibis": "anibis.ch", "bateau24": "boat24 (bateau24.ch)"}
+SRC_LABEL_FR = {"tutti": "tutti.ch", "anibis": "anibis.ch", "bateau24": "boat24 (bateau24.ch)", "lakeboat": "lakeboat.ch",
+                "petitesannonces": "petitesannonces.ch", "aquaboat": "aquaboat.ch", "ricardo": "ricardo.ch",
+                "facebook_marketplace": "Facebook Marketplace", "swissboat.ch": "swissboat.ch"}
 MONTHS_FR = {"January": "janvier", "February": "février", "March": "mars", "April": "avril", "May": "mai", "June": "juin",
              "July": "juillet", "August": "août", "September": "septembre", "October": "octobre", "November": "novembre", "December": "décembre"}
 DAYS_FR = {"Monday": "lundi", "Tuesday": "mardi", "Wednesday": "mercredi", "Thursday": "jeudi",
@@ -23,6 +25,12 @@ def date_fr(d):
 def badge_fr(text, bg, fg="#FFFFFF"):
     return (f'<span style="display:inline-block;background:{bg};color:{fg};font:700 10px/1 {SANS};'
             f'letter-spacing:.06em;text-transform:uppercase;padding:4px 6px;border-radius:3px;margin-right:4px;">{e(text)}</span>')
+
+def also_fr(r):
+    al = r.get("also_listed")
+    if not isinstance(al, list) or not al:
+        return ""
+    return " · aussi sur " + ", ".join(f'<a href="{e(a["url"])}" style="color:{GREY};">{e(SRC_LABEL_FR.get(a["source"], a["source"]))}</a>' for a in al)
 
 def card_fr(r, info=None, big=False):
     info = info or {}
@@ -49,7 +57,7 @@ def card_fr(r, info=None, big=False):
             f'<td valign="top" style="padding:10px 0;"><a href="{e(r["url"])}" style="font:700 14px/1.3 {SANS};color:{NAVY};text-decoration:none;">{e(r["title"][:90])}</a>'
             f'<div style="font:400 12px/1.45 {SANS};color:{MUTED};margin-top:3px;">📍 {e(where(r))} · <b style="color:{INK};">{km(r)}</b> de Genève</div>'
             + (f'<div style="font:400 12px/1.45 {SANS};color:#33415C;margin-top:1px;">{e(sp)}</div>' if sp else "") +
-            f'<div style="margin-top:5px;">{flags}<span style="font:400 11px/1 {SANS};color:{GREY};">{e(SRC_LABEL_FR.get(r["source"], r["source"]))}</span></div></td>'
+            f'<div style="margin-top:5px;">{flags}<span style="font:400 11px/1 {SANS};color:{GREY};">{e(SRC_LABEL_FR.get(r["source"], r["source"]))}{also_fr(r)}</span></div></td>'
             f'<td width="96" valign="top" align="right" style="padding:10px 0 10px 8px;"><div style="font:900 15px/1.2 {SANS};color:{price_col};white-space:nowrap;">{chf(r["price_chf"])}</div>'
             f'<a href="{e(r["url"])}" style="display:inline-block;margin-top:8px;font:700 11px/1 {SANS};color:#FFFFFF;background:{NAVY};padding:6px 9px;border-radius:4px;text-decoration:none;">Voir l’annonce →</a></td></tr></table>')
 
@@ -131,7 +139,8 @@ def render_filtre(pairs, all_active, status, today, mode="daily"):
         ))
     else:
         lead = (
-            "Hors-bord de 40 à 90 CV, largeur max. 2,30 m, longueur max. 7,00 m, prix max. CHF 15’000. "
+            "Hors-bord à coque rigide de 40 à 90 CV, largeur max. 2,30 m, longueur max. 7,00 m, prix max. CHF 15’000. "
+            "Les pneumatiques, gonflables et semi-rigides (RIB) sont exclus. "
             "Zone 1 = lacs Léman, de Neuchâtel, de Morat et de Bienne. Zone 2 = le reste de la Suisse, "
             "avec les très bonnes opportunités mises en avant. "
             "Les bateaux dont la puissance, la largeur ou la longueur n’est pas indiquée ne sont pas écartés automatiquement : ils figurent sous « À vérifier »."
@@ -162,14 +171,16 @@ def render_filtre(pairs, all_active, status, today, mode="daily"):
         'Pour un bateau loin du Léman, prévoyez le transport : remorque, largeur et poids pour votre rampe.'], ORANGE, "#FEF4E8") + "</td></tr>")
     src_lines = []
     for s, v in (status or {}).items():
-        nm = {"tutti": "tutti.ch", "anibis": "anibis.ch", "bateau24": "boat24 (bateau24.ch)", "ricardo": "ricardo.ch", "facebook_marketplace": "Facebook Marketplace"}.get(s, s)
-        cnt = sum(1 for r, _ in pairs if r["source"] == s)
+        if s.startswith("_"):
+            continue
+        nm = SRC_LABEL_FR.get(s, s)
+        cnt = sum(1 for r, _ in pairs if r["source"] == s or any(a.get("source") == s for a in (r.get("also_listed") if isinstance(r.get("also_listed"), list) else [])))
         src_lines.append(f"{nm} : {cnt} dans cette sélection" if v.get("ok") else f"{nm} : non inclus ({e(v.get('error') or 'échec')})")
     P.append(
         f'<tr><td style="padding:26px 24px 24px 24px;" class="pad"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #D5DCE4;"><tr><td style="padding-top:12px;font:400 11px/1.55 {SANS};color:{MUTED};">'
         f"<b style=\"color:{NAVY};\">Sources et méthode.</b> {' · '.join(src_lines)}. "
         "Filtre global (version enregistrée dans le dépôt) : hors-bord uniquement, 40 à 90 CV, largeur max. 2,30 m, longueur max. 7,00 m, prix max. CHF 15’000. "
-        "Pas de voiliers, annexes, pédalos ni bateaux à rames ; les semi-rigides hors-bord sont conservés s’ils correspondent aux autres critères. "
+        "Pas de voiliers, annexes, pédalos ni bateaux à rames. Pas de pneumatiques, gonflables ni semi-rigides (RIB) : ils sont repérés par la catégorie du site, le matériau (Hypalon, PVC), le titre, la description et les marques spécialisées (Zodiac, Bombard, Brig, Highfield, 3D Tender, Joker Boat…). "
         "Les valeurs manquantes (puissance, largeur, longueur) ne font pas écarter l’annonce : elle va dans « À vérifier », sauf si elle est clairement hors sujet. "
         f"La distance indiquée est la distance routière depuis le centre de Genève. Prix et caractéristiques sont ceux des vendeurs, relevés le {dfr}."
         "</td></tr></table></td></tr></table></td></tr></table></body></html>"

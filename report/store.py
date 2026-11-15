@@ -18,7 +18,7 @@ FIELDS = ["id", "source", "source_listing_id", "url", "title", "category", "cate
           "licence_leman", "town", "canton", "postcode", "region", "lat", "lon", "geo_precision",
           "distance_km_from_geneva", "distance_method", "seller_type", "posted_date", "photo_url", "thumb_url",
           "description_excerpt", "first_seen", "last_seen", "status", "removed_on", "sent_in_digest",
-          "price_changed_on", "previous_price_chf", "price_history"]
+          "price_changed_on", "previous_price_chf", "price_history", "also_listed"]
 
 def _num(v):
     try:
@@ -43,6 +43,7 @@ def normalise(r):
     desc = re.sub(r"\s+", " ", r.get("snippet") or "").strip()
     desc = re.sub(r"[\w.+-]+@[\w-]+\.[\w.-]+", "[email hidden]", desc)                      # public repo: no contact details
     desc = re.sub(r"(\+41|0041|\b0)[\s./-]?\d{2}[\s./-]?\d{3}[\s./-]?\d{2}[\s./-]?\d{2}\b", "[phone hidden]", desc)
+    desc = re.sub(r"(?<!\d)(?:\+|00)\d{2}[\s./-]?\d[\d\s./-]{7,14}\d(?!\d)", "[phone hidden]", desc)   # international numbers
     o["description_excerpt"] = desc[:500] or NA
     hp, kw = _num(r.get("hp")), _num(r.get("kw"))
     eng = r.get("engine") or ""
@@ -62,13 +63,17 @@ def normalise(r):
     if hp is not None: lic = "yes (>10 CV)" if hp > 10 else "no (≤10 CV)"
     if _num(o["sail_area_m2"]) and _num(o["sail_area_m2"]) > 15: lic = "yes (sail >15 m²)"
     o["licence_leman"] = lic
+    if r.get("also_listed"): o["also_listed"] = [{"source": a["source"], "url": a["url"]} for a in r["also_listed"]]
     for k in FIELDS:
-        if o[k] is None or o[k] == "": o[k] = NA
+        if o[k] is None or o[k] == "" or o[k] == []: o[k] = NA
     return o
 
 def load():
     if STORE.exists():
-        return json.loads(STORE.read_text())
+        st = json.loads(STORE.read_text())
+        for rec in st["records"].values():
+            for k in FIELDS: rec.setdefault(k, NA)
+        return st
     return {"schema_version": 1, "updated": None, "sources": {}, "records": {}}
 
 def merge(store, rows, status, today):
@@ -105,5 +110,7 @@ def save(store):
     with CSV.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=FIELDS); w.writeheader()
         for r in sorted(store["records"].values(), key=lambda x: (x["category"], x["price_chf"] if isinstance(x["price_chf"], (int, float)) else 1e9)):
-            row = dict(r); row["price_history"] = "; ".join(f"{p['date']}={p['price_chf']}" for p in r.get("price_history") or []) or NA
+            row = dict(r)
+            row["also_listed"] = " ".join(a["url"] for a in r.get("also_listed") or [] if isinstance(a, dict)) or NA
+            row["price_history"] = "; ".join(f"{p['date']}={p['price_chf']}" for p in r.get("price_history") or []) or NA
             w.writerow(row)

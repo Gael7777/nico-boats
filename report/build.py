@@ -4,7 +4,9 @@
   python3 build.py --no-collect    # reuse report/data/raw_today.json (no network scraping)
   python3 build.py --no-mark       # build digest without marking boats as sent
   python3 build.py --no-shots      # skip PNG previews
-Daily digest (French, filtre global): only matching boats not yet sent (the 2026-11-15 baseline is excluded)."""
+Daily digest (French, filtre global): only matching boats not yet sent (the 2026-11-15 baseline is excluded).
+Marking: unless --no-mark, every boat written into today's digest gets sent_in_digest = today. Use --no-mark for
+any build that will NOT be sent (rebuilds, tests), otherwise tomorrow's digest would skip those boats."""
 import argparse, json, shutil, subprocess, sys
 from datetime import date
 from pathlib import Path
@@ -60,14 +62,19 @@ def main():
             c = collect.b24_keep(r)
             if c is None: continue
             r["category"] = c
+        elif r["source"] in ("lakeboat", "petitesannonces"):
+            c = collect.classify_hint(r["title"], (r.get("snippet") or "") + " " + (r.get("type_label") or ""), r.get("rubric_hint"))
+            if c is None: continue
+            if r.get("rubric_hint") == "sail" and c in ("open", "motor", "other"): c = "sail"
+            r["category"] = c
         if not r.get("town") and (r.get("region") or "").strip().lower() in ("suisse", "schweiz", "svizzera", "switzerland"):
             for k in ("lat", "lon", "distance_km", "distance_method", "geo_precision"): r[k] = None   # country centroid is meaningless
         if r.get("canton") == "FL" or r.get("canton") == "LI": continue   # Liechtenstein is outside Switzerland
         kept.append(r)
-    rows = kept
+    rows = collect.merge_duplicates(kept, collect.known_ids())   # idempotent; re-applies duplicate rules on --no-collect
     for s_ in status.values():
         if "kept" in s_: s_["kept"] = None
-    for src in ("tutti", "anibis", "bateau24"):
+    for src in ("tutti", "anibis", "bateau24", "lakeboat", "petitesannonces", "aquaboat"):
         if src in status: status[src]["kept"] = sum(1 for r in rows if r["source"] == src)
     st = store.load()
     changes, removed = store.merge(st, rows, status, today)

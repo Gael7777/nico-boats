@@ -4,7 +4,8 @@
   const NA = "N/A";
   const CATS = { sail: ["Voiliers", "#1A9E9A", "⛵"], open: ["Bateaux ouverts et day-cruisers", "#F08A24", "🚤"], motor: ["Bateaux à cabine", "#0B1F3A", "🛥️"],
     inflatable: ["Pneumatiques et semi-rigides", "#7B5EA7", "🛟"], small: ["Annexes, aviron et petits bateaux", "#2E9E5B", "🛶"], other: ["Autres", "#9AA5B1", "⚓"] };
-  const SRC = { tutti: "tutti.ch", anibis: "anibis.ch", bateau24: "boat24" };
+  const SRC = { tutti: "tutti.ch", anibis: "anibis.ch", bateau24: "boat24 (bateau24.ch / boot24.ch)", lakeboat: "lakeboat.ch", petitesannonces: "petitesannonces.ch", aquaboat: "aquaboat.ch", ricardo: "ricardo.ch", facebook_marketplace: "Facebook Marketplace", "swissboat.ch": "swissboat.ch", _duplicates: "doublons fusionnés" };
+  const alsoHtml = (r) => Array.isArray(r.also_listed) && r.also_listed.length ? `<div class="na">aussi sur ${r.also_listed.map((a) => `<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(SRC[a.source] || a.source)}</a>`).join(", ")}</div>` : "";
   const COLS = [
     ["thumb_url", "Photo", true], ["title", "Bateau", true], ["category", "Catégorie", true], ["price_chf", "Prix CHF", true],
     ["distance_km_from_geneva", "km GE", true], ["town", "Commune", true], ["canton", "Canton", true], ["length_m", "Longueur m", true],
@@ -109,7 +110,7 @@
   function cell(r, k) {
     const v = r[k];
     if (k === "thumb_url") return has(v) ? `<td><a href="${esc(r.url)}" target="_blank" rel="noopener"><img class="thumb" loading="lazy" src="${esc(v)}" alt=""></a></td>` : `<td class="na">${(CATS[r.category] || CATS.other)[2]}</td>`;
-    if (k === "title") return `<td class="title"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a><div>${tags(r)}</div></td>`;
+    if (k === "title") return `<td class="title"><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a><div>${tags(r)}</div>${alsoHtml(r)}</td>`;
     if (k === "category") return `<td>${catHtml(v)}</td>`;
     if (k === "price_chf") return `<td class="num"><span class="price ${typeof v === "number" && v < 10000 ? "cheap" : ""}">${chf(v)}</span>${has(r.previous_price_chf) ? `<div class="na">avant ${chf(r.previous_price_chf)}</div>` : ""}</td>`;
     if (k === "url") return `<td><a class="btn small" href="${esc(v)}" target="_blank" rel="noopener">Voir l’annonce →</a></td>`;
@@ -132,7 +133,7 @@
     return `<article class="card" style="border-top-color:${c[1]}"><a class="ph" href="${esc(r.url)}" target="_blank" rel="noopener" style="background-image:url('${has(r.thumb_url) ? esc(r.photo_url !== NA ? r.photo_url : r.thumb_url) : ""}')"><span class="tags">${tags(r)}</span></a>
       <div class="bd">${catHtml(r.category)}<h3><a href="${esc(r.url)}" target="_blank" rel="noopener">${esc(r.title)}</a></h3>
       <div class="meta">📍 ${esc(has(r.town) ? r.town : has(r.region) ? r.region : "N/A")}${has(r.canton) ? " (" + esc(r.canton) + ")" : ""} · <b>${typeof r.distance_km_from_geneva === "number" ? Math.round(r.distance_km_from_geneva) + " km" : "km N/A"}</b> de Genève</div>
-      <div class="spec">${esc(spec(r))}</div>
+      <div class="spec">${esc(spec(r))}</div>${alsoHtml(r)}
       <div class="ft"><span class="price ${typeof r.price_chf === "number" && r.price_chf < 10000 ? "cheap" : ""}">${chf(r.price_chf)}</span><a class="btn small" href="${esc(r.url)}" target="_blank" rel="noopener">Voir l’annonce →</a></div></div></article>`;
   }
   function renderCats(rows) {
@@ -167,7 +168,7 @@
     const opp = act.filter((r) => filtreOf(r).opportunite).length;
     const k = (v, l, s, c) => `<div class="kpi ${c}"><div class="v">${v}</div><div class="l">${l}</div><div class="s">${s}</div></div>`;
     if (filtreOn) {
-      $("#kpis").innerHTML = k(act.length, "Retenus par le filtre", "hors-bord 40–90 CV, max. 15’000", "")
+      $("#kpis").innerHTML = k(act.length, "Retenus par le filtre", "hors-bord rigide 40–90 CV, sans pneumatiques, max. 15’000", "")
         + k(z1, "Zone 1", "Léman, Neuchâtel, Morat, Bienne", "teal")
         + k(act.length - z1 - av, "Zone 2", "reste de la Suisse", "orange")
         + k(av, "À vérifier", "une donnée manque encore", "purple")
@@ -189,7 +190,7 @@
   function csv() {
     const rows = filtered(), keys = Object.keys(ALL[0] || {}).filter((k) => k !== "price_history" && k !== "_filtre");
     const q = (v) => '"' + String(v ?? "").replace(/"/g, '""') + '"';
-    const blob = new Blob([keys.join(",") + "\n" + rows.map((r) => keys.map((k) => q(r[k])).join(",")).join("\n")], { type: "text/csv" });
+    const blob = new Blob([keys.join(",") + "\n" + rows.map((r) => keys.map((k) => q(Array.isArray(r[k]) ? r[k].map((a) => a.url || a).join(" ") : r[k])).join(",")).join("\n")], { type: "text/csv" });
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "nico-boats-" + today() + ".csv"; a.click();
   }
   function init(data) {
@@ -216,9 +217,9 @@
     $("#csv").onclick = csv;
     const h = (location.hash.match(/v=(\w+)/) || [])[1]; if (["table", "cards", "cats", "map"].includes(h)) $(`#tabs > button[data-view="${h}"]`).click();
     const s = data.sources || {};
-    $("#foot").innerHTML = "<b>Sources.</b> " + Object.entries(s).map(([k, v]) => `${esc(SRC[k] || k)} : ${v.ok ? "ok" : "non inclus (" + esc(v.error || "échec") + ")"}`).join(" · ")
+    $("#foot").innerHTML = "<b>Sources.</b> " + Object.entries(s).filter(([k]) => k !== "_duplicates").map(([k, v]) => `${esc(SRC[k] || k)} : ${v.ok ? "ok" + (typeof v.kept === "number" ? " (" + v.kept + " annonces)" : "") : "non inclus (" + esc(v.error || "échec") + ")"}`).join(" · ")
       + ". Distance = distance routière depuis le centre de Genève via OSRM (OpenStreetMap), ligne droite × 1,25 en secours. "
-      + "Le filtre global (hors-bord 40–90 CV, 2,30 × 7,00 m, CHF 15’000, priorité aux lacs Léman, de Neuchâtel, de Morat et de Bienne) est actif par défaut ; le bouton permet de voir toutes les annonces. "
+      + "Le filtre global (version " + esc(String((data.filtre_global || {}).version || "")) + " : hors-bord à coque rigide 40–90 CV, sans pneumatiques ni semi-rigides, 2,30 × 7,00 m, CHF 15’000, priorité aux lacs Léman, de Neuchâtel, de Morat et de Bienne) est actif par défaut ; le bouton permet de voir toutes les annonces. "
       + "Les valeurs manquantes s’affichent en N/A et, si le reste correspond, le bateau reste visible sous « À vérifier ». Prix et détails sont ceux des vendeurs ; toujours vérifier l’annonce.";
     setFiltre(true);
   }

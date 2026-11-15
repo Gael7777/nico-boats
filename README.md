@@ -6,11 +6,11 @@ La machine qui prépare le digest **ne peut pas** joindre un serveur SMTP. Les r
 
 ## Filtre global
 
-Les règles de sélection sont enregistrées et versionnées dans [`config/filtre_global.json`](config/filtre_global.json) (version 1, 15 novembre 2026). Le site les applique **par défaut** (bouton « Filtre global ON/OFF » pour tout afficher). Le digest quotidien et la sélection initiale s’appuient sur le même fichier.
+Les règles de sélection sont enregistrées et versionnées dans [`config/filtre_global.json`](config/filtre_global.json) (version 2, 15 novembre 2026). Le site les applique **par défaut** (bouton « Filtre global ON/OFF » pour tout afficher). Le digest quotidien et la sélection initiale s’appuient sur le même fichier.
 
 | Critère | Règle |
 | --- | --- |
-| Type | Hors-bord uniquement. Pas de voiliers, annexes, pédalos ni bateaux à rames. Les pneumatiques / semi-rigides hors-bord sont conservés s’ils correspondent au reste. |
+| Type | Hors-bord à coque rigide uniquement. Pas de voiliers, annexes, pédalos ni bateaux à rames. **Pas de pneumatiques, gonflables ni semi-rigides (RIB)** depuis la version 2 : détection par catégorie du site, matériau (Hypalon / PVC), titre et type, description (sauf mention d’une annexe fournie avec un bateau rigide) et marques spécialisées (Zodiac, Bombard, Brig, Highfield, 3D Tender, Joker Boat, Lomac, BSC, Valiant, Grand…). Les marques mixtes (Ranieri, Capelli, Selva, Quicksilver…) ne sont exclues que pour leurs gammes pneumatiques. |
 | Puissance | 40 à 90 CV |
 | Largeur max. | 2,30 m |
 | Longueur max. | 7,00 m |
@@ -18,7 +18,7 @@ Les règles de sélection sont enregistrées et versionnées dans [`config/filtr
 | Zone 1 (prioritaire) | Bateaux situés sur ou près des lacs Léman, de Neuchâtel, de Morat et de Bienne (communes, codes postaux, et distance à la rive si les coordonnées sont connues, rayon 12 km). |
 | Zone 2 | Reste de la Suisse, présentée à part. Mention « Très bonne opportunité » si le prix est nettement sous des bateaux comparables (longueur / puissance / année), s’il y a une remorque, un moteur récent, etc. On reste ouvert au plus loin si ça vaut le déplacement. |
 
-**Valeurs manquantes (N/A).** Si la puissance, la largeur ou la longueur n’est pas indiquée, le bateau **n’est pas écarté automatiquement**. Il reste visible dans le seau « À vérifier », pour autant que les autres critères correspondent et qu’il ne soit pas clairement hors sujet (très petit pneumatique, « sans permis », épave à donner, moteur in-bord, etc.).
+**Valeurs manquantes (N/A).** Si la puissance, la largeur ou la longueur n’est pas indiquée, le bateau **n’est pas écarté automatiquement**. Il reste visible dans le seau « À vérifier », pour autant que les autres critères correspondent et qu’il ne soit pas clairement hors sujet (« sans permis », épave à donner, moteur in-bord, etc.).
 
 Le dépôt conserve **toutes** les annonces dans `data/listings.json`. Le filtre ne fait que choisir la vue par défaut et le contenu du digest.
 
@@ -50,6 +50,8 @@ Aperçu sans push ni envoi :
 ```bash
 ./publish_and_send.sh --dry-run --html report/digest/latest.html --subject "Nico Boats – $(TZ=Europe/Zurich date +'%d %b %Y')"
 ```
+
+**Attention au marquage.** Sans `--no-mark`, `build.py` marque immédiatement comme envoyés (`sent_in_digest = date du jour`) tous les bateaux du digest qu’il écrit. Toute reconstruction qui ne sera **pas** envoyée (test, correctif, ajout de sources) doit donc tourner avec `--no-mark`, sinon le digest suivant sauterait ces bateaux.
 
 Options utiles : `--no-mark` (ne pas marquer les bateaux comme envoyés), `--no-shots` (pas d’aperçus PNG), `--no-enrich` (ne pas retravailler les fiches incomplètes), `--selection-initiale` (produire la sélection complète du jour, à ne pas envoyer).
 
@@ -85,4 +87,4 @@ Gmail coupe le HTML au-delà d’environ 102 Ko. Les gros jours restent donc sou
 | `site/data/listings.json` | Copie du magasin **plus** les champs `_filtre` (zone, seau, opportunité) |
 | `report/digest/latest.html` | Corps de l’e-mail du jour |
 
-Le détail des sources, du classement et du schéma est dans [`report/README.md`](report/README.md).
+Sources (15.11.2026) : tutti.ch, anibis.ch, boat24 (bateau24.ch = boot24.ch), lakeboat.ch, petitesannonces.ch, aquaboat.ch. Bloqués : ricardo.ch (captcha Cloudflare), Facebook Marketplace (connexion), swissboat.ch (mur anti-robot). Un même bateau publié sur plusieurs sites n’apparaît qu’une fois, avec les liens « aussi sur ». Le détail des sources, du classement et du schéma est dans [`report/README.md`](report/README.md).

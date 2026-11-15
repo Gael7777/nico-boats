@@ -4,35 +4,62 @@ window.__LISTINGS__ = {
  "sources": {
   "tutti": {
    "ok": true,
-   "raw": 1065,
-   "total_reported": 1065,
-   "kept": 214
+   "raw": 1075,
+   "total_reported": 1075,
+   "kept": 213
   },
   "anibis": {
    "ok": true,
-   "raw": 358,
-   "total_reported": 358,
-   "kept": 79
+   "raw": 356,
+   "total_reported": 356,
+   "kept": 78
   },
   "bateau24": {
    "ok": true,
    "raw": 1445,
    "kept_before_geo": 637,
-   "kept": 619
+   "kept": 620
+  },
+  "lakeboat": {
+   "ok": true,
+   "raw": 192,
+   "kept_before_geo": 83,
+   "kept": 72
+  },
+  "petitesannonces": {
+   "ok": true,
+   "raw": 562,
+   "kept_before_geo": 230,
+   "kept": 199
+  },
+  "aquaboat": {
+   "ok": true,
+   "raw": 141,
+   "kept_before_geo": 5,
+   "kept": 2
   },
   "ricardo": {
    "ok": false,
-   "error": "HTTP 403, captcha/Cloudflare challenge page",
-   "kept": null
+   "kept": null,
+   "probe_http": 200,
+   "error": "page joignable ce jour (HTTP 200), mais Ricardo est d’habitude derrière un captcha ; pas encore de lecteur"
   },
   "facebook_marketplace": {
    "ok": false,
-   "error": "requires a logged-in Facebook session; not scraped",
+   "error": "nécessite une session Facebook connectée ; non collecté",
    "kept": null
+  },
+  "swissboat.ch": {
+   "ok": false,
+   "error": "mur anti-robot (Anubis) ; non collecté",
+   "kept": null
+  },
+  "_duplicates": {
+   "merged": 28
   }
  },
  "filtre_global": {
-  "version": 1,
+  "version": 2,
   "updated": "2026-11-15",
   "label": "Filtre global"
  },
@@ -93,6 +120,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -161,14 +189,16 @@ window.__LISTINGS__ = {
      "price_chf": 1800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -229,6 +259,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -295,6 +326,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 0
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1074175244"
     }
    ],
    "_filtre": {
@@ -365,6 +402,12 @@ window.__LISTINGS__ = {
      "price_chf": 10500
     }
    ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/bateauxamoteur/maendli/maendli-k52069/detail/755756/"
+    }
+   ],
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -433,6 +476,7 @@ window.__LISTINGS__ = {
      "price_chf": 27500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -501,6 +545,7 @@ window.__LISTINGS__ = {
      "price_chf": 5990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -567,6 +612,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 2900
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1073932770"
     }
    ],
    "_filtre": {
@@ -637,8 +688,9 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -706,6 +758,7 @@ window.__LISTINGS__ = {
      "price_chf": 9990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -774,6 +827,7 @@ window.__LISTINGS__ = {
      "price_chf": 21000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -842,6 +896,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -910,6 +965,7 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -978,14 +1034,16 @@ window.__LISTINGS__ = {
      "price_chf": 1400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -1046,6 +1104,7 @@ window.__LISTINGS__ = {
      "price_chf": 10000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1114,14 +1173,16 @@ window.__LISTINGS__ = {
      "price_chf": 1200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -1182,6 +1243,7 @@ window.__LISTINGS__ = {
      "price_chf": 6500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1250,6 +1312,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1318,6 +1381,7 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1386,6 +1450,7 @@ window.__LISTINGS__ = {
      "price_chf": 2700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1452,6 +1517,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 23750
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/bateauxamoteur/linder/linder-arkip-460/detail/639023/"
     }
    ],
    "_filtre": {
@@ -1522,6 +1593,7 @@ window.__LISTINGS__ = {
      "price_chf": 1100
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1590,6 +1662,7 @@ window.__LISTINGS__ = {
      "price_chf": 990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1658,6 +1731,7 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1726,6 +1800,7 @@ window.__LISTINGS__ = {
      "price_chf": 4000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1749,8 +1824,8 @@ window.__LISTINGS__ = {
    "brand": "Linder",
    "model": "Sportsmann 445",
    "year": 2015,
-   "price_chf": 14400,
-   "price_label": "14 400.-",
+   "price_chf": 13750,
+   "price_label": "13 750.-",
    "length_m": "N/A",
    "width_m": "N/A",
    "engine_type": "electric",
@@ -1786,14 +1861,19 @@ window.__LISTINGS__ = {
    "status": "active",
    "removed_on": "N/A",
    "sent_in_digest": "2026-11-15",
-   "price_changed_on": "N/A",
-   "previous_price_chf": "N/A",
+   "price_changed_on": "2026-11-15",
+   "previous_price_chf": 14400,
    "price_history": [
     {
      "date": "2026-11-15",
      "price_chf": 14400
+    },
+    {
+     "date": "2026-11-15",
+     "price_chf": 13750
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1862,6 +1942,7 @@ window.__LISTINGS__ = {
      "price_chf": 8000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1879,7 +1960,7 @@ window.__LISTINGS__ = {
    "source": "tutti",
    "source_listing_id": "84068012",
    "url": "https://www.tutti.ch/fr/vi/84068012",
-   "title": "Bateau en aluminium, bateau de pêche, barque à rames",
+   "title": "Bateau en aluminium, bateau de pêche, barque - réservé",
    "category": "small",
    "category_label": "Dinghies, rowing & small boats",
    "brand": "N/A",
@@ -1930,6 +2011,7 @@ window.__LISTINGS__ = {
      "price_chf": 950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -1998,14 +2080,16 @@ window.__LISTINGS__ = {
      "price_chf": 850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -2066,14 +2150,16 @@ window.__LISTINGS__ = {
      "price_chf": 1490
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -2134,6 +2220,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2200,6 +2287,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 1000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1074149241"
     }
    ],
    "_filtre": {
@@ -2270,6 +2363,7 @@ window.__LISTINGS__ = {
      "price_chf": 2950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2338,6 +2432,7 @@ window.__LISTINGS__ = {
      "price_chf": 1350
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2406,6 +2501,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2474,6 +2570,7 @@ window.__LISTINGS__ = {
      "price_chf": 240
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2542,14 +2639,16 @@ window.__LISTINGS__ = {
      "price_chf": 3100
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -2610,6 +2709,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2678,6 +2778,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2746,6 +2847,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2814,6 +2916,7 @@ window.__LISTINGS__ = {
      "price_chf": 1800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -2882,14 +2985,16 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -2950,6 +3055,7 @@ window.__LISTINGS__ = {
      "price_chf": 2290
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3018,6 +3124,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3086,6 +3193,7 @@ window.__LISTINGS__ = {
      "price_chf": 1750
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3154,6 +3262,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3211,8 +3320,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Vends mon bateau de pêche d'occasion avec cabine et moteur de 6 CV en raison d'un nouvel achat. Le bateau se trouve actuellement au lac de Walen (Walensee) et est toujours en service pour le moment. Une visite est possible sur rendez-vous. Inclus dans le prix de vente : le bateau et le moteur de 6 CV. L'équipement de pêche n'est pas inclus dans le prix, mais peut être acheté séparément sur demande, par exemple le sondeur, le matériel de traîne et d'autres accessoires. Si vous êtes intéressé ou s",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -3222,6 +3331,7 @@ window.__LISTINGS__ = {
      "price_chf": 2990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3290,14 +3400,16 @@ window.__LISTINGS__ = {
      "price_chf": 2999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -3358,14 +3470,16 @@ window.__LISTINGS__ = {
      "price_chf": 390
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "description : « pneumatiques »"
     ],
     "score": 0
    }
@@ -3426,6 +3540,7 @@ window.__LISTINGS__ = {
      "price_chf": 5900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3453,7 +3568,7 @@ window.__LISTINGS__ = {
    "price_label": "5 000.-",
    "length_m": "N/A",
    "width_m": "N/A",
-   "engine_type": "electric",
+   "engine_type": "none",
    "engine_brand": "N/A",
    "engine_model": "N/A",
    "hp": "N/A",
@@ -3494,6 +3609,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3562,6 +3678,7 @@ window.__LISTINGS__ = {
      "price_chf": 4700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3630,6 +3747,7 @@ window.__LISTINGS__ = {
      "price_chf": 2400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3698,6 +3816,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3766,6 +3885,7 @@ window.__LISTINGS__ = {
      "price_chf": 29000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3834,6 +3954,7 @@ window.__LISTINGS__ = {
      "price_chf": 7500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3902,6 +4023,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -3970,6 +4092,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4038,14 +4161,16 @@ window.__LISTINGS__ = {
      "price_chf": 800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -4106,6 +4231,7 @@ window.__LISTINGS__ = {
      "price_chf": 1600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4174,6 +4300,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4242,6 +4369,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4310,6 +4438,7 @@ window.__LISTINGS__ = {
      "price_chf": 550
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4378,6 +4507,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4446,14 +4576,16 @@ window.__LISTINGS__ = {
      "price_chf": 1600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -4514,14 +4646,16 @@ window.__LISTINGS__ = {
      "price_chf": 890
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -4582,6 +4716,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4650,6 +4785,7 @@ window.__LISTINGS__ = {
      "price_chf": 2100
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4718,6 +4854,7 @@ window.__LISTINGS__ = {
      "price_chf": 3600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4786,6 +4923,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4854,14 +4992,16 @@ window.__LISTINGS__ = {
      "price_chf": 1000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "description : « bateau pneumatique »"
     ],
     "score": 0
    }
@@ -4922,6 +5062,7 @@ window.__LISTINGS__ = {
      "price_chf": 15500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -4990,6 +5131,7 @@ window.__LISTINGS__ = {
      "price_chf": 2800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5058,6 +5200,7 @@ window.__LISTINGS__ = {
      "price_chf": 4800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5126,6 +5269,7 @@ window.__LISTINGS__ = {
      "price_chf": 2399
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5194,6 +5338,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5262,14 +5407,16 @@ window.__LISTINGS__ = {
      "price_chf": 1199
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -5330,8 +5477,14 @@ window.__LISTINGS__ = {
      "price_chf": 14750
     }
    ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/bateauxamoteur/lehmann/lehmann-swiss-cat-18/detail/752734/"
+    }
+   ],
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -5398,16 +5551,18 @@ window.__LISTINGS__ = {
      "price_chf": 7950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
-    "bucket": "zone2",
-    "zone": "zone2",
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
     "lake": null,
-    "opportunite": true,
+    "opportunite": false,
     "reasons": [
-     "default"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
-    "score": 88
+    "score": 0
    }
   },
   "tutti:81477111": {
@@ -5466,6 +5621,7 @@ window.__LISTINGS__ = {
      "price_chf": 2999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5532,6 +5688,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 26680
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/83768423"
     }
    ],
    "_filtre": {
@@ -5602,6 +5764,7 @@ window.__LISTINGS__ = {
      "price_chf": 3200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5670,6 +5833,7 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5738,6 +5902,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5806,6 +5971,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5874,6 +6040,7 @@ window.__LISTINGS__ = {
      "price_chf": 300
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -5942,6 +6109,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6010,6 +6178,7 @@ window.__LISTINGS__ = {
      "price_chf": 930
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6076,6 +6245,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 26680
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/83805329"
     }
    ],
    "_filtre": {
@@ -6146,6 +6321,7 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6214,14 +6390,16 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -6282,8 +6460,9 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -6352,6 +6531,7 @@ window.__LISTINGS__ = {
      "price_chf": 1000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6420,14 +6600,16 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -6488,6 +6670,7 @@ window.__LISTINGS__ = {
      "price_chf": 450
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6556,6 +6739,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6622,6 +6806,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 2000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/82101818"
     }
    ],
    "_filtre": {
@@ -6692,6 +6882,7 @@ window.__LISTINGS__ = {
      "price_chf": 400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6760,6 +6951,7 @@ window.__LISTINGS__ = {
      "price_chf": 2999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6828,6 +7020,7 @@ window.__LISTINGS__ = {
      "price_chf": 4499
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -6896,8 +7089,9 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -6966,6 +7160,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7034,6 +7229,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7102,6 +7298,7 @@ window.__LISTINGS__ = {
      "price_chf": 7200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7170,14 +7367,16 @@ window.__LISTINGS__ = {
      "price_chf": 199
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -7238,6 +7437,7 @@ window.__LISTINGS__ = {
      "price_chf": 10500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7306,6 +7506,7 @@ window.__LISTINGS__ = {
      "price_chf": 1900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7374,6 +7575,7 @@ window.__LISTINGS__ = {
      "price_chf": 1600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7442,6 +7644,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7510,6 +7713,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7578,6 +7782,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7646,6 +7851,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7714,6 +7920,7 @@ window.__LISTINGS__ = {
      "price_chf": 1000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7782,14 +7989,16 @@ window.__LISTINGS__ = {
      "price_chf": 1900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -7848,6 +8057,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 600
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1074065569"
     }
    ],
    "_filtre": {
@@ -7918,6 +8133,12 @@ window.__LISTINGS__ = {
      "price_chf": 150
     }
    ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/54597272"
+    }
+   ],
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -7986,6 +8207,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8054,6 +8276,7 @@ window.__LISTINGS__ = {
      "price_chf": 5200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8122,6 +8345,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8190,6 +8414,7 @@ window.__LISTINGS__ = {
      "price_chf": 4000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8258,6 +8483,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8326,6 +8552,7 @@ window.__LISTINGS__ = {
      "price_chf": 3987
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8394,8 +8621,9 @@ window.__LISTINGS__ = {
      "price_chf": 4400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -8463,6 +8691,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8531,8 +8760,9 @@ window.__LISTINGS__ = {
      "price_chf": 4000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -8601,6 +8831,7 @@ window.__LISTINGS__ = {
      "price_chf": 11900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8669,14 +8900,16 @@ window.__LISTINGS__ = {
      "price_chf": 7600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "implausible_unknown"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -8737,6 +8970,7 @@ window.__LISTINGS__ = {
      "price_chf": 1800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8805,6 +9039,7 @@ window.__LISTINGS__ = {
      "price_chf": 999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8873,6 +9108,7 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -8941,14 +9177,16 @@ window.__LISTINGS__ = {
      "price_chf": 2300
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -9009,6 +9247,7 @@ window.__LISTINGS__ = {
      "price_chf": 1590
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -9077,6 +9316,7 @@ window.__LISTINGS__ = {
      "price_chf": 1800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -9145,14 +9385,16 @@ window.__LISTINGS__ = {
      "price_chf": 200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -9202,8 +9444,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Un bateau de pêche Thoma 550 est à vendre en état d'occasion, avec diverses traces d'utilisation correspondant à son âge. Le dernier contrôle technique (MFK) a été effectué en 2024. La dernière maintenance des gaz d'échappement a également eu lieu en 2024. Toutes les maintenances des gaz d'échappement ont été effectuées régulièrement et sont documentées dans le carnet d'entretien. Moteur : Yamaha F25AEL 99 Dimensions : 5,50 x 1,65 Le bateau est vendu sans équipement de sécurité. Le bateau est id",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -9213,6 +9455,7 @@ window.__LISTINGS__ = {
      "price_chf": 5520
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -9281,14 +9524,16 @@ window.__LISTINGS__ = {
      "price_chf": 800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -9349,6 +9594,7 @@ window.__LISTINGS__ = {
      "price_chf": 7000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -9417,6 +9663,7 @@ window.__LISTINGS__ = {
      "price_chf": 1950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -9485,14 +9732,16 @@ window.__LISTINGS__ = {
      "price_chf": 950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -9553,14 +9802,16 @@ window.__LISTINGS__ = {
      "price_chf": 1770
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -9621,14 +9872,16 @@ window.__LISTINGS__ = {
      "price_chf": 1280
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -9689,14 +9942,16 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -9757,6 +10012,7 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -9825,6 +10081,7 @@ window.__LISTINGS__ = {
      "price_chf": 200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -9893,6 +10150,7 @@ window.__LISTINGS__ = {
      "price_chf": 13900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -9961,6 +10219,7 @@ window.__LISTINGS__ = {
      "price_chf": 3300
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10029,14 +10288,16 @@ window.__LISTINGS__ = {
      "price_chf": 2550
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -10097,6 +10358,7 @@ window.__LISTINGS__ = {
      "price_chf": 1800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10165,6 +10427,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10233,6 +10496,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10301,6 +10565,7 @@ window.__LISTINGS__ = {
      "price_chf": 1000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10369,6 +10634,7 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10437,6 +10703,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10505,6 +10772,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10573,14 +10841,16 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -10641,6 +10911,7 @@ window.__LISTINGS__ = {
      "price_chf": 4000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10709,6 +10980,7 @@ window.__LISTINGS__ = {
      "price_chf": 1200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10777,6 +11049,7 @@ window.__LISTINGS__ = {
      "price_chf": 1650
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10845,6 +11118,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10913,6 +11187,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -10981,6 +11256,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -11049,14 +11325,16 @@ window.__LISTINGS__ = {
      "price_chf": 290
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -11117,6 +11395,7 @@ window.__LISTINGS__ = {
      "price_chf": 5900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -11185,6 +11464,7 @@ window.__LISTINGS__ = {
      "price_chf": 1700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -11253,6 +11533,7 @@ window.__LISTINGS__ = {
      "price_chf": 16000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -11321,6 +11602,7 @@ window.__LISTINGS__ = {
      "price_chf": 830
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -11389,14 +11671,16 @@ window.__LISTINGS__ = {
      "price_chf": 1200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -11457,6 +11741,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -11525,14 +11810,16 @@ window.__LISTINGS__ = {
      "price_chf": 2199
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -11593,8 +11880,9 @@ window.__LISTINGS__ = {
      "price_chf": 12900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -11662,14 +11950,16 @@ window.__LISTINGS__ = {
      "price_chf": 450
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -11730,6 +12020,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -11798,14 +12089,16 @@ window.__LISTINGS__ = {
      "price_chf": 1290
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -11866,6 +12159,7 @@ window.__LISTINGS__ = {
      "price_chf": 950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -11934,8 +12228,9 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -12003,6 +12298,7 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12071,6 +12367,7 @@ window.__LISTINGS__ = {
      "price_chf": 6900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12139,14 +12436,16 @@ window.__LISTINGS__ = {
      "price_chf": 850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "titre : « airdeck »"
     ],
     "score": 0
    }
@@ -12207,6 +12506,7 @@ window.__LISTINGS__ = {
      "price_chf": 9999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12275,6 +12575,7 @@ window.__LISTINGS__ = {
      "price_chf": 12500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12343,6 +12644,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12411,14 +12713,21 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/bateauxpneumatiques/honda-honwave/honda-honwave-mx-400-al/detail/746523/"
+    }
+   ],
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -12479,6 +12788,7 @@ window.__LISTINGS__ = {
      "price_chf": 17500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12547,6 +12857,7 @@ window.__LISTINGS__ = {
      "price_chf": 1990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12613,6 +12924,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 20500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/bateauxamoteur/smartliner/smartliner-fisher-19/detail/595908/"
     }
    ],
    "_filtre": {
@@ -12683,6 +13000,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12751,6 +13069,7 @@ window.__LISTINGS__ = {
      "price_chf": 1850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12819,6 +13138,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -12887,14 +13207,16 @@ window.__LISTINGS__ = {
      "price_chf": 666
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -12955,14 +13277,16 @@ window.__LISTINGS__ = {
      "price_chf": 1000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "description : « gonflable »"
     ],
     "score": 0
    }
@@ -13023,6 +13347,7 @@ window.__LISTINGS__ = {
      "price_chf": 3850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13091,14 +13416,16 @@ window.__LISTINGS__ = {
      "price_chf": 3250
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -13159,6 +13486,7 @@ window.__LISTINGS__ = {
      "price_chf": 9999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13227,6 +13555,7 @@ window.__LISTINGS__ = {
      "price_chf": 590
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13252,13 +13581,13 @@ window.__LISTINGS__ = {
    "year": 1984,
    "price_chf": 4500,
    "price_label": "4 500.-",
-   "length_m": "N/A",
+   "length_m": 5.6,
    "width_m": "N/A",
    "engine_type": "N/A",
    "engine_brand": "Mercruiser",
-   "engine_model": "N/A",
+   "engine_model": "Mercruiser 5.7 v8",
    "hp": 260.0,
-   "kw": 191.2,
+   "kw": 191.0,
    "fuel": "N/A",
    "hours": "N/A",
    "sail_area_m2": "N/A",
@@ -13271,7 +13600,7 @@ window.__LISTINGS__ = {
    "town": "Agno",
    "canton": "TI",
    "postcode": "6982",
-   "region": "N/A",
+   "region": "Lac de Lugano",
    "lat": 45.999542236328125,
    "lon": 8.908219337463379,
    "geo_precision": "listing coordinates",
@@ -13293,6 +13622,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 4500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/bateauxamoteur/glastron/glastron-svv-194/detail/745707/"
     }
    ],
    "_filtre": {
@@ -13363,17 +13698,18 @@ window.__LISTINGS__ = {
      "price_chf": 1999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
-    "bucket": "a_verifier",
-    "zone": "zone2",
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "width_m",
-     "length_m"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
-    "score": 20
+    "score": 0
    }
   },
   "tutti:83099130": {
@@ -13432,6 +13768,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13500,6 +13837,7 @@ window.__LISTINGS__ = {
      "price_chf": 8900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13568,6 +13906,7 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13636,6 +13975,7 @@ window.__LISTINGS__ = {
      "price_chf": 2600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13704,14 +14044,16 @@ window.__LISTINGS__ = {
      "price_chf": 1400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -13772,6 +14114,7 @@ window.__LISTINGS__ = {
      "price_chf": 400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13840,6 +14183,7 @@ window.__LISTINGS__ = {
      "price_chf": 4200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13908,6 +14252,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -13976,14 +14321,16 @@ window.__LISTINGS__ = {
      "price_chf": 200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -14044,14 +14391,16 @@ window.__LISTINGS__ = {
      "price_chf": 900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -14098,7 +14447,7 @@ window.__LISTINGS__ = {
    "posted_date": "2026-09-18",
    "photo_url": "https://c.tutti.ch/big/5565613891.jpg",
    "thumb_url": "https://c.tutti.ch/thumbnail/5565613891.jpg",
-   "description_excerpt": "À vendre, veuillez contacter le 00436769706488 si intéressé",
+   "description_excerpt": "À vendre, veuillez contacter le [phone hidden] si intéressé",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
    "status": "active",
@@ -14112,6 +14461,7 @@ window.__LISTINGS__ = {
      "price_chf": 6500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14180,6 +14530,7 @@ window.__LISTINGS__ = {
      "price_chf": 850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14248,6 +14599,7 @@ window.__LISTINGS__ = {
      "price_chf": 21500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14316,6 +14668,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14384,6 +14737,7 @@ window.__LISTINGS__ = {
      "price_chf": 4000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14441,8 +14795,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Comme annoncé, je vends un bateau Prosperi Gandria 2S, à coque à déjaugeage, avec un moteur Yamaha 25 CV (2015) en excellent état, incluant une bâche de protection à remettre en état. Le bateau est hors de l'eau et n'est pas utilisé depuis 2022, mais il est encore en bon état. Le bateau est également déjà préparé pour la pêche à la traîne avec un porte-canne pour les chiens et un tirlindana. Prix négociable, sans place de port. Je reste à votre disposition pour toute information complémentaire.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -14452,6 +14806,7 @@ window.__LISTINGS__ = {
      "price_chf": 12500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14520,6 +14875,7 @@ window.__LISTINGS__ = {
      "price_chf": 990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14588,6 +14944,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14656,6 +15013,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14722,6 +15080,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 8500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/voiliers/wirz/wirz-drachen/detail/752765/"
     }
    ],
    "_filtre": {
@@ -14792,6 +15156,12 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/82933960"
+    }
+   ],
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14860,6 +15230,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -14928,14 +15299,16 @@ window.__LISTINGS__ = {
      "price_chf": 4250
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "implausible_unknown"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -14996,6 +15369,7 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15064,6 +15438,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15132,6 +15507,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15198,6 +15574,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 990
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8542742"
     }
    ],
    "_filtre": {
@@ -15268,6 +15650,7 @@ window.__LISTINGS__ = {
      "price_chf": 4900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15336,6 +15719,7 @@ window.__LISTINGS__ = {
      "price_chf": 1850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15404,6 +15788,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15472,8 +15857,14 @@ window.__LISTINGS__ = {
      "price_chf": 4800
     }
    ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1073865689"
+    }
+   ],
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone1",
     "lake": "Lac de Neuchâtel",
@@ -15541,14 +15932,16 @@ window.__LISTINGS__ = {
      "price_chf": 3200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -15609,8 +16002,9 @@ window.__LISTINGS__ = {
      "price_chf": 2200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -15679,6 +16073,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15747,6 +16142,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15815,6 +16211,7 @@ window.__LISTINGS__ = {
      "price_chf": 300
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15883,6 +16280,7 @@ window.__LISTINGS__ = {
      "price_chf": 400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -15951,6 +16349,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16019,6 +16418,7 @@ window.__LISTINGS__ = {
      "price_chf": 1800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16087,6 +16487,7 @@ window.__LISTINGS__ = {
      "price_chf": 1000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16155,6 +16556,7 @@ window.__LISTINGS__ = {
      "price_chf": 7000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16223,6 +16625,7 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16291,6 +16694,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16359,6 +16763,7 @@ window.__LISTINGS__ = {
      "price_chf": 8900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16427,14 +16832,16 @@ window.__LISTINGS__ = {
      "price_chf": 850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -16495,6 +16902,7 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16515,7 +16923,7 @@ window.__LISTINGS__ = {
    "title": "Bateau idéal pour sports nautiques",
    "category": "open",
    "category_label": "Open boats & day-cruisers",
-   "brand": "N/A",
+   "brand": "Aston 19",
    "model": "N/A",
    "year": "N/A",
    "price_chf": 8900,
@@ -16539,7 +16947,7 @@ window.__LISTINGS__ = {
    "town": "Grandvaux",
    "canton": "VD",
    "postcode": "1091",
-   "region": "N/A",
+   "region": "Grandvaux, canton de Vaud, Suisse",
    "lat": 46.495765686035156,
    "lon": 6.731480121612549,
    "geo_precision": "listing coordinates",
@@ -16563,8 +16971,18 @@ window.__LISTINGS__ = {
      "price_chf": 8900
     }
    ],
+   "also_listed": [
+    {
+     "source": "lakeboat",
+     "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-de-sport/"
+    },
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8114044"
+    }
+   ],
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone1",
     "lake": "Lac Léman",
@@ -16632,6 +17050,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16700,6 +17119,7 @@ window.__LISTINGS__ = {
      "price_chf": 1200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16768,6 +17188,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16836,6 +17257,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16904,6 +17326,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -16970,6 +17393,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 2000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8527379"
     }
    ],
    "_filtre": {
@@ -17040,6 +17469,12 @@ window.__LISTINGS__ = {
      "price_chf": 600
     }
    ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/83596837"
+    }
+   ],
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17108,6 +17543,7 @@ window.__LISTINGS__ = {
      "price_chf": 1900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17174,6 +17610,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 1500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1074008147"
     }
    ],
    "_filtre": {
@@ -17244,6 +17686,7 @@ window.__LISTINGS__ = {
      "price_chf": 4945
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17312,6 +17755,7 @@ window.__LISTINGS__ = {
      "price_chf": 1450
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17380,6 +17824,7 @@ window.__LISTINGS__ = {
      "price_chf": 3800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17448,6 +17893,7 @@ window.__LISTINGS__ = {
      "price_chf": 3800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17516,14 +17962,16 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -17584,6 +18032,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17652,6 +18101,7 @@ window.__LISTINGS__ = {
      "price_chf": 4600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17720,6 +18170,7 @@ window.__LISTINGS__ = {
      "price_chf": 550
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17788,6 +18239,7 @@ window.__LISTINGS__ = {
      "price_chf": 1300
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17856,6 +18308,7 @@ window.__LISTINGS__ = {
      "price_chf": 2250
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -17924,14 +18377,16 @@ window.__LISTINGS__ = {
      "price_chf": 3250
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -17992,14 +18447,16 @@ window.__LISTINGS__ = {
      "price_chf": 450
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -18060,6 +18517,7 @@ window.__LISTINGS__ = {
      "price_chf": 2600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18128,14 +18586,25 @@ window.__LISTINGS__ = {
      "price_chf": 2650
     }
    ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/6781851"
+    },
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7543428"
+    }
+   ],
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -18196,14 +18665,16 @@ window.__LISTINGS__ = {
      "price_chf": 1750
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -18264,6 +18735,7 @@ window.__LISTINGS__ = {
      "price_chf": 404
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18332,6 +18804,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18400,14 +18873,21 @@ window.__LISTINGS__ = {
      "price_chf": 21500
     }
    ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8692683"
+    }
+   ],
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "price_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -18468,6 +18948,7 @@ window.__LISTINGS__ = {
      "price_chf": 999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18536,6 +19017,7 @@ window.__LISTINGS__ = {
      "price_chf": 4200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18604,6 +19086,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18672,6 +19155,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18740,6 +19224,7 @@ window.__LISTINGS__ = {
      "price_chf": 800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18808,6 +19293,7 @@ window.__LISTINGS__ = {
      "price_chf": 1950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18865,8 +19351,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Petit bateau à voile sans permis, avec moteur 8ch yamaha. 5.50 m de long, 2.45 m de large, tirant d'eau 0.55 m, 600 kg. Grand-voile et foc, surface totale 13 m2 (sans permis) Bateau de 1987, vendu en l'état, grand travail de carénage et antifouling à prévoir, cloisons du puits d'ancre et du coffre à réparer car fissurées. Moteur hors-bord Yamaha 8ch (sans permis) de 2013, en très bon état, peu tourné, services faits tous les 3 ans. Bateau et moteur peuvent être vendus séparément : 1'200 chf le m",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -18876,6 +19362,7 @@ window.__LISTINGS__ = {
      "price_chf": 1400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -18944,6 +19431,7 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19012,14 +19500,16 @@ window.__LISTINGS__ = {
      "price_chf": 230
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -19078,6 +19568,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 9300
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/voiliers/archambault/archambault-surprise/detail/745673/"
     }
    ],
    "_filtre": {
@@ -19148,6 +19644,7 @@ window.__LISTINGS__ = {
      "price_chf": 24000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19214,6 +19711,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 26500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "bateau24",
+     "url": "https://www.bateau24.ch/chfr/bateauxamoteur/bayliner/bayliner-652-cuddy/detail/745117/"
     }
    ],
    "_filtre": {
@@ -19284,6 +19787,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19352,6 +19856,7 @@ window.__LISTINGS__ = {
      "price_chf": 2550
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19379,7 +19884,7 @@ window.__LISTINGS__ = {
    "price_label": "700.-",
    "length_m": 5.6,
    "width_m": 2.1,
-   "engine_type": "electric",
+   "engine_type": "none",
    "engine_brand": "N/A",
    "engine_model": "N/A",
    "hp": "N/A",
@@ -19420,6 +19925,7 @@ window.__LISTINGS__ = {
      "price_chf": 700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19488,6 +19994,7 @@ window.__LISTINGS__ = {
      "price_chf": 1250
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19556,14 +20063,16 @@ window.__LISTINGS__ = {
      "price_chf": 800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -19624,6 +20133,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19692,6 +20202,7 @@ window.__LISTINGS__ = {
      "price_chf": 3700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19760,6 +20271,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19828,6 +20340,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19896,6 +20409,7 @@ window.__LISTINGS__ = {
      "price_chf": 0
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -19964,6 +20478,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20032,6 +20547,7 @@ window.__LISTINGS__ = {
      "price_chf": 26700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20100,6 +20616,7 @@ window.__LISTINGS__ = {
      "price_chf": 750
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20168,6 +20685,7 @@ window.__LISTINGS__ = {
      "price_chf": 13500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20236,14 +20754,16 @@ window.__LISTINGS__ = {
      "price_chf": 20500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -20304,6 +20824,7 @@ window.__LISTINGS__ = {
      "price_chf": 4990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20372,6 +20893,7 @@ window.__LISTINGS__ = {
      "price_chf": 21000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20440,6 +20962,7 @@ window.__LISTINGS__ = {
      "price_chf": 27000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20508,6 +21031,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20576,6 +21100,7 @@ window.__LISTINGS__ = {
      "price_chf": 16500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20644,6 +21169,7 @@ window.__LISTINGS__ = {
      "price_chf": 14000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20712,6 +21238,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20780,6 +21307,7 @@ window.__LISTINGS__ = {
      "price_chf": 29900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20848,6 +21376,7 @@ window.__LISTINGS__ = {
      "price_chf": 16900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20916,6 +21445,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -20984,6 +21514,7 @@ window.__LISTINGS__ = {
      "price_chf": 22900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21052,6 +21583,7 @@ window.__LISTINGS__ = {
      "price_chf": 26500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21120,6 +21652,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21188,6 +21721,7 @@ window.__LISTINGS__ = {
      "price_chf": 29000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21256,6 +21790,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21324,6 +21859,7 @@ window.__LISTINGS__ = {
      "price_chf": 17000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21392,6 +21928,7 @@ window.__LISTINGS__ = {
      "price_chf": 26000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21460,6 +21997,7 @@ window.__LISTINGS__ = {
      "price_chf": 29900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21528,6 +22066,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21596,6 +22135,7 @@ window.__LISTINGS__ = {
      "price_chf": 180
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21664,6 +22204,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21732,6 +22273,7 @@ window.__LISTINGS__ = {
      "price_chf": 8800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21800,6 +22342,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21868,6 +22411,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21936,6 +22480,7 @@ window.__LISTINGS__ = {
      "price_chf": 24900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -21943,7 +22488,8 @@ window.__LISTINGS__ = {
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "engine_type",
+     "ski-boat in-bord"
     ],
     "score": 0
    }
@@ -22004,14 +22550,16 @@ window.__LISTINGS__ = {
      "price_chf": 21300
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -22072,6 +22620,7 @@ window.__LISTINGS__ = {
      "price_chf": 14450
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22140,14 +22689,21 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/83196343"
+    }
+   ],
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -22208,6 +22764,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22276,6 +22833,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22344,6 +22902,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22412,6 +22971,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22480,6 +23040,7 @@ window.__LISTINGS__ = {
      "price_chf": 26600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22548,6 +23109,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22616,6 +23178,7 @@ window.__LISTINGS__ = {
      "price_chf": 16000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22684,6 +23247,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22752,6 +23316,7 @@ window.__LISTINGS__ = {
      "price_chf": 9400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22820,14 +23385,16 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -22888,6 +23455,7 @@ window.__LISTINGS__ = {
      "price_chf": 13500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -22956,6 +23524,7 @@ window.__LISTINGS__ = {
      "price_chf": 11900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23024,6 +23593,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23092,6 +23662,7 @@ window.__LISTINGS__ = {
      "price_chf": 23000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23160,6 +23731,7 @@ window.__LISTINGS__ = {
      "price_chf": 18500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23228,6 +23800,7 @@ window.__LISTINGS__ = {
      "price_chf": 9200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23296,6 +23869,7 @@ window.__LISTINGS__ = {
      "price_chf": 22000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23319,8 +23893,8 @@ window.__LISTINGS__ = {
    "brand": "Beneteau",
    "model": "First 305",
    "year": 1986,
-   "price_chf": 12000,
-   "price_label": "CHF 12'000.-",
+   "price_chf": 11000,
+   "price_label": "CHF 11'000.-",
    "length_m": 9.35,
    "width_m": 3.25,
    "engine_type": "N/A",
@@ -23356,14 +23930,19 @@ window.__LISTINGS__ = {
    "status": "active",
    "removed_on": "N/A",
    "sent_in_digest": "2026-11-15",
-   "price_changed_on": "N/A",
-   "previous_price_chf": "N/A",
+   "price_changed_on": "2026-11-15",
+   "previous_price_chf": 12000,
    "price_history": [
     {
      "date": "2026-11-15",
      "price_chf": 12000
+    },
+    {
+     "date": "2026-11-15",
+     "price_chf": 11000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23432,6 +24011,7 @@ window.__LISTINGS__ = {
      "price_chf": 8900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23500,6 +24080,7 @@ window.__LISTINGS__ = {
      "price_chf": 22000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23557,8 +24138,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Coque et Moteur en bon état Prévoir la mise à niveau de : Trim à réparer Pare-brise à remplacer Sellerie à réparer Remplacer le support fusibles Expertise technique à refaire",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -23568,6 +24149,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23619,7 +24201,7 @@ window.__LISTINGS__ = {
    "distance_km_from_geneva": 63,
    "distance_method": "osrm",
    "seller_type": "private",
-   "posted_date": "N/A",
+   "posted_date": "2025-02-09",
    "photo_url": "https://static.b24.co/fotos/large/753423-6e960b5f50ff71ca9dd575de66c8ff61-x-9766001-390e0dfd74a9d515ce869f6542572000.jpg",
    "thumb_url": "https://static.b24.co/thumbs/xlarge/753423-1793452054.jpg",
    "description_excerpt": "Voilier à vendre prêt pour la saison 2027. Trois voiles neuves (1 saison), visite technique à jour, intérieur refait avec sellerie neuve. Service moteur et antifouling à jour.",
@@ -23634,6 +24216,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 12000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "lakeboat",
+     "url": "https://lakeboat.ch/bateau-occasion-suisse/jeanneau-leader-545-hb/"
     }
    ],
    "_filtre": {
@@ -23679,7 +24267,7 @@ window.__LISTINGS__ = {
    "licence_leman": "no (≤10 CV)",
    "town": "Port de Pully",
    "canton": "VD",
-   "postcode": "N/A",
+   "postcode": "1009",
    "region": "Lac Léman",
    "lat": 46.5052816,
    "lon": 6.6635863,
@@ -23687,7 +24275,7 @@ window.__LISTINGS__ = {
    "distance_km_from_geneva": 67,
    "distance_method": "osrm",
    "seller_type": "private",
-   "posted_date": "N/A",
+   "posted_date": "2026-10-10",
    "photo_url": "https://static.b24.co/fotos/large/717109-28f913673c9bcd3ad18cfea92d73a668-x-8930005-2f34c8ee0d645f11a44ba00723cbd731.jpg",
    "thumb_url": "https://static.b24.co/thumbs/xlarge/717109-1780292603.jpg",
    "description_excerpt": "Ber démontable. Gréement dormant changé en 2025. 2 Grandes voiles, 1 Génois, 1 Solent, 1 Spi et 1 Spi 3/8 Hivernage à terre Antifouling en mai 2026 Expertisé en mai 2025 Moteur neuf",
@@ -23702,6 +24290,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 9990
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "lakeboat",
+     "url": "https://lakeboat.ch/bateau-occasion-suisse/archambault-surprise-2/"
     }
    ],
    "_filtre": {
@@ -23772,6 +24366,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23840,6 +24435,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23908,6 +24504,7 @@ window.__LISTINGS__ = {
      "price_chf": 27000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -23976,6 +24573,7 @@ window.__LISTINGS__ = {
      "price_chf": 7800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24044,6 +24642,7 @@ window.__LISTINGS__ = {
      "price_chf": 10500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24112,6 +24711,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24180,6 +24780,7 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24248,6 +24849,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24316,6 +24918,7 @@ window.__LISTINGS__ = {
      "price_chf": 11000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24384,6 +24987,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24452,6 +25056,7 @@ window.__LISTINGS__ = {
      "price_chf": 4000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24520,6 +25125,7 @@ window.__LISTINGS__ = {
      "price_chf": 18700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24588,6 +25194,7 @@ window.__LISTINGS__ = {
      "price_chf": 23000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24656,6 +25263,7 @@ window.__LISTINGS__ = {
      "price_chf": 18500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24724,6 +25332,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24792,6 +25401,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24860,6 +25470,7 @@ window.__LISTINGS__ = {
      "price_chf": 500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24928,6 +25539,7 @@ window.__LISTINGS__ = {
      "price_chf": 9000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -24996,6 +25608,7 @@ window.__LISTINGS__ = {
      "price_chf": 23900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25064,6 +25677,7 @@ window.__LISTINGS__ = {
      "price_chf": 20900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25132,6 +25746,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25200,6 +25815,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25268,6 +25884,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25336,6 +25953,7 @@ window.__LISTINGS__ = {
      "price_chf": 16000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25369,13 +25987,13 @@ window.__LISTINGS__ = {
    "hp": 27.0,
    "kw": 20.0,
    "fuel": "Diesel",
-   "hours": "N/A",
+   "hours": 1200,
    "sail_area_m2": "N/A",
    "berths": 1,
    "material": "Polyester/Fibre de verre",
    "trailer": "N/A",
    "mooring_included": "N/A",
-   "condition": "N/A",
+   "condition": "very good",
    "licence_leman": "yes (>10 CV)",
    "town": "Barkenhafen Nidau",
    "canton": "BE",
@@ -25387,7 +26005,7 @@ window.__LISTINGS__ = {
    "distance_km_from_geneva": 156,
    "distance_method": "osrm",
    "seller_type": "private",
-   "posted_date": "N/A",
+   "posted_date": "2025-03-07",
    "photo_url": "https://static.b24.co/fotos/large/750887-c5642ae0630cc9f039ac957502a36795-x-9702482-9fdb6aae50d2f82fac213b9c5e8c6a92.jpg",
    "thumb_url": "https://static.b24.co/thumbs/xlarge/750887-1792399256.jpg",
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
@@ -25402,6 +26020,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 12000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "lakeboat",
+     "url": "https://lakeboat.ch/bateau-occasion-suisse/windy-25-funcab/"
     }
    ],
    "_filtre": {
@@ -25472,6 +26096,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25540,6 +26165,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25608,6 +26234,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25674,6 +26301,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 9300
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1073968828"
     }
    ],
    "_filtre": {
@@ -25744,6 +26377,7 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25812,6 +26446,7 @@ window.__LISTINGS__ = {
      "price_chf": 13900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25880,6 +26515,7 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -25948,6 +26584,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26016,6 +26653,7 @@ window.__LISTINGS__ = {
      "price_chf": 17500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26084,6 +26722,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26152,6 +26791,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26220,6 +26860,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26288,6 +26929,7 @@ window.__LISTINGS__ = {
      "price_chf": 1250
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26354,6 +26996,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 10500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/84137641"
     }
    ],
    "_filtre": {
@@ -26424,6 +27072,7 @@ window.__LISTINGS__ = {
      "price_chf": 21000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26492,6 +27141,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26560,6 +27210,7 @@ window.__LISTINGS__ = {
      "price_chf": 4800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26628,6 +27279,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26696,6 +27348,7 @@ window.__LISTINGS__ = {
      "price_chf": 10000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26764,6 +27417,7 @@ window.__LISTINGS__ = {
      "price_chf": 22900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26832,6 +27486,7 @@ window.__LISTINGS__ = {
      "price_chf": 9999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26900,6 +27555,7 @@ window.__LISTINGS__ = {
      "price_chf": 8000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -26968,6 +27624,7 @@ window.__LISTINGS__ = {
      "price_chf": 2400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27036,6 +27693,7 @@ window.__LISTINGS__ = {
      "price_chf": 13500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27104,6 +27762,7 @@ window.__LISTINGS__ = {
      "price_chf": 24999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27172,6 +27831,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27240,6 +27900,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27291,7 +27952,7 @@ window.__LISTINGS__ = {
    "distance_km_from_geneva": 303,
    "distance_method": "osrm",
    "seller_type": "private",
-   "posted_date": "N/A",
+   "posted_date": "2026-10-27",
    "photo_url": "https://static.b24.co/fotos/large/752734-44452c7a52f035e9eaa3cf8f5b80ef43-x-9743293-e46c546d2db3c43839dee8bee87b2c07.jpg",
    "thumb_url": "https://static.b24.co/thumbs/xlarge/752734-1793171967.jpg",
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
@@ -27308,8 +27969,18 @@ window.__LISTINGS__ = {
      "price_chf": 14750
     }
    ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/83809317"
+    },
+    {
+     "source": "lakeboat",
+     "url": "https://lakeboat.ch/bateau-occasion-suisse/fischer-und-freizeitboot-swiss-cat-18-lehmann/"
+    }
+   ],
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -27376,6 +28047,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27444,6 +28116,7 @@ window.__LISTINGS__ = {
      "price_chf": 900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27512,14 +28185,16 @@ window.__LISTINGS__ = {
      "price_chf": 6500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -27580,14 +28255,16 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -27648,6 +28325,7 @@ window.__LISTINGS__ = {
      "price_chf": 3950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27716,8 +28394,9 @@ window.__LISTINGS__ = {
      "price_chf": 10800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone1",
     "zone": "zone1",
     "lake": "Lac de Bienne",
@@ -27773,8 +28452,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -27784,6 +28463,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27852,6 +28532,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -27920,8 +28601,9 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone1",
     "zone": "zone1",
     "lake": "Lac de Neuchâtel",
@@ -27988,6 +28670,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28056,6 +28739,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28124,6 +28808,7 @@ window.__LISTINGS__ = {
      "price_chf": 22900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28192,6 +28877,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28260,6 +28946,7 @@ window.__LISTINGS__ = {
      "price_chf": 4000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28328,6 +29015,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28396,6 +29084,7 @@ window.__LISTINGS__ = {
      "price_chf": 18500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28464,6 +29153,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28532,6 +29222,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28600,6 +29291,7 @@ window.__LISTINGS__ = {
      "price_chf": 8990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28668,6 +29360,7 @@ window.__LISTINGS__ = {
      "price_chf": 3150
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28736,6 +29429,7 @@ window.__LISTINGS__ = {
      "price_chf": 23000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28804,6 +29498,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28872,6 +29567,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -28940,6 +29636,7 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29008,6 +29705,7 @@ window.__LISTINGS__ = {
      "price_chf": 29900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29076,6 +29774,7 @@ window.__LISTINGS__ = {
      "price_chf": 4999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29144,6 +29843,7 @@ window.__LISTINGS__ = {
      "price_chf": 700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29212,6 +29912,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29280,6 +29981,7 @@ window.__LISTINGS__ = {
      "price_chf": 3980
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29348,6 +30050,7 @@ window.__LISTINGS__ = {
      "price_chf": 20900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29414,6 +30117,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 8500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1074107529"
     }
    ],
    "_filtre": {
@@ -29484,6 +30193,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29552,6 +30262,7 @@ window.__LISTINGS__ = {
      "price_chf": 9000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29620,6 +30331,7 @@ window.__LISTINGS__ = {
      "price_chf": 11900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29688,6 +30400,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29756,6 +30469,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29824,6 +30538,7 @@ window.__LISTINGS__ = {
      "price_chf": 5600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29892,6 +30607,7 @@ window.__LISTINGS__ = {
      "price_chf": 24999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -29960,6 +30676,7 @@ window.__LISTINGS__ = {
      "price_chf": 15800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30028,6 +30745,7 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30096,6 +30814,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30164,6 +30883,7 @@ window.__LISTINGS__ = {
      "price_chf": 2300
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30232,14 +30952,16 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "price_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -30300,6 +31022,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30368,6 +31091,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30436,6 +31160,7 @@ window.__LISTINGS__ = {
      "price_chf": 1900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30504,6 +31229,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30572,6 +31298,7 @@ window.__LISTINGS__ = {
      "price_chf": 12500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30640,6 +31367,7 @@ window.__LISTINGS__ = {
      "price_chf": 600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30708,6 +31436,7 @@ window.__LISTINGS__ = {
      "price_chf": 16500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30765,8 +31494,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. La traduction automatique n'est malheureusement pas disponible pour ce texte. (max. 2100 caractères) Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -30776,6 +31505,7 @@ window.__LISTINGS__ = {
      "price_chf": 21500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30833,8 +31563,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -30844,6 +31574,7 @@ window.__LISTINGS__ = {
      "price_chf": 10500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30912,6 +31643,7 @@ window.__LISTINGS__ = {
      "price_chf": 4800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -30980,6 +31712,7 @@ window.__LISTINGS__ = {
      "price_chf": 21000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31048,6 +31781,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31116,6 +31850,7 @@ window.__LISTINGS__ = {
      "price_chf": 18900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31184,6 +31919,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31252,14 +31988,16 @@ window.__LISTINGS__ = {
      "price_chf": 13900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -31320,6 +32058,7 @@ window.__LISTINGS__ = {
      "price_chf": 21700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31388,6 +32127,7 @@ window.__LISTINGS__ = {
      "price_chf": 13500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31456,6 +32196,7 @@ window.__LISTINGS__ = {
      "price_chf": 7900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31524,14 +32265,16 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -31592,6 +32335,7 @@ window.__LISTINGS__ = {
      "price_chf": 7500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31658,6 +32402,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 23750
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/81367250"
     }
    ],
    "_filtre": {
@@ -31728,6 +32478,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31796,6 +32547,7 @@ window.__LISTINGS__ = {
      "price_chf": 18500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -31862,6 +32614,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 26500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "anibis",
+     "url": "https://www.anibis.ch/fr/vi/1073958466"
     }
    ],
    "_filtre": {
@@ -31932,14 +32690,16 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "implausible_unknown"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -32000,6 +32760,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32068,6 +32829,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32136,6 +32898,7 @@ window.__LISTINGS__ = {
      "price_chf": 17500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32204,6 +32967,7 @@ window.__LISTINGS__ = {
      "price_chf": 7900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32272,6 +33036,7 @@ window.__LISTINGS__ = {
      "price_chf": 2200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32340,6 +33105,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32408,6 +33174,7 @@ window.__LISTINGS__ = {
      "price_chf": 7700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32476,6 +33243,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32544,6 +33312,7 @@ window.__LISTINGS__ = {
      "price_chf": 7100
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32612,6 +33381,7 @@ window.__LISTINGS__ = {
      "price_chf": 27500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32680,6 +33450,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32748,14 +33519,16 @@ window.__LISTINGS__ = {
      "price_chf": 20900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "price_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -32816,6 +33589,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32884,6 +33658,7 @@ window.__LISTINGS__ = {
      "price_chf": 26000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -32952,6 +33727,7 @@ window.__LISTINGS__ = {
      "price_chf": 5900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33020,6 +33796,7 @@ window.__LISTINGS__ = {
      "price_chf": 23500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33088,6 +33865,7 @@ window.__LISTINGS__ = {
      "price_chf": 3700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33156,6 +33934,7 @@ window.__LISTINGS__ = {
      "price_chf": 28500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33224,6 +34003,7 @@ window.__LISTINGS__ = {
      "price_chf": 22000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33292,16 +34072,17 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
-    "opportunite": true,
+    "opportunite": false,
     "reasons": [
      "default"
     ],
-    "score": 80
+    "score": 50
    }
   },
   "bateau24:715814": {
@@ -33360,16 +34141,17 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone1",
     "zone": "zone1",
     "lake": "Lac Léman",
-    "opportunite": true,
+    "opportunite": false,
     "reasons": [
      "town"
     ],
-    "score": 130
+    "score": 100
    }
   },
   "bateau24:745648": {
@@ -33428,6 +34210,7 @@ window.__LISTINGS__ = {
      "price_chf": 10500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33496,6 +34279,7 @@ window.__LISTINGS__ = {
      "price_chf": 600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33564,6 +34348,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33632,6 +34417,7 @@ window.__LISTINGS__ = {
      "price_chf": 27499
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33700,6 +34486,7 @@ window.__LISTINGS__ = {
      "price_chf": 11500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33768,6 +34555,7 @@ window.__LISTINGS__ = {
      "price_chf": 15900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33836,6 +34624,7 @@ window.__LISTINGS__ = {
      "price_chf": 14500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -33904,8 +34693,9 @@ window.__LISTINGS__ = {
      "price_chf": 4990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -33972,6 +34762,7 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34040,6 +34831,7 @@ window.__LISTINGS__ = {
      "price_chf": 9800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34108,6 +34900,7 @@ window.__LISTINGS__ = {
      "price_chf": 23000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34176,6 +34969,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34244,6 +35038,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34312,6 +35107,7 @@ window.__LISTINGS__ = {
      "price_chf": 1000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34380,6 +35176,7 @@ window.__LISTINGS__ = {
      "price_chf": 28500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34448,6 +35245,7 @@ window.__LISTINGS__ = {
      "price_chf": 22000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34516,6 +35314,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34584,6 +35383,7 @@ window.__LISTINGS__ = {
      "price_chf": 8700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34652,6 +35452,7 @@ window.__LISTINGS__ = {
      "price_chf": 1400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34720,6 +35521,7 @@ window.__LISTINGS__ = {
      "price_chf": 11900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34788,6 +35590,7 @@ window.__LISTINGS__ = {
      "price_chf": 12500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34856,6 +35659,7 @@ window.__LISTINGS__ = {
      "price_chf": 13000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34924,6 +35728,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -34992,6 +35797,7 @@ window.__LISTINGS__ = {
      "price_chf": 1400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35060,6 +35866,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35128,6 +35935,7 @@ window.__LISTINGS__ = {
      "price_chf": 6900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35196,6 +36004,7 @@ window.__LISTINGS__ = {
      "price_chf": 2500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35264,6 +36073,7 @@ window.__LISTINGS__ = {
      "price_chf": 3800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35332,6 +36142,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35389,8 +36200,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -35400,6 +36211,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35457,8 +36269,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -35468,6 +36280,7 @@ window.__LISTINGS__ = {
      "price_chf": 9800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35536,8 +36349,9 @@ window.__LISTINGS__ = {
      "price_chf": 7400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone1",
     "lake": "Lac de Bienne",
@@ -35604,6 +36418,7 @@ window.__LISTINGS__ = {
      "price_chf": 2990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35672,6 +36487,7 @@ window.__LISTINGS__ = {
      "price_chf": 9000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35740,6 +36556,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35808,6 +36625,7 @@ window.__LISTINGS__ = {
      "price_chf": 18500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35876,6 +36694,7 @@ window.__LISTINGS__ = {
      "price_chf": 14000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -35944,6 +36763,7 @@ window.__LISTINGS__ = {
      "price_chf": 27000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36012,14 +36832,16 @@ window.__LISTINGS__ = {
      "price_chf": 23900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -36080,6 +36902,7 @@ window.__LISTINGS__ = {
      "price_chf": 10800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36148,6 +36971,7 @@ window.__LISTINGS__ = {
      "price_chf": 17000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36216,6 +37040,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36284,6 +37109,7 @@ window.__LISTINGS__ = {
      "price_chf": 21500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36352,6 +37178,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36420,6 +37247,7 @@ window.__LISTINGS__ = {
      "price_chf": 7200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36486,6 +37314,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 20500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "tutti",
+     "url": "https://www.tutti.ch/fr/vi/83180994"
     }
    ],
    "_filtre": {
@@ -36556,6 +37390,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36624,6 +37459,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36692,6 +37528,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36760,6 +37597,7 @@ window.__LISTINGS__ = {
      "price_chf": 15900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36828,6 +37666,7 @@ window.__LISTINGS__ = {
      "price_chf": 8400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36896,6 +37735,7 @@ window.__LISTINGS__ = {
      "price_chf": 5900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -36964,6 +37804,7 @@ window.__LISTINGS__ = {
      "price_chf": 23750
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37032,6 +37873,7 @@ window.__LISTINGS__ = {
      "price_chf": 17990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37100,6 +37942,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37168,6 +38011,7 @@ window.__LISTINGS__ = {
      "price_chf": 19870
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37236,6 +38080,7 @@ window.__LISTINGS__ = {
      "price_chf": 21900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37304,6 +38149,7 @@ window.__LISTINGS__ = {
      "price_chf": 8000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37372,6 +38218,7 @@ window.__LISTINGS__ = {
      "price_chf": 26900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37440,6 +38287,7 @@ window.__LISTINGS__ = {
      "price_chf": 23500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37508,6 +38356,7 @@ window.__LISTINGS__ = {
      "price_chf": 29850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37576,6 +38425,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37644,6 +38494,7 @@ window.__LISTINGS__ = {
      "price_chf": 11000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37712,6 +38563,7 @@ window.__LISTINGS__ = {
      "price_chf": 24500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37780,6 +38632,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37848,6 +38701,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37916,6 +38770,7 @@ window.__LISTINGS__ = {
      "price_chf": 18900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -37984,6 +38839,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38052,6 +38908,7 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38120,6 +38977,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38188,6 +39046,7 @@ window.__LISTINGS__ = {
      "price_chf": 6500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38245,8 +39104,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -38256,6 +39115,7 @@ window.__LISTINGS__ = {
      "price_chf": 23750
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38324,6 +39184,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38392,6 +39253,7 @@ window.__LISTINGS__ = {
      "price_chf": 26900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38460,6 +39322,7 @@ window.__LISTINGS__ = {
      "price_chf": 28900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38528,8 +39391,9 @@ window.__LISTINGS__ = {
      "price_chf": 12349
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone1",
     "zone": "zone1",
     "lake": "Lac Léman",
@@ -38596,6 +39460,7 @@ window.__LISTINGS__ = {
      "price_chf": 4800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38639,7 +39504,7 @@ window.__LISTINGS__ = {
    "licence_leman": "yes (>10 CV)",
    "town": "Lausanne",
    "canton": "VD",
-   "postcode": "N/A",
+   "postcode": "1007",
    "region": "Lac Léman",
    "lat": 46.5218269,
    "lon": 6.6327025,
@@ -38647,10 +39512,10 @@ window.__LISTINGS__ = {
    "distance_km_from_geneva": 64,
    "distance_method": "osrm",
    "seller_type": "dealer",
-   "posted_date": "N/A",
+   "posted_date": "2026-11-01",
    "photo_url": "https://static.b24.co/fotos/large/716030-790ae72892b81b11849e1d02f33256b5-x-8907788-4bcc67ac7d59cde8b5ef5086e787758e.jpg",
    "thumb_url": "https://static.b24.co/thumbs/xlarge/716030-1779431731.jpg",
-   "description_excerpt": "N/A",
+   "description_excerpt": "Entièrement révisé, nouveau démarreur, soufflets neufs, travaux effectué par Blanchard Marine, expertisé 2024. Bâche neuve achetée 2022 (Remund). Bateau hiverné à l'extérieur, dock Ouchy. Plus d'informations sur factures et demandes. Prix: 18'000.- CHF",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
    "status": "active",
@@ -38662,6 +39527,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 18000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7787728"
     }
    ],
    "_filtre": {
@@ -38732,6 +39603,7 @@ window.__LISTINGS__ = {
      "price_chf": 14900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38800,6 +39672,7 @@ window.__LISTINGS__ = {
      "price_chf": 13500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38868,6 +39741,7 @@ window.__LISTINGS__ = {
      "price_chf": 6700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -38936,6 +39810,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39004,6 +39879,7 @@ window.__LISTINGS__ = {
      "price_chf": 23900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39072,6 +39948,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39140,6 +40017,7 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39208,6 +40086,7 @@ window.__LISTINGS__ = {
      "price_chf": 6800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39276,6 +40155,7 @@ window.__LISTINGS__ = {
      "price_chf": 15500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39344,6 +40224,7 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39412,6 +40293,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39480,6 +40362,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39548,6 +40431,7 @@ window.__LISTINGS__ = {
      "price_chf": 18900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39616,6 +40500,7 @@ window.__LISTINGS__ = {
      "price_chf": 15800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39684,6 +40569,7 @@ window.__LISTINGS__ = {
      "price_chf": 3800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39752,6 +40638,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39820,6 +40707,7 @@ window.__LISTINGS__ = {
      "price_chf": 12900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39888,6 +40776,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39956,6 +40845,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -39999,7 +40889,7 @@ window.__LISTINGS__ = {
    "licence_leman": "yes (>10 CV)",
    "town": "Le Bouveret",
    "canton": "VS",
-   "postcode": "N/A",
+   "postcode": "1897",
    "region": "Lac Léman",
    "lat": 46.382908,
    "lon": 6.8540248,
@@ -40022,6 +40912,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 16000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "aquaboat",
+     "url": "https://aquaboat.ch/fr/boats/cobalt-253"
     }
    ],
    "_filtre": {
@@ -40092,6 +40988,7 @@ window.__LISTINGS__ = {
      "price_chf": 6500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40160,6 +41057,7 @@ window.__LISTINGS__ = {
      "price_chf": 29000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40228,6 +41126,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40296,6 +41195,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40364,6 +41264,7 @@ window.__LISTINGS__ = {
      "price_chf": 16500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40432,6 +41333,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40500,6 +41402,7 @@ window.__LISTINGS__ = {
      "price_chf": 14900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40568,6 +41471,7 @@ window.__LISTINGS__ = {
      "price_chf": 6900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40636,6 +41540,7 @@ window.__LISTINGS__ = {
      "price_chf": 10900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40704,6 +41609,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40772,8 +41678,9 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone1",
     "zone": "zone1",
     "lake": "Lac de Bienne",
@@ -40829,8 +41736,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -40840,6 +41747,7 @@ window.__LISTINGS__ = {
      "price_chf": 27000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40908,6 +41816,7 @@ window.__LISTINGS__ = {
      "price_chf": 19500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -40976,6 +41885,7 @@ window.__LISTINGS__ = {
      "price_chf": 7000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41044,6 +41954,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41112,6 +42023,7 @@ window.__LISTINGS__ = {
      "price_chf": 6500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41180,6 +42092,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41248,6 +42161,7 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41316,6 +42230,7 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41384,6 +42299,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41452,6 +42368,7 @@ window.__LISTINGS__ = {
      "price_chf": 19500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41520,6 +42437,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41588,6 +42506,7 @@ window.__LISTINGS__ = {
      "price_chf": 6500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41656,6 +42575,7 @@ window.__LISTINGS__ = {
      "price_chf": 14000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41724,6 +42644,7 @@ window.__LISTINGS__ = {
      "price_chf": 13900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41792,6 +42713,7 @@ window.__LISTINGS__ = {
      "price_chf": 19800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41860,8 +42782,9 @@ window.__LISTINGS__ = {
      "price_chf": 6900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -41929,6 +42852,7 @@ window.__LISTINGS__ = {
      "price_chf": 14000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -41997,6 +42921,7 @@ window.__LISTINGS__ = {
      "price_chf": 16800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42065,6 +42990,7 @@ window.__LISTINGS__ = {
      "price_chf": 13800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42133,6 +43059,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42201,6 +43128,7 @@ window.__LISTINGS__ = {
      "price_chf": 19500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42258,8 +43186,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -42269,6 +43197,7 @@ window.__LISTINGS__ = {
      "price_chf": 6100
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42337,6 +43266,7 @@ window.__LISTINGS__ = {
      "price_chf": 7000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42364,7 +43294,7 @@ window.__LISTINGS__ = {
    "price_label": "CHF 29'900.-",
    "length_m": 6.23,
    "width_m": 2.48,
-   "engine_type": "N/A",
+   "engine_type": "outboard",
    "engine_brand": "Honda",
    "engine_model": "Honda",
    "hp": 150.0,
@@ -42380,7 +43310,7 @@ window.__LISTINGS__ = {
    "licence_leman": "yes (>10 CV)",
    "town": "Le Bouveret",
    "canton": "VS",
-   "postcode": "N/A",
+   "postcode": "1897",
    "region": "Lac Léman",
    "lat": 46.382908,
    "lon": 6.8540248,
@@ -42403,6 +43333,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 29900
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "aquaboat",
+     "url": "https://aquaboat.ch/fr/boats/jeanneau-cap-camarat-6-5-style"
     }
    ],
    "_filtre": {
@@ -42473,6 +43409,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42541,6 +43478,7 @@ window.__LISTINGS__ = {
      "price_chf": 13900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42609,6 +43547,7 @@ window.__LISTINGS__ = {
      "price_chf": 13000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42677,14 +43616,16 @@ window.__LISTINGS__ = {
      "price_chf": 16000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -42745,6 +43686,7 @@ window.__LISTINGS__ = {
      "price_chf": 24900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42813,6 +43755,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42881,6 +43824,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -42949,6 +43893,7 @@ window.__LISTINGS__ = {
      "price_chf": 5900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43017,6 +43962,7 @@ window.__LISTINGS__ = {
      "price_chf": 7500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43085,6 +44031,7 @@ window.__LISTINGS__ = {
      "price_chf": 12900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43153,8 +44100,9 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -43221,6 +44169,7 @@ window.__LISTINGS__ = {
      "price_chf": 18500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43289,16 +44238,18 @@ window.__LISTINGS__ = {
      "price_chf": 11500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
-    "bucket": "zone2",
-    "zone": "zone2",
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "default"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
-    "score": 50
+    "score": 0
    }
   },
   "bateau24:713432": {
@@ -43357,6 +44308,7 @@ window.__LISTINGS__ = {
      "price_chf": 24500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43425,6 +44377,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43493,6 +44446,7 @@ window.__LISTINGS__ = {
      "price_chf": 3950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43561,6 +44515,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43629,6 +44584,7 @@ window.__LISTINGS__ = {
      "price_chf": 27000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43697,6 +44653,7 @@ window.__LISTINGS__ = {
      "price_chf": 8900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43765,6 +44722,7 @@ window.__LISTINGS__ = {
      "price_chf": 19800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43833,6 +44791,7 @@ window.__LISTINGS__ = {
      "price_chf": 27500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43901,6 +44860,7 @@ window.__LISTINGS__ = {
      "price_chf": 24800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -43969,6 +44929,7 @@ window.__LISTINGS__ = {
      "price_chf": 8980
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44037,6 +44998,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44105,6 +45067,7 @@ window.__LISTINGS__ = {
      "price_chf": 7000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44173,6 +45136,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44241,6 +45205,7 @@ window.__LISTINGS__ = {
      "price_chf": 24900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44309,6 +45274,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44377,14 +45343,16 @@ window.__LISTINGS__ = {
      "price_chf": 22600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -44445,6 +45413,7 @@ window.__LISTINGS__ = {
      "price_chf": 16000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44513,6 +45482,7 @@ window.__LISTINGS__ = {
      "price_chf": 15900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44581,6 +45551,7 @@ window.__LISTINGS__ = {
      "price_chf": 2150
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44649,6 +45620,7 @@ window.__LISTINGS__ = {
      "price_chf": 9000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44717,6 +45689,7 @@ window.__LISTINGS__ = {
      "price_chf": 24800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44785,6 +45758,7 @@ window.__LISTINGS__ = {
      "price_chf": 19500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44853,6 +45827,7 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44921,6 +45896,7 @@ window.__LISTINGS__ = {
      "price_chf": 14500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -44989,6 +45965,7 @@ window.__LISTINGS__ = {
      "price_chf": 12500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45057,6 +46034,7 @@ window.__LISTINGS__ = {
      "price_chf": 3950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45125,8 +46103,9 @@ window.__LISTINGS__ = {
      "price_chf": 10000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone1",
     "lake": "Lac Léman",
@@ -45194,6 +46173,7 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45262,6 +46242,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45330,8 +46311,9 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -45398,6 +46380,7 @@ window.__LISTINGS__ = {
      "price_chf": 10800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45466,6 +46449,7 @@ window.__LISTINGS__ = {
      "price_chf": 18800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45534,6 +46518,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45602,6 +46587,7 @@ window.__LISTINGS__ = {
      "price_chf": 15800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45670,6 +46656,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45738,6 +46725,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45806,6 +46794,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45874,6 +46863,7 @@ window.__LISTINGS__ = {
      "price_chf": 8900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -45942,6 +46932,7 @@ window.__LISTINGS__ = {
      "price_chf": 29200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46010,8 +47001,9 @@ window.__LISTINGS__ = {
      "price_chf": 14800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -46078,6 +47070,7 @@ window.__LISTINGS__ = {
      "price_chf": 29900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46135,8 +47128,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -46146,6 +47139,7 @@ window.__LISTINGS__ = {
      "price_chf": 18500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46203,8 +47197,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -46214,16 +47208,18 @@ window.__LISTINGS__ = {
      "price_chf": 12900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
-    "bucket": "zone2",
-    "zone": "zone2",
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "default"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
-    "score": 50
+    "score": 0
    }
   },
   "bateau24:730878": {
@@ -46282,6 +47278,7 @@ window.__LISTINGS__ = {
      "price_chf": 23500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46350,6 +47347,7 @@ window.__LISTINGS__ = {
      "price_chf": 19500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46418,6 +47416,7 @@ window.__LISTINGS__ = {
      "price_chf": 19500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46486,6 +47485,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46554,6 +47554,7 @@ window.__LISTINGS__ = {
      "price_chf": 29900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46622,6 +47623,7 @@ window.__LISTINGS__ = {
      "price_chf": 19950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46690,14 +47692,16 @@ window.__LISTINGS__ = {
      "price_chf": 27800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -46758,6 +47762,7 @@ window.__LISTINGS__ = {
      "price_chf": 15900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46826,6 +47831,7 @@ window.__LISTINGS__ = {
      "price_chf": 3990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46894,6 +47900,7 @@ window.__LISTINGS__ = {
      "price_chf": 24500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -46962,6 +47969,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47030,8 +48038,9 @@ window.__LISTINGS__ = {
      "price_chf": 5800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -47099,6 +48108,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47167,6 +48177,7 @@ window.__LISTINGS__ = {
      "price_chf": 2000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47235,6 +48246,7 @@ window.__LISTINGS__ = {
      "price_chf": 6800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47303,6 +48315,7 @@ window.__LISTINGS__ = {
      "price_chf": 26500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47371,6 +48384,7 @@ window.__LISTINGS__ = {
      "price_chf": 3500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47439,6 +48453,7 @@ window.__LISTINGS__ = {
      "price_chf": 11500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47507,6 +48522,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47575,6 +48591,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47643,6 +48660,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47711,6 +48729,7 @@ window.__LISTINGS__ = {
      "price_chf": 5800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47779,6 +48798,7 @@ window.__LISTINGS__ = {
      "price_chf": 8900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47847,6 +48867,7 @@ window.__LISTINGS__ = {
      "price_chf": 27850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47915,6 +48936,7 @@ window.__LISTINGS__ = {
      "price_chf": 4000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -47983,6 +49005,7 @@ window.__LISTINGS__ = {
      "price_chf": 28900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48051,8 +49074,9 @@ window.__LISTINGS__ = {
      "price_chf": 7500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone1",
     "zone": "zone1",
     "lake": "Lac de Bienne",
@@ -48119,6 +49143,7 @@ window.__LISTINGS__ = {
      "price_chf": 23000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48187,6 +49212,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48194,7 +49220,8 @@ window.__LISTINGS__ = {
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "engine_type",
+     "ski-boat in-bord"
     ],
     "score": 0
    }
@@ -48255,8 +49282,9 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -48323,6 +49351,7 @@ window.__LISTINGS__ = {
      "price_chf": 2900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48391,8 +49420,9 @@ window.__LISTINGS__ = {
      "price_chf": 12500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -48459,6 +49489,7 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48527,6 +49558,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48595,6 +49627,7 @@ window.__LISTINGS__ = {
      "price_chf": 22000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48663,6 +49696,7 @@ window.__LISTINGS__ = {
      "price_chf": 3000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48731,6 +49765,7 @@ window.__LISTINGS__ = {
      "price_chf": 15800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48799,14 +49834,16 @@ window.__LISTINGS__ = {
      "price_chf": 950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -48867,6 +49904,7 @@ window.__LISTINGS__ = {
      "price_chf": 28500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -48935,6 +49973,7 @@ window.__LISTINGS__ = {
      "price_chf": 6900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49003,6 +50042,7 @@ window.__LISTINGS__ = {
      "price_chf": 16800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49071,6 +50111,7 @@ window.__LISTINGS__ = {
      "price_chf": 10000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49139,6 +50180,7 @@ window.__LISTINGS__ = {
      "price_chf": 16000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49207,6 +50249,7 @@ window.__LISTINGS__ = {
      "price_chf": 9200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49275,6 +50318,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49343,6 +50387,7 @@ window.__LISTINGS__ = {
      "price_chf": 22000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49411,6 +50456,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49479,6 +50525,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49547,6 +50594,7 @@ window.__LISTINGS__ = {
      "price_chf": 19800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49615,6 +50663,7 @@ window.__LISTINGS__ = {
      "price_chf": 12900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49683,6 +50732,7 @@ window.__LISTINGS__ = {
      "price_chf": 15800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49751,6 +50801,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49819,6 +50870,7 @@ window.__LISTINGS__ = {
      "price_chf": 11500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49887,6 +50939,7 @@ window.__LISTINGS__ = {
      "price_chf": 29000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -49955,6 +51008,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50023,8 +51077,9 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone1",
     "lake": "Lac Léman",
@@ -50092,6 +51147,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50160,6 +51216,7 @@ window.__LISTINGS__ = {
      "price_chf": 1900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50228,6 +51285,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50296,6 +51354,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50364,14 +51423,16 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -50432,6 +51493,7 @@ window.__LISTINGS__ = {
      "price_chf": 9800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50500,6 +51562,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50568,6 +51631,7 @@ window.__LISTINGS__ = {
      "price_chf": 5490
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50636,6 +51700,7 @@ window.__LISTINGS__ = {
      "price_chf": 11990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50704,6 +51769,7 @@ window.__LISTINGS__ = {
      "price_chf": 26000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50772,6 +51838,7 @@ window.__LISTINGS__ = {
      "price_chf": 29000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50840,6 +51907,7 @@ window.__LISTINGS__ = {
      "price_chf": 11000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50908,6 +51976,7 @@ window.__LISTINGS__ = {
      "price_chf": 21900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -50976,6 +52045,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51044,6 +52114,7 @@ window.__LISTINGS__ = {
      "price_chf": 3900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51112,6 +52183,7 @@ window.__LISTINGS__ = {
      "price_chf": 24000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51180,6 +52252,7 @@ window.__LISTINGS__ = {
      "price_chf": 26500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51248,6 +52321,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51316,6 +52390,7 @@ window.__LISTINGS__ = {
      "price_chf": 29800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51384,6 +52459,7 @@ window.__LISTINGS__ = {
      "price_chf": 29000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51452,6 +52528,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51520,14 +52597,16 @@ window.__LISTINGS__ = {
      "price_chf": 8900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -51588,6 +52667,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51656,6 +52736,7 @@ window.__LISTINGS__ = {
      "price_chf": 22000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51724,6 +52805,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51792,6 +52874,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51860,6 +52943,7 @@ window.__LISTINGS__ = {
      "price_chf": 2550
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51928,6 +53012,7 @@ window.__LISTINGS__ = {
      "price_chf": 12500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -51996,6 +53081,7 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52064,6 +53150,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52132,6 +53219,7 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52200,6 +53288,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52268,6 +53357,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52311,7 +53401,7 @@ window.__LISTINGS__ = {
    "licence_leman": "yes (>10 CV)",
    "town": "Le Bouveret",
    "canton": "VS",
-   "postcode": "N/A",
+   "postcode": "1897",
    "region": "Lac Léman",
    "lat": 46.382908,
    "lon": 6.8540248,
@@ -52334,6 +53424,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 18000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "aquaboat",
+     "url": "https://aquaboat.ch/fr/boats/237"
     }
    ],
    "_filtre": {
@@ -52404,14 +53500,16 @@ window.__LISTINGS__ = {
      "price_chf": 1800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -52472,6 +53570,7 @@ window.__LISTINGS__ = {
      "price_chf": 12800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52540,6 +53639,7 @@ window.__LISTINGS__ = {
      "price_chf": 7200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52608,6 +53708,7 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52676,6 +53777,7 @@ window.__LISTINGS__ = {
      "price_chf": 1950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52744,6 +53846,7 @@ window.__LISTINGS__ = {
      "price_chf": 28900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52812,6 +53915,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -52880,14 +53984,16 @@ window.__LISTINGS__ = {
      "price_chf": 4100
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -52948,6 +54054,7 @@ window.__LISTINGS__ = {
      "price_chf": 13500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53016,6 +54123,7 @@ window.__LISTINGS__ = {
      "price_chf": 18500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53084,6 +54192,7 @@ window.__LISTINGS__ = {
      "price_chf": 2800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53152,6 +54261,7 @@ window.__LISTINGS__ = {
      "price_chf": 24900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53220,6 +54330,7 @@ window.__LISTINGS__ = {
      "price_chf": 19990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53288,6 +54399,7 @@ window.__LISTINGS__ = {
      "price_chf": 6600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53356,6 +54468,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53424,6 +54537,7 @@ window.__LISTINGS__ = {
      "price_chf": 27500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53492,6 +54606,7 @@ window.__LISTINGS__ = {
      "price_chf": 1900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53560,6 +54675,7 @@ window.__LISTINGS__ = {
      "price_chf": 3950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53628,6 +54744,7 @@ window.__LISTINGS__ = {
      "price_chf": 28500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53696,6 +54813,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53764,8 +54882,9 @@ window.__LISTINGS__ = {
      "price_chf": 8800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -53832,6 +54951,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -53900,8 +55020,9 @@ window.__LISTINGS__ = {
      "price_chf": 7000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone1",
     "zone": "zone1",
     "lake": "Lac de Morat",
@@ -53957,8 +55078,8 @@ window.__LISTINGS__ = {
    "description_excerpt": "Classique norvégien bien entretenu avec puissance Mercruiser et plateforme de bain stable. Ce Draco 1800 SunTop de 1984 rappelle les débuts glorieux de la marque et séduit encore aujourd’hui par son allure sportive et épurée. La coque en PRV de couleur crème glisse légèrement sur l’eau, tandis que le balcon avant aux courbes douces évoque immédiatement les lignes élégantes des premiers modèles Draco. Sous le grand bain de soleil arrière généreusement rembourré se trouve un moteur in-board Mercru",
    "first_seen": "2026-11-15",
    "last_seen": "2026-11-15",
-   "status": "active",
-   "removed_on": "N/A",
+   "status": "removed",
+   "removed_on": "2026-11-15",
    "sent_in_digest": "2026-11-15",
    "price_changed_on": "N/A",
    "previous_price_chf": "N/A",
@@ -53968,6 +55089,7 @@ window.__LISTINGS__ = {
      "price_chf": 11900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54036,6 +55158,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54104,6 +55227,7 @@ window.__LISTINGS__ = {
      "price_chf": 14000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54172,6 +55296,7 @@ window.__LISTINGS__ = {
      "price_chf": 13800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54240,6 +55365,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54308,6 +55434,7 @@ window.__LISTINGS__ = {
      "price_chf": 24000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54376,6 +55503,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54444,6 +55572,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54512,6 +55641,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54580,6 +55710,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54648,6 +55779,7 @@ window.__LISTINGS__ = {
      "price_chf": 14900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54716,6 +55848,7 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54784,14 +55917,16 @@ window.__LISTINGS__ = {
      "price_chf": 16000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "engine_type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -54852,6 +55987,7 @@ window.__LISTINGS__ = {
      "price_chf": 18900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54920,6 +56056,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -54988,6 +56125,7 @@ window.__LISTINGS__ = {
      "price_chf": 22900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55056,6 +56194,7 @@ window.__LISTINGS__ = {
      "price_chf": 7900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55124,6 +56263,7 @@ window.__LISTINGS__ = {
      "price_chf": 1000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55192,6 +56332,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55260,6 +56401,7 @@ window.__LISTINGS__ = {
      "price_chf": 8700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55328,6 +56470,7 @@ window.__LISTINGS__ = {
      "price_chf": 2480
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55396,6 +56539,7 @@ window.__LISTINGS__ = {
      "price_chf": 15000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55464,6 +56608,7 @@ window.__LISTINGS__ = {
      "price_chf": 7950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55532,6 +56677,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55600,6 +56746,7 @@ window.__LISTINGS__ = {
      "price_chf": 24900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55668,6 +56815,7 @@ window.__LISTINGS__ = {
      "price_chf": 16900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55736,6 +56884,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55804,6 +56953,7 @@ window.__LISTINGS__ = {
      "price_chf": 14000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55872,6 +57022,7 @@ window.__LISTINGS__ = {
      "price_chf": 12000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -55940,6 +57091,7 @@ window.__LISTINGS__ = {
      "price_chf": 7600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56008,14 +57160,16 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "hp_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -56076,6 +57230,7 @@ window.__LISTINGS__ = {
      "price_chf": 23900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56144,6 +57299,7 @@ window.__LISTINGS__ = {
      "price_chf": 4500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56212,6 +57368,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56280,6 +57437,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56348,6 +57506,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56416,6 +57575,7 @@ window.__LISTINGS__ = {
      "price_chf": 25900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56453,13 +57613,13 @@ window.__LISTINGS__ = {
    "sail_area_m2": "N/A",
    "berths": "N/A",
    "material": "Polyester/Fibre de verre",
-   "trailer": "N/A",
+   "trailer": "yes",
    "mooring_included": "N/A",
    "condition": "bon état",
    "licence_leman": "yes (>10 CV)",
    "town": "Chevroux",
    "canton": "VD",
-   "postcode": "N/A",
+   "postcode": "2000",
    "region": "Lac de Neuchâtel",
    "lat": 46.8898441,
    "lon": 6.9053929,
@@ -56467,7 +57627,7 @@ window.__LISTINGS__ = {
    "distance_km_from_geneva": 117,
    "distance_method": "osrm",
    "seller_type": "dealer",
-   "posted_date": "N/A",
+   "posted_date": "2026-10-31",
    "photo_url": "https://static.b24.co/fotos/large/736498-da646b44914b5c623d9bf8123295d68d-x-9411145-f75053ba0d4481ee5c97a8579dbe0646.jpg",
    "thumb_url": "https://static.b24.co/thumbs/xlarge/736498-1787844474.jpg",
    "description_excerpt": "Parca / Folk 1973 – Un bateau unique, restauré avec passion Magnifique Parca / Folk de 1973, une construction artisanale en polyester pleine de caractère, restaurée et entretenue avec beaucoup de soin par son propriétaire. Avec sa couleur rose magenta unique, ses lignes classiques et son moteur diesel NANNI, ce bateau ne passe pas inaperçu et représente une belle opportunité pour profiter de navigations tranquilles sur les lacs suisses. Caractéristiques principales Année : 1973 Construction : ar",
@@ -56482,6 +57642,12 @@ window.__LISTINGS__ = {
     {
      "date": "2026-11-15",
      "price_chf": 10000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8701027"
     }
    ],
    "_filtre": {
@@ -56552,6 +57718,7 @@ window.__LISTINGS__ = {
      "price_chf": 16000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56620,6 +57787,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56688,6 +57856,7 @@ window.__LISTINGS__ = {
      "price_chf": 17500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56756,6 +57925,7 @@ window.__LISTINGS__ = {
      "price_chf": 18000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56824,6 +57994,7 @@ window.__LISTINGS__ = {
      "price_chf": 15800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56892,6 +58063,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -56960,6 +58132,7 @@ window.__LISTINGS__ = {
      "price_chf": 1500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57028,6 +58201,7 @@ window.__LISTINGS__ = {
      "price_chf": 4900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57096,6 +58270,7 @@ window.__LISTINGS__ = {
      "price_chf": 23900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57164,6 +58339,7 @@ window.__LISTINGS__ = {
      "price_chf": 22222
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57232,6 +58408,7 @@ window.__LISTINGS__ = {
      "price_chf": 6600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57300,6 +58477,7 @@ window.__LISTINGS__ = {
      "price_chf": 29900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57368,6 +58546,7 @@ window.__LISTINGS__ = {
      "price_chf": 28500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57436,6 +58615,7 @@ window.__LISTINGS__ = {
      "price_chf": 13900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57504,6 +58684,7 @@ window.__LISTINGS__ = {
      "price_chf": 15900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57572,8 +58753,9 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone1",
     "zone": "zone1",
     "lake": "Lac de Neuchâtel",
@@ -57640,8 +58822,9 @@ window.__LISTINGS__ = {
      "price_chf": 13500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -57708,6 +58891,7 @@ window.__LISTINGS__ = {
      "price_chf": 26000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57776,8 +58960,9 @@ window.__LISTINGS__ = {
      "price_chf": 5000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "zone2",
     "zone": "zone2",
     "lake": null,
@@ -57844,6 +59029,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57912,6 +59098,7 @@ window.__LISTINGS__ = {
      "price_chf": 6000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -57980,6 +59167,7 @@ window.__LISTINGS__ = {
      "price_chf": 29500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58048,6 +59236,7 @@ window.__LISTINGS__ = {
      "price_chf": 19999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58116,6 +59305,7 @@ window.__LISTINGS__ = {
      "price_chf": 1800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58184,6 +59374,7 @@ window.__LISTINGS__ = {
      "price_chf": 17900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58252,6 +59443,7 @@ window.__LISTINGS__ = {
      "price_chf": 11700
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58320,6 +59512,7 @@ window.__LISTINGS__ = {
      "price_chf": 19500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58388,6 +59581,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58456,6 +59650,7 @@ window.__LISTINGS__ = {
      "price_chf": 5950
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58524,6 +59719,7 @@ window.__LISTINGS__ = {
      "price_chf": 13900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58592,6 +59788,7 @@ window.__LISTINGS__ = {
      "price_chf": 28500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58660,6 +59857,7 @@ window.__LISTINGS__ = {
      "price_chf": 9000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58728,6 +59926,7 @@ window.__LISTINGS__ = {
      "price_chf": 20000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58796,6 +59995,7 @@ window.__LISTINGS__ = {
      "price_chf": 6200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58864,6 +60064,7 @@ window.__LISTINGS__ = {
      "price_chf": 18800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -58932,6 +60133,7 @@ window.__LISTINGS__ = {
      "price_chf": 5500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59000,6 +60202,7 @@ window.__LISTINGS__ = {
      "price_chf": 26850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59068,6 +60271,7 @@ window.__LISTINGS__ = {
      "price_chf": 28000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59136,6 +60340,7 @@ window.__LISTINGS__ = {
      "price_chf": 8250
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59204,6 +60409,7 @@ window.__LISTINGS__ = {
      "price_chf": 24400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59272,6 +60478,7 @@ window.__LISTINGS__ = {
      "price_chf": 27000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59340,6 +60547,7 @@ window.__LISTINGS__ = {
      "price_chf": 24900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59408,6 +60616,7 @@ window.__LISTINGS__ = {
      "price_chf": 15800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59476,6 +60685,7 @@ window.__LISTINGS__ = {
      "price_chf": 8500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59544,6 +60754,7 @@ window.__LISTINGS__ = {
      "price_chf": 19000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59612,14 +60823,16 @@ window.__LISTINGS__ = {
      "price_chf": 3600
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -59680,6 +60893,7 @@ window.__LISTINGS__ = {
      "price_chf": 3800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59748,6 +60962,7 @@ window.__LISTINGS__ = {
      "price_chf": 18200
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59816,6 +61031,7 @@ window.__LISTINGS__ = {
      "price_chf": 14900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59884,6 +61100,7 @@ window.__LISTINGS__ = {
      "price_chf": 17000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -59952,6 +61169,7 @@ window.__LISTINGS__ = {
      "price_chf": 1750
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60020,6 +61238,7 @@ window.__LISTINGS__ = {
      "price_chf": 5800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60088,6 +61307,7 @@ window.__LISTINGS__ = {
      "price_chf": 7500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60156,6 +61376,7 @@ window.__LISTINGS__ = {
      "price_chf": 11500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60224,6 +61445,7 @@ window.__LISTINGS__ = {
      "price_chf": 4900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60292,6 +61514,7 @@ window.__LISTINGS__ = {
      "price_chf": 28500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60360,6 +61583,7 @@ window.__LISTINGS__ = {
      "price_chf": 9500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60428,6 +61652,7 @@ window.__LISTINGS__ = {
      "price_chf": 16900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60496,6 +61721,7 @@ window.__LISTINGS__ = {
      "price_chf": 25000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60564,6 +61790,7 @@ window.__LISTINGS__ = {
      "price_chf": 8000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60632,6 +61859,7 @@ window.__LISTINGS__ = {
      "price_chf": 18800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60700,6 +61928,7 @@ window.__LISTINGS__ = {
      "price_chf": 10500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60768,6 +61997,7 @@ window.__LISTINGS__ = {
      "price_chf": 6850
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60836,6 +62066,7 @@ window.__LISTINGS__ = {
      "price_chf": 19900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60904,6 +62135,7 @@ window.__LISTINGS__ = {
      "price_chf": 26400
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -60972,6 +62204,7 @@ window.__LISTINGS__ = {
      "price_chf": 6900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61040,6 +62273,7 @@ window.__LISTINGS__ = {
      "price_chf": 23000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61108,6 +62342,7 @@ window.__LISTINGS__ = {
      "price_chf": 9990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61176,8 +62411,9 @@ window.__LISTINGS__ = {
      "price_chf": 10690
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone2",
     "lake": null,
@@ -61244,6 +62480,7 @@ window.__LISTINGS__ = {
      "price_chf": 22500
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61312,8 +62549,9 @@ window.__LISTINGS__ = {
      "price_chf": 14800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": 1,
+    "version": 2,
     "bucket": "a_verifier",
     "zone": "zone1",
     "lake": "Lac Léman",
@@ -61380,6 +62618,7 @@ window.__LISTINGS__ = {
      "price_chf": 24999
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61448,6 +62687,7 @@ window.__LISTINGS__ = {
      "price_chf": 28990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61516,6 +62756,7 @@ window.__LISTINGS__ = {
      "price_chf": 11990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61584,6 +62825,7 @@ window.__LISTINGS__ = {
      "price_chf": 9990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61652,14 +62894,16 @@ window.__LISTINGS__ = {
      "price_chf": 19650
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "price_out_of_range"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -61720,6 +62964,7 @@ window.__LISTINGS__ = {
      "price_chf": 24900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61788,14 +63033,16 @@ window.__LISTINGS__ = {
      "price_chf": 9900
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
-    "version": null,
+    "version": 2,
     "bucket": "excluded",
     "zone": null,
     "lake": null,
     "opportunite": false,
     "reasons": [
-     "type"
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
     ],
     "score": 0
    }
@@ -61856,6 +63103,7 @@ window.__LISTINGS__ = {
      "price_chf": 3990
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61924,6 +63172,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -61992,6 +63241,7 @@ window.__LISTINGS__ = {
      "price_chf": 30000
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -62060,6 +63310,7 @@ window.__LISTINGS__ = {
      "price_chf": 9800
     }
    ],
+   "also_listed": "N/A",
    "_filtre": {
     "version": null,
     "bucket": "excluded",
@@ -62068,6 +63319,20057 @@ window.__LISTINGS__ = {
     "opportunite": false,
     "reasons": [
      "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:756351": {
+   "id": "bateau24:756351",
+   "source": "bateau24",
+   "source_listing_id": "756351",
+   "url": "https://www.bateau24.ch/chfr/bateauxamoteur/nautique/nautique-correct-craft-sport-nautique/detail/756351/",
+   "title": "Nautique Correct Craft Sport Nautique",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Nautique",
+   "model": "Correct Craft Sport",
+   "year": 1994,
+   "price_chf": 5000,
+   "price_label": "CHF 5'000.-",
+   "length_m": 6.68,
+   "width_m": 2.24,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "PCM GT-40",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "Essence",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "défectueux",
+   "licence_leman": "N/A",
+   "town": "N/A",
+   "canton": "GL",
+   "postcode": "N/A",
+   "region": "Bilten",
+   "lat": 47.1500911,
+   "lon": 9.0221711,
+   "geo_precision": "lake/region",
+   "distance_km_from_geneva": 334,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/756351-ae02c8c9beca0167959e8a08bc213dee-x-9879264-f681ab7ab8e48b99ea5339c1ed9edca4.jpg",
+   "thumb_url": "https://static.b24.co/fotos/large/756351-ae02c8c9beca0167959e8a08bc213dee-x-9879264-f681ab7ab8e48b99ea5339c1ed9edca4.jpg",
+   "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "ski-boat in-bord"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:721689": {
+   "id": "bateau24:721689",
+   "source": "bateau24",
+   "source_listing_id": "721689",
+   "url": "https://www.bateau24.ch/chfr/voiliers/cather-sailhorse/detail/721689/",
+   "title": "Cather Sailhorse",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "Cather Sailhorse",
+   "year": 1975,
+   "price_chf": 1020,
+   "price_label": "CHF 1'020.-",
+   "length_m": 6.1,
+   "width_m": 2.14,
+   "engine_type": "outboard",
+   "engine_brand": "Johnson",
+   "engine_model": "Johnson J2R4",
+   "hp": 2.0,
+   "kw": 1.5,
+   "fuel": "Essence",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "à restaurer",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Hörhausen",
+   "canton": "TG",
+   "postcode": "N/A",
+   "region": "Lac de Constance",
+   "lat": 47.6318597,
+   "lon": 8.970178,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 328,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/721689-37df066aabb24ef0a699f46cae8a68df-x-9053758-027955836a020265d39a9b46947377a3.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/721689-1781503110.jpg",
+   "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1020
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:748989": {
+   "id": "bateau24:748989",
+   "source": "bateau24",
+   "source_listing_id": "748989",
+   "url": "https://www.bateau24.ch/chfr/bateauxamoteur/picton/picton-180-s-royale/detail/748989/",
+   "title": "Picton 180 S Royale",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Picton",
+   "model": "180 S Royale",
+   "year": "N/A",
+   "price_chf": 8299,
+   "price_label": "CHF 8'299.-",
+   "length_m": 5.57,
+   "width_m": 1.97,
+   "engine_type": "inboard",
+   "engine_brand": "N/A",
+   "engine_model": "Mercruses",
+   "hp": 180.0,
+   "kw": 132.0,
+   "fuel": "Essence",
+   "hours": 350,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Uttigen",
+   "canton": "BE",
+   "postcode": "N/A",
+   "region": "Lac de Thoune",
+   "lat": 46.7937156,
+   "lon": 7.579181,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 189,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/748989-08e0dccae7d11b90edb6b6cf9baca660-x-9656181-d18c86874e03ed9a8a81b75a0e947db3.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/748989-1791444586.jpg",
+   "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8299
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:689600": {
+   "id": "bateau24:689600",
+   "source": "bateau24",
+   "source_listing_id": "689600",
+   "url": "https://www.bateau24.ch/chfr/voiliers/botnia/botnia-h-boot/detail/689600/",
+   "title": "Botnia H-Boot",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Botnia Marin",
+   "model": "H-Boot",
+   "year": 1983,
+   "price_chf": 7900,
+   "price_label": "CHF 7'900.-",
+   "length_m": 8.28,
+   "width_m": 2.18,
+   "engine_type": "outboard",
+   "engine_brand": "Yamaha",
+   "engine_model": "Yamaha",
+   "hp": 5.9,
+   "kw": 4.3,
+   "fuel": "Essence",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 4,
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "bon état",
+   "licence_leman": "no (≤10 CV)",
+   "town": "N/A",
+   "canton": "N/A",
+   "postcode": "N/A",
+   "region": "Suisse",
+   "lat": "N/A",
+   "lon": "N/A",
+   "geo_precision": "N/A",
+   "distance_km_from_geneva": "N/A",
+   "distance_method": "N/A",
+   "seller_type": "private",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/689600-ea4d8f9718353250cf8453f217433315-x-8331137-380ea301e2f2b3f50bfae099d3dc0899.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/689600-1766991605.jpg",
+   "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:729979": {
+   "id": "bateau24:729979",
+   "source": "bateau24",
+   "source_listing_id": "729979",
+   "url": "https://www.bateau24.ch/chfr/voiliers/drabant/drabant-d30/detail/729979/",
+   "title": "Drabant D30",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Polaris Drabant",
+   "model": "D30",
+   "year": 1982,
+   "price_chf": 22000,
+   "price_label": "CHF 22'000.-",
+   "length_m": 8.95,
+   "width_m": 2.95,
+   "engine_type": "inboard",
+   "engine_brand": "Yanmar",
+   "engine_model": "Yanmar 2 GM",
+   "hp": 15.0,
+   "kw": 11.0,
+   "fuel": "Diesel",
+   "hours": 1035,
+   "sail_area_m2": "N/A",
+   "berths": 3,
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "Très bon état",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Yvonand",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Lac de Neuchâtel",
+   "lat": 46.7983158,
+   "lon": 6.7445021,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 97,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/729979-7eba954ad750fe6fce25dfe1443806d8-x-9230623-e7c17780635fd21e1aca4f335169f71a.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/729979-1784705759.jpg",
+   "description_excerpt": "N/A",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 22000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:685286": {
+   "id": "bateau24:685286",
+   "source": "bateau24",
+   "source_listing_id": "685286",
+   "url": "https://www.bateau24.ch/chfr/voiliers/vindoe/vindoe-40/detail/685286/",
+   "title": "Vindö 40",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Vindö",
+   "model": "40",
+   "year": 1975,
+   "price_chf": 23000,
+   "price_label": "CHF 23'000.-",
+   "length_m": 9.5,
+   "width_m": 2.95,
+   "engine_type": "inboard",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "Volvo Penta",
+   "hp": 25.0,
+   "kw": 18.0,
+   "fuel": "Diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 6,
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "Très bon état",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Neuenburgersee , Chevroux",
+   "canton": "NE",
+   "postcode": "N/A",
+   "region": "Lac de Neuchâtel",
+   "lat": 46.8978306,
+   "lon": 6.840984,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 114,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/685286-c18a4f8a1b72b8344a5f8069706dd71c-x-8250757-52aaaad4bdf303630681f87e49a300ab.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/685286-1781078260.jpg",
+   "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 23000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:745745": {
+   "id": "bateau24:745745",
+   "source": "bateau24",
+   "source_listing_id": "745745",
+   "url": "https://www.bateau24.ch/chfr/bateauxamoteur/wellcraft/wellcraft-eclipse-210/detail/745745/",
+   "title": "Wellcraft Eclipse 210",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Wellcraft",
+   "model": "Eclipse 210",
+   "year": 1995,
+   "price_chf": 10900,
+   "price_label": "CHF 10'900.-",
+   "length_m": 6.4,
+   "width_m": 2.49,
+   "engine_type": "inboard",
+   "engine_brand": "Mercruiser",
+   "engine_model": "Mercruiser 5.7 V8 MCM",
+   "hp": 223.0,
+   "kw": 164.0,
+   "fuel": "Essence",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "en condition satisfaisante",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Horw",
+   "canton": "LU",
+   "postcode": "N/A",
+   "region": "Lac des Quatre-Cantons",
+   "lat": 47.0185008,
+   "lon": 8.3107797,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 270,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/745745-92539799aa57d8a525f0fc576c6083b0-x-9556648-fd15f94cbc0172d85c94c8e06607c694.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/745745-1790151803.jpg",
+   "description_excerpt": "Wellcraft Eclipse 210, année 1995: occasion honnête avec motorisation V8, vendue sur place et sans expertise Ce Wellcraft Eclipse 210 est un bateau de sport de 1995 et il est vendu exactement dans l'état où il se trouve: sur place, sans expertise (MFK), en état satisfaisant, avec des traces d'usage correspondant à son âge. Ce n'est pas un bateau fraîchement remis à neuf, et nous l'écrivons volontairement ainsi. Si vous cherchez une base saine à la ligne sportive classique et que vous êtes prêt à",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:737076": {
+   "id": "bateau24:737076",
+   "source": "bateau24",
+   "source_listing_id": "737076",
+   "url": "https://www.bateau24.ch/chfr/bateauxamoteur/thompson/thompson-santa-cruz-2600/detail/737076/",
+   "title": "Thompson Santa Cruz 2600",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Thompson",
+   "model": "Santa Cruz 2600",
+   "year": 1993,
+   "price_chf": 18950,
+   "price_label": "CHF 18'950.-",
+   "length_m": 8.25,
+   "width_m": 2.59,
+   "engine_type": "inboard",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "Volvo Penta 570 DP",
+   "hp": 245.0,
+   "kw": 180.0,
+   "fuel": "Essence",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "Polyester/Fibre de verre",
+   "trailer": "yes",
+   "mooring_included": "no",
+   "condition": "bon état",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Chevroux",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Lac de Neuchâtel",
+   "lat": 46.8898441,
+   "lon": 6.9053929,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 117,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/737076-5c410815f8762435c496e245e8a41395-x-9373794-d60a0c0067c4aa200647d90d02573342.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/737076-1787226825.jpg",
+   "description_excerpt": "Disponible sans place d'amarrage. Remorque pour la route révisée et expertisée. Nouveaux freins, roulements. Antifouling complet effectué avec 5 couches de primer et 2 couches d'antifouling Ultra 300 durant l'été 2025. Électricité du bateau refaite et fonctionnelle durant l'été 2025. Lumières en LED Prises en USB pour charger TV et machine à café Nouveau sondeur de profondeur. Service moteur effectué en 2025. Nouvelles batteries. Carburateur remplacé avec de nouveaux joints. Nouvelles hélices Du",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 18950
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:739530": {
+   "id": "bateau24:739530",
+   "source": "bateau24",
+   "source_listing_id": "739530",
+   "url": "https://www.bateau24.ch/chfr/bateauxamoteur/mastercraft/mastercraft-19-skier/detail/739530/",
+   "title": "MasterCraft 19 Skier",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "MasterCraft",
+   "model": "19 Skier",
+   "year": 2009,
+   "price_chf": 19000,
+   "price_label": "CHF 19'000.-",
+   "length_m": 5.94,
+   "width_m": 2.15,
+   "engine_type": "inboard",
+   "engine_brand": "Indmar",
+   "engine_model": "Indmar Mastercraft 5.7 IND285",
+   "hp": 239.0,
+   "kw": 176.0,
+   "fuel": "Essence",
+   "hours": 1260,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "Polyester/Fibre de verre",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "en condition satisfaisante",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Le Landeron, Neuchâtel",
+   "canton": "NE",
+   "postcode": "N/A",
+   "region": "Lac de Bienne",
+   "lat": 47.0554312,
+   "lon": 7.0702155,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 140,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/739530-560aba3e7956ebbca1772b94dc6c5b85-x-9428323-7bb784b68b6c9f47b075d2f09e26b94b.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/739530-1788246616.jpg",
+   "description_excerpt": "Occasion à venir visiter sur notre chantier naval Bateau remis en état durant l'été 2026 (service AP, polisch, antifouling, réparation gelcoat,..) Remorque de transport également disponible",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 19000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:619453": {
+   "id": "bateau24:619453",
+   "source": "bateau24",
+   "source_listing_id": "619453",
+   "url": "https://www.bateau24.ch/chfr/bateauxamoteur/sport-craft/sport-craft-sportsman-180/detail/619453/",
+   "title": "Sport Craft Sportsman 180",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Sport Craft",
+   "model": "Sportsman 180",
+   "year": 1988,
+   "price_chf": 7900,
+   "price_label": "CHF 7'900.-",
+   "length_m": 5.15,
+   "width_m": 2.18,
+   "engine_type": "inboard",
+   "engine_brand": "N/A",
+   "engine_model": "OMC",
+   "hp": 140.0,
+   "kw": 103.0,
+   "fuel": "Essence",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "défectueux",
+   "licence_leman": "yes (>10 CV)",
+   "town": "N/A",
+   "canton": "BE",
+   "postcode": "N/A",
+   "region": "Rohrbach",
+   "lat": 47.1356989,
+   "lon": 7.815146,
+   "geo_precision": "lake/region",
+   "distance_km_from_geneva": 204,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/619453-6099447f3e5a94572282041f2426a8fa-x-6673125-51ca0f1d2ab23aeca3bfbf248bb2a0a1.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/619453-1730631224.jpg",
+   "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:700438": {
+   "id": "bateau24:700438",
+   "source": "bateau24",
+   "source_listing_id": "700438",
+   "url": "https://www.bateau24.ch/chfr/voiliers/keltic/keltic-halftonner/detail/700438/",
+   "title": "Keltic Halftonner",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Keltic Marine",
+   "model": "Halftonner",
+   "year": 1984,
+   "price_chf": 6900,
+   "price_label": "CHF 6'900.-",
+   "length_m": 9.25,
+   "width_m": 3.3,
+   "engine_type": "inboard",
+   "engine_brand": "Torqeedo",
+   "engine_model": "Torqeedo Cruiser 2.0",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "Électrique",
+   "hours": 15,
+   "sail_area_m2": 42.0,
+   "berths": 6,
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "en condition satisfaisante",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "St-Blaise",
+   "canton": "NE",
+   "postcode": "N/A",
+   "region": "Lac de Neuchâtel",
+   "lat": 47.0297784,
+   "lon": 6.9837196,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 132,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/700438-ad3658adbda576f5c8cabb72054c80fe-x-8559783-3d41a6f35c129566e9599416c263ec10.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/700438-1773225905.jpg",
+   "description_excerpt": "surface vélique 42m2, expertisé 2021, bateau rénové en 2015 (peinture, accastillage, mât, coque, appareils), rénovation intérieur à prévoir, grand voile changée en 2019, housse de génois neuf 2022, housse de grand voile 2023, 1 grand spi et 1 petit, 1 génois, 1 fox, Ber en sus 1500fr.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:679145": {
+   "id": "bateau24:679145",
+   "source": "bateau24",
+   "source_listing_id": "679145",
+   "url": "https://www.bateau24.ch/chfr/bateauxamoteur/bass-boat-g3/detail/679145/",
+   "title": "Bass Boat G3",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "Bass Boat G3",
+   "year": "N/A",
+   "price_chf": 15900,
+   "price_label": "CHF 15'900.-",
+   "length_m": 5.8,
+   "width_m": 2.3,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "Bass Boat G3",
+   "hp": 100.0,
+   "kw": 74.0,
+   "fuel": "Essence",
+   "hours": 950,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "Aluminium",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "Très bon état",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Galgenen | Yvonand | Lengnau",
+   "canton": "ZH",
+   "postcode": "N/A",
+   "region": "Lac de Zurich",
+   "lat": 47.2790956,
+   "lon": 8.597868,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 290,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/679145-ac0231c4e56782a585f43ae036ba24c5-x-8110798-aa6ec25b30cdfd11a3375d31ecce2260.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/679145-1760527686.jpg",
+   "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "bateau24:752445": {
+   "id": "bateau24:752445",
+   "source": "bateau24",
+   "source_listing_id": "752445",
+   "url": "https://www.bateau24.ch/chfr/bateauxamoteur/bucher/bucher-580/detail/752445/",
+   "title": "Bucher 580",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Bucher",
+   "model": "580",
+   "year": 1963,
+   "price_chf": 4500,
+   "price_label": "CHF 4'500.-",
+   "length_m": 5.8,
+   "width_m": 1.52,
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "Honda",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "Essence",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "Polyester/Fibre de verre",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "bon état",
+   "licence_leman": "no (≤10 CV)",
+   "town": "N/A",
+   "canton": "LU",
+   "postcode": "N/A",
+   "region": "Neuenkirch",
+   "lat": 47.1066988,
+   "lon": 8.1968502,
+   "geo_precision": "lake/region",
+   "distance_km_from_geneva": 256,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://static.b24.co/fotos/large/752445-bd092a9a88b3f86fa26fbbb8996a87c0-x-9737084-b355983278a57e056056c903ae3a07da.jpg",
+   "thumb_url": "https://static.b24.co/thumbs/xlarge/752445-1793024297.jpg",
+   "description_excerpt": "Il s'agit du texte dans la langue originale. Afficher la traduction Un instant, s'il vous plaît, nous traduisons le texte pour vous.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "tutti:84186796": {
+   "id": "tutti:84186796",
+   "source": "tutti",
+   "source_listing_id": "84186796",
+   "url": "https://www.tutti.ch/fr/vi/84186796",
+   "title": "Bateau à moteur Canadian",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1500,
+   "price_label": "1 500.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Flüelen",
+   "canton": "UR",
+   "postcode": "6454",
+   "region": "N/A",
+   "lat": 46.91889190673828,
+   "lon": 8.647314071655273,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 316,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://c.tutti.ch/big/3992447371.jpg",
+   "thumb_url": "https://c.tutti.ch/thumbnail/3992447371.jpg",
+   "description_excerpt": "Bateau d'accompagnement \"Canadian\" avec remorque à vendre, rarement utilisé. Incluant le test d'échappement 2026",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "tutti:82969063": {
+   "id": "tutti:82969063",
+   "source": "tutti",
+   "source_listing_id": "82969063",
+   "url": "https://www.tutti.ch/fr/vi/82969063",
+   "title": "Bateau pneumatique avec moteur hors-bord Yamaha + accessoires",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 850,
+   "price_label": "850.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "outboard",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 4.0,
+   "kw": 2.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Freienbach",
+   "canton": "SZ",
+   "postcode": "8807",
+   "region": "N/A",
+   "lat": 47.201873779296875,
+   "lon": 8.7548828125,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 310,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://c.tutti.ch/big/8696423610.jpg",
+   "thumb_url": "https://c.tutti.ch/thumbnail/8696423610.jpg",
+   "description_excerpt": "Bonjour Je vends ici mon bateau pneumatique avec un fond en aluminium stable et un moteur hors-bord Yamaha de 4 CV. Le bateau comprend pratiquement tout ce dont on a besoin pour commencer immédiatement : pagaies, ancre, pompe à air, réservoir, échelle, banc ainsi que d'autres accessoires. Le moteur hors-bord Yamaha n'a jamais été utilisé par moi-même, car j'ai utilisé un autre moteur. Le moteur fonctionne parfaitement. Avec ses 4 CV, il est très bien motorisé pour ce bateau pneumatique. Le suppo",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 850
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:marieholm-folkeboot": {
+   "id": "lakeboat:marieholm-folkeboot",
+   "source": "lakeboat",
+   "source_listing_id": "marieholm-folkeboot",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/marieholm-folkeboot/",
+   "title": "Marieholm Folkeboot",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Marieholm Folkeboot",
+   "model": "Marieholm Folkeboot",
+   "year": 1978,
+   "price_chf": 5000,
+   "price_label": "CHF. 5000.-",
+   "length_m": 8.0,
+   "width_m": 2.2,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "Volvo Penta",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Ouchy",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Ouchy, Lausanne, canton de Vaud, Suisse",
+   "lat": 46.50634,
+   "lon": 6.62575,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 64,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-02-12",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/605150-05fe864562309262604c3f860979c79d-x-6394217-091832b84e14b2f76e8ba9dc7d8f35eb.webp",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/605150-05fe864562309262604c3f860979c79d-x-6394217-091832b84e14b2f76e8ba9dc7d8f35eb.webp",
+   "description_excerpt": "Quillard Quille longue. classique bien entretenu à vendre pour des raisons de circonstances, amarrage sur le lac Léman, visite possible sur rendez-vous. Carte d'identité européenne. Les coussins ont été refaits en 2022. Le prix est négociable. Permis CH disponible",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:amesthyste-950": {
+   "id": "lakeboat:amesthyste-950",
+   "source": "lakeboat",
+   "source_listing_id": "amesthyste-950",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/amesthyste-950/",
+   "title": "Amesthyste 950",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Amesthyste 950",
+   "model": "N/A",
+   "year": 1996,
+   "price_chf": 5000,
+   "price_label": "CHF. 5000.-",
+   "length_m": 9.5,
+   "width_m": 2.25,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "Hors bord 5CV",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Ouchy",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Ouchy, Lausanne, canton de Vaud, Suisse",
+   "lat": 46.50634,
+   "lon": 6.62575,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 64,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-02-13",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/420297-2bf7a21109f7ffc7ba418097332cd543-x-7010418-91f5ec28b95a62826f5ec6a9b7fa1a48.webp",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/420297-2bf7a21109f7ffc7ba418097332cd543-x-7010418-91f5ec28b95a62826f5ec6a9b7fa1a48.webp",
+   "description_excerpt": "Voilier de régate Quille à Bulbe. 1996 Amesthyste 950, CHF 5'000.- Beau bateau de régate, toujours entretenu et fonctionnel, qui court en TCF3, possible de le faire courir en TCF2 en fonction des voiles, jauge 1.099 pour TCF3.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:dolphin-81": {
+   "id": "lakeboat:dolphin-81",
+   "source": "lakeboat",
+   "source_listing_id": "dolphin-81",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/dolphin-81/",
+   "title": "Dolphin 81",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Dolphin 81",
+   "model": "N/A",
+   "year": 1998,
+   "price_chf": 10500,
+   "price_label": "CHF. 10500.-",
+   "length_m": 8.1,
+   "width_m": 2.7,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "Hors-bord 4 temps Propulsion Suzuki",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vevey",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Vevey, canton de Vaud, Suisse",
+   "lat": 46.46008,
+   "lon": 6.84381,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 87,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-02-13",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/602408-30c30c7e888392178f40f77a0d186a54-x-6274563-6e1f92d47c2faff21b4bd49bf66c10bb.webp",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/602408-30c30c7e888392178f40f77a0d186a54-x-6274563-6e1f92d47c2faff21b4bd49bf66c10bb.webp",
+   "description_excerpt": "Voilier de régate Quille courte. Lac Léman » Pichette Ce bateau possède une autorisation pour naviguer sur le lac de Constance.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:brema-450-pro-bass": {
+   "id": "lakeboat:brema-450-pro-bass",
+   "source": "lakeboat",
+   "source_listing_id": "brema-450-pro-bass",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/brema-450-pro-bass/",
+   "title": "Brema 450 Pro Bass",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Brema",
+   "model": "450 Pro Bass",
+   "year": 2024,
+   "price_chf": 10390,
+   "price_label": "CHF. 10390.-",
+   "length_m": 4.5,
+   "width_m": 2.0,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 50.0,
+   "kw": 36.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Fribourg",
+   "canton": "FR",
+   "postcode": "N/A",
+   "region": "Fribourg, canton de Fribourg, Suisse",
+   "lat": 46.80445,
+   "lon": 7.15434,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 139,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-02-17",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/PXL_20240612_154922940.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/PXL_20240612_154922940.jpg",
+   "description_excerpt": "Bateau de pêche. De marque Brema boat, ce bateau est en aluminium double soudé de 3 mm. Il dispose de coffres étanches à vérins, d'un vivier avec pompe, d'une moquette marine facile d'entretien, de tubes préinstallés entre les coffres pour faciliter le passage des câbles, ainsi que d'un tableau électrique avec pompe de cale, éclairage de navigation et éclairage de pont. Vous pourrez pêcher aussi bien debout, sur une grande surface de pont, qu'assis sur un siège amovible. Données: Longueur : 4.50",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10390
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone2",
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 20
+   }
+  },
+  "lakeboat:sea-ray-seville-2-5-6-cb": {
+   "id": "lakeboat:sea-ray-seville-2-5-6-cb",
+   "source": "lakeboat",
+   "source_listing_id": "sea-ray-seville-2-5-6-cb",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/sea-ray-seville-2-5-6-cb/",
+   "title": "Sea Ray Seville 2 5.6 CB",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Sea Ray",
+   "model": "Seville 2 5.6 CB",
+   "year": 1986,
+   "price_chf": 4500,
+   "price_label": "CHF. 4500.-",
+   "length_m": 5.69,
+   "width_m": 2.27,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 142.0,
+   "kw": 104.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Morges",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Morges, District de Morges, Vaud, 1110, Suisse",
+   "lat": 46.50933,
+   "lon": 6.49832,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 51,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-02-09",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/608480-e1aa47fdc716548a07842a18c25203ea-x-6448212-59a3428a4823d66fd91441daffef7ea3.webp",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/608480-e1aa47fdc716548a07842a18c25203ea-x-6448212-59a3428a4823d66fd91441daffef7ea3.webp",
+   "description_excerpt": "Bateau de sport Propulsion Z. Très bon bateau Sea Ray, bonnes dimensions, bon rapport poids puissance, très agréable à naviguer, topp pour sorties à la journée, baignade apéros sport nautique ! Moteur top démarre au quart de tour, 0 problème :) Embase ok, hélice ok, révision ok, antifouling ok. Sellerie de 2 sièges à éventuellement revoir mais utilisable sans soucis tel quel. Bâche d'été 1 année (état de neuf), possibilité de bâche d'hiver occasion (Chantier). Expertise ok 30.05.2023 Possibilité",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:olympus": {
+   "id": "lakeboat:olympus",
+   "source": "lakeboat",
+   "source_listing_id": "olympus",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/olympus/",
+   "title": "Bateau Olympus",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "Olympus 540-2828",
+   "year": 2007,
+   "price_chf": 24000,
+   "price_label": "CHF. 24000.-",
+   "length_m": 5.0,
+   "width_m": 1.97,
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 90.0,
+   "kw": 66.2,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Portalban",
+   "canton": "FR",
+   "postcode": "N/A",
+   "region": "Portalban, canton de Fribourg, Suisse",
+   "lat": 46.9215,
+   "lon": 6.95489,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 121,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-03-24",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/20220710_111415-1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/20220710_111415-1.jpg",
+   "description_excerpt": "Bateau moteur classique Hord-bord 4 temps. Bateau à moteur hors bord HONDA 90CV. Actuellement hors d'eau pour services et entretien chez SOUTO NAVAL Plusieurs accessoires et une paire de ski nautique Remorque de transport DALTEC Cargo Port d'attache Portalban",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 24000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:deriveur-laser": {
+   "id": "lakeboat:deriveur-laser",
+   "source": "lakeboat",
+   "source_listing_id": "deriveur-laser",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/deriveur-laser/",
+   "title": "Dériveur laser",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "Laser",
+   "model": "2010",
+   "year": "N/A",
+   "price_chf": 1800,
+   "price_label": "CHF. 1800.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Lutry",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Lutry, canton de Vaud, Suisse",
+   "lat": 46.50287,
+   "lon": 6.68448,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 69,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-03-13",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/3A116778-1F72-4D57-983C-395AF65533EB.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/3A116778-1F72-4D57-983C-395AF65533EB.jpeg",
+   "description_excerpt": "Petit voilier. Bateau ayant passé un peu de temps dehors ce serait bien qu’un passionné le remette à l’eau car il est encore très bien et vous fera passer de bon moment sur le lac",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:projects-princess": {
+   "id": "lakeboat:projects-princess",
+   "source": "lakeboat",
+   "source_listing_id": "projects-princess",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/projects-princess/",
+   "title": "Projects princess",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Projects princess",
+   "model": "N/A",
+   "year": 1979,
+   "price_chf": 17000,
+   "price_label": "CHF. 17000.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vilars NE",
+   "canton": "NE",
+   "postcode": "N/A",
+   "region": "Vilars NE, canton de Neuchâtel, Suisse",
+   "lat": 47.03178,
+   "lon": 6.92699,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 131,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-03-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/0684209999.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/0684209999.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau à cabine. projects princess 32, 2 moteurs volvo pentaAQ140A/280, puissance 91. année 1979 bien entretenu le prix est de 15`000.- en l état prévoir l étanchéité des fenêtres, autrement aucun probléme navigable de suite,où 17`000.- fenêtre réparé ,si vous êtes un bon bricoleur aucun probléme.. visible au port de St Blaise ponton 200 place 245,( pas de place d amarrage avec la vente)",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 17000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bateau-a-moteur": {
+   "id": "lakeboat:bateau-a-moteur",
+   "source": "lakeboat",
+   "source_listing_id": "bateau-a-moteur",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-a-moteur/",
+   "title": "Bateau à moteur Aquaviva",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Aquaviva",
+   "model": "19Sport",
+   "year": 1993,
+   "price_chf": 20000,
+   "price_label": "CHF. 20000.-",
+   "length_m": 5.75,
+   "width_m": 2.24,
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 115.0,
+   "kw": 84.6,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 2,
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "N/A",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Lac Léman",
+   "lat": 46.5076442,
+   "lon": 6.6196302,
+   "geo_precision": "lake/region",
+   "distance_km_from_geneva": 63,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-04-06",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/04/inbound6366739700945624440.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/04/inbound6366739700945624440.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau Ski nautique, Bateau de sport Hord-bord 4 temps. -Expertisé fin 2024 - Année 1993 - 5.75m x 2.24m - 500 kg - Moteur Yamaha 115 ch révisé fin 2024 - Réservoir 80 litres - barre \"Turboswing\" pour ski nautique / bouée - cabine 2 couchettes aménagées (matelas + duvets)",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 20000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:a-vendre-bateau-stingray-185-lx-annee-2010-expertise-en-2024": {
+   "id": "lakeboat:a-vendre-bateau-stingray-185-lx-annee-2010-expertise-en-2024",
+   "source": "lakeboat",
+   "source_listing_id": "a-vendre-bateau-stingray-185-lx-annee-2010-expertise-en-2024",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/a-vendre-bateau-stingray-185-lx-annee-2010-expertise-en-2024/",
+   "title": "à vendre bateau Stingray 185 LX",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Stingray",
+   "model": "185 LX",
+   "year": 2010,
+   "price_chf": 16000,
+   "price_label": "CHF. 16000.-",
+   "length_m": 5.65,
+   "width_m": 2.16,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 150.0,
+   "kw": 110.3,
+   "fuel": "N/A",
+   "hours": 290,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Lausanne, canton de Vaud, Suisse",
+   "lat": 46.52071,
+   "lon": 6.63253,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 65,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2025-04-06",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/04/stingray-185-1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/04/stingray-185-1.jpg",
+   "description_excerpt": "Bateau de plaisance. A vendre bateau Stingray 185 LX de 2010 avec 290 heures moteurs / 7 personnes. Hivernage hors de l'eau chaque année, services effectuées auprès d'un chantier naval chaque année également. Le bateau a été expertisé en 2024. A disposition pour toute autre question.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 16000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:drago-olympus-540": {
+   "id": "lakeboat:drago-olympus-540",
+   "source": "lakeboat",
+   "source_listing_id": "drago-olympus-540",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/drago-olympus-540/",
+   "title": "Bateau Drago Olympus 540",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2007,
+   "price_chf": 5000,
+   "price_label": "CHF. 5000.-",
+   "length_m": 5.4,
+   "width_m": 1.98,
+   "engine_type": "outboard",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 75.0,
+   "kw": 55.2,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "N/A",
+   "region": "Genève, canton de Genève, Suisse",
+   "lat": 46.20477,
+   "lon": 6.14631,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-03-25",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/2012-1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/2012-1.jpg",
+   "description_excerpt": "Bateau moteur classique. Dimensions : Longueur de 5,40 m, largeur de 1,98 m, tirant d'eau de 0,50 m. Poids : Environ 600 kg. Matériau : Coque en fibre de verre. Motorisation : Équipé d'un moteur hors-bord, souvent avec une puissance de 75 CV. Aménagements : Deux sièges en coque avec coussins pour le pilote et le copilote. Plage de bain à l'avant transformable en table. Grande banquette arrière avec coussins et coffre de rangement. Coffres latéraux pour le rangement. Échelle de bain et bimini top",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "zone1",
+    "zone": "zone1",
+    "lake": "Lac Léman",
+    "opportunite": true,
+    "reasons": [
+     "town"
+    ],
+    "score": 130
+   }
+  },
+  "lakeboat:correct-craft-nautique": {
+   "id": "lakeboat:correct-craft-nautique",
+   "source": "lakeboat",
+   "source_listing_id": "correct-craft-nautique",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/correct-craft-nautique/",
+   "title": "Correct Craft Nautique",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Correct Craft",
+   "model": "Nautique",
+   "year": 2001,
+   "price_chf": 18500,
+   "price_label": "CHF. 18500.-",
+   "length_m": 5.9,
+   "width_m": 2.32,
+   "engine_type": "inboard",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 290.0,
+   "kw": 213.3,
+   "fuel": "N/A",
+   "hours": 780,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Lutry",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Lutry, canton de Vaud, Suisse",
+   "lat": 46.50287,
+   "lon": 6.68448,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 69,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-05-05",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/05/Correct-Craft-Nautique.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/05/Correct-Craft-Nautique.jpg",
+   "description_excerpt": "Bateau Ski nautique, Bateau wakeboard / Wakesurf In-Bord arbre D-Drive. Découvrez ce bateau de wakeboard et ski nautique de la prestigieuse marque Nautique / Correct Craft, idéal pour les passionnés de sports nautiques. Équipé d'une tour de wakeboard pour des sessions de glisse exceptionnelles, il est propulsé par un moteur de 290 CV avec seulement 780 heures d'utilisation. En excellent état général, ce bateau est parfait pour les amateurs de ski nautique, de wakeboard, ou de balades sportives. ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 18500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:5-5ji": {
+   "id": "lakeboat:5-5ji",
+   "source": "lakeboat",
+   "source_listing_id": "5-5ji",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/5-5ji/",
+   "title": "5.5JI",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "5.5JI",
+   "model": "N/A",
+   "year": 1990,
+   "price_chf": 17000,
+   "price_label": "CHF. 17000.-",
+   "length_m": 9.43,
+   "width_m": 1.91,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Morges",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Morges, canton de Vaud, Suisse",
+   "lat": 46.5098,
+   "lon": 6.49784,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 52,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-02-12",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/578237-c38fb4ad3f1302f1323ea3499034fcd7-x-6464242-0d62c5cee3beafd484361621db7b8756.webp",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/02/578237-c38fb4ad3f1302f1323ea3499034fcd7-x-6464242-0d62c5cee3beafd484361621db7b8756.webp",
+   "description_excerpt": "Voilier de régate Quille à Bulbe. 1990 5.5JI, CHF 17'000.- SUI 183 - Lovana II - deux jeux de voiles - remorque de route Satellite",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 17000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:brema-430-v-pro": {
+   "id": "lakeboat:brema-430-v-pro",
+   "source": "lakeboat",
+   "source_listing_id": "brema-430-v-pro",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/brema-430-v-pro/",
+   "title": "Brema 430 v pro",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Brema",
+   "model": "430 V Pro",
+   "year": 2024,
+   "price_chf": 14000,
+   "price_label": "CHF. 14000.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "N/A",
+   "canton": "N/A",
+   "postcode": "N/A",
+   "region": "canton de Fribourg, Suisse",
+   "lat": 46.80557,
+   "lon": 7.16127,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 141,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-05-05",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/05/20250419_145149.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/05/20250419_145149.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau de pêche. Brema 430 v pro équipé de coffres de rangement, vivier, tableau de commande, pompe de calle, moteur yamaha 8ch démarrage électrique avec remorque l'ensemble est neuf",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 14000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:prufungsfrei-bodenseezulassung-steuerstand-suzuki-df6-badeleiter-biminitop-sprayhootverdeck-motorboot-500x185-grosse-liegeflache-180x150-3-sitzbank-anhanger-komplettset-fahrbereit": {
+   "id": "lakeboat:prufungsfrei-bodenseezulassung-steuerstand-suzuki-df6-badeleiter-biminitop-sprayhootverdeck-motorboot-500x185-grosse-liegeflache-180x150-3-sitzbank-anhanger-komplettset-fahrbereit",
+   "source": "lakeboat",
+   "source_listing_id": "prufungsfrei-bodenseezulassung-steuerstand-suzuki-df6-badeleiter-biminitop-sprayhootverdeck-motorboot-500x185-grosse-liegeflache-180x150-3-sitzbank-anhanger-komplettset-fahrbereit",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/prufungsfrei-bodenseezulassung-steuerstand-suzuki-df6-badeleiter-biminitop-sprayhootverdeck-motorboot-500x185-grosse-liegeflache-180x150-3-sitzbank-anhanger-komplettset-fahrbereit/",
+   "title": "Bateau à moteur",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2013,
+   "price_chf": 17900,
+   "price_label": "CHF. 17900.-",
+   "length_m": 5.0,
+   "width_m": 1.85,
+   "engine_type": "N/A",
+   "engine_brand": "Suzuki",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Berlingen",
+   "canton": "TG",
+   "postcode": "N/A",
+   "region": "Berlingen, canton de Thurgovie, Suisse",
+   "lat": 47.67413,
+   "lon": 9.01621,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 336,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-05-23",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/05/IMG-20250221-WA0007-1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/05/IMG-20250221-WA0007-1.jpg",
+   "description_excerpt": "Hord-bord 4 temps. Motorboot mit top Nutzen Geniessen Sie die schönheit und Ruhe der Natur in Privaterathmosphäre. Kostengünstig im Unterhalt. Gut Trailerbar. Motorboot ca.350Kg mit Ausstattung Anhänger ungebremst Zug mit jedem Auto zu ziehen.Zug unter 700Kg. Anhänger kann auf der Ebene von Hand verschoben werden. Frisch ab MFK Gepflegt Unterwasser frisch gestrichen Ohne Prüfung farbar. Bodenseezulassung Auf jedem See zugelassen. Aucun test requis. Inscription au lac de Constance. Poste de barre",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 17900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bateau-fjord-dolphin": {
+   "id": "lakeboat:bateau-fjord-dolphin",
+   "source": "lakeboat",
+   "source_listing_id": "bateau-fjord-dolphin",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-fjord-dolphin/",
+   "title": "bateau fjord Dolphin",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "bateau fjord",
+   "model": "Dolphin 900",
+   "year": "N/A",
+   "price_chf": 29990,
+   "price_label": "CHF. 29990.-",
+   "length_m": 9.0,
+   "width_m": 3.18,
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 170.0,
+   "kw": 125.0,
+   "fuel": "N/A",
+   "hours": 470,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Montreux",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Montreux, canton de Vaud, Suisse",
+   "lat": 46.43342,
+   "lon": 6.91012,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 94,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-10-15",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/10/bateau-fjord.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/10/bateau-fjord.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau à cabine. Bateau à moteur à vendre Fjord Dolphin 900 made in Norway 1988 Bateau Suisse avec permis de navigation Dimensions: 9m x 3.18m 2 x moteurs Volvo Penta 170cv (470 heures chacun). Relativement récents. Couchages pour 6 personnes (couchages 3 x 2 personnes). Salle de bain avec wc, lavabo et douche. Cuisine avec frigo Matelas exterieurs Le bateau sera vendu avec service complet et essai au lac. - place port à l’année dans la région: extra + 4990.- chf (pour le tr",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 29990
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:falcon-thunderbird-2500-cd": {
+   "id": "lakeboat:falcon-thunderbird-2500-cd",
+   "source": "lakeboat",
+   "source_listing_id": "falcon-thunderbird-2500-cd",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/falcon-thunderbird-2500-cd/",
+   "title": "Falcon Thunderbird 2500 CD",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Falcon",
+   "model": "Thunderbird 2500 CD",
+   "year": "N/A",
+   "price_chf": 12500,
+   "price_label": "CHF. 12500.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 310.0,
+   "kw": 228.0,
+   "fuel": "petrol",
+   "hours": 480,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Yvonand",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Yvonand, canton de Vaud, Suisse",
+   "lat": 46.79959,
+   "lon": 6.74548,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 97,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-11-18",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/bateau-falcon.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/bateau-falcon.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau Ski nautique, Bateau de sport. Falcon Thunderbird 2500 CD – Moteur Mercruiser 7.4L MPI – bon état général Falcon Thunderbird 2500 CD, un bateau iconique alliant lignes classiques et puissance américaine. Propulsé par le Mercruiser 7.4L MPI (injection multipoint) développant un couple impressionnant, ce bateau offre des sensations fortes et une navigation fluide, idéale pour les sorties sportives comme pour les balades en famille. Caractéristiques principales : Marque ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:mirro-beachcomber": {
+   "id": "lakeboat:mirro-beachcomber",
+   "source": "lakeboat",
+   "source_listing_id": "mirro-beachcomber",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/mirro-beachcomber/",
+   "title": "Mirro Beachcomber",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Mirro Beachcomber",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 3250,
+   "price_label": "CHF. 3250.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 200.0,
+   "kw": 147.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "fair",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Essertines-sur-Yverdon",
+   "canton": "VD",
+   "postcode": "1417",
+   "region": "Essertines-sur-Yverdon, canton de Vaud, Suisse",
+   "lat": 46.71552,
+   "lon": 6.63941,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 82,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-11-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/7496665c467cab0b49.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/7496665c467cab0b49.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau à cabine. bateau moteur Mirro BEACHCOMBER, avec petite cabine, dernière expertise 02.05.2023, première mise à l'eau mai 1982, régulièrement suivit, roulements et soufflets d embase, remplacés en 2021, impaller 2023, Bimini 2018 plage arrière refaite en 2023,... Dimensions 6.17/2.34, 7 places, V8 200CV MerCruiser, vérins de trym à remplacer. tourne parfaitement. bateau sortit et hiverné chaque année. vente de particulier sans garantie. possibilité de transport à conven",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3250
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7496734"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:joli-bateau": {
+   "id": "lakeboat:joli-bateau",
+   "source": "lakeboat",
+   "source_listing_id": "joli-bateau",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/joli-bateau/",
+   "title": "Joli bateau",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Joli bateau à moteur-Diesel-SAGA 20",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 3500,
+   "price_label": "CHF. 3500.-",
+   "length_m": 6.15,
+   "width_m": 2.19,
+   "engine_type": "inboard",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 17.0,
+   "kw": 12.5,
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Vevey",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Vevey, canton de Vaud, Suisse",
+   "lat": 46.46008,
+   "lon": 6.84381,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 87,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-11-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/791867cf715a0b57d0.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/791867cf715a0b57d0.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau de pêche. Disponible de suite ou à convenir. Construction norvégienne très réputée, idéal pour balades en famille, pour la pêche de loisirs, etc... - Année de fabrication: 1987. - État: Bon, en état de marche. - Dimensions longueur x largeur: 6.15 x 2.19 m. - Tirant d'eau: 0.70 m. - Pompe de câle. - Moteur: Volvo Penta diesel faible consommation. - Réservoir: 30 L. - Coupe circuit. - Pilotage: Commande à distance, démarrage électrique. - Propulsion: In-bord avec arbre",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "lakeboat",
+     "url": "https://lakeboat.ch/bateau-occasion-suisse/joli-bateau-a-moteur-diesel/"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:sea-ray-200": {
+   "id": "lakeboat:sea-ray-200",
+   "source": "lakeboat",
+   "source_listing_id": "sea-ray-200",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/sea-ray-200/",
+   "title": "SEA RAY 200",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Sea Ray",
+   "model": "200",
+   "year": 1991,
+   "price_chf": 11996,
+   "price_label": "CHF. 11996.-",
+   "length_m": 6.45,
+   "width_m": 2.5,
+   "engine_type": "outboard",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Préverenges",
+   "canton": "VD",
+   "postcode": "1028",
+   "region": "Préverenges, canton de Vaud, Suisse",
+   "lat": 46.51693,
+   "lon": 6.5285,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 54,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-11-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/7404660c6433b00823.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/7404660c6433b00823.jpg",
+   "description_excerpt": "Bateau de plaisance. A vendre bateau inbord SEA RAY 200, année 1991, bon état, expertisé en octobre 2023. Moteur Mercruiser 5.7L Longueur 645, largeur 250. Alentours de Morges. Idéalement: arrangement à conclure avec l'achat d'un bateau hors bord d'occasion de moins de 10 ans et de dimension équivalente ou inférieure. Contact: tél.: [phone hidden] Prix: 12'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 11996
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "lakeboat",
+     "url": "https://lakeboat.ch/bateau-occasion-suisse/sea-ray-200-2/"
+    },
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7404235"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "width_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bayliner-capri": {
+   "id": "lakeboat:bayliner-capri",
+   "source": "lakeboat",
+   "source_listing_id": "bayliner-capri",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bayliner-capri/",
+   "title": "BAYLINER Capri",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "BAYLINER Capri",
+   "model": "2025 SS (Sport Series)",
+   "year": 1994,
+   "price_chf": 14800,
+   "price_label": "CHF. 14800.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 183.5,
+   "kw": 135.0,
+   "fuel": "N/A",
+   "hours": 1043,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1213",
+   "region": "Genève, canton de Genève, Suisse",
+   "lat": 46.20477,
+   "lon": 6.14631,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-11-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/82876919fc67ea1ac4.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/82876919fc67ea1ac4.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau wakeboard / Wakesurf, Bateau de sport. Ce bateau, version Sport Series, est en très bon état et idéal pour la balade et toutes les activités nautiques (ski nautique, wakeboard, wake surf, bouée). Taille 20 pieds (6,17 mètres de long - 2,26 mètres de large). 8 personnes autorisées à bord. Année 1994. Vendu en l'état avec bâche et remorque. Mât de traction amovible et trois hélices de différentes tailles également inclus. Sa motorisation Mercruiser V6 4,3 LX Alpha One (",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 14800
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8287884"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bayliner-602-capri": {
+   "id": "lakeboat:bayliner-602-capri",
+   "source": "lakeboat",
+   "source_listing_id": "bayliner-602-capri",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bayliner-602-capri/",
+   "title": "Bayliner 602 capri",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Bayliner",
+   "model": "602 capri Runabout",
+   "year": "N/A",
+   "price_chf": 14800,
+   "price_label": "CHF. 14800.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercury",
+   "engine_model": "N/A",
+   "hp": 135.0,
+   "kw": 99.3,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1004",
+   "region": "Lausanne, canton de Vaud, Suisse",
+   "lat": 46.52071,
+   "lon": 6.63253,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 65,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-11-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/823168e616740c8287.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/823168e616740c8287.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau de sport. Moteur Mercury 3l 135 CV essence révisé avant hivernage et pour toutes les mises à l'eau. Première main (achat neuf). La remorque est une 1301. Taud hiver et soleil neuf, la douchette, les supports cannes à pèche. La table cockpit, les coussins pour plage de bronzage. Sonar et GPS de navigation Humminbird. Hélice 4 pales et modification constructeur pour ski nautique. Le bateau est visible sur Valence en France selon demande.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 14800
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8231333"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:voilier-wauquiez-gladiateur": {
+   "id": "lakeboat:voilier-wauquiez-gladiateur",
+   "source": "lakeboat",
+   "source_listing_id": "voilier-wauquiez-gladiateur",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/voilier-wauquiez-gladiateur/",
+   "title": "Voilier Wauquiez Gladiateur",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Wauquiez Gladiateur",
+   "model": "N/A",
+   "year": 1981,
+   "price_chf": 21000,
+   "price_label": "CHF. 21000.-",
+   "length_m": 10.0,
+   "width_m": 3.35,
+   "engine_type": "inboard",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1227",
+   "region": "Genève, canton de Genève, Suisse",
+   "lat": 46.20477,
+   "lon": 6.14631,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-11-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/6437240_9.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/6437240_9.jpg",
+   "description_excerpt": "Voilier de croisière Wauquiez Gladiateur 10m x 3.35m Année 1981 numero de coque: 193 moteur volvo penta md.11.c saildrive Visite passée été 2021 7 couchages Voilier très marin et très bien construit. Bien entretenu par son propriétaire, constructeur naval. Remplacement de tout le gréement courant et dormant, controle du saildrive et antifouling 2020 articles de presse visibles sur le site wauquiez(point)gladiateur(point)free(point)fr Vendu SANS Place Localisation: Genève, Suisse",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 21000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/6437240"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:optima-92": {
+   "id": "lakeboat:optima-92",
+   "source": "lakeboat",
+   "source_listing_id": "optima-92",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/optima-92/",
+   "title": "Optima 92",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Optima 92 - Dehler",
+   "model": "N/A",
+   "year": 1977,
+   "price_chf": 12000,
+   "price_label": "CHF. 12000.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "N/A",
+   "region": "Genève, canton de Genève, Suisse",
+   "lat": 46.20477,
+   "lon": 6.14631,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-11-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/735966c0ccf0e12700.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/735966c0ccf0e12700.jpg",
+   "description_excerpt": "Je cherche personne qui voudrait investir du temps et des sous dans l'entretien de ce beau Voilier familial blanc Optima 92 du constructeur Dehler. 9m20 x 3m ,.tirant d'eau 1m56, moteur inboard Volvo-Penta en top état! Ceci en échange de navigation ou en vue d'un achat à petit prix... Le voilier date de 1977 mais a été très bien soigné. (intérieur comme neuf! ),.expertisé en août 2023. Gréement mer , avec 5 voiles fonctionnelles. À changer: certains joints, antifouling... Voilier stationné sur s",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:colin-archer": {
+   "id": "lakeboat:colin-archer",
+   "source": "lakeboat",
+   "source_listing_id": "colin-archer",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/colin-archer/",
+   "title": "Colin Archer",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "type Colin Archer",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 12000,
+   "price_label": "CHF. 12000.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1200",
+   "region": "Genève, canton de Genève, Suisse",
+   "lat": 46.20477,
+   "lon": 6.14631,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2025-11-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/11/7742682da98f9f7014.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/11/7742682da98f9f7014.jpg",
+   "description_excerpt": "Voilier type Colin Archer en iroko 9m30x3m30. A vendre Magnifique Voilier tout en iroko et en parfait état. Le voilier possède un moteur in board Lombardini LDW 1003 acheté neuf et installé par le chantier naval Aebi en 2020. Le bateau est vendu avec visite du jour et peut bénéficier d'une garantie.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7742910"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bateau-a-moteur-sea-ray-195-br-avec-ou-sans-remorque": {
+   "id": "lakeboat:bateau-a-moteur-sea-ray-195-br-avec-ou-sans-remorque",
+   "source": "lakeboat",
+   "source_listing_id": "bateau-a-moteur-sea-ray-195-br-avec-ou-sans-remorque",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-a-moteur-sea-ray-195-br-avec-ou-sans-remorque/",
+   "title": "Bateau à moteur Sea Ray 195 BR avec ou sans remorque",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Sea Ray",
+   "model": "195 BR",
+   "year": 1995,
+   "price_chf": 11990,
+   "price_label": "CHF. 11990.-",
+   "length_m": 6.15,
+   "width_m": 2.34,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 182.0,
+   "kw": 133.9,
+   "fuel": "N/A",
+   "hours": 502,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "no",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Renens",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Renens, canton de Vaud, Suisse",
+   "lat": 46.53795,
+   "lon": 6.58174,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 62,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-03-28",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/P1020792_rogne.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/P1020792_rogne.jpg",
+   "description_excerpt": "Propulsion Z. Bateau à moteur Sea Ray 195 BR Année: 1995 Long. 6,15 m Larg. 2,34 m. Mot. Mercruiser V6 4.3 lit. Prop. Z 134 kW 182 cv 502 heures 8 personnes Avec Taud, échelle de bain, Radio CD, extincteur, feux de navigation, ancre Mis en vente en raison de la cessation de navigation Très bon état. Entretiens annuels suivis. Possibilité d'acheter la remorque et les bers 2900.- CHF Visible à Renens hors d'eau",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 11990
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:quicksilver-cruiser": {
+   "id": "lakeboat:quicksilver-cruiser",
+   "source": "lakeboat",
+   "source_listing_id": "quicksilver-cruiser",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/quicksilver-cruiser/",
+   "title": "Quicksilver Cruiser",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Quicksilver",
+   "model": "Cruiser",
+   "year": 2003,
+   "price_chf": 19000,
+   "price_label": "CHF. 19000.-",
+   "length_m": 6.5,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 225.0,
+   "kw": 165.5,
+   "fuel": "N/A",
+   "hours": 590,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Veyrier",
+   "canton": "GE",
+   "postcode": "1255",
+   "region": "Veyrier, canton de Genève, Suisse",
+   "lat": 46.16785,
+   "lon": 6.18549,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 6,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-12-23",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/12/8077685d7843978106.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/12/8077685d7843978106.jpg",
+   "description_excerpt": "Quicksilver 650 CRUISER. Parfait état coque, pont, sellerie , moteur. Année 2003. Aucun frais à prévoir. Sort de révision complète (octobre 2024). Coudes et collecteurs neufs (1 saison). Equipé d'un moteur inboard Mercruiser 4.3 Mpi de 225cv, ce qui laisse un vaste espace de bain de soleil à l'arrière. La sellerie est impeccable. La cabine se transforme en couchage pour 2 personnes, avec des coffres de rangement sous les coussins, et une prise allume cigare pour y branche une glacière électrique",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 19000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8077078"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bayliner-trophy": {
+   "id": "lakeboat:bayliner-trophy",
+   "source": "lakeboat",
+   "source_listing_id": "bayliner-trophy",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bayliner-trophy/",
+   "title": "bayliner trophy",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Bayliner Trophy",
+   "model": "Trophy",
+   "year": 2001,
+   "price_chf": 11000,
+   "price_label": "CHF. 11000.-",
+   "length_m": 6.0,
+   "width_m": 2.5,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 220.0,
+   "kw": 161.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Vernier",
+   "canton": "GE",
+   "postcode": "1214",
+   "region": "Vernier, canton de Genève, Suisse",
+   "lat": 46.21705,
+   "lon": 6.08434,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-12-23",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/12/6476078_1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/12/6476078_1.jpg",
+   "description_excerpt": "Vend bateau bayliner trophy moteur mercruiser 220ch avec moteur 8 ch pour la traine score chimique bimini avec en option matériel de traine. Mat luge deux tours de fond un tour de surface un pilote automatique et un tour 8 leurres a vendre Séparément a la moitié du prix neuf Le bateau est vendu avec sa remorque homologué 4 roues",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 11000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "lakeboat",
+     "url": "https://lakeboat.ch/bateau-occasion-suisse/bayliner-trophy-2/"
+    },
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/6476078"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:mariah-183": {
+   "id": "lakeboat:mariah-183",
+   "source": "lakeboat",
+   "source_listing_id": "mariah-183",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/mariah-183/",
+   "title": "Mariah 183",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Mariah 183",
+   "model": "Shabah",
+   "year": "N/A",
+   "price_chf": 10692,
+   "price_label": "CHF. 10692.-",
+   "length_m": 5.45,
+   "width_m": 2.28,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 126.0,
+   "kw": 92.7,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Neuchâtel",
+   "canton": "NE",
+   "postcode": "N/A",
+   "region": "Neuchâtel, canton de Neuchâtel, Suisse",
+   "lat": 46.99172,
+   "lon": 6.9286,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 124,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-12-27",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2025/12/7994681258cd22f8b7.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2025/12/7994681258cd22f8b7.jpg",
+   "description_excerpt": "Bateau Mariah 183 Shabah avec moteur MerCruiser 3.0 LX 10'700 CHF (raisonnablement négociable) Lieu : Canton de Neuchâtel Vous cherchez un bateau fiable, sportif et parfait pour vos sorties sur le lac ? Ce Mariah 183 Shabah, équipé d'un moteur MerCruiser 3.0 LX (126 CV), est idéal pour la navigation et les sports nautiques. Contrairement aux modèles bowrider, il possède une proue pleine pour plus de sécurité et un espace optimisé. Toujours bien entretenu, services à jour, à chercher en l'état. C",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10692
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:rinker-212-festiva-cuddy-with-private-place": {
+   "id": "lakeboat:rinker-212-festiva-cuddy-with-private-place",
+   "source": "lakeboat",
+   "source_listing_id": "rinker-212-festiva-cuddy-with-private-place",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/rinker-212-festiva-cuddy-with-private-place/",
+   "title": "Rinker 212 Festiva Cuddy with private place",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Rinker",
+   "model": "212 Festiva Cuddy",
+   "year": 1998,
+   "price_chf": 20000,
+   "price_label": "CHF. 20000.-",
+   "length_m": 6.36,
+   "width_m": 2.59,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 212.0,
+   "kw": 155.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 24,
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Bienne",
+   "canton": "N/A",
+   "postcode": "2503",
+   "region": "Chemin des Roseaux 16, 2503 Bienne, Suisse",
+   "lat": 47.13036,
+   "lon": 7.23674,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 155,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-09-10",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/09/Screenshot_20250910_221441_Gallery.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/09/Screenshot_20250910_221441_Gallery.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau Ski nautique, Bateau de sport. 🇬🇧 English FOR SALE: 1998 Sports Boat (212 HP Mercruiser) – CHF 20'000.- Well-maintained sports boat, 212 HP Mercruiser engine in very good condition. Includes cabin (2–4 berths) + outside cockpit table. Comes with rare in-water covered hangar place: sheltered, launch-ready, next to a shipyard, wintering system included. 📩 Contact for photos & viewing. --- 🇫🇷 Français À VENDRE : Bateau Sport 1998 (212 CV Mercruiser) – CHF 20'000.- Bateau",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 20000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:sea-ray-195-br": {
+   "id": "lakeboat:sea-ray-195-br",
+   "source": "lakeboat",
+   "source_listing_id": "sea-ray-195-br",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/sea-ray-195-br/",
+   "title": "Sea Ray 195 BR",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Sea Ray",
+   "model": "195",
+   "year": 1995,
+   "price_chf": 10900,
+   "price_label": "CHF. 10900.-",
+   "length_m": 6.15,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 182.0,
+   "kw": 133.9,
+   "fuel": "N/A",
+   "hours": 502,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Saint-George",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Saint-George, canton de Vaud, Suisse",
+   "lat": 46.51385,
+   "lon": 6.26018,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 44,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-01-20",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/01/7858679a2dce817954.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/01/7858679a2dce817954.jpg",
+   "description_excerpt": "Bateau de plaisance. Année: 1995 Long. 6,15 m Larg. 2,34 m. Mot. Mercruiser V6 4.3 lit. Prop. Z 134 kW 182 cv 502 heures 8 personnes Immatriculé en Suisse Avec Taud, échelle de bain, Radio CD, extincteur, feux de navigation, ancre Mis en vente en raison de la cessation de navigation Très bon état. Entretiens annuels suivis. Valeur estimée par le chantier naval: 15500.- CHF Possibilité d'acheter la remorque et les bers 3000.- CHF Visible à Renens hors d'eau Prix: 10'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:brema-480-tiller": {
+   "id": "lakeboat:brema-480-tiller",
+   "source": "lakeboat",
+   "source_listing_id": "brema-480-tiller",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/brema-480-tiller/",
+   "title": "Brema 480 tiller",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Brema 480",
+   "model": "N/A",
+   "year": 2017,
+   "price_chf": 15500,
+   "price_label": "CHF. 15500.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lentigny FR",
+   "canton": "FR",
+   "postcode": "N/A",
+   "region": "Lentigny FR, canton de Fribourg, Suisse",
+   "lat": 46.75863,
+   "lon": 7.00359,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 124,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-02-01",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/02/818168b9468f9a4659.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/02/818168b9468f9a4659.jpg",
+   "description_excerpt": "Bateau de plaisance. A vendre jolie bateau de pêche Brema 480 tiller de juin 2024 Remorque respo de juin 2024 750 kg non freinée. Moteur Honda 8 cv arbre long de 2017. Bâche faite sur mesure de 2024 Vendu avec une batterie lithium 12 volt 105 ah avec sortie regulee 12 volt. Le prix 16500 frs a discuter. Prix: 16'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:lambro-marine": {
+   "id": "lakeboat:lambro-marine",
+   "source": "lakeboat",
+   "source_listing_id": "lambro-marine",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/lambro-marine/",
+   "title": "Lambro marine",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Lambro",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6000,
+   "price_label": "CHF. 6000.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": 1220,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Fribourg",
+   "canton": "FR",
+   "postcode": "N/A",
+   "region": "Fribourg, canton de Fribourg, Suisse",
+   "lat": 46.80445,
+   "lon": 7.15434,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 139,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-02-04",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/02/763666d48785123978.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/02/763666d48785123978.jpg",
+   "description_excerpt": "Bateau de plaisance. LAMBRO MARINE ONDA SUPER DL 1220 Heures Doté d'un moteur In board Mercruiser / MCM 165 3.7L, Ce bateau a tous les accessoires indispensables : gilet de sauvetage, pare-battages, gaffe, parasols, bâche de protection, extincteurs et équipements de sécurité, ainsi qu'une radio avec 6 haut-parleur Profitez également de la possibilité de couvrir le bateau avec un toit rétractable en cuir. Entretenu , ce bateau bénéficie d'une révision moteur annuelle et d'une hélice neuve en 2024",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:ancien-bateau": {
+   "id": "lakeboat:ancien-bateau",
+   "source": "lakeboat",
+   "source_listing_id": "ancien-bateau",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/ancien-bateau/",
+   "title": "Ancien bateau",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Ancien bateau en acajou de 1937",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6000,
+   "price_label": "CHF. 6000.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 70.0,
+   "kw": 51.5,
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 5,
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Frinvillier",
+   "canton": "BE",
+   "postcode": "2535",
+   "region": "Frinvillier, canton de Berne, Suisse",
+   "lat": 47.1691,
+   "lon": 7.25512,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 163,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-02-08",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/02/3718307_6.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/02/3718307_6.jpg",
+   "description_excerpt": "Cabin Cruiser de la marque Vouga fabriqué à Versoix (Genève) en 1937. Moteur de 70 cv Volvo Penta Diesel, 8 places, 9 m. Grande cabine avec table et petite cuisine, 4 à 5 couchettes, tout équipé pour navigation....coque à retenir quelques planches à remplacer.... partiellement expertisé.... pour plus info [phone hidden] Prix: 6'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/3718307"
+    }
+   ],
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac de Bienne",
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "lakeboat:voilier-beneteau-first-22": {
+   "id": "lakeboat:voilier-beneteau-first-22",
+   "source": "lakeboat",
+   "source_listing_id": "voilier-beneteau-first-22",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/voilier-beneteau-first-22/",
+   "title": "Voilier Beneteau First 22",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Beneteau First 22",
+   "model": "First 22",
+   "year": "N/A",
+   "price_chf": 8000,
+   "price_label": "CHF. 8000.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "outboard",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 12.5,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Fleurier",
+   "canton": "NE",
+   "postcode": "N/A",
+   "region": "Fleurier, canton de Neuchâtel, Suisse",
+   "lat": 46.90218,
+   "lon": 6.58232,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 114,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-02-08",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/02/837069694fe6bfa165.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/02/837069694fe6bfa165.jpg",
+   "description_excerpt": "A vendre Voilier First 22 1980 Expertisé 08/2024 Moteur hors-bord Yamaha 6cv/4,4 kw Barre franche quille relevable tirant d'eau 0,65 / 1,58 m Plusieurs voiles GV 12,5 m2 /GV a corne lattée 16m2 Génois sur enrouleur Furlex 16,5 m2 Inter 11m2 / foc 7m2 3x spi symétrique 45/60 et 75 m2 Asymétrique 50 m2 Lazy bag Pilote automatique Antifouling a prévoir avant la mise a l'eau ber d'hivernage Visible a terre à Grandson Prix a discuter Prix: 8'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:op-gepflegte-corsiva-475-new-age-fuhrerscheinfrei-bodenseezulassung-inkl-anhanger": {
+   "id": "lakeboat:op-gepflegte-corsiva-475-new-age-fuhrerscheinfrei-bodenseezulassung-inkl-anhanger",
+   "source": "lakeboat",
+   "source_listing_id": "op-gepflegte-corsiva-475-new-age-fuhrerscheinfrei-bodenseezulassung-inkl-anhanger",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/op-gepflegte-corsiva-475-new-age-fuhrerscheinfrei-bodenseezulassung-inkl-anhanger/",
+   "title": "op gepflegte Corsiva 475 New Age – führerscheinfrei & Bodenseezulassung – inkl. Anhänger!",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Corsiva",
+   "model": "475 new age",
+   "year": 2017,
+   "price_chf": 12500,
+   "price_label": "CHF. 12500.-",
+   "length_m": 4.65,
+   "width_m": 1.92,
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Arbon",
+   "canton": "TG",
+   "postcode": "N/A",
+   "region": "Arbon, canton de Thurgovie, Suisse",
+   "lat": 47.51555,
+   "lon": 9.43577,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 373,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-02-15",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/02/524928232_10237370209252694_723214309468895334_n.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/02/524928232_10237370209252694_723214309468895334_n.jpg",
+   "description_excerpt": "Hord-bord 2 temps. 🔥 Top gepflegte Corsiva 475 New Age – führerscheinfrei & Bodenseezulassung – inkl. Anhänger! 🔥 - Sofort startklar Wegen Zeitmangel verkaufe ich meine sehr gepflegte Corsiva 475 New Age – ein ideales Freizeit- und Badeboot für den Bodensee. Dank 6 PS Honda Aussenbordmotor ist keine Bootsprüfung erforderlich. Frisch ab MFK, einsteigen und die Saison geniessen! ⚓ Highlights: ✔ Bodenseezulassung ✔ Frisch geprüft (MFK) ✔ Führerscheinfrei fahrbar ✔ Inkl. Bootsanhänger ✔ Viel Zubehör",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:maendli-motorschiff": {
+   "id": "lakeboat:maendli-motorschiff",
+   "source": "lakeboat",
+   "source_listing_id": "maendli-motorschiff",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/maendli-motorschiff/",
+   "title": "Maendli Motorschiff",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Maendli",
+   "model": "K 520/69",
+   "year": 1990,
+   "price_chf": 6000,
+   "price_label": "CHF. 6000.-",
+   "length_m": 5.2,
+   "width_m": 1.62,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "N/A",
+   "canton": "ZH",
+   "postcode": "N/A",
+   "region": "Lac de Zurich",
+   "lat": 47.2790956,
+   "lon": 8.597868,
+   "geo_precision": "lake/region",
+   "distance_km_from_geneva": 290,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-02-23",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/02/38_kussens-boot.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/02/38_kussens-boot.jpg",
+   "description_excerpt": "Bateau de pêche Hord-bord 4 temps. Schönes, kleines Fischerboot",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:archambault-surprise": {
+   "id": "lakeboat:archambault-surprise",
+   "source": "lakeboat",
+   "source_listing_id": "archambault-surprise",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/archambault-surprise/",
+   "title": "Archambault Surprise",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Archambault",
+   "model": "Surprise",
+   "year": 2003,
+   "price_chf": 27000,
+   "price_label": "CHF. 27000.-",
+   "length_m": 6.65,
+   "width_m": 2.48,
+   "engine_type": "outboard",
+   "engine_brand": "N/A",
+   "engine_model": "Yamaha",
+   "hp": 4.0,
+   "kw": 2.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Cologny",
+   "canton": "N/A",
+   "postcode": "1223",
+   "region": "Quai De Cologny, 1223 Cologny, Suisse",
+   "lat": 46.2124,
+   "lon": 6.17356,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 4,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-03-15",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/03/IMG_3482.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/03/IMG_3482.jpeg",
+   "description_excerpt": "Excellent état Hivernage effectué tous les 2 ans contrôle technique du moteur octobre 2025 spi symétrique neuf spi asymétrique 2 GV 1 foc 1 Génois Lazy bag bâche hivernale enrouleur foc Loch speedo échelle de bain",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 27000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:windy-7800-inkl-anhanger": {
+   "id": "lakeboat:windy-7800-inkl-anhanger",
+   "source": "lakeboat",
+   "source_listing_id": "windy-7800-inkl-anhanger",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/windy-7800-inkl-anhanger/",
+   "title": "Windy 7800 (inkl. Anhänger)",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Windy",
+   "model": "N/A",
+   "year": 1991,
+   "price_chf": 23000,
+   "price_label": "CHF. 23000.-",
+   "length_m": 7.85,
+   "width_m": 2.54,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 180.0,
+   "kw": 132.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Gletterens",
+   "canton": "N/A",
+   "postcode": "1544",
+   "region": "Place Du Tilleul 1a, 1544 Gletterens, Suisse",
+   "lat": 46.89517,
+   "lon": 6.9368,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 117,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-10-03",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/10/WhatsApp-Image-2025-10-03-at-16.21.11-1-1.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/10/WhatsApp-Image-2025-10-03-at-16.21.11-1-1.jpeg",
+   "description_excerpt": "Propulsion Z. Bateau à moteur rétro Windy 7800 en parfait état d'entretien à vendre Ce bateau à moteur de 1991, entretenu avec soin, attend un nouveau propriétaire à Gletterens. Son style rétro lui confère un charme particulier et, grâce à un entretien régulier, il est en très bon état. Caractéristiques techniques : Bas de caisse fraîchement traité en 2025 Remorque et pneus neufs inclus Équipements et commodités : Petite cuisine à bord Toilettes Sellerie d'origine en très bon état (toujours prot",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 23000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:sea-ray-200-ov": {
+   "id": "lakeboat:sea-ray-200-ov",
+   "source": "lakeboat",
+   "source_listing_id": "sea-ray-200-ov",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/sea-ray-200-ov/",
+   "title": "SEA RAY 200 OV",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "SEA RAY",
+   "model": "Motorschiff",
+   "year": 1998,
+   "price_chf": 9500,
+   "price_label": "CHF. 9500.-",
+   "length_m": 6.55,
+   "width_m": 2.45,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 125.0,
+   "kw": 91.9,
+   "fuel": "N/A",
+   "hours": 2030,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Augst",
+   "canton": "N/A",
+   "postcode": "N/A",
+   "region": "Augst, canton de Bâle-Campagne, Suisse",
+   "lat": 47.53525,
+   "lon": 7.71443,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 241,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-02-02",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/02/WhatsApp-Image-2025-11-05-at-08.46.06-8-2.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/02/WhatsApp-Image-2025-11-05-at-08.46.06-8-2.jpeg",
+   "description_excerpt": "Bateau de sport Propulsion Z. 🚤 SEA RAY 200 OV – Top gepflegt inkl. Trailer & mit ganzer Wassersport-Ausrüstung dazu Zum Verkauf steht unsere gepflegte SEA RAY 200 OV in gutem Zustand. Das Boot wurde stets regelmäßig gewartet und jeden Winter in einer Bootswerft eingelagert. 🔹 Details: Länge 6.55 m Breite 2.45 m Zugelassen für 8 Personen Ausrüstung für 8 Personen an Bord Inklusive Trailer für Ein- und Auswassern (nicht eingelöst) Wakeboard mit Zugseil & Wasserski inklusive Alle nötigen Utensilie",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:draco-2100": {
+   "id": "lakeboat:draco-2100",
+   "source": "lakeboat",
+   "source_listing_id": "draco-2100",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/draco-2100/",
+   "title": "Draco 2100",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Draco",
+   "model": "2100",
+   "year": 1981,
+   "price_chf": 9000,
+   "price_label": "CHF. 9000.-",
+   "length_m": 6.2,
+   "width_m": 2.45,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 175.0,
+   "kw": 128.7,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Prangins",
+   "canton": "VD",
+   "postcode": "1115",
+   "region": "Prangins, canton de Vaud, Suisse",
+   "lat": 46.39321,
+   "lon": 6.24927,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 29,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2025-04-06",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/04/IMG_20240811_161102.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/04/IMG_20240811_161102.jpg",
+   "description_excerpt": "Bateau de plaisance Propulsion Z. Bateau Draco 2100 Moteur Mercruiser 898 v8 5L 129 KW Année: 1981 Dimensions: longueur 6.20m largeur 2.45m 7 places à bord Coque en très bon état, couches de fond refaite en 2015 et antifouling refait chaques années depuis. Entretien suivi. Moteur révisé en 2023, changé soupapes et refait les culasses chez un professionnel. Équipements ajoutés: - Guindeau électrique - Flaps électriques - Panneaux solaires - Sondeur/Radar a poissons avec GPS Lowrence - Glacière él",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7895777"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:nacra-500-sport-2019": {
+   "id": "lakeboat:nacra-500-sport-2019",
+   "source": "lakeboat",
+   "source_listing_id": "nacra-500-sport-2019",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/nacra-500-sport-2019/",
+   "title": "NACRA 500 Sport (2019)",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "NACRA",
+   "model": "500 Sport",
+   "year": 2019,
+   "price_chf": 8000,
+   "price_label": "CHF. 8000.-",
+   "length_m": 5.0,
+   "width_m": 2.5,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Founex",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Founex, canton de Vaud, Suisse",
+   "lat": 46.33287,
+   "lon": 6.19266,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 20,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-04-11",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/04/Nacra-500-sail-with-regatta.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/04/Nacra-500-sail-with-regatta.jpg",
+   "description_excerpt": "À VENDRE : NACRA 500 Sport Catamaran – 2019 Port de Founex Caractéristiques principales : · Pack Sport : spinnaker + accastillage Harken · Longueur : 5,00 m | Largeur : 2,50 m | Poids : 149 kg · Grand-voile Mylar sans bôme = plus de sécurité · Foc Dacron sur enrouleur Harken · Spinnaker bleu avec chaussette & sac Performance Sails (neuf) · Double trapèze, lignes réglables · Stick téléscopique en carbone · Cunningam 1:8 · Nouveaux cordages de spinnaker et gréement courant · Trampoline en filet no",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:orkney-longliner-16-cab": {
+   "id": "lakeboat:orkney-longliner-16-cab",
+   "source": "lakeboat",
+   "source_listing_id": "orkney-longliner-16-cab",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/orkney-longliner-16-cab/",
+   "title": "Orkney Longliner 16 CAB",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Orkney",
+   "model": "Longliner 16 CAB",
+   "year": 1988,
+   "price_chf": 5500,
+   "price_label": "CHF. 5500.-",
+   "length_m": 4.9,
+   "width_m": 1.75,
+   "engine_type": "outboard",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Neuchâtel",
+   "canton": "N/A",
+   "postcode": "2000",
+   "region": "Rue Du Clos-De-Serrières 1, 2000 Neuchâtel, Suisse",
+   "lat": 46.98092,
+   "lon": 6.90262,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 121,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-04-11",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/04/Tribord.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/04/Tribord.jpeg",
+   "description_excerpt": "Bateau à cabine. Description : Je vends mon bateau Orkney Longliner 16 CAB, un modèle réputé pour sa solidité, sa stabilité et son usage polyvalent. Idéal pour la pêche ou les sorties sur lac ou rivière. Facile à transporter et à manœuvrer, même en solo. Caractéristiques techniques : Modèle : Orkney Longliner 16 CAB 1ère mise en circulation : 22.04.1988 Longueur : 4.90 m Largeur : 1.75 m Homologation : 5 personnes Moteur : Marque : Honda Modèle : BF 8BXCH Puissance : 5.9 kW / 8 CV Régime max : 5",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:swift-moth": {
+   "id": "lakeboat:swift-moth",
+   "source": "lakeboat",
+   "source_listing_id": "swift-moth",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/swift-moth/",
+   "title": "Swift Moth",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Swift",
+   "model": "Moth",
+   "year": 2023,
+   "price_chf": 30000,
+   "price_label": "CHF. 30000.-",
+   "length_m": 3.3,
+   "width_m": 2.3,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Oberhofen am Thunersee",
+   "canton": "BE",
+   "postcode": "N/A",
+   "region": "Oberhofen am Thunersee, canton de Berne, Suisse",
+   "lat": 46.72997,
+   "lon": 7.66942,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 193,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-03-01",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/03/cd5c10ff-e117-4644-aa3a-df36a4b5f0b7.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/03/cd5c10ff-e117-4644-aa3a-df36a4b5f0b7.jpeg",
+   "description_excerpt": "Petit voilier, Voilier de régate Hydrofoils. Hi Ich möchte meine Motte verkaufen, da ich umgezogen bin und einen neuen Job angefangen habe, habe ich leider keine Zeit mehr. Das Boot ist im Kanton Bern eingelöst. Beim Transport bin ich gerne behilflich. Die Swift Motte ist von Luka Damic designed und gebaut. Das Schoff ist meiner Meinung nach zur Zeit das beste Leichtwindboot und daher perfekt geeignet für die schweizer Seen. Die Flügel sind etwas grösser als bei anderen Herstellern und daher auc",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 30000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bateau-a-moteur-quicksilver-commander-505-a-vendre-tres-bon-etat": {
+   "id": "lakeboat:bateau-a-moteur-quicksilver-commander-505-a-vendre-tres-bon-etat",
+   "source": "lakeboat",
+   "source_listing_id": "bateau-a-moteur-quicksilver-commander-505-a-vendre-tres-bon-etat",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-a-moteur-quicksilver-commander-505-a-vendre-tres-bon-etat/",
+   "title": "Bateau à moteur Quicksilver commander 505 à vendre très bon etat",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Quicksilver",
+   "model": "Bateau à moteur Quicksilver commander 505 à vendre très bon etat",
+   "year": 2007,
+   "price_chf": 16500,
+   "price_label": "CHF. 16500.-",
+   "length_m": 5.05,
+   "width_m": 2.0,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 75.0,
+   "kw": 55.2,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Versoix",
+   "canton": "GE",
+   "postcode": "N/A",
+   "region": "Versoix, canton de Genève, Suisse",
+   "lat": 46.28113,
+   "lon": 6.1666,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 10,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-04-19",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/04/IMG_1238.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/04/IMG_1238.jpg",
+   "description_excerpt": "Bateau de plaisance. Bateau à moteur tres bon etat",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 16500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:teka-t-228-ri": {
+   "id": "lakeboat:teka-t-228-ri",
+   "source": "lakeboat",
+   "source_listing_id": "teka-t-228-ri",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/teka-t-228-ri/",
+   "title": "TEKA T 228 RI",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "TEKA T 228 RI (1993)",
+   "model": "N/A",
+   "year": 1993,
+   "price_chf": 18500,
+   "price_label": "CHF. 18500.-",
+   "length_m": 6.86,
+   "width_m": 2.3,
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 195.0,
+   "kw": 143.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Neuchâtel",
+   "canton": "NE",
+   "postcode": "2000",
+   "region": "Neuchâtel, canton de Neuchâtel, Suisse",
+   "lat": 46.99172,
+   "lon": 6.9286,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 124,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-04-28",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/04/7994681259916d16a1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/04/7994681259916d16a1.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau à cabine. Envie de vivre l'expérience \"Miami\" sur l'eau ? Ce TEKA T 228 RI, un bateau de 1993 en parfait état, est prêt à vous offrir des sensations fortes et un style intemporel. Avec sa ligne cigare et son moteur Volvo Penta de 5L, vous aurez confort et puissance. Caractéristiques qui font la différence : Modèle : TEKA T 228 RI (1993) - Un classique au look élégant et racé Moteur : Volvo Penta AQ225D (145 kW / 195 CV) - 5L de cylindrée Longueur : 6,86 m Largeur : 2,",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 18500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7994513"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:roga-470-designer-andre-cornu": {
+   "id": "lakeboat:roga-470-designer-andre-cornu",
+   "source": "lakeboat",
+   "source_listing_id": "roga-470-designer-andre-cornu",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/roga-470-designer-andre-cornu/",
+   "title": "Roga 470 Designer André Cornu",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Roga",
+   "model": "470 Designer André Cornu",
+   "year": 1976,
+   "price_chf": 400,
+   "price_label": "CHF. 400.-",
+   "length_m": 4.7,
+   "width_m": 1.7,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 75.0,
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "Mörigen",
+   "canton": "BE",
+   "postcode": "N/A",
+   "region": "Mörigen, canton de Berne, Suisse",
+   "lat": 47.08506,
+   "lon": 7.21349,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 156,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-04-19",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/04/IMG_2012.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/04/IMG_2012.jpeg",
+   "description_excerpt": "Petit voilier. Roga 470 Designer André Cornu, CHF 400.- Voici un dériveur double mythique, le 470 dessiné par André Cornu — série olympique depuis 1976 et diffusé dans plus de 60 pays ! Avec ses 4,70 m, ce voilier deux places est taillé pour la performance : trapèze, spinnaker symétrique, et une carène réactive qui procure des sensations fortes aussi bien par petit temps que dans la brise. Suffisamment accessible pour le loisir, suffisamment pointu pour la régate — le 470, c’est le juste milieu ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:supra-saltare": {
+   "id": "lakeboat:supra-saltare",
+   "source": "lakeboat",
+   "source_listing_id": "supra-saltare",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/supra-saltare/",
+   "title": "Supra Saltare",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Supra",
+   "model": "Saltare",
+   "year": 1987,
+   "price_chf": 4900,
+   "price_label": "CHF. 4900.-",
+   "length_m": 7.0,
+   "width_m": 2.5,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 330.0,
+   "kw": 242.7,
+   "fuel": "N/A",
+   "hours": 1987,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Bouveret",
+   "canton": "VS",
+   "postcode": "N/A",
+   "region": "Bouveret, canton du Valais, Suisse",
+   "lat": 46.38533,
+   "lon": 6.85275,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 66,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-04-15",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/04/WhatsApp-Image-2024-10-02-a-14.47.20_853f993a.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/04/WhatsApp-Image-2024-10-02-a-14.47.20_853f993a.jpg",
+   "description_excerpt": "Bowrider, Bateau de plaisance, Bateau Ski nautique, Bateau wakeboard / Wakesurf, Bateau de sport. A vendre Supra Saltare de 1987 Heures moteur : 1120h Puissance 330 CV Réservoir 150 litres Moteur à arbre fixe avec gouvernail Quelques éléments de sellerie mériteraient d'être refaits Bateau très bien entretenu, à l'eau 3-4 mois par années sinon dans un hangar Vendu avec une remorque (non homologuée en CH)",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "ski-boat in-bord"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:saphir-schweizer-560": {
+   "id": "lakeboat:saphir-schweizer-560",
+   "source": "lakeboat",
+   "source_listing_id": "saphir-schweizer-560",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/saphir-schweizer-560/",
+   "title": "Saphir Schweizer 560",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Saphir Schweizer",
+   "model": "560",
+   "year": 1975,
+   "price_chf": 6500,
+   "price_label": "CHF. 6500.-",
+   "length_m": 5.6,
+   "width_m": 2.1,
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 111.5,
+   "kw": 82.0,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1254",
+   "region": "Genève, canton de Genève, Suisse",
+   "lat": 46.20477,
+   "lon": 6.14631,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-05-12",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/05/761766c4a65bd52836.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/05/761766c4a65bd52836.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau moteur classique. Fabrication Suisse Schweizer Bien entretenu Nb. de personnes 6 Dimensions 5.60 x 2.10 m Puissance 82 kW Volvo Penta AQ 130 1ère mise en circulation 1975 Expertisé en 2024 Antifouling 2024 Sellerie refaite blanc Riva Bimini Bache en 2 parties Remorque Roca 1 essieu",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7617583"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:draco-2100-2": {
+   "id": "lakeboat:draco-2100-2",
+   "source": "lakeboat",
+   "source_listing_id": "draco-2100-2",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/draco-2100-2/",
+   "title": "Draco 2100",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Draco",
+   "model": "2100",
+   "year": 1981,
+   "price_chf": 9000,
+   "price_label": "CHF. 9000.-",
+   "length_m": 6.2,
+   "width_m": 2.45,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 175.4,
+   "kw": 129.0,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "N/A",
+   "canton": "N/A",
+   "postcode": "N/A",
+   "region": "canton de Vaud, Suisse",
+   "lat": 46.52183,
+   "lon": 6.6327,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 64,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-05-12",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/05/789567bb03285b2d03.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/05/789567bb03285b2d03.jpg",
+   "description_excerpt": "Bateau de plaisance. Bateau Draco 2100 Moteur Mercruiser 898 v8 5L 129 KW Carburant: essence Année: 1981 Dimensions: longueur 6.20m largeur 2.45m Coque en très bon état, couches de fond refaite en 2015 et antifouling refait chaques années depuis. Toujours hiverné hors de l'eau et entretien suivi. Moteur révisé en 2023, changé soupapes et refait les culasses chez un professionnel. Équipements ajoutés: - Guindeau électrique - Flaps électriques - Panneaux solaires - Sondeur/Radar a poissons avec GP",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:quicksilver-classic-20": {
+   "id": "lakeboat:quicksilver-classic-20",
+   "source": "lakeboat",
+   "source_listing_id": "quicksilver-classic-20",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/quicksilver-classic-20/",
+   "title": "Quicksilver classic 20",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Quicksilver",
+   "model": "Classic 20",
+   "year": 2005,
+   "price_chf": 20000,
+   "price_label": "CHF. 20000.-",
+   "length_m": 5.82,
+   "width_m": 2.32,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 220.0,
+   "kw": 161.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Bouveret",
+   "canton": "VS",
+   "postcode": "N/A",
+   "region": "Bouveret, canton du Valais, Suisse",
+   "lat": 46.38533,
+   "lon": 6.85275,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 66,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-06-16",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/06/IMG_8420.webp",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/06/IMG_8420.webp",
+   "description_excerpt": "Bateau de plaisance. Quicksilver Classic 20 – Prêt à naviguer, aucun frais à prévoir Je vends mon Quicksilver Classic 20, bateau entretenu avec soin et en excellent état de fonctionnement. Année 2005 ✅ Services et entretiens à jour 4500chf de frais cette année. ✅ Expertise à jour ✅ Antifouling récent et anti pollution à jour ✅ Aucun frais à prévoir, prêt pour la saison Moteur Mercruiser 4,3 mpi 163kw ( très fiable) Le bateau a toujours bénéficié d’un suivi rigoureux et est immédiatement disponib",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 20000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:falcon-yachts": {
+   "id": "lakeboat:falcon-yachts",
+   "source": "lakeboat",
+   "source_listing_id": "falcon-yachts",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/falcon-yachts/",
+   "title": "Falcon Yachts",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Falcon Yachts GB",
+   "model": "Thunderbird 2500 CD",
+   "year": 1998,
+   "price_chf": 9850,
+   "price_label": "CHF. 9850.-",
+   "length_m": 7.67,
+   "width_m": 2.59,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 294.0,
+   "kw": 216.2,
+   "fuel": "petrol",
+   "hours": 480,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Yvonand",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Yvonand, canton de Vaud, Suisse",
+   "lat": 46.79959,
+   "lon": 6.74548,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 97,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-06-18",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/06/7947119-large.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/06/7947119-large.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau de sport, Bateau à cabine Propulsion Z. Falcon Thunderbird 2500 CD – Moteur Mercruiser 7.4L MPI – bon état général Falcon Thunderbird 2500 CD, un bateau iconique alliant lignes classiques et puissance américaine. Propulsé par le Mercruiser 7.4L MPI (injection multipoint) développant un couple impressionnant, ce bateau offre des sensations fortes et une navigation fluide, idéale pour les sorties sportives comme pour les balades en famille. Caractéristiques principales ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9850
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:lomac-nautica-420-mit-torqeedo-travel-1003-s": {
+   "id": "lakeboat:lomac-nautica-420-mit-torqeedo-travel-1003-s",
+   "source": "lakeboat",
+   "source_listing_id": "lomac-nautica-420-mit-torqeedo-travel-1003-s",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/lomac-nautica-420-mit-torqeedo-travel-1003-s/",
+   "title": "Lomac Nautica 420 mit Torqeedo Travel 1003 S",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "Lomac Nautica 420 mit Torqeedo Travel 1003 S",
+   "model": "Lomac Nautica 420",
+   "year": 2022,
+   "price_chf": 2000,
+   "price_label": "CHF. 2000.-",
+   "length_m": 4.15,
+   "width_m": "N/A",
+   "engine_type": "electric",
+   "engine_brand": "Torqeedo",
+   "engine_model": "N/A",
+   "hp": 1.0,
+   "kw": 0.7,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Morschach",
+   "canton": "N/A",
+   "postcode": "N/A",
+   "region": "Morschach, canton de Schwytz, Suisse",
+   "lat": 46.98166,
+   "lon": 8.61854,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 309,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-06-19",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/06/Gummiboot_ohne-blauen-Ring.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/06/Gummiboot_ohne-blauen-Ring.jpg",
+   "description_excerpt": "Bateau pneumatique. Lomac Nautica 420 avec moteur électrique Torqeedo Travel 1003 S Entretien effectué – Immatriculation bateau À vendre : mon bateau pneumatique Lomac Nautica 420 (4,15 m) en excellent état, équipé d'un moteur électrique Torqeedo Travel 1003 S. Ce bateau est homologué pour 4 personnes, possède une immatriculation suisse et est en très bon état général. Le moteur Torqeedo Travel 1003 S a été révisé et fonctionne parfaitement. Le dernier contrôle technique date du 22 juin 2022. De",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:polyform": {
+   "id": "lakeboat:polyform",
+   "source": "lakeboat",
+   "source_listing_id": "polyform",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/polyform/",
+   "title": "Polyform",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Canot 535",
+   "model": "Polyform",
+   "year": "N/A",
+   "price_chf": 5400,
+   "price_label": "CHF. 5400.-",
+   "length_m": 5.35,
+   "width_m": 1.62,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "N/A",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Lac de Joux",
+   "lat": 46.6396063,
+   "lon": 6.288357,
+   "geo_precision": "lake/region",
+   "distance_km_from_geneva": 69,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-07-01",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/07/BATEAU.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/07/BATEAU.jpg",
+   "description_excerpt": "Bateau de pêche. - démarreur - GPS-Sondeur - bâche - 6 places - place de port avec ponton au Pégase (le Pont) à discuter - avec remorque",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bateau-a-moteur-bayliner-capri-2050ss": {
+   "id": "lakeboat:bateau-a-moteur-bayliner-capri-2050ss",
+   "source": "lakeboat",
+   "source_listing_id": "bateau-a-moteur-bayliner-capri-2050ss",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-a-moteur-bayliner-capri-2050ss/",
+   "title": "Bateau à moteur Bayliner Capri 2050SS",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Bayliner",
+   "model": "Capri 2050SS",
+   "year": 1998,
+   "price_chf": 17500,
+   "price_label": "CHF. 17500.-",
+   "length_m": 6.18,
+   "width_m": 2.22,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 185.0,
+   "kw": 136.1,
+   "fuel": "petrol",
+   "hours": 360,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Estavayer-le-Lac",
+   "canton": "FR",
+   "postcode": "N/A",
+   "region": "Estavayer-le-Lac, canton de Fribourg, Suisse",
+   "lat": 46.84877,
+   "lon": 6.84647,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 108,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-03-10",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/IMG_6058.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/IMG_6058.jpeg",
+   "description_excerpt": "Bateau de plaisance, Bateau Ski nautique, Bateau wakeboard / Wakesurf, Bateau de sport Propulsion Z. Prix à discuter 1998 Bayliner Capri 2050SS, CHF 17'500.- Modèle Bayliner Capri 2050 SS de 1998 - Dimension : 6,18m x 2.22m - homologué pour 8 adultes Moteur Mercruisere 4,3LX - 135kW - 185CV - 360h - Propulsion Z - sans plomb - capacité 120L Equipement et accessoires Taud complet - GPS - compas - tachymètre - ancre - radio-CD compatible smartphone - haut-parleurs - bâche neuve - extincteur - éche",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 17500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:zodiac-7-places-avec-moteur-8cv": {
+   "id": "lakeboat:zodiac-7-places-avec-moteur-8cv",
+   "source": "lakeboat",
+   "source_listing_id": "zodiac-7-places-avec-moteur-8cv",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/zodiac-7-places-avec-moteur-8cv/",
+   "title": "ZODIAC, 7 places, avec moteur 8CV",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "ZODIAC",
+   "model": "MK2 Classic",
+   "year": 2019,
+   "price_chf": 3990,
+   "price_label": "CHF. 3990.-",
+   "length_m": 4.2,
+   "width_m": 1.83,
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Corbières",
+   "canton": "FR",
+   "postcode": "N/A",
+   "region": "1647, Corbières, canton de Fribourg, Suisse",
+   "lat": 46.66034,
+   "lon": 7.10036,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 119,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-05-31",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/05/Zodiac-1.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/05/Zodiac-1.jpeg",
+   "description_excerpt": "Bateau pneumatique. Zodiac, 4.20mx1.83m, 7 places, année 2019 Stocké au sec dans un garage, en très bon état Payé neuf CHF 5890.-- le 23 juillet 2019 (bateau seul) Complet avec housse, 2 roues et 2 bâches (dont une d'origine) et le matériel pour la navigation ainsi trois gilets Moteur Honda BF8D4, 8CV, année 2011, service antipollution à renouveler. Moteur en très bon état. Visible à 1647 Corbières",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3990
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:magnifique-bateau-sans-permis-entierement-renove-en-2020": {
+   "id": "lakeboat:magnifique-bateau-sans-permis-entierement-renove-en-2020",
+   "source": "lakeboat",
+   "source_listing_id": "magnifique-bateau-sans-permis-entierement-renove-en-2020",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/magnifique-bateau-sans-permis-entierement-renove-en-2020/",
+   "title": "Magnifique bateau sans permis entièrement rénové en 2020",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "magnifique bateau",
+   "model": "N/A",
+   "year": 2010,
+   "price_chf": 6500,
+   "price_label": "CHF. 6500.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 60.0,
+   "kw": 44.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Neuchâtel",
+   "canton": "NE",
+   "postcode": "N/A",
+   "region": "Neuchâtel, canton de Neuchâtel, Suisse",
+   "lat": 46.99172,
+   "lon": 6.9286,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 124,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-03-10",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/telechargement.jpeg-3.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/telechargement.jpeg-3.jpg",
+   "description_excerpt": "Bateau de plaisance. Je vend un magnifique bateau sans permis. Moteur 8cv refait, comme neuf. Les dimensions : 2m15 x 5m05 Entièrement refait en 2020et expertisé en 2022 avec service moteur et antipollution. La vente comprend une remorque de transport de 2018 2500.-, le bateau est vendu entièrement équipé, frigo, plancha, sonar, sono, onduleur, batterie décharge lente!",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:schweizer-saphir-40cv-remorque": {
+   "id": "lakeboat:schweizer-saphir-40cv-remorque",
+   "source": "lakeboat",
+   "source_listing_id": "schweizer-saphir-40cv-remorque",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/schweizer-saphir-40cv-remorque/",
+   "title": "Schweizer Saphir 40cv + remorque",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 7000,
+   "price_label": "CHF. 7000.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 40.0,
+   "kw": 29.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Chez-le-Bart",
+   "canton": "NE",
+   "postcode": "N/A",
+   "region": "2025, Chez-le-Bart, canton de Neuchâtel, Suisse",
+   "lat": 46.90115,
+   "lon": 6.78587,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 108,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2025-03-10",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/IMG_8738.png",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/03/IMG_8738.png",
+   "description_excerpt": "Bateau moteur classique. Bateau moteur 40cv expertisée service et antipollution effectués ce jour remorque de route non expertisée",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac de Neuchâtel",
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "lakeboat:quicksilver-active455-wie-neu": {
+   "id": "lakeboat:quicksilver-active455-wie-neu",
+   "source": "lakeboat",
+   "source_listing_id": "quicksilver-active455-wie-neu",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/quicksilver-active455-wie-neu/",
+   "title": "Quicksilver Active455 wie neu",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Quicksilver",
+   "model": "active455",
+   "year": "N/A",
+   "price_chf": 15000,
+   "price_label": "CHF. 15000.-",
+   "length_m": 4.55,
+   "width_m": 1.85,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 60.0,
+   "kw": 44.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Zollikon",
+   "canton": "ZH",
+   "postcode": "N/A",
+   "region": "Zollikon, canton de Zurich, Suisse",
+   "lat": 47.33754,
+   "lon": 8.5739,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 283,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-08-03",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/08/IMG_0726.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/08/IMG_0726.jpeg",
+   "description_excerpt": "Bateau de plaisance, Bateau de sport Hord-bord 4 temps. Gut gepflegt ab Trockenplatz, mit/auf Amhänger. Ohne Standplatz.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone2",
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 20
+   }
+  },
+  "lakeboat:voilier-beneteau-first": {
+   "id": "lakeboat:voilier-beneteau-first",
+   "source": "lakeboat",
+   "source_listing_id": "voilier-beneteau-first",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/voilier-beneteau-first/",
+   "title": "Voilier Beneteau first",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Beneteau First",
+   "model": "30 E",
+   "year": "N/A",
+   "price_chf": 12800,
+   "price_label": "CHF. 12800.-",
+   "length_m": 9.25,
+   "width_m": 3.25,
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "Volvo Penta MD / B 18 CV",
+   "hp": 18.0,
+   "kw": 13.2,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Verbier",
+   "canton": "VS",
+   "postcode": "1936",
+   "region": "Verbier, canton du Valais, Suisse",
+   "lat": 46.09607,
+   "lon": 7.22904,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 163,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-08-13",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/08/Voilier-Beneteau-first-vendre.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/08/Voilier-Beneteau-first-vendre.jpg",
+   "description_excerpt": "Voilier cockpit central. Voilier de 9.25 x 3.25 Moteur Volvo Penta MD / B 18 CV (vitesse sous moteur 7 noeuds, suffisant pour foiler derrière le bateau !) Bien entretenu Intérieur partiellement refait Carré et 2 cabines Génois, GV, spi Ouverture arrière et plage pour accès facilité à l'eau Panneaux solaires Actuellement sur le Lac de Neuchâtel, à Grandson. La place, payée, est disponible pour toute la saison et jusqu'en fin d'année. Le nouveau propriétaire devra s'inscrire au garde port pour sav",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12800
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7558446"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bateau-aluminium-top": {
+   "id": "lakeboat:bateau-aluminium-top",
+   "source": "lakeboat",
+   "source_listing_id": "bateau-aluminium-top",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-aluminium-top/",
+   "title": "Bateau Aluminium top",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Top",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6450,
+   "price_label": "CHF. 6450.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Bienne",
+   "canton": "BE",
+   "postcode": "3235",
+   "region": "Bienne, canton de Berne, Suisse",
+   "lat": 47.13792,
+   "lon": 7.24674,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 156,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-08-13",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/08/bateau-aluminum.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/08/bateau-aluminum.jpg",
+   "description_excerpt": "Bateau de pêche, Autre. Pêche promenade moteur Honda 6 cv place Le Landeron lac de Bienne très bon état service et expertises",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6450
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7482013"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bateau-boutemy-470-deriveur-avec-voiles-customisees-chariot-470": {
+   "id": "lakeboat:bateau-boutemy-470-deriveur-avec-voiles-customisees-chariot-470",
+   "source": "lakeboat",
+   "source_listing_id": "bateau-boutemy-470-deriveur-avec-voiles-customisees-chariot-470",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-boutemy-470-deriveur-avec-voiles-customisees-chariot-470/",
+   "title": "bateau boutemy 470 – dériveur avec voiles customisées + chariot 470",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "boutemy",
+   "model": "470",
+   "year": 1999,
+   "price_chf": 2800,
+   "price_label": "CHF. 2800.-",
+   "length_m": 4.7,
+   "width_m": 1.73,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Corsier",
+   "canton": "N/A",
+   "postcode": "1246",
+   "region": "Route D' Hermance 229a, 1246 Corsier, Suisse",
+   "lat": 46.2661,
+   "lon": 6.2163,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 10,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-08-20",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/08/WhatsApp-Image-2026-08-08-at-23.47.36-1-1.jpeg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/08/WhatsApp-Image-2026-08-08-at-23.47.36-1-1.jpeg",
+   "description_excerpt": "Dériveur 470 de 1999, idéal pour naviguer sur le lac, en loisir ou pour quelqu’un souhaitant un bateau performant à un prix accessible. Le bateau a été expertisé en 2025. Équipement et points forts: - Grand-voile et foc de 2005, très peu utilisés et en très bon état - Voiles Northsails customisées avec une surface supérieure aux voiles standards, permettant de gagner en performance - Mât et gréement - Bâche de de protection neuve - Chariot de déplacement inclus, uniquement pour mise à l’eau et d",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:poseidon-blu-water-185": {
+   "id": "lakeboat:poseidon-blu-water-185",
+   "source": "lakeboat",
+   "source_listing_id": "poseidon-blu-water-185",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/poseidon-blu-water-185/",
+   "title": "Poseidon blu water 185",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Poseidon",
+   "model": "blu water 185",
+   "year": 2022,
+   "price_chf": 28000,
+   "price_label": "CHF. 28000.-",
+   "length_m": 5.6,
+   "width_m": 2.17,
+   "engine_type": "N/A",
+   "engine_brand": "Tohatsu",
+   "engine_model": "N/A",
+   "hp": 115.0,
+   "kw": 84.6,
+   "fuel": "petrol",
+   "hours": 60,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Meillerie",
+   "canton": "N/A",
+   "postcode": "N/A",
+   "region": "Meillerie, Haute-Savoie, France",
+   "lat": 46.40745,
+   "lon": 6.71864,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 55,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-08-26",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/08/bateau.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/08/bateau.jpg",
+   "description_excerpt": "Bateau de plaisance. Marque: POSEIDON Série: BLU WATER 185 Garantie 5 ans à partir du 24-11-22 Moteur TOHATSU 115CV LONG 4T BLANC Nbrs d'heures : 60H Garantie 7 ans sous conditions (plan d'entretien à respecter à partir du 15-12-24 CARACTÉRISTIQUES TECHNIQUES * Longueur : 5,60 m * Largeur (bau) : 2,17 m * Poids : 550 kg * Tirant d’eau : 0,30 m * V de carène (angle de V) : 20° * Catégorie de conception : C * Nombre de passagers : 8 ÉQUIPEMENT * Console avant avec siège et coussin * Système de dir",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 28000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:b2-marine-cap-ferret-452-fish": {
+   "id": "lakeboat:b2-marine-cap-ferret-452-fish",
+   "source": "lakeboat",
+   "source_listing_id": "b2-marine-cap-ferret-452-fish",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/b2-marine-cap-ferret-452-fish/",
+   "title": "B2 Marine Cap-Ferret 452 Fish",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "B2 Marine",
+   "model": "Cap-Ferret 452 Fish",
+   "year": 2022,
+   "price_chf": 11900,
+   "price_label": "CHF. 11900.-",
+   "length_m": 4.52,
+   "width_m": 1.9,
+   "engine_type": "outboard",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "N/A",
+   "region": "Genève, canton de Genève, Suisse",
+   "lat": 46.20477,
+   "lon": 6.14631,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-09-06",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/09/FISH-452.png",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/09/FISH-452.png",
+   "description_excerpt": "Bateau de sport. B2 Marine Cap-Ferret 452 Fish de 2022 en excellent état, équipé d’un moteur hors-bord Honda BF8 8 CV de 2022. Navigation sans permis en Suisse avec cette motorisation. Bimini neuf. Moteur entretenu. Bateau immatriculé à Genève et prêt à naviguer. Longueur 4,52 m – largeur 1,90 m – 5 personnes. Visible à Genève sur rendez-vous. Prix : 11’900 CHF, raisonnablement négociable.",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 11900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:draco-2200": {
+   "id": "lakeboat:draco-2200",
+   "source": "lakeboat",
+   "source_listing_id": "draco-2200",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/draco-2200/",
+   "title": "DRACO 2200",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Draco",
+   "model": "2200 Topaz Volvo Penta",
+   "year": 1991,
+   "price_chf": 10001,
+   "price_label": "CHF. 10001.-",
+   "length_m": 6.77,
+   "width_m": 2.28,
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 230.0,
+   "kw": 169.2,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 2,
+   "material": "N/A",
+   "trailer": "no",
+   "mooring_included": "no",
+   "condition": "good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Ecublens",
+   "canton": "VD",
+   "postcode": "1024",
+   "region": "Ecublens, canton de Vaud, Suisse",
+   "lat": 46.52906,
+   "lon": 6.56579,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 63,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-09-10",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/09/draco-boat.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/09/draco-boat.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau à cabine Propulsion Z. A vendre Bateau à Moteur DRACO 2200 Topaz Volvo Penta Nombre de places/d'occupants : 7 personnes. Avec 1 cabine et 2 couchettes 1ère Mise en circulation : Année 1991 Dernière expertise : Juin 2022 Le groupe Moteur a été remplacé et entièrement révisé - V8 5.7 L Embase double avec hélice en inox - Moyeu neuf. Propulsion Z Grand service effectué. Antipollution à jour. Les pièces périphériques sont neuves : Démarreur, Alternateur, Carburateur. Allu",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10001
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8709809"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:trimaran-virus-plus": {
+   "id": "lakeboat:trimaran-virus-plus",
+   "source": "lakeboat",
+   "source_listing_id": "trimaran-virus-plus",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/trimaran-virus-plus/",
+   "title": "Trimaran Virus Plus",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Inkl. Sportanhänger Habeck, Honda Motor und viel Zubehör",
+   "model": "N/A",
+   "year": 2026,
+   "price_chf": 3200,
+   "price_label": "CHF. 3200.-",
+   "length_m": 4.95,
+   "width_m": 3.12,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 10.0,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "N/A",
+   "canton": "FR",
+   "postcode": "N/A",
+   "region": "Lac de Morat",
+   "lat": 46.9312138,
+   "lon": 7.0819478,
+   "geo_precision": "lake/region",
+   "distance_km_from_geneva": 129,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-01",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/10/20260930_1509491-2.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/10/20260930_1509491-2.jpg",
+   "description_excerpt": "- Leicht und sicher zu segelnder Trimaran, ideal für Seen und sogar zugelassen für Küstenseglerei (gebaut in der Bretagne), selbstlenzend - zugelassen für drei Personen - Gewicht nur ca. 130 kg, kann oft von Hand an Land gezogen werden oder vom Hänger eingewassert werden - Hinter dem Auto auf dem Trailer nur um die 230kg, du wirst den Anhäger kaum bemerken beim Fahren. Mast, Baum, Ausleger etc. findet alles innerhalb des Hauptrumpfes Platz. - In der CH ist nicht einmal ein Segelschein nötig, da ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3200
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:jeanneau-23-pieds-full-restaure-like-new": {
+   "id": "lakeboat:jeanneau-23-pieds-full-restaure-like-new",
+   "source": "lakeboat",
+   "source_listing_id": "jeanneau-23-pieds-full-restaure-like-new",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/jeanneau-23-pieds-full-restaure-like-new/",
+   "title": "Jeanneau 23 pieds full restauré like new",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Jeanneau",
+   "model": "Tonic 23",
+   "year": 2026,
+   "price_chf": 21000,
+   "price_label": "CHF. 21000.-",
+   "length_m": 7.0,
+   "width_m": 2.5,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 10.0,
+   "kw": 7.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "N/A",
+   "canton": "GE",
+   "postcode": "N/A",
+   "region": "Autre",
+   "lat": 46.2146113,
+   "lon": 6.032741,
+   "geo_precision": "lake/region",
+   "distance_km_from_geneva": 11,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-03",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/10/IMG_9333-1.png",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/10/IMG_9333-1.png",
+   "description_excerpt": "Quillard. ⚓ JEANNEAU 23 PIEDS DÉRIVEUR LESTÉ — RESTAURÉ À NEUF — PRÊT À NAVIGUER ⛵ ⭐ UNE OPPORTUNITÉ POUR NAVIGATEUR EXIGEANT Vous recherchez un voilier marin, confortable, habitable et réellement prêt à naviguer, sans devoir passer des mois à bricoler ou à engager de lourds travaux ? Voici une unité qui mérite toute votre attention. À vendre, Jeanneau 23 pieds – version dériveur lesté, entièrement restauré et soigneusement préparé pour la navigation. Ce bateau a été entretenu avec énormément de",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 21000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:zeitlose-cornish-shrimper-19": {
+   "id": "lakeboat:zeitlose-cornish-shrimper-19",
+   "source": "lakeboat",
+   "source_listing_id": "zeitlose-cornish-shrimper-19",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/zeitlose-cornish-shrimper-19/",
+   "title": "Zeitlose Cornish Shrimper 19",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Cornish Crabbers Ltd.",
+   "model": "Cornish Shrimper 19 Mk I",
+   "year": 1989,
+   "price_chf": 23000,
+   "price_label": "CHF. 23000.-",
+   "length_m": 5.87,
+   "width_m": 2.18,
+   "engine_type": "outboard",
+   "engine_brand": "N/A",
+   "engine_model": "Yamaha",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Berlingen",
+   "canton": "TG",
+   "postcode": "N/A",
+   "region": "Berlingen, canton de Thurgovie, Suisse",
+   "lat": 47.67413,
+   "lon": 9.01621,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 336,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-07",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/06/2017-06-18-985-1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/06/2017-06-18-985-1.jpg",
+   "description_excerpt": "Petit voilier Klappkiel. Eine zeitlose Cornish Shrimper 19 Mk I mit Strassentrailer zu verkaufen. Dieser hübsche Gaffelkutter (April 1989) gebaut von Cornish Crabbers Ltd. in Cornwall, stammt aus der Feder von Roger Dongray inspiriert von traditionellen Garnelenfischereibooten aus Südwestengland und Wales. Das Deck und die dezente Kajüte ist in traditioneller Holzbauweise mit Bronzebeschlägen verarbeitet (Swiss Layout) und mit vielen kleinen knuffligen Details ausgestattet. Der Mast, Bugspriet, ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 23000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:protagoniste": {
+   "id": "lakeboat:protagoniste",
+   "source": "lakeboat",
+   "source_listing_id": "protagoniste",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/protagoniste/",
+   "title": "Protagoniste",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Sunbeam",
+   "model": "One Design 7.50",
+   "year": 2004,
+   "price_chf": 19500,
+   "price_label": "CHF. 19500.-",
+   "length_m": 7.5,
+   "width_m": 1.8,
+   "engine_type": "outboard",
+   "engine_brand": "Yamaha",
+   "engine_model": "Yamaha F6",
+   "hp": 0.0,
+   "kw": 0.0,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Cheyres",
+   "canton": "FR",
+   "postcode": "N/A",
+   "region": "Cheyres, canton de Fribourg, Suisse",
+   "lat": 46.81552,
+   "lon": 6.78774,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 101,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-09",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/10/Protagonist.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2025/10/Protagonist.jpg",
+   "description_excerpt": "Petit voilier. Protagonist = Fabricant 2004 = Année de fabrication Bon état 7.50 m x 2.40 m = Longueur x Largeur 1.80 m de tirant d'eau 1'000 kg de déplacement Plastique à renfort de verre PRV Pilotage = barre franche Nombre de personnes admises = 6 Propulsion = Hors-bord 4 temps Moteur = Yamaha F6 CMHL Puissance du moteur 1 x 6.0 cv / 4.4 kW Carburant Essence Année de construction du moteur 2020 Matériau du mât Aluminium Hauteur du mât 9.38 m Place d'amarrage pour 1-3 ans Remorque non expertisé",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 19500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:bateau-moteur-windy-7800": {
+   "id": "lakeboat:bateau-moteur-windy-7800",
+   "source": "lakeboat",
+   "source_listing_id": "bateau-moteur-windy-7800",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/bateau-moteur-windy-7800/",
+   "title": "Bateau Moteur Windy 7800",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Windy",
+   "model": "7800",
+   "year": 1992,
+   "price_chf": 19000,
+   "price_label": "CHF. 19000.-",
+   "length_m": 7.85,
+   "width_m": 2.54,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Aubonne",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Aubonne, canton de Vaud, Suisse",
+   "lat": 46.49492,
+   "lon": 6.39174,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 45,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-08-29",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/2026/08/Bateau-Moteur-Windy-7800-aubonne.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/2026/08/Bateau-Moteur-Windy-7800-aubonne.jpg",
+   "description_excerpt": "Bateau de plaisance, Bateau à cabine. Windy 7800 en bon état , utiliser fréquemment , vente pour cause de double emploi. cabine suivi mécanique ok Longueur 785 cm Largeur 254 cm Moteur : Mercruiser 5.7 L nombre de personne : 8 année : 01.02.1992 options installée : Arceau pour wake board , bimini ( toit ombragé) -Bâche qui recouvre le tout pour protection ( sur mesure ) possibilité de le voir et essayer. possibilité amarrage bouée. Prix: 19'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 19000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "width_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:voilier-x-99-course-croisiere": {
+   "id": "lakeboat:voilier-x-99-course-croisiere",
+   "source": "lakeboat",
+   "source_listing_id": "voilier-x-99-course-croisiere",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/voilier-x-99-course-croisiere/",
+   "title": "Voilier X-99 course croisière",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "X boat",
+   "model": "99",
+   "year": 1987,
+   "price_chf": 13000,
+   "price_label": "CHF. 13000.-",
+   "length_m": 9.95,
+   "width_m": 3.0,
+   "engine_type": "outboard",
+   "engine_brand": "Yamaha",
+   "engine_model": "Yamaha 15 CV",
+   "hp": 15.0,
+   "kw": 11.0,
+   "fuel": "N/A",
+   "hours": 5,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Genève",
+   "canton": "N/A",
+   "postcode": "1207",
+   "region": "Jetée Du Jet-D'eau 1, 1207 Genève, Suisse",
+   "lat": 46.20626,
+   "lon": 6.15657,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-20",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/10/0595284840-1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/10/0595284840-1.jpg",
+   "description_excerpt": "Yacht X-99 de 1987 sans place de port Opportunité rare prix à débattre: super équipé et bien entretenu, moteur hors bord neuf, voilier idéal pour la régate et également pour des croisières sur le lac. Expertisé en octobre 2025 en Suisse, TVA européenne et suisse payée. Visible au port des Eaux-Vives. 1 cabine avant, 8 couchages au total, cuisinière Liste des équipements Voiles 2 Grands-Voiles : - un de régate en membranes (photo) - un Dacron 5 Voiles d'avant - J1 150%, membrane (photo) - J2 100%",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 13000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "lakeboat:catamaran-ventilo-ht": {
+   "id": "lakeboat:catamaran-ventilo-ht",
+   "source": "lakeboat",
+   "source_listing_id": "catamaran-ventilo-ht",
+   "url": "https://lakeboat.ch/bateau-occasion-suisse/catamaran-ventilo-ht/",
+   "title": "Catamaran Ventilo HT.",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Ventilo Hich Tech 18",
+   "model": "N/A",
+   "year": 2016,
+   "price_chf": 11500,
+   "price_label": "CHF. 11500.-",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Morges",
+   "canton": "VD",
+   "postcode": "N/A",
+   "region": "Morges, canton de Vaud, Suisse",
+   "lat": 46.5098,
+   "lon": 6.49784,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 52,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-12",
+   "photo_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/10/IMG_2805-1.jpg",
+   "thumb_url": "https://lakeboat.ch/wp-content/uploads/listing-uploads/cover/2026/10/IMG_2805-1.jpg",
+   "description_excerpt": "Catamaran Ventilo HT 11’500.- Étraves perces vagues, dernière génération 2016 Coques et voiles, remis à neuf en 2023, 2 spis + 2 jeux de dérives Bâche complète, chariot de mise à l’eau, etc… Remorque de route Harbeck en aluminium 1500.- Caisse de rangement adaptée en aluminium Caisse de rangement 400.- Aluminium 150/50/50cm, poignée et aération",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 11500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8667949": {
+   "id": "petitesannonces:8667949",
+   "source": "petitesannonces",
+   "source_listing_id": "8667949",
+   "url": "https://www.petitesannonces.ch/a/8667949",
+   "title": "Bateau à moteur à la Pichette",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1995,
+   "price_chf": 30000,
+   "price_label": "30'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 170.0,
+   "kw": 125.0,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Montreux",
+   "canton": "VD",
+   "postcode": "1820",
+   "region": "N/A",
+   "lat": 46.4293472,
+   "lon": 6.9172542,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 95,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/949/86676a7890b5452784.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/949/86676a7890b5452784.jpg",
+   "description_excerpt": "THUNDERCRAFT Diablo 230 d'année 1995 Moteur Mercruiser 170 Ch./kW EXPERTISER Place d'amarrage (en sous-location) à la Pichette , Vevey En excellent état, soigneusement entretenu et prêt à naviguer, équipé d'une barre de traction pour le wakeboard - idéal pour les sorties en famille, les sports nautiques et les belles journées sur le lac. Prix: 30'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 30000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8250977": {
+   "id": "petitesannonces:8250977",
+   "source": "petitesannonces",
+   "source_listing_id": "8250977",
+   "url": "https://www.petitesannonces.ch/a/8250977",
+   "title": "Bateau de pêche Brema 450 Pro Bass",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2025,
+   "price_chf": 13990,
+   "price_label": "13'990.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 0.8,
+   "kw": 0.6,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Le Mouret",
+   "canton": "FR",
+   "postcode": "1724",
+   "region": "N/A",
+   "lat": 46.7263812,
+   "lon": 7.1937786,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 133,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://www.petitesannonces.ch/i/l/977/825068f795ad831260.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/977/825068f795ad831260.jpg",
+   "description_excerpt": "Bateau de pêche Brema 450 Pro Bass. Ensemble des équipements et bateau de 2025 (Moteur Yamaha et sondeur non inclus): - BREMA Pro Bass 450 x 193 - Remorque RESPO-750-571 PTAC750 CU517 - Terrova BT 55 137cm wireless remote 0.6 kW - Bâche Brema - LiFePO4 12V batterie 100Ah - Panneau solaire amovible, onduleur, câblage,... - Bouée, corde, ancre, gilets, ... Possibilité d'avoir l'ensemble pour 17'990 CHF avec : - Garmin ECHOMAP Ultra 122sv avec GT54UHD-TM (occasion 2023) - Yamaha F 8 FMHL (occasion ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 13990
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8679037": {
+   "id": "petitesannonces:8679037",
+   "source": "petitesannonces",
+   "source_listing_id": "8679037",
+   "url": "https://www.petitesannonces.ch/a/8679037",
+   "title": "Bateau Moteur Windy 7800 en bon état prêt a naviguer",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 16900,
+   "price_label": "16'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Aubonne",
+   "canton": "VD",
+   "postcode": "1170",
+   "region": "N/A",
+   "lat": 46.4937375,
+   "lon": 6.382444,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 46,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://www.petitesannonces.ch/i/l/37/86796a82d1d2a098e7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/37/86796a82d1d2a098e7.jpg",
+   "description_excerpt": "Windy 7800 en bon état , utiliser fréquemment , vente pour cause de double emploi. cabine suivi mécanique ok Longueur 785 cm Largeur 254 cm Moteur : Mercruiser 5.7 L nombre de personne : 8 année : 01.02.1992 options installée : Arceau pour wake board , bimini ( toit ombragé) -Bâche qui recouvre le tout pour protection ( sur mesure ) possibilité de le voir et essayer. possibilité de garder l'amarrage bouée. ( région de morges ) Prix: 16'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 16900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:2999211": {
+   "id": "petitesannonces:2999211",
+   "source": "petitesannonces",
+   "source_listing_id": "2999211",
+   "url": "https://www.petitesannonces.ch/a/2999211",
+   "title": "Vends Sea Ray 230 DA LTD",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Sea Ray",
+   "model": "230",
+   "year": 1993,
+   "price_chf": 25000,
+   "price_label": "25'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Bellevue",
+   "canton": "GE",
+   "postcode": "1293",
+   "region": "N/A",
+   "lat": 46.2541398,
+   "lon": 6.1423031,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-14",
+   "photo_url": "https://www.petitesannonces.ch/i/l/211/2999211_3.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/211/2999211_3.jpg",
+   "description_excerpt": "Avec bache neuf, sans place d'amarrage, annee 1993 Prix: 25'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 25000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8600823": {
+   "id": "petitesannonces:8600823",
+   "source": "petitesannonces",
+   "source_listing_id": "8600823",
+   "url": "https://www.petitesannonces.ch/a/8600823",
+   "title": "Coronet Seafarer - bateau classique de charme",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1976,
+   "price_chf": 9500,
+   "price_label": "9'500.- CHF",
+   "length_m": 9.64,
+   "width_m": 3.18,
+   "engine_type": "inboard",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 145.0,
+   "kw": 106.6,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Cheyres",
+   "canton": "FR",
+   "postcode": "1468",
+   "region": "N/A",
+   "lat": 46.8168823,
+   "lon": 6.7870222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 101,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-14",
+   "photo_url": "https://www.petitesannonces.ch/i/l/823/86006a3cc32eed58c6.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/823/86006a3cc32eed58c6.jpg",
+   "description_excerpt": "Typ Kajütboot Hersteller Coronet Modell Seafarer Baujahr 1976 Länge 9.64 m Breite 3.18 m Tiefgang 1.00 m Verdrängung 4000.00 kg Material Kunststoff GFK Antriebsart Z-Antrieb Motorenhersteller Volvo Penta 175A Motorleistung 2 x 145 PS / 107 kW Motorstunden 1600 Treibstoff Benzin Brennstofftank 270 Liter Reisegeschwindigkeit 30 kmh Höchstgeschwindigkeit 45 kmh Zugelassene Personenzahl 8 Stehhöhe 1.85 m Anz. Kabinen 1 Anz. Kojen 4 Anz. Toiletten 1 Frischwassertank 90 Liter Fäkalientank 80 Liter Sta",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8590236": {
+   "id": "petitesannonces:8590236",
+   "source": "petitesannonces",
+   "source_listing_id": "8590236",
+   "url": "https://www.petitesannonces.ch/a/8590236",
+   "title": "Bateau Sergio Cellano SC-290 Al + moteur 6CV + remorque",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2700,
+   "price_label": "2'700.- CHF",
+   "length_m": 2.9,
+   "width_m": 1.55,
+   "engine_type": "N/A",
+   "engine_brand": "Suzuki",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Autavaux",
+   "canton": "FR",
+   "postcode": "1475",
+   "region": "N/A",
+   "lat": 46.8650655,
+   "lon": 6.8776916,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 111,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-14",
+   "photo_url": "https://www.petitesannonces.ch/i/l/236/85906a32fa4f0650c9.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/236/85906a32fa4f0650c9.jpg",
+   "description_excerpt": "Votre compagnon idéal pour profiter des lacs cet été ! À vendre magnifique Sergio Cellano SC-290 AL équipé d'un moteur Suzuki DF6 6 CV, en parfait état et prêt à naviguer immédiatement. Que ce soit pour une balade en famille, une sortie détente entre amis ou simplement pour profiter du calme et de la beauté de nos lacs, ce bateau saura vous séduire par sa simplicité d'utilisation et sa fiabilité. Caractéristiques : * Longueur : 2,90 m * Largeur : 1,55 m * Capacité : jusqu'à 4 personnes * Moteur ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2700
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8070692": {
+   "id": "petitesannonces:8070692",
+   "source": "petitesannonces",
+   "source_listing_id": "8070692",
+   "url": "https://www.petitesannonces.ch/a/8070692",
+   "title": "Bateaux pneumatiques Honda 2m65",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1500,
+   "price_label": "1'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Petit-Lancy",
+   "canton": "GE",
+   "postcode": "1213",
+   "region": "N/A",
+   "lat": 46.1899458,
+   "lon": 6.1190366,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 3,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-14",
+   "photo_url": "https://www.petitesannonces.ch/i/l/692/807068580e006b7d26.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/692/807068580e006b7d26.jpg",
+   "description_excerpt": "Bateaux pneumatiques Honda, double sol alu avec moteur Torqueedo Traveler 1003 et batterie 916Wh Longeur 265cm, largeur 149cm Prix: 1'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6215992": {
+   "id": "petitesannonces:6215992",
+   "source": "petitesannonces",
+   "source_listing_id": "6215992",
+   "url": "https://www.petitesannonces.ch/a/6215992",
+   "title": "Bateaux Ceresio Ti-yacht",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 7000,
+   "price_label": "7'000.- CHF",
+   "length_m": 4.8,
+   "width_m": 1.6,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lugano",
+   "canton": "TI",
+   "postcode": "6900",
+   "region": "N/A",
+   "lat": 46.0067817,
+   "lon": 8.9504743,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 372,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-13",
+   "photo_url": "https://www.petitesannonces.ch/i/l/992/6215992_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/992/6215992_1.jpg",
+   "description_excerpt": "Jolie bateaux Suisse Ceresio by TI-YACHTS Lugano Longeur 4.80 m Largeur 1.60 m 5 place SWISS MADE A partir de CHF 7000.00 Puissance de 8 cv - 20 cv Prix: 7'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8632265": {
+   "id": "petitesannonces:8632265",
+   "source": "petitesannonces",
+   "source_listing_id": "8632265",
+   "url": "https://www.petitesannonces.ch/a/8632265",
+   "title": "Windy 8800 à vendre avec place port à dispo (vevey)",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 20000,
+   "price_label": "20'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 262.0,
+   "kw": 192.7,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "yes",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Corseaux",
+   "canton": "VD",
+   "postcode": "1802",
+   "region": "N/A",
+   "lat": 46.4697313,
+   "lon": 6.8280401,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 86,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-13",
+   "photo_url": "https://www.petitesannonces.ch/i/l/265/86326a586f4d6a1cc4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/265/86326a586f4d6a1cc4.jpg",
+   "description_excerpt": "Bateau moteur Windy 8800 à vendre. Amarrage à disposition au port de Vevey. Moteur 262ch Volvo Mercruiser Expertisé Mise à l'eau 1988 Cabine avc toilette Mécano à disposition pour l'entretien Excellente opportunité Prix à discuter Prix: 20'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 20000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:4823672": {
+   "id": "petitesannonces:4823672",
+   "source": "petitesannonces",
+   "source_listing_id": "4823672",
+   "url": "https://www.petitesannonces.ch/a/4823672",
+   "title": "Bateau à moteur Cranchi Derby 700",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Cranchi",
+   "model": "Derby 700",
+   "year": "N/A",
+   "price_chf": 12500,
+   "price_label": "12'500.- CHF",
+   "length_m": 7.2,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 260.0,
+   "kw": 191.2,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Vessy",
+   "canton": "GE",
+   "postcode": "1234",
+   "region": "N/A",
+   "lat": 46.1722953,
+   "lon": 6.1585455,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/672/4823672_3.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/672/4823672_3.jpg",
+   "description_excerpt": "Dimensions : 7,20 m. X 2,48 m., 7 places, moteur Volvo Penta 260 CV, visite technique 2025, service complet, hiverné chaque année par chantier naval. Remorque de route, prêt pour naviguer. Pas de place d'amarrage. CHF 12'500.-- à discuter. Tél. [phone hidden] Prix: 12'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7380927": {
+   "id": "petitesannonces:7380927",
+   "source": "petitesannonces",
+   "source_listing_id": "7380927",
+   "url": "https://www.petitesannonces.ch/a/7380927",
+   "title": "Larson Sei 206",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Larson",
+   "model": "Sei 206",
+   "year": "N/A",
+   "price_chf": 17000,
+   "price_label": "17'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": 479,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Yvonand",
+   "canton": "VD",
+   "postcode": "1462",
+   "region": "N/A",
+   "lat": 46.7978927,
+   "lon": 6.7402581,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 97,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/927/738065f7edb7613a00.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/927/738065f7edb7613a00.jpg",
+   "description_excerpt": "Larson Sei 206 Longeur: 607 Largeur: 247 Places: 8 Moteur: Volvo Penta 4.3 GI 1ere mise en circulation: 30 Mars 1998 479 heures Expertise fait mars 2024 Pas de remorque et pas de place au port. Nouvelle bâche achetée en 2021. Réparations et entretien effectués en 2023: - Grand service et antipollution - Antifouling - Fourniture et pose démarreur - Travaux sur trasom, rempalcement des manchette de cardents et échappement, roulement de passe coque, tuyaux d'eau. - Vis de vidange de l'embase. - Rem",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 17000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6176882": {
+   "id": "petitesannonces:6176882",
+   "source": "petitesannonces",
+   "source_listing_id": "6176882",
+   "url": "https://www.petitesannonces.ch/a/6176882",
+   "title": "Echosondeur garmin echomap 92sv",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 800,
+   "price_label": "800.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Bulle",
+   "canton": "FR",
+   "postcode": "1630",
+   "region": "N/A",
+   "lat": 46.6223374,
+   "lon": 7.0562906,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 116,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/882/6176882_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/882/6176882_1.jpg",
+   "description_excerpt": "A vendre echosondeur garmin echomap 92sv (sans sonde) en très bon état . Prix 800.- [phone hidden] Prix: 800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8459834": {
+   "id": "petitesannonces:8459834",
+   "source": "petitesannonces",
+   "source_listing_id": "8459834",
+   "url": "https://www.petitesannonces.ch/a/8459834",
+   "title": "Bateau Elan GT 495 F",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Elan",
+   "model": "Gt 495",
+   "year": "N/A",
+   "price_chf": 9500,
+   "price_label": "9'500.- CHF",
+   "length_m": 2.0,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 50.0,
+   "kw": 36.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "no",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Echandens",
+   "canton": "VD",
+   "postcode": "1026",
+   "region": "N/A",
+   "lat": 46.532307,
+   "lon": 6.5430732,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 56,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/834/845969b957442a5f21.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/834/845969b957442a5f21.jpg",
+   "description_excerpt": "A vendre bateau Elan GT 495 F en très bon état Coque en fibre de verre avec système auto-videur Dimenssion 4m95 de longueur sur 2m de largeur Moteur casi neuf Yamaha FT 50 Jet (50 cv) Service à jour Jolie plage de bain modulable à l'avant Poste de pilotage central avec banquette modulable Divers coffres de rangements Bâche complète Vendu sans remorque ni place d'amarrage. Région Morges Prix à discuté dans la limite du résonnable. Prix: 9'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7920041": {
+   "id": "petitesannonces:7920041",
+   "source": "petitesannonces",
+   "source_listing_id": "7920041",
+   "url": "https://www.petitesannonces.ch/a/7920041",
+   "title": "Bateau Elan T401L",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Elan",
+   "model": "T401L",
+   "year": "N/A",
+   "price_chf": 3000,
+   "price_label": "3'000.- CHF",
+   "length_m": 4.0,
+   "width_m": 1.6,
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Mies",
+   "canton": "VD",
+   "postcode": "1295",
+   "region": "N/A",
+   "lat": 46.3078203,
+   "lon": 6.1691121,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 22,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-11-11",
+   "photo_url": "https://www.petitesannonces.ch/i/l/41/792067d075f2809a05.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/41/792067d075f2809a05.jpg",
+   "description_excerpt": "Bateau Elan T401L Dimensions 4.00m x 1.60m Moteur Honda 8cv neuf Réservoir 12L Disponible pour visite au chantier naval de Mies (VD) Prix: 3'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8714841": {
+   "id": "petitesannonces:8714841",
+   "source": "petitesannonces",
+   "source_listing_id": "8714841",
+   "url": "https://www.petitesannonces.ch/a/8714841",
+   "title": "Bateau neuf en coproprièté",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 30000,
+   "price_label": "30'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Chernex",
+   "canton": "VD",
+   "postcode": "1822",
+   "region": "N/A",
+   "lat": 46.4456342,
+   "lon": 6.9088409,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 93,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-11-11",
+   "photo_url": "https://www.petitesannonces.ch/i/l/841/87146aa48c29be5806.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/841/87146aa48c29be5806.jpg",
+   "description_excerpt": "Bonjour Je vous propose de rentrer au capital d'une sarl qui sera propriétaire du bateau en contrepartie de 30'000 CHF. Je vais proposer 5 parts de 30'000 CHF et prendre un prêt de 150'000 CHF pour l'achat du bateau. Celui-ci pourra être utilisé par les propriétaire selon une clé de répartition à définir en fonction d'ou l'on met le curseur de la rentabilité (plaisir/business) car l'idée est de couvrir l'entier des frais + un petit rendement des fonds propre en faisant de la location à la belle ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 30000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8111683": {
+   "id": "petitesannonces:8111683",
+   "source": "petitesannonces",
+   "source_listing_id": "8111683",
+   "url": "https://www.petitesannonces.ch/a/8111683",
+   "title": "Bateau sans permis - Avec remorque - Rénové & prêt à naviguer!",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6000,
+   "price_label": "6'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1004",
+   "region": "N/A",
+   "lat": 46.5276554,
+   "lon": 6.6191122,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 64,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-11",
+   "photo_url": "https://www.petitesannonces.ch/i/l/683/8111687b6719619622.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/683/8111687b6719619622.jpg",
+   "description_excerpt": "Je vends mon Selco Sel Speed, bateau parfait pour les balades en famille, entre amis ou comme premier bateau Sans permis nécessaire Remorque homologuée incluse (pas d'expertise requise) Bateau expertisé (2025) & antipollution OK (2024) Bâche sur mesure incluse Rénové récemment Aucun frais à prévoir ! - Système LED à l'intérieur - batterie de servitude 12v 95ah - Tableau électrique 12v avec fusible - Espaces de rangement - Tapis imitation tek facile à nettoyer - feux de navigation - amarre, ancre",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6492174": {
+   "id": "petitesannonces:6492174",
+   "source": "petitesannonces",
+   "source_listing_id": "6492174",
+   "url": "https://www.petitesannonces.ch/a/6492174",
+   "title": "Bateau gonflable Zodiac, Futura",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "Zodiac",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 4850,
+   "price_label": "4'850.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Tohatsu",
+   "engine_model": "N/A",
+   "hp": 30.0,
+   "kw": 22.1,
+   "fuel": "petrol",
+   "hours": 120,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Vollèges",
+   "canton": "VS",
+   "postcode": "1941",
+   "region": "N/A",
+   "lat": 46.0880053,
+   "lon": 7.1697258,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 151,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-11",
+   "photo_url": "https://www.petitesannonces.ch/i/l/174/649262eb7e077664e2.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/174/649262eb7e077664e2.jpg",
+   "description_excerpt": "Modèle : Bateau gonflable Zodiac Futura Mark 3 2013 Moteur : Tohatsu 30 HP (120 heures max.) Inclus dans l'offre : réseroire essence 25 litres, 2 pagaies, roues de mise à l'eau, 2 encres et plsuieurs accessoires. Prix: 4'850.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4850
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8542784": {
+   "id": "petitesannonces:8542784",
+   "source": "petitesannonces",
+   "source_listing_id": "8542784",
+   "url": "https://www.petitesannonces.ch/a/8542784",
+   "title": "Bateau à moteur très bon état",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 5400,
+   "price_label": "5'400.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Cressier",
+   "canton": "NE",
+   "postcode": "2088",
+   "region": "N/A",
+   "lat": 47.0497269,
+   "lon": 7.0346316,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 137,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-10",
+   "photo_url": "https://www.petitesannonces.ch/i/l/784/85426a060d087e51a5.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/784/85426a060d087e51a5.jpg",
+   "description_excerpt": "Bateau à moteur, très bon état, aménagé avec beaucoup de goût et de qualité. on peut dormir à 4 dédans Expertisé, avec un moteur 8 ch 4 temps (pas besoin de permis de navigation), complétement révisé, anti-pollution effectué, Vendu avec tous les accessoires, ber d'hivernage, accostages, etc.. Prix: 5'400.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8584071": {
+   "id": "petitesannonces:8584071",
+   "source": "petitesannonces",
+   "source_listing_id": "8584071",
+   "url": "https://www.petitesannonces.ch/a/8584071",
+   "title": "Shetland 500 - 50cv amarré",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2014,
+   "price_chf": 5900,
+   "price_label": "5'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 50.0,
+   "kw": 36.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Estavayer-le-Lac",
+   "canton": "FR",
+   "postcode": "1470",
+   "region": "N/A",
+   "lat": 46.8439087,
+   "lon": 6.8463873,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 108,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-10",
+   "photo_url": "https://www.petitesannonces.ch/i/l/71/85846a2d7f2ab651e7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/71/85846a2d7f2ab651e7.jpg",
+   "description_excerpt": "Bateau Shetland 500 avec moteur Yamaha 50cv de 2014. Place payée pour l'année en cours. Prix: 5'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac de Neuchâtel",
+    "opportunite": false,
+    "reasons": [
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:2765862": {
+   "id": "petitesannonces:2765862",
+   "source": "petitesannonces",
+   "source_listing_id": "2765862",
+   "url": "https://www.petitesannonces.ch/a/2765862",
+   "title": "Poole Powerboats Sunseeker 28",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1983,
+   "price_chf": 20000,
+   "price_label": "20'000.- CHF",
+   "length_m": 8.5,
+   "width_m": 3.0,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 246.7,
+   "kw": 181.45,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "St-Aubin-Sauges",
+   "canton": "NE",
+   "postcode": "2024",
+   "region": "N/A",
+   "lat": 46.894585,
+   "lon": 6.7737479,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/862/2765862_3.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/862/2765862_3.jpg",
+   "description_excerpt": "Nouveau prix pour la saison 2019 Année : 1983 / polyester Dimension : 8.5 m x 3.00 m Moteur : 2x OMC 574STHR - 181.45 KW et révisé en 2018 Nombre de personnes : 10 Bon état général / l'intérieur rénové en 2017 Prix à discuter Prix: 20'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 20000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8511967": {
+   "id": "petitesannonces:8511967",
+   "source": "petitesannonces",
+   "source_listing_id": "8511967",
+   "url": "https://www.petitesannonces.ch/a/8511967",
+   "title": "Bateau moteur Thundercraft Diablo XL",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1995,
+   "price_chf": 14000,
+   "price_label": "14'000.- CHF",
+   "length_m": 5.66,
+   "width_m": 2.21,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "St-Aubin-Sauges",
+   "canton": "NE",
+   "postcode": "2024",
+   "region": "N/A",
+   "lat": 46.894585,
+   "lon": 6.7737479,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/967/851169ea26bdccb702.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/967/851169ea26bdccb702.jpg",
+   "description_excerpt": "Thundercraft Diablo Année : 1995 Dimension : 5.66 m x 2.21 m Nombre de personnes : 7 Moteur : Mercruiser 4.3 l. Services suivis. Bâche d'hiver. Expertisé le 21.04.2026 CHF 14'000.- à discuter Prix: 14'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 14000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac de Neuchâtel",
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "hp"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:4661739": {
+   "id": "petitesannonces:4661739",
+   "source": "petitesannonces",
+   "source_listing_id": "4661739",
+   "url": "https://www.petitesannonces.ch/a/4661739",
+   "title": "Résidence secondaire au sud de la France",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1957,
+   "price_chf": 25000,
+   "price_label": "25'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 120.0,
+   "kw": 88.3,
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": 64.0,
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1201",
+   "region": "N/A",
+   "lat": 46.2098446,
+   "lon": 6.1447795,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/739/4661739_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/739/4661739_1.jpg",
+   "description_excerpt": "Bateau habitable 16,65 X 4 mètres, en bois de bonne qualité construit en 1957 à St Nazaire et rénové totalement en 1998 pouvant naviguer sur les canaux ou en haute mer. Il peut servir de résidence principale ou secondaire, pouvant loger 8 personnes en 4 cabines dont 2 avec des lits doubles et 2 avec des lits individuels. Grande salle de séjour, pont avant, plage arrière et pont supérieur. Cuisine équipée et salle de douche avec lavabo et WC. Surface habitable au total 64 m2. Moteur Perkins 120 C",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 25000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8431784": {
+   "id": "petitesannonces:8431784",
+   "source": "petitesannonces",
+   "source_listing_id": "8431784",
+   "url": "https://www.petitesannonces.ch/a/8431784",
+   "title": "QuickSilver 505 commander",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Quicksilver",
+   "model": "505",
+   "year": 2007,
+   "price_chf": 17500,
+   "price_label": "17'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercury",
+   "engine_model": "N/A",
+   "hp": 75.0,
+   "kw": 55.2,
+   "fuel": "N/A",
+   "hours": 150,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1202",
+   "region": "N/A",
+   "lat": 46.2173657,
+   "lon": 6.139998,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 3,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/784/8431699f323a7caf44.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/784/8431699f323a7caf44.jpg",
+   "description_excerpt": "Bateau 5 places en super état et toujour bien entretenu! - Bateau à moteur QuickSilver Comander 505 - 75 chevaux - 5 places - 2 m sur 5m - 17'500.- CHF a discuter - Sur Genève - Sans place d'amarrage Pour tout renseignement complémentaire veuillez me contacter au [phone hidden] Prix: 17'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 17500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8505958"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7968453": {
+   "id": "petitesannonces:7968453",
+   "source": "petitesannonces",
+   "source_listing_id": "7968453",
+   "url": "https://www.petitesannonces.ch/a/7968453",
+   "title": "Highfield semi rigide C380 8 cv Yamaha 7 places Hypalon",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 9900,
+   "price_label": "9'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": 4,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "PVC/Hypalon",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Blonay",
+   "canton": "VD",
+   "postcode": "1807",
+   "region": "N/A",
+   "lat": 46.4719423,
+   "lon": 6.9017022,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 93,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/453/796867fb7ce6aa2aa1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/453/796867fb7ce6aa2aa1.jpg",
+   "description_excerpt": "Semi rigide Highfield C 380 en Hypalon, état neuf, navigué 4 heures sur lac de gruyère. Bâche complète hivernage moteur Yamaha dernier modèle neuf avec démarreur électrique remorque articulée pour mise à l'eau en talus vendu avec matériel complet pour 5 personnes bateau 8'800.- moteur 3'400.- remorque 1'430.- Prix: 9'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8152155": {
+   "id": "petitesannonces:8152155",
+   "source": "petitesannonces",
+   "source_listing_id": "8152155",
+   "url": "https://www.petitesannonces.ch/a/8152155",
+   "title": "Giulietta/TI-YACHTS Lugano",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 14000,
+   "price_label": "14'000.- CHF",
+   "length_m": 5.4,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lugano",
+   "canton": "TI",
+   "postcode": "6900",
+   "region": "N/A",
+   "lat": 46.0067817,
+   "lon": 8.9504743,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 372,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-08",
+   "photo_url": "https://www.petitesannonces.ch/i/l/155/8152689f29f8ce3025.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/155/8152689f29f8ce3025.jpg",
+   "description_excerpt": "Bateaux a moteur Long. 5.40 m Larg. 1.78 m 6 place Autovidange Avec moteur 8 cv 4T Fabrication 2025 Prix: 14'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 14000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6215972": {
+   "id": "petitesannonces:6215972",
+   "source": "petitesannonces",
+   "source_listing_id": "6215972",
+   "url": "https://www.petitesannonces.ch/a/6215972",
+   "title": "Ascona Ti Yachts Sagl",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 12900,
+   "price_label": "12'900.- CHF",
+   "length_m": 6.14,
+   "width_m": 1.75,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lugano",
+   "canton": "TI",
+   "postcode": "6900",
+   "region": "N/A",
+   "lat": 46.0067817,
+   "lon": 8.9504743,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 372,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-08",
+   "photo_url": "https://www.petitesannonces.ch/i/l/972/6215972_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/972/6215972_1.jpg",
+   "description_excerpt": "Ascona by TI-YACHTS Lugano Longeur 6.14m Largeur 1.75 m 7 place Autovidant A partir de CHF 12900.00 Pas de moteur. Puissance enstallable a partire de 8 cv - MMax 30 cv SWISS MADE Prix: 12'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6215983": {
+   "id": "petitesannonces:6215983",
+   "source": "petitesannonces",
+   "source_listing_id": "6215983",
+   "url": "https://www.petitesannonces.ch/a/6215983",
+   "title": "Lugano Open 465",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 13500,
+   "price_label": "13'500.- CHF",
+   "length_m": 4.65,
+   "width_m": 1.85,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lugano",
+   "canton": "TI",
+   "postcode": "6900",
+   "region": "N/A",
+   "lat": 46.0067817,
+   "lon": 8.9504743,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 372,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-08",
+   "photo_url": "https://www.petitesannonces.ch/i/l/983/6215689f27f6a02279.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/983/6215689f27f6a02279.jpg",
+   "description_excerpt": "Jolie bateaux Suisse LUGANO OPEN 465 By TI-YACHTS Lugano Longeur 4.65 m Largeur 1.85 m 6 place Autovidant A partir de CHF 13500.00 Puissance 8 cv - max 40 cv Avec moteur 8cv, montee: Prima 18500.00 chf Prix: 13'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 13500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8600994": {
+   "id": "petitesannonces:8600994",
+   "source": "petitesannonces",
+   "source_listing_id": "8600994",
+   "url": "https://www.petitesannonces.ch/a/8600994",
+   "title": "Titanium 460 pêche promenade.",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 18500,
+   "price_label": "18'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 30.0,
+   "kw": 22.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Sévery",
+   "canton": "VD",
+   "postcode": "1141",
+   "region": "N/A",
+   "lat": 46.5750696,
+   "lon": 6.4391681,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 58,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-08",
+   "photo_url": "https://www.petitesannonces.ch/i/l/994/86006a3ce4ef27b132.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/994/86006a3ce4ef27b132.jpg",
+   "description_excerpt": "Je vends mon bateau de peche tout équipé avec sa remorque cause déménagement. Il est de novembre 2023 .moteur yamaha 30 ch plus moteur électrique min kota 24 volts et batterie lithium. Sondeur elix 7 et beaucoup d'options. Pour plus de renseignements, merci de me téléphoner. Prix: 18'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 18500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5200249": {
+   "id": "petitesannonces:5200249",
+   "source": "petitesannonces",
+   "source_listing_id": "5200249",
+   "url": "https://www.petitesannonces.ch/a/5200249",
+   "title": "Bateau Moteur Saphir 560 GT",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1976,
+   "price_chf": 2900,
+   "price_label": "2'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 170.0,
+   "kw": 125.0,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "no",
+   "mooring_included": "N/A",
+   "condition": "to restore",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1200",
+   "region": "N/A",
+   "lat": 46.1868,
+   "lon": 6.12825,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 4,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-08",
+   "photo_url": "https://www.petitesannonces.ch/i/l/249/5200249_7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/249/5200249_7.jpg",
+   "description_excerpt": "A rénover avec quasi toutes les pièces détachées nécessaires à sa restauration ou, Bateau dans l'état vendu CHF 450.- Marque et type : Saphir 560 GT Motorisation : 1 x Volvo Penta B30 (6cyl) Puissance : 1 x 170.00 HP/CV (125.00kW) Heures : 900 Transmission : Stern Drive - Rare => SP 280T avec Power Trim d'origine en bon état Carburant : Essence 4 temps Matière : Polyester Année de construction : 1976 Immatriculation : Suisse - Dédouané Zone EU Dimensions : Lo 560cm - La 200cm Poids : ~950 Kg Nom",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8213933": {
+   "id": "petitesannonces:8213933",
+   "source": "petitesannonces",
+   "source_listing_id": "8213933",
+   "url": "https://www.petitesannonces.ch/a/8213933",
+   "title": "Bateau 4 places moteur 8 CV",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6300,
+   "price_label": "6'300.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Estavayer-le-Lac",
+   "canton": "FR",
+   "postcode": "1470",
+   "region": "N/A",
+   "lat": 46.8439087,
+   "lon": 6.8463873,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 108,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-07",
+   "photo_url": "https://www.petitesannonces.ch/i/l/933/821368d67eed0a7012.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/933/821368d67eed0a7012.jpg",
+   "description_excerpt": "Bateau moteur 4 places GERMANN MB 405 Moteur 8 CV YAMAHA en très bon état Possibilité d'avoir une remorque, pas celle visible sur les photos, et la place d'amarrage avec le bateau Expertisé le 17.08.2026 Prix: 6'300.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6300
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8639288": {
+   "id": "petitesannonces:8639288",
+   "source": "petitesannonces",
+   "source_listing_id": "8639288",
+   "url": "https://www.petitesannonces.ch/a/8639288",
+   "title": "RIO 650 Cruiser 4.3LX",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Rio",
+   "model": "650",
+   "year": 1997,
+   "price_chf": 17900,
+   "price_label": "17'900.- CHF",
+   "length_m": 6.5,
+   "width_m": 2.45,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": 190.0,
+   "kw": 139.7,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "no",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Bernex",
+   "canton": "GE",
+   "postcode": "1233",
+   "region": "N/A",
+   "lat": 46.1757119,
+   "lon": 6.0713951,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-07",
+   "photo_url": "https://www.petitesannonces.ch/i/l/288/86396a5e501bb66b44.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/288/86396a5e501bb66b44.jpg",
+   "description_excerpt": "A vendre RIO 650 Cruiser de 1997, bateau familial prêt à naviguer sur le Léman. CARACTÉRISTIQUES : Coque : 6.50m x 2.45m, 6 places, cabine 2 couchages Moteur : Mercruiser 4.3LX V6 essence 190cv - MOTEUR NEUF 2005, factures à l'appui Heures moteur : 500 Sellerie : ENTIÈREMENT REFAITE EN 2015 Antifouling : Refait 2026 ÉQUIPEMENT : - Bâche d'hivernage couvrant tout le bateau - Taud de pont entièrement fermable - WC marin, Frigo, Cuisinière - Sorti de l'eau chaque hiver pour hivernage ENTRETIEN : Ba",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 17900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8792736": {
+   "id": "petitesannonces:8792736",
+   "source": "petitesannonces",
+   "source_listing_id": "8792736",
+   "url": "https://www.petitesannonces.ch/a/8792736",
+   "title": "Bateaux avec moteur électrique",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1600,
+   "price_label": "1'600.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "electric",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "electric",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Villeneuve",
+   "canton": "FR",
+   "postcode": "1527",
+   "region": "N/A",
+   "lat": 46.7467089,
+   "lon": 6.8682475,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 99,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-06",
+   "photo_url": "https://www.petitesannonces.ch/i/l/736/87926aef587c2d18d0.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/736/87926aef587c2d18d0.jpg",
+   "description_excerpt": "Petit bateau pour 3 a4 personnes avec moteur électrique plus remorque de route plus matériel de pêche Prix: 1'600.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1600
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8103087": {
+   "id": "petitesannonces:8103087",
+   "source": "petitesannonces",
+   "source_listing_id": "8103087",
+   "url": "https://www.petitesannonces.ch/a/8103087",
+   "title": "Zodiac Medline 540",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "Zodiac",
+   "model": "Medline 540",
+   "year": 2013,
+   "price_chf": 15000,
+   "price_label": "15'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 100.0,
+   "kw": 73.6,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1006",
+   "region": "N/A",
+   "lat": 46.5133716,
+   "lon": 6.634049,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 64,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-05",
+   "photo_url": "https://www.petitesannonces.ch/i/l/87/81036873f6d3db81b6.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/87/81036873f6d3db81b6.jpg",
+   "description_excerpt": "Zodiac medline 540 de 2013 avec un moteur Yamaha de 100cv Vendu avec remorque Stussi en très bon état Le bateau dispose d'un bain de soleil avant et arrière (assez rare sur les semi-rigide de cette taille). Il y a également un mât pour le ski nautique. Bateau en très bon état. Capacité 10 personnes Expertisé en 2024 Prix: 15'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7862095": {
+   "id": "petitesannonces:7862095",
+   "source": "petitesannonces",
+   "source_listing_id": "7862095",
+   "url": "https://www.petitesannonces.ch/a/7862095",
+   "title": "Draco 2700 Sterling",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Draco",
+   "model": "2700",
+   "year": "N/A",
+   "price_chf": 29000,
+   "price_label": "29'000.- CHF",
+   "length_m": 9.0,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 165.0,
+   "kw": 121.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1007",
+   "region": "N/A",
+   "lat": 46.5172963,
+   "lon": 6.6148735,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 63,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-05",
+   "photo_url": "https://www.petitesannonces.ch/i/l/95/7862679d10740a0fb6.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/95/7862679d10740a0fb6.jpg",
+   "description_excerpt": "Draco 2700 Sterling, 1990, 2 moteurs de 165 ch, 9m x 2.85, climatisation intérieure, eau chaude et froide, 220v, 2 frigos, TV, parfait état, expertisé, 1 chambre double, toilettes douche ext +int, bimini, batteries neuves. Prix: 29'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 29000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8576561": {
+   "id": "petitesannonces:8576561",
+   "source": "petitesannonces",
+   "source_listing_id": "8576561",
+   "url": "https://www.petitesannonces.ch/a/8576561",
+   "title": "Nomade 640 Périsset",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 9400,
+   "price_label": "9'400.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Estavayer-le-Lac",
+   "canton": "FR",
+   "postcode": "1470",
+   "region": "N/A",
+   "lat": 46.8439087,
+   "lon": 6.8463873,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 108,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-05",
+   "photo_url": "https://www.petitesannonces.ch/i/l/561/85766a268a4c724ef4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/561/85766a268a4c724ef4.jpg",
+   "description_excerpt": "A vendre magnifique Périsset Nomade 640 (version à moteur, sans mât), idéal pour la détente et la pêche. Ce bateau est équipé d'un moteur Yamaha de 8 ch qui permet de naviguer sans permis.Grâce à sa quille pivotante (tirant d'eau variable de 0,50 m à 1,20 m), il est parfait pour s'approcher facilement des berges ou naviguer dans les zones peu profondes. Le bateau est homologué pour accueillir jusqu'à 6 personnes en toute sécurité et bénéficie d'un suivi technique irréprochable. Caractéristiques ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6414487": {
+   "id": "petitesannonces:6414487",
+   "source": "petitesannonces",
+   "source_listing_id": "6414487",
+   "url": "https://www.petitesannonces.ch/a/6414487",
+   "title": "Bateau \"Vintage\" en très bon état",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 4000,
+   "price_label": "4'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 20.0,
+   "kw": 14.7,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Marin-Epagnier",
+   "canton": "NE",
+   "postcode": "2074",
+   "region": "N/A",
+   "lat": 47.0091238,
+   "lon": 6.9999328,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 132,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-04",
+   "photo_url": "https://www.petitesannonces.ch/i/l/487/6414487_7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/487/6414487_7.jpg",
+   "description_excerpt": "Moteur 20 CV, réservoir 10l, peu coûteux et en bon état general. Fonctionne parfaitement. Service fait en 2022, expertise en 2021. VENDU AVEC BÂCHE ET REMORQUE ! Prix: 4'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7968562": {
+   "id": "petitesannonces:7968562",
+   "source": "petitesannonces",
+   "source_listing_id": "7968562",
+   "url": "https://www.petitesannonces.ch/a/7968562",
+   "title": "Bateau jeanneau cap camarat 6.5 dc occasion",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Jeanneau",
+   "model": "CAP",
+   "year": 2011,
+   "price_chf": 24500,
+   "price_label": "24'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Suzuki",
+   "engine_model": "N/A",
+   "hp": 140.0,
+   "kw": 103.0,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Neuchâtel",
+   "canton": "NE",
+   "postcode": "2000",
+   "region": "N/A",
+   "lat": 46.9953093,
+   "lon": 6.9314074,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 125,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-04",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "Jeanneau cap camarat 6.5 dc année 2011 Moteur suzuki 140 ch Prix: 24'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 24500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8083946": {
+   "id": "petitesannonces:8083946",
+   "source": "petitesannonces",
+   "source_listing_id": "8083946",
+   "url": "https://www.petitesannonces.ch/a/8083946",
+   "title": "Bateau Zodiac en très bon état",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "Zodiac",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2800,
+   "price_label": "2'800.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Nuvilly",
+   "canton": "FR",
+   "postcode": "1485",
+   "region": "N/A",
+   "lat": 46.7835443,
+   "lon": 6.8335345,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 113,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-04",
+   "photo_url": "https://www.petitesannonces.ch/i/l/946/8083686394990aade9.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/946/8083686394990aade9.jpg",
+   "description_excerpt": "Zodiac avec remorque, bâche et moteur Tout révisé et en ordre Se trouve près d Yverdon mais peut être amené si pas trop loin. Prix à discuter légèrement Prix: 2'800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7360041": {
+   "id": "petitesannonces:7360041",
+   "source": "petitesannonces",
+   "source_listing_id": "7360041",
+   "url": "https://www.petitesannonces.ch/a/7360041",
+   "title": "A vendre bateau à moteur",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 12000,
+   "price_label": "12'000.- CHF",
+   "length_m": 2.3,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Borex",
+   "canton": "VD",
+   "postcode": "1277",
+   "region": "N/A",
+   "lat": 46.379071,
+   "lon": 6.1777222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 23,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-03",
+   "photo_url": "https://www.petitesannonces.ch/i/l/41/736065e5cdc9590641.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/41/736065e5cdc9590641.jpg",
+   "description_excerpt": "Emplacement Rolle, Place 1000.- /année et place de parking à proximité. A vendre avec matériel de pêche et équipement Vent du nord de 6m par 2.30m avec 2 moteurs Yamaha de 8 CV. Panneau solaire, pompe de cale, bâche de protection, toit télescopique. Expertisé du jour. Prix: 12'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5457002": {
+   "id": "petitesannonces:5457002",
+   "source": "petitesannonces",
+   "source_listing_id": "5457002",
+   "url": "https://www.petitesannonces.ch/a/5457002",
+   "title": "Bateau à moteur, semi rigide",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1994,
+   "price_chf": 3000,
+   "price_label": "3'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Chancy",
+   "canton": "GE",
+   "postcode": "1284",
+   "region": "N/A",
+   "lat": 46.1506634,
+   "lon": 5.9773287,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 15,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-02",
+   "photo_url": "https://www.petitesannonces.ch/i/l/2/5457002_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/2/5457002_1.jpg",
+   "description_excerpt": "Bateau semi rigide Novamar NM 450 6 Personne Année 1994 Moteur Yamaha 8, cv , 2 temp passe plus la visite Bateau agréable a naviguer et maniable. Nombreux compartiment de rangement Parfait pour pêcheur Vendu avec remorque route, visite OK Natel:[phone hidden] Prix: 3'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7973065": {
+   "id": "petitesannonces:7973065",
+   "source": "petitesannonces",
+   "source_listing_id": "7973065",
+   "url": "https://www.petitesannonces.ch/a/7973065",
+   "title": "Bayliner 1850 BS avec remorque",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Bayliner",
+   "model": "1850",
+   "year": "N/A",
+   "price_chf": 12000,
+   "price_label": "12'000.- CHF",
+   "length_m": 5.6,
+   "width_m": 2.29,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "petrol",
+   "hours": 791,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Auvernier",
+   "canton": "NE",
+   "postcode": "2012",
+   "region": "N/A",
+   "lat": 46.9748348,
+   "lon": 6.8785925,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 120,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-02",
+   "photo_url": "https://www.petitesannonces.ch/i/l/65/797367ff56823fdac4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/65/797367ff56823fdac4.jpg",
+   "description_excerpt": "Bateau à moteur Bayliner d'occasion, idéal pour des journées inoubliables sur l'eau. Propulsé par un moteur à essence fiable, ce Bayliner offre une navigation agréable et sportive. Le bateau est en bon état général et prêt pour la saison estivale. N'hésitez pas à me contacter pour plus d'informations ou pour organiser une visite. bateau soigné et entretenu chaque année. Hiverné à Sec, antifouling l'année passée. Idéal comme premier bateau familial. Très confortable. puissance nécessaire pour tir",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac de Neuchâtel",
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "hp"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:8098453": {
+   "id": "petitesannonces:8098453",
+   "source": "petitesannonces",
+   "source_listing_id": "8098453",
+   "url": "https://www.petitesannonces.ch/a/8098453",
+   "title": "Bateau de sport Bayliner 1800 Capri",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Bayliner",
+   "model": "1800",
+   "year": 1990,
+   "price_chf": 11000,
+   "price_label": "11'000.- CHF",
+   "length_m": 5.36,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 90.0,
+   "kw": 66.2,
+   "fuel": "petrol",
+   "hours": 380,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "fair",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Hauterive",
+   "canton": "NE",
+   "postcode": "2068",
+   "region": "N/A",
+   "lat": 47.0133299,
+   "lon": 6.972712,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 130,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-02",
+   "photo_url": "https://www.petitesannonces.ch/i/l/453/809868701224e44b52.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/453/809868701224e44b52.jpg",
+   "description_excerpt": "Bateau équipé pour le wakeboard Année: 1990 NB de place: 6 Moteur: essence Honda 90 CV injection 380h Coque: Fibre de verre Longueur:5,36m Equipement: Entièrement équipé (légal) Etat: Légère osmose et usure normal Service: Moteur entièrement révisé en 07.2025 Expertise: 07.2024 Vendu avec sa bâche et une remorque non routière incluse Je vends mon bateau car je ne vais plus naviguer. Amarrer au port d'Hauterive Prix: 11'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 11000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac de Neuchâtel",
+    "opportunite": false,
+    "reasons": [
+     "width_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:8658564": {
+   "id": "petitesannonces:8658564",
+   "source": "petitesannonces",
+   "source_listing_id": "8658564",
+   "url": "https://www.petitesannonces.ch/a/8658564",
+   "title": "Bateau à moteur avec une grande cabine",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 13000,
+   "price_label": "13'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 6,
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Cheyres",
+   "canton": "FR",
+   "postcode": "1468",
+   "region": "N/A",
+   "lat": 46.8168823,
+   "lon": 6.7870222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 101,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/564/86586a7070e678cb92.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/564/86586a7070e678cb92.jpg",
+   "description_excerpt": "Bateau à moteur pour 7 personnes avec 6 places de couchage. Une toilette, un évier et possibilité de mettre un gazinère. Coussins intérieur neuf et tapis de fond également. Prix: 13'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 13000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7995197": {
+   "id": "petitesannonces:7995197",
+   "source": "petitesannonces",
+   "source_listing_id": "7995197",
+   "url": "https://www.petitesannonces.ch/a/7995197",
+   "title": "Bateau B2 marine 472 neuf",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 15000,
+   "price_label": "15'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 50.0,
+   "kw": 36.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/197/7995681320f6b52744.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/197/7995681320f6b52744.jpg",
+   "description_excerpt": "Vends bateau B2 marine neuf. Coque blanche. Disponible en juin 2025. Dimension 4,72 x 1,92 Petite cabine de rangement. Puissance maximum : 50 cv. Capacité : 5 personnes Équipé de sellerie avec bain de soleil. Prix au départ de Vésenaz : 15 000 CHF TTC Cette offre n'inclut pas le moteur. Offre avec moteur Honda BF 8 inclus, installation. Prix : 20 500 CHF TTC. Offre avec moteur Honda BF50 inclus, installation. Prix : 26 500 CHF TTC. Expertise 180.00 CHF Si livraison sur Suisse forfait 140 CHF Pri",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac Léman",
+    "opportunite": false,
+    "reasons": [
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:7448493": {
+   "id": "petitesannonces:7448493",
+   "source": "petitesannonces",
+   "source_listing_id": "7448493",
+   "url": "https://www.petitesannonces.ch/a/7448493",
+   "title": "Bateau Quicksiver 510 Cruiser d'occasion",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Quicksilver",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 12000,
+   "price_label": "12'000.- CHF",
+   "length_m": 4.98,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercury",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/493/7448663267e61cfe24.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/493/7448663267e61cfe24.jpg",
+   "description_excerpt": "Vend bateau Quicksilver QS 510 cruiser avec un moteur Mercury F60 EFI et une bâche. Le tout est d'occasion est en bon état. Expertise du jour Caractéristiques: 4.98 m x 2.33 Place :5 personnes Travaux effectués: Service complet Antifouling Lustrage de la coque Prix départ de Vésenaz 12000 chf Possibilité de livraison, prix à déterminé. Prix: 12'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac Léman",
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "hp",
+     "width_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:7304518": {
+   "id": "petitesannonces:7304518",
+   "source": "petitesannonces",
+   "source_listing_id": "7304518",
+   "url": "https://www.petitesannonces.ch/a/7304518",
+   "title": "Bateau d'occasion Staempfli Juvan",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Staempfli",
+   "model": "Juvan",
+   "year": 1993,
+   "price_chf": 22000,
+   "price_label": "22'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/518/730465b7cb04084876.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/518/730465b7cb04084876.jpg",
+   "description_excerpt": "Nous vendons un bateau d'occasion de marque Staempfli Juvan. Année 1993 Dimension: 7.17x2.25 8 personnes Le bateau est équipé de deux moteurs Honda BF 8 (un des deux moteurs est très usagé) il y a aussi un panneau solaire, un frigo, un sonar, un toit rigide (très rare), et une quille rallongée. Le bateau est actuellement sur Genève et il peut être livré. Le prix du transport sera sur demande. prix 22000 chf Prix: 22'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 22000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7995310": {
+   "id": "petitesannonces:7995310",
+   "source": "petitesannonces",
+   "source_listing_id": "7995310",
+   "url": "https://www.petitesannonces.ch/a/7995310",
+   "title": "Vends bateau ROTO open 450",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 7800,
+   "price_label": "7'800.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 60.0,
+   "kw": 44.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/310/799568132fb6c095f7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/310/799568132fb6c095f7.jpg",
+   "description_excerpt": "Vends bateau 450 neuf de marque ROTO Bateau open auto-videur en roto moulé Couleur de coque blanche ou grise Dimension 4,50 x 1,80 Puissance maximum : 60 cv Capacité : 4 personnes Inclus bain de soleil et sellerie. Bateau en stock Prix : 7800 CHF TTC Cette offre n'inclut pas le moteur. Départ de Vésenaz Offre avec moteur BF8 : 14 000,00 CHF Offre avec moteur BF50 : 19 500,00 CHF. options possibles Bâche de protection des coussins 800,00 CHF Bimini avec jambe de force 900,00 CHF Si expertise : 18",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac Léman",
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:8783717": {
+   "id": "petitesannonces:8783717",
+   "source": "petitesannonces",
+   "source_listing_id": "8783717",
+   "url": "https://www.petitesannonces.ch/a/8783717",
+   "title": "Bateau pilotage central avec remorque route",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 7300,
+   "price_label": "7'300.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 45.0,
+   "kw": 33.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Choulex",
+   "canton": "GE",
+   "postcode": "1244",
+   "region": "N/A",
+   "lat": 46.2320258,
+   "lon": 6.2064181,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-31",
+   "photo_url": "https://www.petitesannonces.ch/i/l/717/87836ae6004915d130.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/717/87836ae6004915d130.jpg",
+   "description_excerpt": "Je vends mon bateau de marque Molinari modèle Ontario de 4,90 de long sur 1,96 de large avec un moteur Honda de 45 cv le bateau est auto videur avec une bâche d'hiver complète et en bonne état il y a également 2 housses pour couvrir le poste de commande et le siège central . avec un bimini et tout l'équipement GPS , ancre , gaffe etc.. en bonne état et fonctionnel . Dernière expertise l13,09,2024 a Lausanne mais je peux faire une expertise du jour. Je le vends avec sa remorque de 750 kg égalemen",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7300
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac Léman",
+    "opportunite": false,
+    "reasons": [
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:8354036": {
+   "id": "petitesannonces:8354036",
+   "source": "petitesannonces",
+   "source_listing_id": "8354036",
+   "url": "https://www.petitesannonces.ch/a/8354036",
+   "title": "VENDS: Schweizer SAPHIR 700 (1983)",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1983,
+   "price_chf": 15000,
+   "price_label": "15'000.- CHF",
+   "length_m": 6.7,
+   "width_m": 2.35,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "St-Légier-La Chiésaz",
+   "canton": "VD",
+   "postcode": "1806",
+   "region": "N/A",
+   "lat": 46.4722777,
+   "lon": 6.8759701,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 89,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-31",
+   "photo_url": "https://www.petitesannonces.ch/i/l/36/8354695a5cbe73ce19.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/36/8354695a5cbe73ce19.jpg",
+   "description_excerpt": "Vends Saphir 700 de 1983. Unité rare dans cet état de conservation, ayant bénéficié d'un entretien méticuleux Idéal pour croisière côtière ou sorties sur lac. CARACTÉRISTIQUES TECHNIQUES : Modèle : Saphir 700 (Chantier Schweizer) Année : 1983 Dimensions : Longueur env. 6.70m / Largeur env. 2.35m Motorisation : Mercruiser 898 (V8 - 5.0L). Moteur robuste, LES POINTS FORTS : Mécanique : Embase remplacée en 2022 Équipements de protection : Vendu avec ses deux bâches (été et hiver) pour une protectio",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "width_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6565715": {
+   "id": "petitesannonces:6565715",
+   "source": "petitesannonces",
+   "source_listing_id": "6565715",
+   "url": "https://www.petitesannonces.ch/a/6565715",
+   "title": "Bateau moteur cabine",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 4950,
+   "price_label": "4'950.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "no",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Gumefens",
+   "canton": "FR",
+   "postcode": "1643",
+   "region": "N/A",
+   "lat": 46.676829,
+   "lon": 7.0745698,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 120,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-31",
+   "photo_url": "https://www.petitesannonces.ch/i/l/715/6565632c7513dcc769.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/715/6565632c7513dcc769.jpg",
+   "description_excerpt": "Bateau cabine, 6M, 2.40 de largeur, 1100 kg, moteur 8CV 4 temps, bon état général, antifouling fait, expertisé, fonctionne parfaitement. Sans remorque, sans garantie, pris en l'état. Visible en gruyère sur demande. Prix: 4'950.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4950
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8745262": {
+   "id": "petitesannonces:8745262",
+   "source": "petitesannonces",
+   "source_listing_id": "8745262",
+   "url": "https://www.petitesannonces.ch/a/8745262",
+   "title": "Canot Ries à Donner",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "none",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "no",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vevey",
+   "canton": "VD",
+   "postcode": "1800",
+   "region": "N/A",
+   "lat": 46.4626429,
+   "lon": 6.8464644,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 90,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-30",
+   "photo_url": "https://www.petitesannonces.ch/i/l/262/87456ac88c7eb8b988.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/262/87456ac88c7eb8b988.jpg",
+   "description_excerpt": "A donner Canot Ries sans moteur Long. 640 X 200 CM, 6 Places Avec bache et rames Sans remorque, sans place de port A enlever sur place. Prix: 0.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8270621": {
+   "id": "petitesannonces:8270621",
+   "source": "petitesannonces",
+   "source_listing_id": "8270621",
+   "url": "https://www.petitesannonces.ch/a/8270621",
+   "title": "Karel 480 Open",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 11400,
+   "price_label": "11'400.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "none",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 60.0,
+   "kw": 44.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "steel",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Chevroux",
+   "canton": "VD",
+   "postcode": "1545",
+   "region": "N/A",
+   "lat": 46.889997,
+   "lon": 6.9041144,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 117,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-30",
+   "photo_url": "https://www.petitesannonces.ch/i/l/621/8270690a1d8289ab89.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/621/8270690a1d8289ab89.jpg",
+   "description_excerpt": "Karel Open 480 disponible sur commande. Le bateau peut-être livré dans toute la Suisse romande. Prix sans moteur et options supplémentaires. Puissance maximale : 60 CV Options incluses : Échelle de bain avec poignée inox Pompe de cale Main courante inox Installation électrique, avec feu de navigation Console avec volant et main courante Coussin pour table et partie latérale Dossier pour siège conducteur, rembourré Coussins de siège front et siège conducteur Volant en acier chromé Table avec pied",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 11400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8270629": {
+   "id": "petitesannonces:8270629",
+   "source": "petitesannonces",
+   "source_listing_id": "8270629",
+   "url": "https://www.petitesannonces.ch/a/8270629",
+   "title": "Karel 450 Open",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 10500,
+   "price_label": "10'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "none",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 50.0,
+   "kw": 36.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "steel",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Chevroux",
+   "canton": "VD",
+   "postcode": "1545",
+   "region": "N/A",
+   "lat": 46.889997,
+   "lon": 6.9041144,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 117,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-30",
+   "photo_url": "https://www.petitesannonces.ch/i/l/629/8270690a1e7dae5306.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/629/8270690a1e7dae5306.jpg",
+   "description_excerpt": "Karel Open 450 disponible sur commande. Le bateau peut-être livré dans toute la Suisse romande. Prix sans moteur. Puissance maximale : 50 CV Options incluses : Échelle de bain avec poignée inox Pompe de cale Main courante inox Installation électrique, avec feu de navigation Console avec volant et main courante Coussin pour table et partie latérale Dossier pour siège conducteur, rembourré Coussins de siège front et siège conducteur Volant en acier chromé Table avec pied Table/Couchage dans la pro",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7916954": {
+   "id": "petitesannonces:7916954",
+   "source": "petitesannonces",
+   "source_listing_id": "7916954",
+   "url": "https://www.petitesannonces.ch/a/7916954",
+   "title": "Bateau a vendre Presque neuf",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 17250,
+   "price_label": "17'250.- CHF",
+   "length_m": 4.2,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Territet",
+   "canton": "VD",
+   "postcode": "1820",
+   "region": "N/A",
+   "lat": 46.4249698,
+   "lon": 6.9246438,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 96,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-30",
+   "photo_url": "https://www.petitesannonces.ch/i/l/954/791667cdb77881d077.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/954/791667cdb77881d077.jpg",
+   "description_excerpt": "Bateau Titanium 430 Longeur 4,2 m Largeur 1,75 Moteur Yamaha F8FEL 5,9 kW electrical starter + alternator 1ere mise en circulation 10-06-2024 Prix: 17'250.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 17250
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5835859": {
+   "id": "petitesannonces:5835859",
+   "source": "petitesannonces",
+   "source_listing_id": "5835859",
+   "url": "https://www.petitesannonces.ch/a/5835859",
+   "title": "Dégustation de vins sur mon bateau",
+   "category": "other",
+   "category_label": "Other",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 200,
+   "price_label": "200.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Bevaix",
+   "canton": "NE",
+   "postcode": "2022",
+   "region": "N/A",
+   "lat": 46.9295249,
+   "lon": 6.8144572,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 112,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/859/583566fe20d0732527.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/859/583566fe20d0732527.jpg",
+   "description_excerpt": "J'offre de vous faire déguster des vins du Valais et du vins qui provient du sud de la France (Costière de Nîmes )sur mon bateau vous êtes des amis, des collègues vous apprécier le bon vin venez sur mon bateau à maximum 8 personnes je vous ferai une offre par rapport à ce que vous me demander. au plaisir de vous lire Prix: 200.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 200
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8591352": {
+   "id": "petitesannonces:8591352",
+   "source": "petitesannonces",
+   "source_listing_id": "8591352",
+   "url": "https://www.petitesannonces.ch/a/8591352",
+   "title": "Bateau Shetland Alaska 600",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 5000,
+   "price_label": "5'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Buttes",
+   "canton": "NE",
+   "postcode": "2115",
+   "region": "N/A",
+   "lat": 46.8874604,
+   "lon": 6.5513541,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 111,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/352/85916a3408e5c0cc33.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/352/85916a3408e5c0cc33.jpg",
+   "description_excerpt": "Bateau équipé pour la pêche à la traine et de loisir équipé de deux moteur un de 8Cv et un de 50Cv avec carnet antipol rempli 05.2025 4 à 6 places assises intérieur cabine, possible de couchage pour 2 personnes. Bateau bien entretenu avec possibilité de le voir au port de St- Aubin NE Prix: 5'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8181709": {
+   "id": "petitesannonces:8181709",
+   "source": "petitesannonces",
+   "source_listing_id": "8181709",
+   "url": "https://www.petitesannonces.ch/a/8181709",
+   "title": "Brema 480 tiller + remorque respo 750 + Honda 8 cv",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2017,
+   "price_chf": 16500,
+   "price_label": "16'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lentigny",
+   "canton": "FR",
+   "postcode": "1745",
+   "region": "N/A",
+   "lat": 46.7595292,
+   "lon": 7.0037236,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 124,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/709/818168b9450ab92cd2.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/709/818168b9450ab92cd2.jpg",
+   "description_excerpt": "A vendre jolie bateau de pêche Brema 480 tiller de juin 2024 Remorque respo de juin 2024 750 kg non freinée. Moteur Honda 8 cv arbre long de 2017. Bâche faite sur mesure de 2024 Vendu avec une batterie lithium 12 volt 105 ah avec sortie regulee 12 volt. Le prix 16500 frs a discuter. Prix: 16'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 16500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8438385": {
+   "id": "petitesannonces:8438385",
+   "source": "petitesannonces",
+   "source_listing_id": "8438385",
+   "url": "https://www.petitesannonces.ch/a/8438385",
+   "title": "Petits Bateau Moteur",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1800,
+   "price_label": "1'800.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Neuchâtel",
+   "canton": "NE",
+   "postcode": "2000",
+   "region": "N/A",
+   "lat": 46.9953093,
+   "lon": 6.9314074,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 125,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-28",
+   "photo_url": "https://www.petitesannonces.ch/i/l/385/843869a5878432ac34.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/385/843869a5878432ac34.jpg",
+   "description_excerpt": "Petit Bateau à Moteur 3m60 4 places Sans Permis Carte Grise Sfr.1800.- Intéressé ? Alors Contactez-Nous O: [phone hidden] Prix: 1'800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6065187": {
+   "id": "petitesannonces:6065187",
+   "source": "petitesannonces",
+   "source_listing_id": "6065187",
+   "url": "https://www.petitesannonces.ch/a/6065187",
+   "title": "Bateau ponton moteur 8cv",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 12990,
+   "price_label": "12'990.- CHF",
+   "length_m": 4.5,
+   "width_m": 2.0,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Baulmes",
+   "canton": "VD",
+   "postcode": "1446",
+   "region": "N/A",
+   "lat": 46.789976,
+   "lon": 6.5222575,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 89,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-28",
+   "photo_url": "https://www.petitesannonces.ch/i/l/187/6065187_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/187/6065187_1.jpg",
+   "description_excerpt": "Unique en Suisse bateau ponton en bois et alu moteur 8 cv forte poussée 4.50 x 2 m 6 personnes échelles de baignade Fabriqué sur mesure en octobre 2020 Prix: 12'990.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12990
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8707231": {
+   "id": "petitesannonces:8707231",
+   "source": "petitesannonces",
+   "source_listing_id": "8707231",
+   "url": "https://www.petitesannonces.ch/a/8707231",
+   "title": "B2 Marine Cap-Ferret 452 Fish 2022 + Honda 8 CV",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2022,
+   "price_chf": 10900,
+   "price_label": "10'900.- CHF",
+   "length_m": 4.52,
+   "width_m": 1.9,
+   "engine_type": "outboard",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1207",
+   "region": "N/A",
+   "lat": 46.2022497,
+   "lon": 6.1591529,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-28",
+   "photo_url": "https://www.petitesannonces.ch/i/l/231/87076a9d80d17291f8.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/231/87076a9d80d17291f8.jpg",
+   "description_excerpt": "B2 Marine Cap-Ferret 452 Fish de 2022 en excellent état, équipé d'un moteur hors-bord Honda BF8 8 CV de 2022. Navigation sans permis en Suisse avec cette motorisation. Longueur 4,52 m - largeur 1,90 m - homologué 5 personnes. Bimini neuf. Moteur entretenu. Bateau immatriculé à Genève et prêt à naviguer. Visible à Genève sur rendez-vous. Prix raisonnablement négociable. Prix : 11500 Prix: 10'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8379313": {
+   "id": "petitesannonces:8379313",
+   "source": "petitesannonces",
+   "source_listing_id": "8379313",
+   "url": "https://www.petitesannonces.ch/a/8379313",
+   "title": "Bateau de pêche équipé pour la traîne",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 8500,
+   "price_label": "8'500.- CHF",
+   "length_m": 5.85,
+   "width_m": 2.46,
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 20.0,
+   "kw": 14.7,
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 2,
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Lugnorre",
+   "canton": "FR",
+   "postcode": "1789",
+   "region": "N/A",
+   "lat": 46.9501135,
+   "lon": 7.0721164,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 133,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-28",
+   "photo_url": "https://www.petitesannonces.ch/i/l/313/83796970ac26290419.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/313/83796970ac26290419.jpg",
+   "description_excerpt": "Bateau de pêche type Octeau Timonier Dimensions: longueur 5.85 m largeur 2.46 m Cabine avec 2 couchettes Cabine de pilotage hauteur 1.80 m fermée par portes coulissantes, avec barre à roue. Moteur diesel type Yanmar 20QM20 de 20 CV Moteur extérieur Yamaha 8 CV récent Bateau à 3 quilles, trés stable,complètement équipé pour la pêche à la traîne. Possibilité de naviguer sans permis avec le moteur 8 CV. Visible dans le canal de la Broye au camping des Trois Lacs à Sugiez Pour tous renseignements au",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5364329": {
+   "id": "petitesannonces:5364329",
+   "source": "petitesannonces",
+   "source_listing_id": "5364329",
+   "url": "https://www.petitesannonces.ch/a/5364329",
+   "title": "Bateau avec moteur",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1000,
+   "price_label": "1'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Moutier",
+   "canton": "JU",
+   "postcode": "2740",
+   "region": "N/A",
+   "lat": 47.277859,
+   "lon": 7.3690912,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 186,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-27",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "Ont recherche un bateau avec cabine et remorque Prix: 1'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6977430": {
+   "id": "petitesannonces:6977430",
+   "source": "petitesannonces",
+   "source_listing_id": "6977430",
+   "url": "https://www.petitesannonces.ch/a/6977430",
+   "title": "Semi-rigide avec remorque",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 5500,
+   "price_label": "5'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Evinrude",
+   "engine_model": "N/A",
+   "hp": 40.0,
+   "kw": 29.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Carouge",
+   "canton": "GE",
+   "postcode": "1227",
+   "region": "N/A",
+   "lat": 46.1870558,
+   "lon": 6.1370782,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-10-27",
+   "photo_url": "https://www.petitesannonces.ch/i/l/430/69776499c9ba6ccae9.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/430/69776499c9ba6ccae9.jpg",
+   "description_excerpt": "Semi rigide de 4m,60 de la marque TARPON avec un Moteur 40CV evinrude. Le tout est expertisé en novembre 2024 se trouve sur remorque qui n'est pas expertisé. Ce bateau fait partie d'un flotte de bateaux de location. La raison de vente est le manque de place suite à la suppression de places professionnelles Un 2 ième moteur 40 Cv fait partie de l'offre . Celui ci peut être utilisé pour pièces de rechange . Sinon crabot à changer. Prix: 5'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8088090": {
+   "id": "petitesannonces:8088090",
+   "source": "petitesannonces",
+   "source_listing_id": "8088090",
+   "url": "https://www.petitesannonces.ch/a/8088090",
+   "title": "Almarine Almar hors bord 45cv",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 7000,
+   "price_label": "7'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "outboard",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 45.0,
+   "kw": 33.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Villeneuve",
+   "canton": "VD",
+   "postcode": "1844",
+   "region": "N/A",
+   "lat": 46.3974414,
+   "lon": 6.9304356,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 103,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-27",
+   "photo_url": "https://www.petitesannonces.ch/i/l/90/8088687341bc178623.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/90/8088687341bc178623.jpg",
+   "description_excerpt": "Je vends mon bateau à moteur 6 places La bâche est neuve L'antifouling et peinture coque fait en 2025 Expertisé en 2024 Démarreur neuf Moteur Yamaha 4 temps 45cv Prix: 7'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac Léman",
+    "opportunite": false,
+    "reasons": [
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:7867182": {
+   "id": "petitesannonces:7867182",
+   "source": "petitesannonces",
+   "source_listing_id": "7867182",
+   "url": "https://www.petitesannonces.ch/a/7867182",
+   "title": "Privé vend bateau à moteur / cabine 7 places",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Bayliner",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 13200,
+   "price_label": "13'200.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1007",
+   "region": "N/A",
+   "lat": 46.5172963,
+   "lon": 6.6148735,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 63,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-27",
+   "photo_url": "https://www.petitesannonces.ch/i/l/182/786767a1d5db6c4be6.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/182/786767a1d5db6c4be6.jpg",
+   "description_excerpt": "Bayliner 2556 Fly Ciera amarrage à Ouchy (sans place de stationnement) bâche d'hiver et bâche été Cabine int. repeinte quelques travaux légers à prévoir Largeur 293 cm / longueur 874 cm. Expertisé au mois d'août 2025 et environ 3'000 sfr à prévoir pour service complet. Prix à négocier Prix: 13'200.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 13200
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5887598": {
+   "id": "petitesannonces:5887598",
+   "source": "petitesannonces",
+   "source_listing_id": "5887598",
+   "url": "https://www.petitesannonces.ch/a/5887598",
+   "title": "Bateau moteur port des mouches Hermance",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Fletcher",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 8200,
+   "price_label": "8'200.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 25.0,
+   "kw": 18.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Hermance",
+   "canton": "GE",
+   "postcode": "1248",
+   "region": "N/A",
+   "lat": 46.3007635,
+   "lon": 6.2449267,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 15,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-26",
+   "photo_url": "https://www.petitesannonces.ch/i/l/598/5887598_7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/598/5887598_7.jpg",
+   "description_excerpt": "Bateau à moteur 4 places ammarré au port des mouches à Hermance Fletcher Arrow 140 Longueur 438cm Largeur 170cm Moteur 4 temps Honda 25CV Très bon état Dernière Visite 28.05.2021 Si cette annonce vous intéresse je vous prie de me répondre par mail. email Jean-Luc Prix: 8'200.--CHF Prix: 8'200.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8200
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8145030": {
+   "id": "petitesannonces:8145030",
+   "source": "petitesannonces",
+   "source_listing_id": "8145030",
+   "url": "https://www.petitesannonces.ch/a/8145030",
+   "title": "A vendre barque a moteur",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1300,
+   "price_label": "1'300.- CHF",
+   "length_m": 2.5,
+   "width_m": 1.6,
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 4.0,
+   "kw": 2.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Riaz",
+   "canton": "FR",
+   "postcode": "1632",
+   "region": "N/A",
+   "lat": 46.6424704,
+   "lon": 7.0609882,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 116,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-26",
+   "photo_url": "https://www.petitesannonces.ch/i/l/30/81456898f2c84ad7c7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/30/81456898f2c84ad7c7.jpg",
+   "description_excerpt": "A vendre petit barque en très bon état 2.50 m x 1.60m avec un moteur Honda 4 cv 4 temps il est auto videur pas besoin de bâche avec rames ( c'est possible séparément bateau 500frs. ou le moteur seul avec service plus antipollution a jour 800 frs. prix 1300 frs. au complet [phone hidden] Prix: 1'300.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1300
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:4967969": {
+   "id": "petitesannonces:4967969",
+   "source": "petitesannonces",
+   "source_listing_id": "4967969",
+   "url": "https://www.petitesannonces.ch/a/4967969",
+   "title": "Super FLIT 480 B",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6900,
+   "price_label": "6'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "outboard",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Perly",
+   "canton": "GE",
+   "postcode": "1258",
+   "region": "N/A",
+   "lat": 46.1563177,
+   "lon": 6.0901812,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 8,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-26",
+   "photo_url": "https://www.petitesannonces.ch/i/l/969/4967969_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/969/4967969_1.jpg",
+   "description_excerpt": "Excellent pour le wake board, ski nautique, bouée ect.... Moteur : Hors bord Capacité : 5 pers. Longueur : 4, 67 mètres Poids : 600kg Prix: 6'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac Léman",
+    "opportunite": false,
+    "reasons": [
+     "hp",
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:8305749": {
+   "id": "petitesannonces:8305749",
+   "source": "petitesannonces",
+   "source_listing_id": "8305749",
+   "url": "https://www.petitesannonces.ch/a/8305749",
+   "title": "Angler Sport Boot Aktion",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 3750,
+   "price_label": "3'750.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "none",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Nottwil",
+   "canton": "LU",
+   "postcode": "6207",
+   "region": "N/A",
+   "lat": 47.1328852,
+   "lon": 8.13606,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 250,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/749/8305692b0756b99028.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/749/8305692b0756b99028.jpg",
+   "description_excerpt": "Super Boot mit Stassenanhänger gebremst. Ohne Motor. Mit Massplane und Zubehör. Lenkung und Steuerung komplett. Evtl Tausch mit was Kleinerem da mein Wasserhafen zu klein ist für grosse Boote Prix: 3'750.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3750
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8604117": {
+   "id": "petitesannonces:8604117",
+   "source": "petitesannonces",
+   "source_listing_id": "8604117",
+   "url": "https://www.petitesannonces.ch/a/8604117",
+   "title": "A vendre Acquaviva Frontier",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1989,
+   "price_chf": 18000,
+   "price_label": "18'000.- CHF",
+   "length_m": 6.0,
+   "width_m": 2.33,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 130.0,
+   "kw": 95.6,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Gletterens",
+   "canton": "FR",
+   "postcode": "1544",
+   "region": "N/A",
+   "lat": 46.9017078,
+   "lon": 6.9361876,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 119,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/117/86046a3fc63f20baa2.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/117/86046a3fc63f20baa2.jpg",
+   "description_excerpt": "Bateau de 1989 6.00m x 2.33m 130 cv (essence) 8 personnes admises 3 lits dans la cabine et possibilité de dormir (1 couchage) à l'arrière du bateau (en extérieur). Nous avons fabriqué une moustiquaire sur mesure pour l'extérieur. Intérieur cabine entièrement refait. Le moteur a été révisé et testé et fonctionne parfaitement (mai 2026). Possibilité via le lien web de visionner le moteur en marche. L'antifouling a été entièrement refait en mai 2026. La dernière expertise date de 2024. Le bateau es",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 18000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:1803197": {
+   "id": "petitesannonces:1803197",
+   "source": "petitesannonces",
+   "source_listing_id": "1803197",
+   "url": "https://www.petitesannonces.ch/a/1803197",
+   "title": "Zodiac Arimar 520",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "Zodiac",
+   "model": "Arimar 520",
+   "year": "N/A",
+   "price_chf": 28000,
+   "price_label": "28'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 100.0,
+   "kw": 73.6,
+   "fuel": "N/A",
+   "hours": 120,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Bursins",
+   "canton": "VD",
+   "postcode": "1183",
+   "region": "N/A",
+   "lat": 46.4526956,
+   "lon": 6.2881957,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 34,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/197/1803197_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/197/1803197_1.jpg",
+   "description_excerpt": "Arimar 520 En très bon état et très soigné Moteur Yamaha 100CV / 120 heures Antifooling refait à chaque printemps Bâche entièrement recouvrantre neuve 2012 CD radio Taux / bimini Divers options Plusieurs configurations d'assises et plage de bronzage possibles Remoque de route immatriculée A voir à Crans-près-Céligny Factures à l'appui 28000.- a discuter Prix: 28'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 28000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8478466": {
+   "id": "petitesannonces:8478466",
+   "source": "petitesannonces",
+   "source_listing_id": "8478466",
+   "url": "https://www.petitesannonces.ch/a/8478466",
+   "title": "Petit canot à moteur dimension 3,77 x 1.50",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2001,
+   "price_chf": 800,
+   "price_label": "800.- CHF",
+   "length_m": 3.77,
+   "width_m": 1.5,
+   "engine_type": "none",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/466/847869ca8136bad652.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/466/847869ca8136bad652.jpg",
+   "description_excerpt": "Bateau à moteur d'occasion (sans moteur) Année 2001 dernière expertise octobre 2021 les dimensions sont les suivantes: 3.77 M x 1.50 M 4 x personnes Il est vendu comme sur la photo donc sans moteur. Le prix est 800.00 chf Le bateau est visible à Vésenaz et sur RDV Prix: 800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8263470": {
+   "id": "petitesannonces:8263470",
+   "source": "petitesannonces",
+   "source_listing_id": "8263470",
+   "url": "https://www.petitesannonces.ch/a/8263470",
+   "title": "Petit Bateau à Moteur 8 cheveaux",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1800,
+   "price_label": "1'800.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Neuchâtel",
+   "canton": "NE",
+   "postcode": "2000",
+   "region": "N/A",
+   "lat": 46.9953093,
+   "lon": 6.9314074,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 125,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/470/826369035d39efb7b3.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/470/826369035d39efb7b3.jpg",
+   "description_excerpt": "Petit Bateau a Moteur 8 cheveaux Naviguation Sans permis! Avec chariot de mise a l'eau Sfr.1800.- Interessè? Alors Appellez-moi O: [phone hidden] Prix: 1'800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7930323": {
+   "id": "petitesannonces:7930323",
+   "source": "petitesannonces",
+   "source_listing_id": "7930323",
+   "url": "https://www.petitesannonces.ch/a/7930323",
+   "title": "Boston Whaler Outrage 18 Honda BF90 D (injection)",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Boston Whaler",
+   "model": "Outrage 18",
+   "year": "N/A",
+   "price_chf": 9900,
+   "price_label": "9'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": 1900,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Mies",
+   "canton": "VD",
+   "postcode": "1295",
+   "region": "N/A",
+   "lat": 46.3078203,
+   "lon": 6.1691121,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 22,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-24",
+   "photo_url": "https://www.petitesannonces.ch/i/l/323/793067d97aef2108e0.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/323/793067d97aef2108e0.jpg",
+   "description_excerpt": "Bateau de travail expertisé. moteur avec 1900H service OK Prix: 9'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8660845": {
+   "id": "petitesannonces:8660845",
+   "source": "petitesannonces",
+   "source_listing_id": "8660845",
+   "url": "https://www.petitesannonces.ch/a/8660845",
+   "title": "Bateau moteur Cabine WC",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Draco",
+   "model": "N/A",
+   "year": 1989,
+   "price_chf": 4500,
+   "price_label": "4'500.- CHF",
+   "length_m": 6.92,
+   "width_m": 2.59,
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "no",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Rolle",
+   "canton": "VD",
+   "postcode": "1180",
+   "region": "N/A",
+   "lat": 46.45973,
+   "lon": 6.3305444,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 39,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-10-24",
+   "photo_url": "https://www.petitesannonces.ch/i/l/845/86606a72433bbad370.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/845/86606a72433bbad370.jpg",
+   "description_excerpt": "Draco 2300 SC 1984 (1ère mise en circulation 1989) Bâche neuve 2025 Entretenu depuis 10 ans par un chantier naval (factures à l'appui) Sans remorque, pris en l'état. Longueur 6.92 m Largeur 2.59 m Moteur Mercruiser 260 essence Prix: 4'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "width_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5565349": {
+   "id": "petitesannonces:5565349",
+   "source": "petitesannonces",
+   "source_listing_id": "5565349",
+   "url": "https://www.petitesannonces.ch/a/5565349",
+   "title": "Barque Fun Yak moteur Yamaha 8CV",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 4000,
+   "price_label": "4'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": 30,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Neuchâtel",
+   "canton": "NE",
+   "postcode": "2000",
+   "region": "N/A",
+   "lat": 46.9953093,
+   "lon": 6.9314074,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 125,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-24",
+   "photo_url": "https://www.petitesannonces.ch/i/l/349/5565349_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/349/5565349_1.jpg",
+   "description_excerpt": "Barque Fun Yak 370 avec moteur Yamaha 8 cheveaux. Tous les accessoires nécessaires ( Corde, ancre, rames, ressort d'amarrage, cadenas moteur, gilets de sauvetage,...) inclus. Acheté fin août 2017, CHF 5'900.- Moteur entretenu chaque année; très peu utilisé (env. 30h). Antifouling effectué également chaque année. Pour le moment le bateau se trouve au port de Bevaix. Prix: 4'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8689283": {
+   "id": "petitesannonces:8689283",
+   "source": "petitesannonces",
+   "source_listing_id": "8689283",
+   "url": "https://www.petitesannonces.ch/a/8689283",
+   "title": "Sur Marine ST 370 Prestige",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 8900,
+   "price_label": "8'900.- CHF",
+   "length_m": 3.7,
+   "width_m": 1.77,
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 40.0,
+   "kw": 29.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Mollens",
+   "canton": "VD",
+   "postcode": "1146",
+   "region": "N/A",
+   "lat": 46.5769419,
+   "lon": 6.3627928,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 57,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-23",
+   "photo_url": "https://www.petitesannonces.ch/i/l/283/86896a8c2d1ad994d4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/283/86896a8c2d1ad994d4.jpg",
+   "description_excerpt": "A vendre - SURMARINE ST 370 Prestige Élégant, compact et raffiné, ce SURMARINE ST 370 Prestige est le tender idéal pour accompagner un yacht ou pour profiter de sorties côtières avec style. Inspiré de l'univers automobile haut de gamme, il combine luxe, praticité et qualité de fabrication italienne. Caractéristiques principales : Longueur : 3,70 m Largeur : 1,77 m Capacité : jusqu'à 6 personnes Poids : env. 145 kg Motorisation maximale : 40 CV Arbre moteur : long (L) Équipements et points forts ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "zone2",
+    "zone": "zone2",
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "default"
+    ],
+    "score": 58
+   }
+  },
+  "petitesannonces:8490156": {
+   "id": "petitesannonces:8490156",
+   "source": "petitesannonces",
+   "source_listing_id": "8490156",
+   "url": "https://www.petitesannonces.ch/a/8490156",
+   "title": "Bateau Quicksiver à moteur",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Quicksilver",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 7800,
+   "price_label": "7'800.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 50.0,
+   "kw": 36.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "St-Aubin-Sauges",
+   "canton": "NE",
+   "postcode": "2024",
+   "region": "N/A",
+   "lat": 46.894585,
+   "lon": 6.7737479,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-22",
+   "photo_url": "https://www.petitesannonces.ch/i/l/156/849069d5f2876edfb4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/156/849069d5f2876edfb4.jpg",
+   "description_excerpt": "Quicksilver 520 Flamingo Longueur 515cm Largeur 228cm 5 places Bâché Bien entretenu, dernière expertise septembre 2025 Moteur Honda 50CV Pas de remorque pour la sortie de l'eau. Visible à St-Aubin, lac de Neuchâtel Prix à discuter Prix: 7'800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac de Neuchâtel",
+    "opportunite": false,
+    "reasons": [
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:8124229": {
+   "id": "petitesannonces:8124229",
+   "source": "petitesannonces",
+   "source_listing_id": "8124229",
+   "url": "https://www.petitesannonces.ch/a/8124229",
+   "title": "Bateau lambro onda a vendre",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1982,
+   "price_chf": 350,
+   "price_label": "350.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "none",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "to restore",
+   "licence_leman": "N/A",
+   "town": "Cormérod",
+   "canton": "FR",
+   "postcode": "1721",
+   "region": "N/A",
+   "lat": 46.8647845,
+   "lon": 7.0874642,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 129,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-20",
+   "photo_url": "https://www.petitesannonces.ch/i/l/229/81246886570021dc37.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/229/81246886570021dc37.jpg",
+   "description_excerpt": "Bateau polyester, 570 x 209 cm, 6 places, 1ere mise en circulation 1982, derniere expertise 2022, sans moteur, pour bricoleur, avec chariot d hivernage sans papier ez non expertisable. A prendre sur place . Pas de reservation, au plus rapide. Vendu en l etat, sans garantie ni reprise. Prix: 350.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 350
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6254288": {
+   "id": "petitesannonces:6254288",
+   "source": "petitesannonces",
+   "source_listing_id": "6254288",
+   "url": "https://www.petitesannonces.ch/a/6254288",
+   "title": "Beneteau antares 680",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Beneteau",
+   "model": "Antares 680",
+   "year": "N/A",
+   "price_chf": 28000,
+   "price_label": "28'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "inboard",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "diesel",
+   "hours": 10,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Versoix",
+   "canton": "GE",
+   "postcode": "1290",
+   "region": "N/A",
+   "lat": 46.2913825,
+   "lon": 6.1552376,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 12,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-20",
+   "photo_url": "https://www.petitesannonces.ch/i/l/288/6254288_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/288/6254288_1.jpg",
+   "description_excerpt": "Beneteau antares 680 Description - un polish complet a été fait ainsi que l'antifouling juste avant mise à l'eau en début novembre - 6m84 de longueur par 2m50 de largeur - moteur inbord perkins turbo diesel (alternateur neuf et démarreur neuf et révision des injecteurs et divers tuyaux changés - liston caoutchouc neuf - moteur Yamaha 8cv à peine 10 heures de navigations ( sort du service) - 2 batteries (dont une neuve ) - 2 mâts de traîne avec deux enrouleurs - 2 supports pour tours - 2 tours à ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 28000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5302585": {
+   "id": "petitesannonces:5302585",
+   "source": "petitesannonces",
+   "source_listing_id": "5302585",
+   "url": "https://www.petitesannonces.ch/a/5302585",
+   "title": "Rocca rallye 600",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1992,
+   "price_chf": 8000,
+   "price_label": "8'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Lonay",
+   "canton": "VD",
+   "postcode": "1027",
+   "region": "N/A",
+   "lat": 46.5241729,
+   "lon": 6.5167626,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 54,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-20",
+   "photo_url": "https://www.petitesannonces.ch/i/l/585/5302585_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/585/5302585_1.jpg",
+   "description_excerpt": "Je vend mon bateau avec la remorque comprise il est de 1992 et en bon etat. moteur a essence.nbre de place 6 moteur mercruiser prix de vente 8000 a negocier... Prix: 8'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8685100": {
+   "id": "petitesannonces:8685100",
+   "source": "petitesannonces",
+   "source_listing_id": "8685100",
+   "url": "https://www.petitesannonces.ch/a/8685100",
+   "title": "Bateau alu, idéal pour pêche ou promenades, pas besoin de permis",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 9500,
+   "price_label": "9'500.- CHF",
+   "length_m": 4.3,
+   "width_m": "N/A",
+   "engine_type": "electric",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "electric",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Vallorbe",
+   "canton": "VD",
+   "postcode": "1337",
+   "region": "N/A",
+   "lat": 46.7113158,
+   "lon": 6.3793728,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 98,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-20",
+   "photo_url": "https://www.petitesannonces.ch/i/l/100/86856a884659b09f91.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/100/86856a884659b09f91.jpg",
+   "description_excerpt": "Model Marine 15F 4,30m /1,55m Bateau expertisé , moteur électrique homologué , adapté avec une base que j'ai fait en contra plaqué marin et revestie avec un jolie tapis pour pouvoir pêcher de bout, avec 2 bacs de rangement, un troisième pour la batterie, moteur 8ch, moteur électrique avec pedale et télécommande, sonde pour peche en live Lowrance eagle eye9, perche pike'n bass pour la sonde et remorque(le tout moins de 750kg, pas besoin de permis de remorque). Tout dans un état égal à neuf. Prix:",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6947879": {
+   "id": "petitesannonces:6947879",
+   "source": "petitesannonces",
+   "source_listing_id": "6947879",
+   "url": "https://www.petitesannonces.ch/a/6947879",
+   "title": "Bateau Staempfli 8cv",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Staempfli",
+   "model": "8CV",
+   "year": "N/A",
+   "price_chf": 3500,
+   "price_label": "3'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Cudrefin",
+   "canton": "VD",
+   "postcode": "1588",
+   "region": "N/A",
+   "lat": 46.9534988,
+   "lon": 7.0208306,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 132,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-19",
+   "photo_url": "https://www.petitesannonces.ch/i/l/879/69476480ec94f316b8.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/879/69476480ec94f316b8.jpg",
+   "description_excerpt": "Moteur Yamaha 8cv Expertise et service moteur 2020 Bâche neuve 2022 Remorque max 30km/h sans plaque Prix: 3'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6508500": {
+   "id": "petitesannonces:6508500",
+   "source": "petitesannonces",
+   "source_listing_id": "6508500",
+   "url": "https://www.petitesannonces.ch/a/6508500",
+   "title": "Bateau Vieux Rohn S 75",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 15000,
+   "price_label": "15'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "inboard",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 116.0,
+   "kw": 85.3,
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Dully",
+   "canton": "VD",
+   "postcode": "1195",
+   "region": "N/A",
+   "lat": 46.4335711,
+   "lon": 6.30155,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 35,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-19",
+   "photo_url": "https://www.petitesannonces.ch/i/l/500/650862fa4cfd8d9923.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/500/650862fa4cfd8d9923.jpg",
+   "description_excerpt": "Pour les amateurs de bateau ancien, Rohn S 75 1961 construit a Twann Bateau cabine bois, sans ses inconvénients, carène: double bordés croisés, coque et cabine:contre-plaqué marine. Long 7,50, larg 2,40, tirant d'eau 0,70, nécessite quelques réparations, moteur TD 116 CV diesel inbord, Z-drive. En l'état Prix: 15'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "engine_type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8084087": {
+   "id": "petitesannonces:8084087",
+   "source": "petitesannonces",
+   "source_listing_id": "8084087",
+   "url": "https://www.petitesannonces.ch/a/8084087",
+   "title": "Bateau à moteur pour la pêche",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2005,
+   "price_chf": 5500,
+   "price_label": "5'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Montet",
+   "canton": "FR",
+   "postcode": "1483",
+   "region": "N/A",
+   "lat": 46.8152095,
+   "lon": 6.8710312,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 108,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-19",
+   "photo_url": "https://www.petitesannonces.ch/i/l/87/80846863acf79f6131.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/87/80846863acf79f6131.jpg",
+   "description_excerpt": "Bateau Dory13 de chez Dell Quay, longueur 4m17 ; largeur 1m70, 5 places, expertisé du jour, peinture intérieure extérieure et antifouling refait cette année Vendu avec équipement obligatoire complet, 4 gilets, un moteur Honda 8cv de 2005 (révision et antipollution effectué en 2024) + un réservoir 15L et un estagnon de secour 5L, remorque de route remise à neuf, un eco-sondeur Humminbird Helix5 avec batterie neuve et la bâche Prix à discuter Prix: 5'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8764238": {
+   "id": "petitesannonces:8764238",
+   "source": "petitesannonces",
+   "source_listing_id": "8764238",
+   "url": "https://www.petitesannonces.ch/a/8764238",
+   "title": "Revêtement antidérapant Gisatex avec colle",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 200,
+   "price_label": "200.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "PVC/Hypalon",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Les Evouettes",
+   "canton": "VS",
+   "postcode": "1897",
+   "region": "N/A",
+   "lat": 46.3628185,
+   "lon": 6.8794629,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-18",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "Vends rouleau de 4 mètres (largeur 150cm) de Revêtement antidérapant GISATEX Revêtement de pont Antislide Soft blanc Revêtement antidérapant 100% PVC Résistant à l'eau salée et aux rayons UV Facile à poser et à découper Idéal pour les zones humides et pieds nus Facile à entretenir avec des produits de nettoyage doux. (N° d'article 264711 chez Compass24) ainsi que 3 tubes de GISATEX Seal & Bond No. 5 Colle et mastic d'étanchéité 1-composant Inodore Résistance finale élevée Durcissement rapide. Ve",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 200
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8699408": {
+   "id": "petitesannonces:8699408",
+   "source": "petitesannonces",
+   "source_listing_id": "8699408",
+   "url": "https://www.petitesannonces.ch/a/8699408",
+   "title": "Bateau Honda à moteur",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 10000,
+   "price_label": "10'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": 14,
+   "sail_area_m2": "N/A",
+   "berths": 6,
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Monthey",
+   "canton": "VS",
+   "postcode": "1870",
+   "region": "N/A",
+   "lat": 46.2517475,
+   "lon": 6.9496177,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 120,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-18",
+   "photo_url": "https://www.petitesannonces.ch/i/l/408/86996a95a9080412b7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/408/86996a95a9080412b7.jpg",
+   "description_excerpt": "Je vend bateau Honda BF 8 D4 a moteur en parfait état il se trouve au Bouveret 6 couchettes 10'000fr à discuter joignable dès 14h [phone hidden] Prix: 10'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7636175": {
+   "id": "petitesannonces:7636175",
+   "source": "petitesannonces",
+   "source_listing_id": "7636175",
+   "url": "https://www.petitesannonces.ch/a/7636175",
+   "title": "Lambro marine inboard",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercruiser",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": 1220,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Fribourg",
+   "canton": "FR",
+   "postcode": "1700",
+   "region": "N/A",
+   "lat": 46.8034405,
+   "lon": 7.1554492,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 138,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-18",
+   "photo_url": "https://www.petitesannonces.ch/i/l/175/763666d48785123978.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/175/763666d48785123978.jpg",
+   "description_excerpt": "LAMBRO MARINE ONDA SUPER DL 1220 Heures Doté d'un moteur In board Mercruiser / MCM 165 3.7L, Ce bateau a tous les accessoires indispensables : gilet de sauvetage, pare-battages, gaffe, parasols, bâche de protection, extincteurs et équipements de sécurité, ainsi qu'une radio avec 6 haut-parleur Profitez également de la possibilité de couvrir le bateau avec un toit rétractable en cuir. Entretenu , ce bateau bénéficie d'une révision moteur annuelle et d'une hélice neuve en 2024. Aucun frais à prévo",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8030144": {
+   "id": "petitesannonces:8030144",
+   "source": "petitesannonces",
+   "source_listing_id": "8030144",
+   "url": "https://www.petitesannonces.ch/a/8030144",
+   "title": "Bâteau en alu à vendre",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Buster",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 4000,
+   "price_label": "4'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercury",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Pully",
+   "canton": "VD",
+   "postcode": "1009",
+   "region": "N/A",
+   "lat": 46.5128692,
+   "lon": 6.6595375,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 67,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-17",
+   "photo_url": "https://www.petitesannonces.ch/i/l/144/80306832d690e7bea5.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/144/80306832d690e7bea5.jpg",
+   "description_excerpt": "Bonjour, je vends bâteau Buster R en alu longueur 4m75 largeur 1m65 pour 5 personne avec un moteur Mercury 8 CV possibilité de changer de moteur et de mettre jusqu'à 20 chevaux sur ce bâteau, il est complètement équipé grand compartiment devant pour ranger les gilets et fermer avec un cadenas pour l'arrière se trouve un compartiment pour la batterie et l'estagnon de 20 litre le moteur à effectué tout ses service par le centre d'entretien d'Ouchy carnet à disposition Prix: 4'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "hp_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7492612": {
+   "id": "petitesannonces:7492612",
+   "source": "petitesannonces",
+   "source_listing_id": "7492612",
+   "url": "https://www.petitesannonces.ch/a/7492612",
+   "title": "Bateau Quicksilver Captur 640 Pilothouse",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Quicksilver",
+   "model": "Captur 640",
+   "year": "N/A",
+   "price_chf": 15000,
+   "price_label": "15'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Eysins",
+   "canton": "VD",
+   "postcode": "1262",
+   "region": "N/A",
+   "lat": 46.379373,
+   "lon": 6.2067515,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 27,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-17",
+   "photo_url": "https://www.petitesannonces.ch/i/l/612/74926658978616d1d7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/612/74926658978616d1d7.jpg",
+   "description_excerpt": "Ce bateau est fais pour la pèche(toute équipe avec cage de p che,filet de p che,cannes à p che etc....)et aussi fais pour la loisirs avec une cabine confortable et spacieuse pour une bateau de ce type.Elle a été sorti de l'eau toutes les années et gardés sec en hiver Prix: 15'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5490359": {
+   "id": "petitesannonces:5490359",
+   "source": "petitesannonces",
+   "source_listing_id": "5490359",
+   "url": "https://www.petitesannonces.ch/a/5490359",
+   "title": "Vend Seamaster Nord 30",
+   "category": "motor",
+   "category_label": "Motorboats (cabin)",
+   "brand": "Beneteau",
+   "model": "First 30",
+   "year": "N/A",
+   "price_chf": 8000,
+   "price_label": "8'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 85.0,
+   "kw": 62.5,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1203",
+   "region": "N/A",
+   "lat": 46.208711,
+   "lon": 6.1226806,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 3,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-17",
+   "photo_url": "https://www.petitesannonces.ch/i/l/359/5490359_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/359/5490359_1.jpg",
+   "description_excerpt": "Dimansion 9m20 * 3m35, nombre de place 12 personnes, moteur IVECO 85ch disel (faible consommation 5 litre de l'heure).Equipement: frigo, cuisinière,four,chauffage air chaud,chauffe-eau,2 bombonnes de gaz. 2 batteries neuve 1100A avec panneau solaire, antifouling + presse étoupe fais août 2020. expertise + service moteur + gaz juin 2021 Cabine arrière: douche + wc, lavabo,armoir,lit 2 places Cabine avant : cuisine douche+ wc, armoir, lit 3 places Cabine pointe: rangement, armoir, lit 2 places Pri",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8102344"
+    }
+   ],
+   "_filtre": {
+    "version": 2,
+    "bucket": "a_verifier",
+    "zone": "zone1",
+    "lake": "Lac Léman",
+    "opportunite": false,
+    "reasons": [
+     "engine_type",
+     "width_m",
+     "length_m"
+    ],
+    "score": 60
+   }
+  },
+  "petitesannonces:8463354": {
+   "id": "petitesannonces:8463354",
+   "source": "petitesannonces",
+   "source_listing_id": "8463354",
+   "url": "https://www.petitesannonces.ch/a/8463354",
+   "title": "Beau Bateau à voile de 7m35 avec place d'amarage à l'année",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 4900,
+   "price_label": "4'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 4,
+   "material": "wood",
+   "trailer": "yes",
+   "mooring_included": "yes",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Perroy",
+   "canton": "VD",
+   "postcode": "1166",
+   "region": "N/A",
+   "lat": 46.466197,
+   "lon": 6.3595366,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 40,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://www.petitesannonces.ch/i/l/354/846369bca912ba31f6.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/354/846369bca912ba31f6.jpg",
+   "description_excerpt": "Dynamic 2000 avec amarrage Léman, CHF 9'850.- VOILIER et REMORQUE avec amarrage (RARE) à fr Fr 850.-/an 7m34 x 2m49 FR. 34 000 prix d'achat neuf Jusqu'au 15 avril Fr 500 de moins. Très beau bateau performant, bien entretenu, antifouling récent. Grand cockpit.. 6 personnes, 4 couchettes. 2 génois, un enrouleur, une grand-voile top. Mât renforcé. Visible port Morges ouest Vieux Bois ponton du milieu côté droite à mi chemin. Peut être déplacé sur tous les lacs, et sur toutes les mers et écéans, Ind",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:2826962": {
+   "id": "petitesannonces:2826962",
+   "source": "petitesannonces",
+   "source_listing_id": "2826962",
+   "url": "https://www.petitesannonces.ch/a/2826962",
+   "title": "SCHÖCHL SCHÖLCHL Aquila 630/190",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1983,
+   "price_chf": 900,
+   "price_label": "900.- CHF",
+   "length_m": 6.3,
+   "width_m": 1.9,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1201",
+   "region": "N/A",
+   "lat": 46.2098446,
+   "lon": 6.1447795,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://www.petitesannonces.ch/i/l/962/2826962_2.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/962/2826962_2.jpg",
+   "description_excerpt": "Bateau à voiles en polyester auto videur de marque Schoechl, idéal pour ballade sur le lac. Caractéristiques : Année 1983 Longueur 6,30 m Largeur 1,90 m Surface 17 m.c. Nombre de personnes 4 Expertise faite septembre 2011 Tout l'équipement de sécurité (gaffe, ancre, sifflet, fanion rouge, bouée) Voiles en bon état, une grand voile, foc et un spy + baume de spy. Chariot de mise à l'eau. Pas de place. Une bonne affaire! Visible à Collex Prix: 900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6309413": {
+   "id": "petitesannonces:6309413",
+   "source": "petitesannonces",
+   "source_listing_id": "6309413",
+   "url": "https://www.petitesannonces.ch/a/6309413",
+   "title": "Recyclage de tes vieilles voiles",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Yvonand",
+   "canton": "VD",
+   "postcode": "1462",
+   "region": "N/A",
+   "lat": 46.7978927,
+   "lon": 6.7402581,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 97,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://www.petitesannonces.ch/i/l/413/6309413_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/413/6309413_1.jpg",
+   "description_excerpt": "Bonjour, Je recycle les voiles qui ne servent plus, même cassées ou abîmées. Je peux me déplacer pour te débarrasser. J'étudie toute proposition. Merci pour ton prochain contact. Prix: 0.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7849256": {
+   "id": "petitesannonces:7849256",
+   "source": "petitesannonces",
+   "source_listing_id": "7849256",
+   "url": "https://www.petitesannonces.ch/a/7849256",
+   "title": "Dériveur ILCA/LASER",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6500,
+   "price_label": "6'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Goumoens-la-Ville",
+   "canton": "VD",
+   "postcode": "1376",
+   "region": "N/A",
+   "lat": 46.6582734,
+   "lon": 6.6021987,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 73,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-14",
+   "photo_url": "https://www.petitesannonces.ch/i/l/256/7849679205941737b9.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/256/7849679205941737b9.jpg",
+   "description_excerpt": "Le bateau de marque Nautivela est de février 2024 Il est vendu complet avec les tauds/sacs + chariot de mise à l'eau Par défaut il est en version ILCA 7 mais on peut facilement configurer en 4 ou 6 sur demande Prix: 6'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8561194": {
+   "id": "petitesannonces:8561194",
+   "source": "petitesannonces",
+   "source_listing_id": "8561194",
+   "url": "https://www.petitesannonces.ch/a/8561194",
+   "title": "Dehler Delanta 75 1977",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Dehler",
+   "model": "Delanta 75",
+   "year": 1977,
+   "price_chf": 6000,
+   "price_label": "6'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 20.0,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "very good",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "Yverdon-les-Bains",
+   "canton": "VD",
+   "postcode": "1400",
+   "region": "N/A",
+   "lat": 46.7785142,
+   "lon": 6.6426394,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 89,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-11-14",
+   "photo_url": "https://www.petitesannonces.ch/i/l/194/85616a180542916fb5.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/194/85616a180542916fb5.jpg",
+   "description_excerpt": "Expertisé le 27.10.2025, bon état général 20m2 de voiles Dimensions : 750x250, tirant d'eau de 80 à 125 cm 7 places Moteur Yamaha F8FMH récent Girouette électronique, sondeur, autopilote. Ber Weber en très bon état Suivi par chantier naval Burkhalter à Yverdon-les-Bains Sans place de port Renseignements au [phone hidden] Visites par chantier naval Burkhalter [phone hidden] Prix à discuter raisonnablement Prix: 6'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:722780": {
+   "id": "petitesannonces:722780",
+   "source": "petitesannonces",
+   "source_listing_id": "722780",
+   "url": "https://www.petitesannonces.ch/a/722780",
+   "title": "La régate te motive, rejoins le P3 Sailing Team",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Yvonand",
+   "canton": "VD",
+   "postcode": "1462",
+   "region": "N/A",
+   "lat": 46.7978927,
+   "lon": 6.7402581,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 97,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-14",
+   "photo_url": "https://www.petitesannonces.ch/i/l/780/72267f565dcaf5c09.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/780/72267f565dcaf5c09.jpg",
+   "description_excerpt": "Le \"P3 Sailing Team\" a pour but de promouvoir la voile et particulièrement la régate, nous recherchons des équipiers motivés pour la saison 2026 afin de participer à diverses régates de série, championnat FVLJ du lac de Neuchâtel et régates d'entraînement des clubs du haut-lac. Le bateau est basé au port d'Yvonand et les entraînements sont prévus mardi et/ou mercredi soir dès 18h00. N'hésitez pas à me contacter pour plus d'informations et fixer un rendez-vous pour une navigation d'essai. Prix: 0",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8718106": {
+   "id": "petitesannonces:8718106",
+   "source": "petitesannonces",
+   "source_listing_id": "8718106",
+   "url": "https://www.petitesannonces.ch/a/8718106",
+   "title": "Voilier Neptun Type22",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Neptun",
+   "model": "Type22",
+   "year": 1976,
+   "price_chf": 9500,
+   "price_label": "9'500.- CHF",
+   "length_m": 6.95,
+   "width_m": 2.5,
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Givrins",
+   "canton": "VD",
+   "postcode": "1271",
+   "region": "N/A",
+   "lat": 46.4332517,
+   "lon": 6.1971852,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 30,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-13",
+   "photo_url": "https://www.petitesannonces.ch/i/l/106/87186aa7b1088ce3d9.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/106/87186aa7b1088ce3d9.jpg",
+   "description_excerpt": "Le Neptun 22 est doté d'un grand cockpit, d'un intérieur confortable avec des couchettes, des rangements et une petite kitchenette. La place d'amarrage et la place de stockage à sec peuvent être reprises. Vendu avec divers accessoires. Caractéristiques techniques : * Marque : Neptun 22 * Type de bateau : Voilier avec moteur * Année de construction : 1976 * Longueur : 6.95 m * Largeur : 2.5 m * Nombre de personnes autorisées : 6 * Moteur : Yamaha 8CV * Dernière expertise : 08.07.26 Prix: 9'500.- ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8160198": {
+   "id": "petitesannonces:8160198",
+   "source": "petitesannonces",
+   "source_listing_id": "8160198",
+   "url": "https://www.petitesannonces.ch/a/8160198",
+   "title": "Bateau à voile à vendre",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6000,
+   "price_label": "6'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 2.0,
+   "kw": 1.5,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1200",
+   "region": "N/A",
+   "lat": 46.1868,
+   "lon": 6.12825,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 4,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-13",
+   "photo_url": "https://www.petitesannonces.ch/i/l/198/816068a5e8832c5018.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/198/816068a5e8832c5018.jpg",
+   "description_excerpt": "Corsaire voilier-dériveur modèle 1964 Amiguet St. Gingolph CH (insubmersible) LxL 5m50 X 1m92 poids 500 Kg + lest 150 Kg=650Kg env. Tirant d'eau d'un 1m Avec: Place d'amarrage à Corsier GE, Chariot de mise à l'eau, Voiles et bâches, 2 Bouées été - hivers Moteur 2 cv essence 4 temps Matériel : aviron, gaffe, ancre, extincteur, échelle, cordes, gilets de sauvetage, pare-battages et divers Prix 6000 - à discuter Prix: 6'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8588756": {
+   "id": "petitesannonces:8588756",
+   "source": "petitesannonces",
+   "source_listing_id": "8588756",
+   "url": "https://www.petitesannonces.ch/a/8588756",
+   "title": "Bateau à voile à vendre sunbeam 22",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Sunbeam",
+   "model": "22",
+   "year": 1977,
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1000",
+   "region": "N/A",
+   "lat": 46.5537715,
+   "lon": 6.6883953,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 72,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-13",
+   "photo_url": "https://www.petitesannonces.ch/i/l/756/85886a3199e20b44d4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/756/85886a3199e20b44d4.jpg",
+   "description_excerpt": "Bateau de 1977 pour passionné ou bricoleur.. peinture à refaire, moteur de 4 ans, voile genoi et spinaker. En état de fonctionnement mais nécessite un peu d'entretien. Longueur6, 5 m cabine pour dormir possible. contact uniquement par sms ou watsapp Prix: 0.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5335744": {
+   "id": "petitesannonces:5335744",
+   "source": "petitesannonces",
+   "source_listing_id": "5335744",
+   "url": "https://www.petitesannonces.ch/a/5335744",
+   "title": "Canot en polyester à clins (voile et rames)",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2500,
+   "price_label": "2'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 5.5,
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "St-Blaise",
+   "canton": "NE",
+   "postcode": "2072",
+   "region": "N/A",
+   "lat": 47.0130836,
+   "lon": 6.9879483,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 130,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/744/5335744_2.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/744/5335744_2.jpg",
+   "description_excerpt": "Longueur: 2m70 Largeur: 1m40 Surface de voile: 5,5 m2 Poids: 60 kg Expertisé et immatriculé en Suisse (état comme neuf) pour: - 1 personne à voile - 3 personnes à rames Prix: 2'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2500
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/5335745"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8681717": {
+   "id": "petitesannonces:8681717",
+   "source": "petitesannonces",
+   "source_listing_id": "8681717",
+   "url": "https://www.petitesannonces.ch/a/8681717",
+   "title": "Voilier Mallard Start 7 (moteur Volvo Penta MD5B, 5.5kW)",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 8800,
+   "price_label": "8'800.- CHF",
+   "length_m": 7.2,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": 7.5,
+   "kw": 5.5,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Yverdon-les-Bains",
+   "canton": "VD",
+   "postcode": "1400",
+   "region": "N/A",
+   "lat": 46.7785142,
+   "lon": 6.6426394,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 89,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/717/86816a855175999d96.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/717/86816a855175999d96.jpg",
+   "description_excerpt": "Joli petit voilier de 7.20m par 2.64m avec couchette avant, carré avec petite cuisine rétractable. Contrôle moteur effectué en juillet 2024. Immatriculé FR 12795. En bon état. Visible sur lac de Neuchâtel. Prix: 8'800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8764350": {
+   "id": "petitesannonces:8764350",
+   "source": "petitesannonces",
+   "source_listing_id": "8764350",
+   "url": "https://www.petitesannonces.ch/a/8764350",
+   "title": "Barque a voile en acajou",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "Staempfli",
+   "model": "N/A",
+   "year": 1953,
+   "price_chf": 4000,
+   "price_label": "4'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Choulex",
+   "canton": "GE",
+   "postcode": "1244",
+   "region": "N/A",
+   "lat": 46.2320258,
+   "lon": 6.2064181,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/350/87646ad48a5325cc09.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/350/87646ad48a5325cc09.jpg",
+   "description_excerpt": "Je vends une barque a voile en acajou de 1953 fabrication staempfli en tres bon état entierement rénovée. bordages a clin avec 4 rames et puis de derive et tout les acesoirs etc..possibilité de mettre un moteur Avec une remorque immatriculée en bonne état. A voir à Genève. Prix discutable Prix: 4'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7359026": {
+   "id": "petitesannonces:7359026",
+   "source": "petitesannonces",
+   "source_listing_id": "7359026",
+   "url": "https://www.petitesannonces.ch/a/7359026",
+   "title": "A vendre beau voilier familial Optima 92 - Dehler",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Dehler",
+   "model": "N/A",
+   "year": 1977,
+   "price_chf": 12000,
+   "price_label": "12'000.- CHF",
+   "length_m": "N/A",
+   "width_m": 3.0,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 49.0,
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "Les Rasses",
+   "canton": "VD",
+   "postcode": "1452",
+   "region": "N/A",
+   "lat": 46.8292221,
+   "lon": 6.5402244,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 105,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/26/735965e4d4dc815d31.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/26/735965e4d4dc815d31.jpg",
+   "description_excerpt": "Je cherche personne qui voudrait investir du temps et des sous dans l'entretien de ce beau Voilier familial blanc Optima 92 du constructeur Dehler. 9m20 x 3m ,.tirant d'eau 1m56, moteur inboard Volvo-Penta en top état! Ceci en échange de navigation ou en vue d'un achat à petit prix... Le voilier date de 1977 mais a été très bien soigné. (intérieur comme neuf! ),.expertisé en août 2023. Gréement mer , avec 5 voiles fonctionnelles. À changer: certains joints, antifouling... Voilier stationné sur s",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7334785"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7918298": {
+   "id": "petitesannonces:7918298",
+   "source": "petitesannonces",
+   "source_listing_id": "7918298",
+   "url": "https://www.petitesannonces.ch/a/7918298",
+   "title": "A donner sur place voilier sur son ber ou remorque",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Ecublens",
+   "canton": "VD",
+   "postcode": "1024",
+   "region": "N/A",
+   "lat": 46.5257577,
+   "lon": 6.5611289,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 57,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/298/791867cef13f75a903.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/298/791867cef13f75a903.jpg",
+   "description_excerpt": "A débarrasser gratuitement ancien voilier polyester sur un ber ou remorque sans son mât Se trouve dans l'ouest Lausannois Prix: 0.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8643143": {
+   "id": "petitesannonces:8643143",
+   "source": "petitesannonces",
+   "source_listing_id": "8643143",
+   "url": "https://www.petitesannonces.ch/a/8643143",
+   "title": "Voilier Sunrise 34 DL (dériveur lesté)",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 30000,
+   "price_label": "30'000.- CHF",
+   "length_m": 2.15,
+   "width_m": 3.49,
+   "engine_type": "inboard",
+   "engine_brand": "Yanmar",
+   "engine_model": "N/A",
+   "hp": 30.0,
+   "kw": 22.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Lussy-sur-Morges",
+   "canton": "VD",
+   "postcode": "1167",
+   "region": "N/A",
+   "lat": 46.5021731,
+   "lon": 6.4513529,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 53,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-11",
+   "photo_url": "https://www.petitesannonces.ch/i/l/143/86436a621e02590400.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/143/86436a621e02590400.jpg",
+   "description_excerpt": "Magnifique voilier Sunrise 34 DL (10m), tirant d'eau 1.12/2.15m, largeur 3.49m. Bien entretenu. Intérieur : 1 cabine avant et une cabine arrière 1 cabine wc 1 WC Thetford Porta Potti (chimique) Coussins pour le carré et matelas pour cabines Table fixe dans le carré avec côtés rabattables 2 extincteurs 1 réchaud à gaz, deux feux Moteur in-bord Yanmar 30cv Winch pour relever la dérive Extérieur : Génois sur enrouleur Grand voile lattée Ces deux voiles sont en bon état mais usagée 2 spinnaker en tr",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 30000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5840040": {
+   "id": "petitesannonces:5840040",
+   "source": "petitesannonces",
+   "source_listing_id": "5840040",
+   "url": "https://www.petitesannonces.ch/a/5840040",
+   "title": "First 30, Beneteau, a vendre",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Beneteau",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 14900,
+   "price_label": "14'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Cologny",
+   "canton": "GE",
+   "postcode": "1223",
+   "region": "N/A",
+   "lat": 46.2235694,
+   "lon": 6.1886758,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-11",
+   "photo_url": "https://www.petitesannonces.ch/i/l/40/5840040_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/40/5840040_1.jpg",
+   "description_excerpt": "First 30 E, Beneteau. Voiles: 1 grande voile, 1 génois, 1 spinnaker, 1 chaussette de spinnaker, 1 stay sail. Le génois a deux ans et est peu utilisé. La chaussette spinnakker est nouvelle. Pilote automatique Raymarine. Cuisinière et barbecue, 6 lits, d'une toilette, de 2 lavabos, d'un petit zodiac, et le moteur est un Volvo-Penta MD5B. Le bateau est situe a Port Wilson, vidéo du même bateau https://www.youtube.com/watch?v=PqQXCXxAv5w Contactez moi au > ninada @ aol . com Prix: 14'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 14900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5425472": {
+   "id": "petitesannonces:5425472",
+   "source": "petitesannonces",
+   "source_listing_id": "5425472",
+   "url": "https://www.petitesannonces.ch/a/5425472",
+   "title": "A vendre voilier quillard",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6000,
+   "price_label": "6'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "La Roche",
+   "canton": "FR",
+   "postcode": "1634",
+   "region": "N/A",
+   "lat": 46.6936173,
+   "lon": 7.1469685,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 128,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-10",
+   "photo_url": "https://www.petitesannonces.ch/i/l/472/5425472_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/472/5425472_1.jpg",
+   "description_excerpt": "Voilier tirant d,eau 1m40 8m 50 sur 2 m75 surface velique 30m carre place de port a voir Prix: 6'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5649005": {
+   "id": "petitesannonces:5649005",
+   "source": "petitesannonces",
+   "source_listing_id": "5649005",
+   "url": "https://www.petitesannonces.ch/a/5649005",
+   "title": "Devenez copropriétaire d'un JEUDI 12. Et éclatez-vous!",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 26000,
+   "price_label": "26'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Pringy",
+   "canton": "FR",
+   "postcode": "1663",
+   "region": "N/A",
+   "lat": 46.5813271,
+   "lon": 7.0714929,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 121,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-10",
+   "photo_url": "https://www.petitesannonces.ch/i/l/5/5649005_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/5/5649005_1.jpg",
+   "description_excerpt": "Je suis un superbe voilier de la famille des Jeudi 12. Daniel Voruz de Cully m'a fait naître dans une famille de 16 courses-croisières rapides et sûrs. Je suis un compromis idéal pour naviguer sur le Léman selon Philippe Durr, multiple champion du monde de voile et constructeur naval à Versoix, qui sait de quoi il cause ! Ma force: je suis rapide et vivant même dans des petits airs lémaniques. Mon Amoureux m'a bichonné et je suis au top de ma forme grâce à son suivi méticuleux. Je suis à la rech",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 26000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8065478": {
+   "id": "petitesannonces:8065478",
+   "source": "petitesannonces",
+   "source_listing_id": "8065478",
+   "url": "https://www.petitesannonces.ch/a/8065478",
+   "title": "Aloa 25 en état de marche pour bricoleur et passionné",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 3500,
+   "price_label": "3'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "to restore",
+   "licence_leman": "N/A",
+   "town": "Renens",
+   "canton": "VD",
+   "postcode": "1020",
+   "region": "N/A",
+   "lat": 46.5348307,
+   "lon": 6.5908401,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 62,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-10",
+   "photo_url": "https://www.petitesannonces.ch/i/l/478/80656852ff1700c681.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/478/80656852ff1700c681.jpg",
+   "description_excerpt": "Aloa 25 Bon état moteur Renault incrvable diesel D'origine Manque de temps pour s'en occuper je m'en sépare ... Équipement Prise de quai Batterie et centrale éléctrique Chargeur de batterie Convertisseur Extincteur Ancre Radeau de survie feux de navigation Chargeur solaire Réchaud Enceintes pionner Évier Cuisinière à gaz Échelle de bain Table de cockpit Barbecue Drapeaux 8 voiles Et plusieures autres équipement ( voilier complet) il se trouve a Yvonand Prix à discuter Prix: 3'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8713815": {
+   "id": "petitesannonces:8713815",
+   "source": "petitesannonces",
+   "source_listing_id": "8713815",
+   "url": "https://www.petitesannonces.ch/a/8713815",
+   "title": "VOUGA Belouga bateau à voile",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1950,
+   "price_chf": 5000,
+   "price_label": "5'000.- CHF",
+   "length_m": 6.5,
+   "width_m": 2.23,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 3.0,
+   "kw": 2.2,
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "St-Aubin-Sauges",
+   "canton": "NE",
+   "postcode": "2024",
+   "region": "N/A",
+   "lat": 46.894585,
+   "lon": 6.7737479,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/815/87136aa3b893a25c85.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/815/87136aa3b893a25c85.jpg",
+   "description_excerpt": "Bateau à voiles Année : 1950 Dimension : 6.50 m x 2.23 m Nombre de personnes : -- Moteur : Torqueedo Travel 1003 CL (équivalent 3 CV essence) Visible au chantier Prix: 5'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5218541": {
+   "id": "petitesannonces:5218541",
+   "source": "petitesannonces",
+   "source_listing_id": "5218541",
+   "url": "https://www.petitesannonces.ch/a/5218541",
+   "title": "LINGE - LAERLING 12 en l'état",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1976,
+   "price_chf": 800,
+   "price_label": "800.- CHF",
+   "length_m": 3.71,
+   "width_m": 1.38,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "St-Aubin-Sauges",
+   "canton": "NE",
+   "postcode": "2024",
+   "region": "N/A",
+   "lat": 46.894585,
+   "lon": 6.7737479,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/541/5218541_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/541/5218541_1.jpg",
+   "description_excerpt": "Année : 1976 Dimension : 3.71 m x 1.38 m Nombre de personnes : 2 Prix: 800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6386265": {
+   "id": "petitesannonces:6386265",
+   "source": "petitesannonces",
+   "source_listing_id": "6386265",
+   "url": "https://www.petitesannonces.ch/a/6386265",
+   "title": "Bateau à voile Guillet",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1984,
+   "price_chf": 9500,
+   "price_label": "9'500.- CHF",
+   "length_m": 10.58,
+   "width_m": 3.3,
+   "engine_type": "N/A",
+   "engine_brand": "Yanmar",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "yes",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "St-Aubin-Sauges",
+   "canton": "NE",
+   "postcode": "2024",
+   "region": "N/A",
+   "lat": 46.894585,
+   "lon": 6.7737479,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/265/6386265_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/265/6386265_1.jpg",
+   "description_excerpt": "Voilier GUILLET Tonner 330 Année : 1984 Dimension : 10.58 m x 3.30 m Nombre de personnes : 10 Moteur : Yanmar 3 GM 30 Barre franche, quille courte Dernière expertise le 29.09.2020 PLACE D'AMARRAGE disponible dans port privé au prix de CHF 6000.-/an CHF 9'500.- en l'état CHF 18'000.- refait Prix: 9'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8551996": {
+   "id": "petitesannonces:8551996",
+   "source": "petitesannonces",
+   "source_listing_id": "8551996",
+   "url": "https://www.petitesannonces.ch/a/8551996",
+   "title": "Voilier Bénéteau océanis 281",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Beneteau",
+   "model": "Oceanis 281",
+   "year": 2000,
+   "price_chf": 30000,
+   "price_label": "30'000.- CHF",
+   "length_m": 8.47,
+   "width_m": 2.92,
+   "engine_type": "N/A",
+   "engine_brand": "Yanmar",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "St-Aubin-Sauges",
+   "canton": "NE",
+   "postcode": "2024",
+   "region": "N/A",
+   "lat": 46.894585,
+   "lon": 6.7737479,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/996/85516a0ef58e8645f9.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/996/85516a0ef58e8645f9.jpg",
+   "description_excerpt": "Bénéteau Oceanis 281 Année : 2000 Dimension : 8.47 m x 2.92 m Nombre de personnes : 8 Moteur : Yanmar 1 GM 10 En très bon état. Vendu avec son ber Prix: 30'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 30000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8669227": {
+   "id": "petitesannonces:8669227",
+   "source": "petitesannonces",
+   "source_listing_id": "8669227",
+   "url": "https://www.petitesannonces.ch/a/8669227",
+   "title": "Voilier Colvic UFO 31",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 11900,
+   "price_label": "11'900.- CHF",
+   "length_m": 9.4,
+   "width_m": 3.0,
+   "engine_type": "N/A",
+   "engine_brand": "Yanmar",
+   "engine_model": "N/A",
+   "hp": 10.0,
+   "kw": 7.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 2,
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1200",
+   "region": "N/A",
+   "lat": 46.1868,
+   "lon": 6.12825,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 4,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-08",
+   "photo_url": "https://www.petitesannonces.ch/i/l/227/86696a79c7e29704c6.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/227/86696a79c7e29704c6.jpg",
+   "description_excerpt": "Vente avec regret, obligation de vente suite changement de projet. Ardleigh Colvic Ufo de 31 pied en copropriété Expertisé octobre 2025 Dimensions 9,40m x 3m avec un tirant d'eau de 1,70m Moteur Yanmar YSE de 10ch 8 personnes avec 1 couchette double, 1 couchette simple et selon aménagement + 2 couchettes simples En bon état, sans de trace d'osmose, prêt à naviguer Travaux fait entre 2025 et 2026. Batterie auxiliaire 100A Panneaux solaire de 50W Remplacement du tableau électrique Remplacement des",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 11900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8331190": {
+   "id": "petitesannonces:8331190",
+   "source": "petitesannonces",
+   "source_listing_id": "8331190",
+   "url": "https://www.petitesannonces.ch/a/8331190",
+   "title": "A VENDRE - GIB'SEA 84 (Prix fortement réduit)",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Gib'Sea",
+   "model": "84",
+   "year": 1985,
+   "price_chf": 8000,
+   "price_label": "8'000.- CHF",
+   "length_m": 8.4,
+   "width_m": 3.0,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Corcelles",
+   "canton": "NE",
+   "postcode": "2035",
+   "region": "N/A",
+   "lat": 46.9850351,
+   "lon": 6.880004,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 122,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-08",
+   "photo_url": "https://www.petitesannonces.ch/i/l/190/83316943af9f7951a8.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/190/83316943af9f7951a8.jpg",
+   "description_excerpt": "Baisse de prix : Nous avions prévu 15'000 CHF, nous le laissons 8'000 CHF 6'000 CHF pour vente rapide. Le bateau est prêt à naviguer, parfaitement entretenu, expertisé en 2024. Un vrai voilier de croisière : sûr, spacieux, idéal pour profiter du lac en famille ou entre amis. Pourquoi ce Gib'Sea 84 est une belle opportunité : * Cabine vaste et confortable jusqu'à 6 couchages * Dériveur lesté accès aux eaux peu profondes, ports faciles * Moteur Volvo diesel révisé, faible consommation * Équipement",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8794838": {
+   "id": "petitesannonces:8794838",
+   "source": "petitesannonces",
+   "source_listing_id": "8794838",
+   "url": "https://www.petitesannonces.ch/a/8794838",
+   "title": "Waszp - dériveur a foils",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2023,
+   "price_chf": 7800,
+   "price_label": "7'800.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 8.2,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Nyon",
+   "canton": "VD",
+   "postcode": "1260",
+   "region": "N/A",
+   "lat": 46.3851472,
+   "lon": 6.2310845,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 27,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-07",
+   "photo_url": "https://www.petitesannonces.ch/i/l/838/87946aef8cf5ab4d68.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/838/87946aef8cf5ab4d68.jpg",
+   "description_excerpt": "Waszp à vendre Année de construction 2023 Voile 8.2 m2 Voile 6.9 m2 jamais utilisée Base de mât adaptée Chariot de mise a l'eau Bâche de protection supérieure Navigation exclusivement en eau douce Visible a Nyon Dossier sur demande Prix: 7'800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8754974": {
+   "id": "petitesannonces:8754974",
+   "source": "petitesannonces",
+   "source_listing_id": "8754974",
+   "url": "https://www.petitesannonces.ch/a/8754974",
+   "title": "Voilier X-99 super équipé",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1987,
+   "price_chf": 13000,
+   "price_label": "13'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "outboard",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 15.0,
+   "kw": 11.0,
+   "fuel": "N/A",
+   "hours": 5,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Meyrin",
+   "canton": "GE",
+   "postcode": "1217",
+   "region": "N/A",
+   "lat": 46.2306806,
+   "lon": 6.0754885,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-07",
+   "photo_url": "https://www.petitesannonces.ch/i/l/974/87546acb28cfc39f43.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/974/87546acb28cfc39f43.jpg",
+   "description_excerpt": "Yacht X-99 de 1987 sans place de port Opportunité rare prix à débattre: super équipé et bien entretenu, moteur neuf, voilier idéal pour la régate et également pour des croisières sur le lac. Expertisé en octobre 2025, TVA européenne et suisse payée. Visible au port des Eaux-Vives. 1 cabine avant, 8 couchages au total, cuisinière Liste des équipements Voiles 2 Grands-Voiles : - un de régate en membranes (photo) - un Dacron 5 Voiles d'avant - J1 150%, membrane (photo) - J2 100% Dacron - J3 75% ORC",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 13000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:2069004": {
+   "id": "petitesannonces:2069004",
+   "source": "petitesannonces",
+   "source_listing_id": "2069004",
+   "url": "https://www.petitesannonces.ch/a/2069004",
+   "title": "Catamaran Ventilo F20",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1993,
+   "price_chf": 7000,
+   "price_label": "7'000.- CHF",
+   "length_m": 6.1,
+   "width_m": 3.06,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Ferreyres",
+   "canton": "VD",
+   "postcode": "1313",
+   "region": "N/A",
+   "lat": 46.6585678,
+   "lon": 6.4845207,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 78,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-06",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "Année 1993 Longueur: 6.10m, Largeur: 3.06m Mât (11.50m) Safrans neufs Gréement (voile + spi) Chariot de transport Prix à discuter Prix: 7'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:833422": {
+   "id": "petitesannonces:833422",
+   "source": "petitesannonces",
+   "source_listing_id": "833422",
+   "url": "https://www.petitesannonces.ch/a/833422",
+   "title": "Gros catamaran de sport 30 pieds artisanal",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 9000,
+   "price_label": "9'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Dombresson",
+   "canton": "NE",
+   "postcode": "2056",
+   "region": "N/A",
+   "lat": 47.0721873,
+   "lon": 6.9568045,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 136,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-06",
+   "photo_url": "https://www.petitesannonces.ch/i/l/422/833422_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/422/833422_1.jpg",
+   "description_excerpt": "Super cata de sport 10 metres log X 5.4 large mat alu 14m toujours navigué en eau douce sur lac en suisse grand voile lattée foc genois et spy en bon etat vendu avec remorque de transprt et charriot de mise a l'eau le bateau est greé sur le lac de neuchatel vous pouvez venir l'essayer quand vous voulez sur simple coup de telephone ce n'est pluus un bateau pour gagner des regate mais pour se faire plaisir c'est le top Prix: 9'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7933122": {
+   "id": "petitesannonces:7933122",
+   "source": "petitesannonces",
+   "source_listing_id": "7933122",
+   "url": "https://www.petitesannonces.ch/a/7933122",
+   "title": "Fabola Diva 39, voilier suédois de croisière rapide unique",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 14500,
+   "price_label": "14'500.- CHF",
+   "length_m": 12.1,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yanmar",
+   "engine_model": "N/A",
+   "hp": 18.0,
+   "kw": 13.2,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1205",
+   "region": "N/A",
+   "lat": 46.1965371,
+   "lon": 6.1414246,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 1,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-06",
+   "photo_url": "https://www.petitesannonces.ch/i/l/122/793367dc0ba48c3928.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/122/793367dc0ba48c3928.jpg",
+   "description_excerpt": "Nous mettons en vente à contrecoeur notre beau Diva 39 par manque de temps Ce voilier performant a une belle histoire de navigation et a participé à de nombreuses régates (notamment vainqueur de la Translémanique en solitaire et plusieurs participations au Bol d'Or). Son accastillage et son gréement sont de haute qualité usés mais fonctionnels avec des équipements comme un rail de grand-voile, des poulies, un rail pour foc autovireur et 6 winchs self-tailing. Un plaisir à naviguer et à voir navi",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 14500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6446483": {
+   "id": "petitesannonces:6446483",
+   "source": "petitesannonces",
+   "source_listing_id": "6446483",
+   "url": "https://www.petitesannonces.ch/a/6446483",
+   "title": "Voilier classique en bois de type E-scow 8.50m",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1964,
+   "price_chf": 6000,
+   "price_label": "6'000.- CHF",
+   "length_m": 8.5,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Carouge",
+   "canton": "GE",
+   "postcode": "1227",
+   "region": "N/A",
+   "lat": 46.1870558,
+   "lon": 6.1370782,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-05",
+   "photo_url": "https://www.petitesannonces.ch/i/l/483/6446483_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/483/6446483_1.jpg",
+   "description_excerpt": "Longueur 8.50m Poids 438 kgs Construction Melges Boatworks USA Année 1964 Matériau coque cedre État excellent Équipement 1 gréement complet en bois (mat, bôme, 1 tangon) 1 gréement complet en aluminium (mat, bôme) 1 grand-voile et un foc 3 spinnakers symétriques (2 en excellent état, 1 en état correct) remorque (américaine, non immatriculable en Suisse, mais fonctionne très bien comme ber) Certainement le voilier classique le plus rapide! Sensations garanties (15-20kts facilement atteints. on a ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5423456": {
+   "id": "petitesannonces:5423456",
+   "source": "petitesannonces",
+   "source_listing_id": "5423456",
+   "url": "https://www.petitesannonces.ch/a/5423456",
+   "title": "Optimist de compétition jaugé entièrement équipé",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1750,
+   "price_label": "1'750.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Blonay",
+   "canton": "VD",
+   "postcode": "1807",
+   "region": "N/A",
+   "lat": 46.4719423,
+   "lon": 6.9017022,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 93,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-05",
+   "photo_url": "https://www.petitesannonces.ch/i/l/456/5423456_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/456/5423456_1.jpg",
+   "description_excerpt": "Je vends mon optimiste Nordest jaugé pour la régate. La bateau est en bon état et vient tout équipé ( pagaie, bouées, boots, fanon, dérive et gouvernail, remorque) Une bache usagée est offerte. Une housse pour le gouvernail, dérive et la voile est offerte. Le matériel de compétition vient avec. Prix: 1'750.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1750
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8597340": {
+   "id": "petitesannonces:8597340",
+   "source": "petitesannonces",
+   "source_listing_id": "8597340",
+   "url": "https://www.petitesannonces.ch/a/8597340",
+   "title": "Catamaran SmartKat Racing 10.2 (sans permis)",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 5000,
+   "price_label": "5'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 10.2,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1205",
+   "region": "N/A",
+   "lat": 46.1965371,
+   "lon": 6.1414246,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 1,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-04",
+   "photo_url": "https://www.petitesannonces.ch/i/l/340/85976a39653e49ad17.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/340/85976a39653e49ad17.jpg",
+   "description_excerpt": "Le Smartkat est un catamaran facile à manoeuvrer. Grâce à ses deux flotteurs gonflables, il est démontable et transpotable dans le coffre d'une voiture. Il peut être piloté seul ou à deux et glisse rapidement sur l'eau, même par vent faible. Longueur : 5 mètres, largeur : 2.20 mètres Surface de voile : 10,2 m². Nombre de places : 1 à 4 personnes Conditions requises : connaissances de base en voile, à partir de 14 ans, sans permis de voile. Prix: 5'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8277679": {
+   "id": "petitesannonces:8277679",
+   "source": "petitesannonces",
+   "source_listing_id": "8277679",
+   "url": "https://www.petitesannonces.ch/a/8277679",
+   "title": "Dériveur Finn Wilke",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 15000,
+   "price_label": "15'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "St-George",
+   "canton": "VD",
+   "postcode": "1188",
+   "region": "N/A",
+   "lat": 46.5138321,
+   "lon": 6.2602719,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 44,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-04",
+   "photo_url": "https://www.petitesannonces.ch/i/l/679/82776910a80ae2b196.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/679/82776910a80ae2b196.jpg",
+   "description_excerpt": "Magnifique dériveur solitaire comme neuf Coque 2022 Mât carbone 2024 5 voiles entre 2019 et 2025 Accastillage Harken 2 gouvernails en carbone Mise à l'eau galva Près à naviguer, très soigné. Possibilité d'essayer Livraison gratuite possible en Suisse romande. Prix: 15'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8663381": {
+   "id": "petitesannonces:8663381",
+   "source": "petitesannonces",
+   "source_listing_id": "8663381",
+   "url": "https://www.petitesannonces.ch/a/8663381",
+   "title": "Voilier Beneteau first 26 avec remorque",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Beneteau",
+   "model": "First 26",
+   "year": "N/A",
+   "price_chf": 12000,
+   "price_label": "12'000.- CHF",
+   "length_m": 7.75,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Tavannes",
+   "canton": "BE",
+   "postcode": "2710",
+   "region": "N/A",
+   "lat": 47.2218056,
+   "lon": 7.1979933,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 169,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-04",
+   "photo_url": "https://www.petitesannonces.ch/i/l/381/86636a74b041e66059.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/381/86636a74b041e66059.jpg",
+   "description_excerpt": "Voilier Beneteau first 26 à vendre avec remorques pour voilier immatriculée. Caractéristiques techniques : Nb. personnes admises : 7 personnes Longueur Hors-Tout (H.T.) : 8,20 m Longueur de coque : 7,75 m Longueur de flottaison : 7,00 m Largeur (Bau maxi) : 2,80 m Déplacement à vide : 2 000 kg Lest : 660 kg Tirant d'eau quillard: 1,30 m Il dispose d'une cabine arrière pour deux personnes, d'un grand coffre à voiles/pare-battages sous les assises du cockpit, d'un \"WC\" (toilette chimique à ajouter",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:321956": {
+   "id": "petitesannonces:321956",
+   "source": "petitesannonces",
+   "source_listing_id": "321956",
+   "url": "https://www.petitesannonces.ch/a/321956",
+   "title": "Vend spi symétrique tri-radial - 152M2",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1500,
+   "price_label": "1'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 152.0,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "St-Oyens",
+   "canton": "VD",
+   "postcode": "1187",
+   "region": "N/A",
+   "lat": 46.4994607,
+   "lon": 6.3086129,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 45,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-03",
+   "photo_url": "https://www.petitesannonces.ch/i/l/956/321956_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/956/321956_1.jpg",
+   "description_excerpt": "Spi de régate Incidences - 0-20Knts TWS Prix: 1'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8324316": {
+   "id": "petitesannonces:8324316",
+   "source": "petitesannonces",
+   "source_listing_id": "8324316",
+   "url": "https://www.petitesannonces.ch/a/8324316",
+   "title": "Dériveur Laser à donner",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1981,
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Nyon",
+   "canton": "VD",
+   "postcode": "1260",
+   "region": "N/A",
+   "lat": 46.3851472,
+   "lon": 6.2310845,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 27,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-03",
+   "photo_url": "https://www.petitesannonces.ch/i/l/316/8324693c8ca825bb13.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/316/8324693c8ca825bb13.jpg",
+   "description_excerpt": "Année 1981 Avec ber de mise à l'eau Usagé, en l'état Visible à Nyon Prix: 0.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6005068": {
+   "id": "petitesannonces:6005068",
+   "source": "petitesannonces",
+   "source_listing_id": "6005068",
+   "url": "https://www.petitesannonces.ch/a/6005068",
+   "title": "A vendre pare-battage d'occasion",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 160,
+   "price_label": "160.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "La Chaux-de-Fonds",
+   "canton": "NE",
+   "postcode": "2300",
+   "region": "N/A",
+   "lat": 47.1005528,
+   "lon": 6.8257571,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 142,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-02",
+   "photo_url": "https://www.petitesannonces.ch/i/l/68/6005068_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/68/6005068_1.jpg",
+   "description_excerpt": "Pare-battage diamètre 20 cm longueur 63 cm 4 pièces disponibles prix bloc pour 4 pièces laisser moi un sms et je vous rappelle Prix: 160.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 160
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6005077": {
+   "id": "petitesannonces:6005077",
+   "source": "petitesannonces",
+   "source_listing_id": "6005077",
+   "url": "https://www.petitesannonces.ch/a/6005077",
+   "title": "A vendre winch état comme neuf",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 500,
+   "price_label": "500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "La Chaux-de-Fonds",
+   "canton": "NE",
+   "postcode": "2300",
+   "region": "N/A",
+   "lat": 47.1005528,
+   "lon": 6.8257571,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 142,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-02",
+   "photo_url": "https://www.petitesannonces.ch/i/l/77/6005077_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/77/6005077_1.jpg",
+   "description_excerpt": "A vendre winch Barbarossa non self-tailling 3 vitesses - démultiplication 53 x Etat comme neuf. 3 pièces disponible. Prix par pièce. laisser moi un sms et je vous rappelle Prix: 500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8528065": {
+   "id": "petitesannonces:8528065",
+   "source": "petitesannonces",
+   "source_listing_id": "8528065",
+   "url": "https://www.petitesannonces.ch/a/8528065",
+   "title": "Magnifique voilier à partager",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Beneteau",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2000,
+   "price_label": "2'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Founex",
+   "canton": "VD",
+   "postcode": "1297",
+   "region": "N/A",
+   "lat": 46.3363067,
+   "lon": 6.1764053,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 19,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "Magnifique Beneteau First Class 8 à partager, en bon état et équipé d'un moteur, amarré dans le port près de Nyon. 2 000 CHF par an Prix: 2'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5547277": {
+   "id": "petitesannonces:5547277",
+   "source": "petitesannonces",
+   "source_listing_id": "5547277",
+   "url": "https://www.petitesannonces.ch/a/5547277",
+   "title": "A vendre Génois pour enrouleur",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Bavaria",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 900,
+   "price_label": "900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1000",
+   "region": "N/A",
+   "lat": 46.5537715,
+   "lon": 6.6883953,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 72,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/277/5547277_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/277/5547277_1.jpg",
+   "description_excerpt": "Pour enrouleur Furlex Fabrication Elvstrom - état parfait, comme neuf, servi une saison - bande UV - Dacron Radial A l'origine pour BAVARIA 37 Dimensions guindant 11.80 chute 11.10 bordure 4.70 ralingue 5 mm Prix fr. 900.- ( valeur à neuf fr. 2'240.- ) Prix: 900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6422036": {
+   "id": "petitesannonces:6422036",
+   "source": "petitesannonces",
+   "source_listing_id": "6422036",
+   "url": "https://www.petitesannonces.ch/a/6422036",
+   "title": "Bateau à voile - excellent état",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 12000,
+   "price_label": "12'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 35.0,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "St-Sulpice",
+   "canton": "VD",
+   "postcode": "1025",
+   "region": "N/A",
+   "lat": 46.5156914,
+   "lon": 6.5683948,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 62,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/36/6422036_5.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/36/6422036_5.jpg",
+   "description_excerpt": "Banner 28 race - Voilier de course-croisière sportive - Longueur : 8m50 - 35 m2 - Largeur 2m95 - Autorisé 7 places - 3 voiles d'avant / 3 spis / 1 grand-voile neuve - Moteur HB 6cv neuf - Autopilote électronique Assuré à 40'000.- Place de port disponible jusqu'à fin 2024 - plus tard, à discuter Prix à discuter, selon équipement. Prix: 12'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7189935": {
+   "id": "petitesannonces:7189935",
+   "source": "petitesannonces",
+   "source_listing_id": "7189935",
+   "url": "https://www.petitesannonces.ch/a/7189935",
+   "title": "Bateau à voile Contest 32 CS",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 10000,
+   "price_label": "10'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1200",
+   "region": "N/A",
+   "lat": 46.1868,
+   "lon": 6.12825,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 4,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-31",
+   "photo_url": "https://www.petitesannonces.ch/i/l/935/7189655249e1b6ba72.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/935/7189655249e1b6ba72.jpg",
+   "description_excerpt": "Bateau en très bonne état, toujours bien entretenu, des travaux on été effectué pour lui apporter plus de confort et de modernité. Les voiles sont neuves(GV et Génois), tous le système électrique a été changé, en effet, les batteries ainsi que le frigo, pompes, commandes, ventilation cuisine, prises dc, et jauges. le mat d'artimon a été enlevé car j'estime qu'il a peu d'utilité sur le lac et le gain de place est important, il est dans un entrepôt et réutilisable. Pour toutes personnes intéressée",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8128371": {
+   "id": "petitesannonces:8128371",
+   "source": "petitesannonces",
+   "source_listing_id": "8128371",
+   "url": "https://www.petitesannonces.ch/a/8128371",
+   "title": "A vendre Voilier Mallard 9M",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1976,
+   "price_chf": 12500,
+   "price_label": "12'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": 180,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Bovernier",
+   "canton": "VS",
+   "postcode": "1932",
+   "region": "N/A",
+   "lat": 46.0733748,
+   "lon": 7.0784547,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 145,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-30",
+   "photo_url": "https://www.petitesannonces.ch/i/l/371/8128688a276b3d23d4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/371/8128688a276b3d23d4.jpg",
+   "description_excerpt": "Mallard 9 M a vendre année 1976, moteur midif md 16, 180 heures voiles 6 ans en bon état Prix: 12'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6636872": {
+   "id": "petitesannonces:6636872",
+   "source": "petitesannonces",
+   "source_listing_id": "6636872",
+   "url": "https://www.petitesannonces.ch/a/6636872",
+   "title": "Voilier classique E. Salander 1939",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 20000,
+   "price_label": "20'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Lucens",
+   "canton": "VD",
+   "postcode": "1522",
+   "region": "N/A",
+   "lat": 46.7077595,
+   "lon": 6.8363445,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 93,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-30",
+   "photo_url": "https://www.petitesannonces.ch/i/l/872/6636636c0a75d7dbc7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/872/6636636c0a75d7dbc7.jpg",
+   "description_excerpt": "Ma Solitude is an Eric Salander classic boat built in 1939 and rebuilt in 1972 in Sweden. It is a Nordic kustkrysare ideal for sailing the coast or between islands and at the same time it has the energy of a powerful sailing boat. It is in good condition and main maintenance works have been done recently ( new keel bolts, new propeller, electric solar power). Maintenance works are done annually and it stays always protected by a cover. For videos and pictures visit: https://www.flickr.com/gp/155",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 20000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7189558": {
+   "id": "petitesannonces:7189558",
+   "source": "petitesannonces",
+   "source_listing_id": "7189558",
+   "url": "https://www.petitesannonces.ch/a/7189558",
+   "title": "Friendship huit mètres",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 4900,
+   "price_label": "4'900.- CHF",
+   "length_m": 8.1,
+   "width_m": "N/A",
+   "engine_type": "outboard",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 5.0,
+   "kw": 3.7,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Origlio",
+   "canton": "TI",
+   "postcode": "6945",
+   "region": "N/A",
+   "lat": 46.051641,
+   "lon": 8.9461803,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 378,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/558/718965521e81f37d84.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/558/718965521e81f37d84.jpg",
+   "description_excerpt": "Vends voilier Friendship 8,1 mètres x 2,5 mètres, quille relevable avec enrouleur de gènois, grand voile lattée, hors bord Honda 5 cv. Prix: 4'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:4511426": {
+   "id": "petitesannonces:4511426",
+   "source": "petitesannonces",
+   "source_listing_id": "4511426",
+   "url": "https://www.petitesannonces.ch/a/4511426",
+   "title": "A vendre Spi asymétrique 40 m2",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 900,
+   "price_label": "900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 40.0,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "Chêne-Bougeries",
+   "canton": "GE",
+   "postcode": "1224",
+   "region": "N/A",
+   "lat": 46.2021563,
+   "lon": 6.1894241,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/426/4511426_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/426/4511426_1.jpg",
+   "description_excerpt": "Bon état. Servi 2 fois. Dimensions: Guindant = 8,60 mètres Chute = 8,10 mètres Bordure = 5,35 mètres Blanc avec des bandes bleues (voir photos) Avec sac de stockage et les écoutes Prix: 900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8326582": {
+   "id": "petitesannonces:8326582",
+   "source": "petitesannonces",
+   "source_listing_id": "8326582",
+   "url": "https://www.petitesannonces.ch/a/8326582",
+   "title": "A vendre bateau Surprise",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1991,
+   "price_chf": 27000,
+   "price_label": "27'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Lutry",
+   "canton": "VD",
+   "postcode": "1095",
+   "region": "N/A",
+   "lat": 46.506117,
+   "lon": 6.6891167,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 75,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/582/8326693ed8bb853e54.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/582/8326693ed8bb853e54.jpg",
+   "description_excerpt": "Surprise de 1991, en très bon état avec accessoires. Remis à neuf au chantier naval d'Ouchy (Lausanne) en 2025 Possibilité de louer la place de parc à la Pichette près de Vevey, Location 3500 SFr. par année (Si nécessaire). Prix: 27'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 27000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8349501": {
+   "id": "petitesannonces:8349501",
+   "source": "petitesannonces",
+   "source_listing_id": "8349501",
+   "url": "https://www.petitesannonces.ch/a/8349501",
+   "title": "Ligne de mouillage mixte",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 500,
+   "price_label": "500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "La Chaux-de-Fonds",
+   "canton": "NE",
+   "postcode": "2300",
+   "region": "N/A",
+   "lat": 47.1005528,
+   "lon": 6.8257571,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 142,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-28",
+   "photo_url": "https://www.petitesannonces.ch/i/l/501/834969561e4185c053.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/501/834969561e4185c053.jpg",
+   "description_excerpt": "Ligne de mouillage mixte composée de 20 ml de chaîne acier zingué diamètre 10 mm calibrée pour guindeau et de 46 ml de cordage polyester diamètre 16 mm. Très bon état. A emporter sur place (2300 CDF) Laisser moi un SMS et je vous rappelle. Prix: 500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8232111": {
+   "id": "petitesannonces:8232111",
+   "source": "petitesannonces",
+   "source_listing_id": "8232111",
+   "url": "https://www.petitesannonces.ch/a/8232111",
+   "title": "A vendre Folkboat polyester",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1972,
+   "price_chf": 4500,
+   "price_label": "4'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Villaraboud",
+   "canton": "FR",
+   "postcode": "1679",
+   "region": "N/A",
+   "lat": 46.660291,
+   "lon": 6.9096274,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 99,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-27",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "Folkboat polyester de 1972 moteur inboard Volvo Penta/MD 6A Expertisé le 20.08. 2025. Bon état petits travaux d'entretien à prévoir. Visible au port d'Estavayer-le-Lac. Prix: 4'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8593513": {
+   "id": "petitesannonces:8593513",
+   "source": "petitesannonces",
+   "source_listing_id": "8593513",
+   "url": "https://www.petitesannonces.ch/a/8593513",
+   "title": "Petit catamaran pas cher",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 400,
+   "price_label": "400.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Thônex",
+   "canton": "GE",
+   "postcode": "1226",
+   "region": "N/A",
+   "lat": 46.1937425,
+   "lon": 6.2037667,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 6,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-26",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "A vendre catamaran topcat, coque à refibrer bon état général, avec ber, prix à discuter Prix: 400.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:3869922": {
+   "id": "petitesannonces:3869922",
+   "source": "petitesannonces",
+   "source_listing_id": "3869922",
+   "url": "https://www.petitesannonces.ch/a/3869922",
+   "title": "Lit façon arrière de voilier en bois",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 5000,
+   "price_label": "5'000.- CHF",
+   "length_m": 2.0,
+   "width_m": 1.6,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vernier",
+   "canton": "GE",
+   "postcode": "1214",
+   "region": "N/A",
+   "lat": 46.2142373,
+   "lon": 6.0830367,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-26",
+   "photo_url": "https://www.petitesannonces.ch/i/l/922/3869922_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/922/3869922_1.jpg",
+   "description_excerpt": "Pour les amateurs de voilier en bois et de belles pièces d'ameublement Vends splendide lit façon arrière de voilier en bois. TRAVAIL D'EBENISTE : pièce unique.. couchage 2x1.6m lg environ 3.1m larg environ 2.4m cabine composée de 4 portes avec 3 rangements; 1 central avec 3 étagères et 1 derrière chaque porte latérale. premier bordé en acajou massif reste de la coque et cabine en contre-plaqué acajou pont en contre-plaqué de bois exotique (proche veine de teck) 2 panneaux de ventilation en teck ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7507159": {
+   "id": "petitesannonces:7507159",
+   "source": "petitesannonces",
+   "source_listing_id": "7507159",
+   "url": "https://www.petitesannonces.ch/a/7507159",
+   "title": "Superbe surprise pour la nav",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 9000,
+   "price_label": "9'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Montreux",
+   "canton": "VD",
+   "postcode": "1820",
+   "region": "N/A",
+   "lat": 46.4293472,
+   "lon": 6.9172542,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 95,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/159/75076665bb595d6ff2.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/159/75076665bb595d6ff2.jpg",
+   "description_excerpt": "Découvrez ce voilier d'exception, véritable bijou sur l'eau ! Sa navigation est une pure merveille : même par faible vent, il vous offrira des moments inoubliables. L'intérieur a été entièrement refait en octobre 2023 par des professionnels à Lausanne, garantissant un confort et une élégance inégalés. Le moteur Honda 5 chevaux a été expertisé, tout comme le bateau, en octobre 2023, vous assurant ainsi une tranquillité d'esprit totale. Profitez de nuits douillettes grâce au coussin avant central,",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 9000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8668056": {
+   "id": "petitesannonces:8668056",
+   "source": "petitesannonces",
+   "source_listing_id": "8668056",
+   "url": "https://www.petitesannonces.ch/a/8668056",
+   "title": "Côtre Breton avec amarrage",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 15000,
+   "price_label": "15'000.- CHF",
+   "length_m": 7.7,
+   "width_m": 2.2,
+   "engine_type": "N/A",
+   "engine_brand": "Volvo Penta",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": 500,
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Genthod",
+   "canton": "GE",
+   "postcode": "1294",
+   "region": "N/A",
+   "lat": 46.2659325,
+   "lon": 6.1548589,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 9,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-23",
+   "photo_url": "https://www.petitesannonces.ch/i/l/56/86686a78a1c31fb333.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/56/86686a78a1c31fb333.jpg",
+   "description_excerpt": "Magnifique côtre breton de 1920 entièrement restauré (2'500 heures de travail) et remis à l'eau en 2017. à vendre en l'état avec possibilité d'avoir une place d'amarrage. longueur 7,7m largeur 2,2 m tirant d'eau 1,35 m poids 3,72 T coque accajou mât spruce voiles en coton moteur volvo penta ~80 heures Prix: 15'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8536533": {
+   "id": "petitesannonces:8536533",
+   "source": "petitesannonces",
+   "source_listing_id": "8536533",
+   "url": "https://www.petitesannonces.ch/a/8536533",
+   "title": "Sharing sur voilier Brise de mer 31'",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1500,
+   "price_label": "1'500.- CHF",
+   "length_m": 10.0,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 2,
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Monthey",
+   "canton": "VS",
+   "postcode": "1870",
+   "region": "N/A",
+   "lat": 46.2517475,
+   "lon": 6.9496177,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 120,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-23",
+   "photo_url": "https://www.petitesannonces.ch/i/l/533/85366a009a745ce8a7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/533/85366a009a745ce8a7.jpg",
+   "description_excerpt": "Voilier Brise de mer 31', à disposition en sharing Une place s'est libérée pour le sharing d'un Brise de mer 31' Port d'amarrage: Le Bouveret, lac Léman, Valais, Suisse Longueur: env. 10 m Gréement: mer Nombre de places: max. 9 personnes Cabines: 2 Couchettes: 6 Permis requis: voile et moteur (législation suisse) Prix: 1'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7272485": {
+   "id": "petitesannonces:7272485",
+   "source": "petitesannonces",
+   "source_listing_id": "7272485",
+   "url": "https://www.petitesannonces.ch/a/7272485",
+   "title": "Jeanneau Fantasia 27 dériveur lesté",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "Jeanneau",
+   "model": "Fantasia 27",
+   "year": 1984,
+   "price_chf": 7500,
+   "price_label": "7'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "inboard",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "diesel",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Cugy",
+   "canton": "VD",
+   "postcode": "1053",
+   "region": "N/A",
+   "lat": 46.5871315,
+   "lon": 6.6425926,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 68,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-23",
+   "photo_url": "https://www.petitesannonces.ch/i/l/485/7272659b1998923b23.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/485/7272659b1998923b23.jpg",
+   "description_excerpt": "A VENDRE Jeanneau Fantasia 27 dériveur lesté de 1984 6 places 5 couchages, moteur diesel in-bord 8 cv expertisé y compris ber adapté. Excellent bateau pour débuter fiable est sécurisant un des premiers bateau habitable lors de sa mise sur le marché. Voiles : équipé d'un génois à poste sur enrouleur + code zéro + spi. Le bateau est visible dans le port d'Estavayer ponton J (coté parc Nova Fribourgo). Sans place de port Prix à discuter Prix: 7'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8264943": {
+   "id": "petitesannonces:8264943",
+   "source": "petitesannonces",
+   "source_listing_id": "8264943",
+   "url": "https://www.petitesannonces.ch/a/8264943",
+   "title": "A DONNER sans la place.",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1000,
+   "price_label": "1'000.- CHF",
+   "length_m": 6.9,
+   "width_m": "N/A",
+   "engine_type": "none",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1007",
+   "region": "N/A",
+   "lat": 46.5172963,
+   "lon": 6.6148735,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 63,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-22",
+   "photo_url": "https://www.petitesannonces.ch/i/l/943/82646909abda48dd14.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/943/82646909abda48dd14.jpg",
+   "description_excerpt": "Voilier 6.90m x 2.30 expertiseé du jour, visible à Ouchy, gratuit sans moteur, avec son moteur 6 cv comptez 1000.- Conditions : trouver 1 bateau moteur d'ici là pour que je puisse garder ma place. Prix: 1'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7519850": {
+   "id": "petitesannonces:7519850",
+   "source": "petitesannonces",
+   "source_listing_id": "7519850",
+   "url": "https://www.petitesannonces.ch/a/7519850",
+   "title": "Dériveur Parker 505",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "Parker",
+   "model": "505",
+   "year": "N/A",
+   "price_chf": 3500,
+   "price_label": "3'500.- CHF",
+   "length_m": 5.05,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Cortaillod",
+   "canton": "NE",
+   "postcode": "2016",
+   "region": "N/A",
+   "lat": 46.947011,
+   "lon": 6.8492748,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 116,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-21",
+   "photo_url": "https://www.petitesannonces.ch/i/l/850/75196670a6e53bc280.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/850/75196670a6e53bc280.jpg",
+   "description_excerpt": "Le Cinquo, ou 5o5, est un magnifique dériveur. Le roi des dériveur pour ses adeptes, il est dans la cours des grand de la voile légère à coup sûr. C'est un dériveur de 5,05m très élégant, novateur et rapide à 2 équipiers et un trapèze. Le 505 est un superbe bateau de régate en mer comme en plan d'eau fermé. Révisé et réparé par l'entreprise DUVOISIN Nautique à Colombier NE Factures à l'appui et expertisé en 2022 et avec remorque et chariot de mise à l'eau Aucun permis n'est nécessaire ! Prix: 3'",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6371148": {
+   "id": "petitesannonces:6371148",
+   "source": "petitesannonces",
+   "source_listing_id": "6371148",
+   "url": "https://www.petitesannonces.ch/a/6371148",
+   "title": "Catamaran, Dart 18, avec place d'amarage au sec a Gland",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1900,
+   "price_label": "1'900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "yes",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Gland",
+   "canton": "VD",
+   "postcode": "1196",
+   "region": "N/A",
+   "lat": 46.420279,
+   "lon": 6.2714317,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 32,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-21",
+   "photo_url": "https://www.petitesannonces.ch/i/l/148/6371148_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/148/6371148_1.jpg",
+   "description_excerpt": "Ce catamaran a été expertisé pour la dernière fois en août 2018 et est prêt à naviguer. La bâche et le foc ont été récemment renouvelés. La place d'amarrage est à Gland dans la baie de Dullive. Je dois vendre le bateau pour cause de déménagement. Si vous êtes intéressé, veuillez appeler [phone hidden] ou contacter email . Prix: 1'900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5185217": {
+   "id": "petitesannonces:5185217",
+   "source": "petitesannonces",
+   "source_listing_id": "5185217",
+   "url": "https://www.petitesannonces.ch/a/5185217",
+   "title": "Vos vacances à voile en Grèce ou... ailleurs",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 900,
+   "price_label": "900.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1004",
+   "region": "N/A",
+   "lat": 46.5276554,
+   "lon": 6.6191122,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 64,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-21",
+   "photo_url": "https://www.petitesannonces.ch/i/l/217/5185217_7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/217/5185217_7.jpg",
+   "description_excerpt": "Skipper confirmé organise et vous accompagne pour une croisière découverte en famille ou entre amis. Voilier tout confort, idéalement avec 4 personnes pour profiter des endroits encore sauvages et préservés, ou de petits ports de pêche. Grèce - Athènes le tour des Cyclades Semaine 1 : Athènes - Santorin Semaine 2 : Santorin - Mykonos semaine 3 : Mykonos - Athènes Choisissez vos dates, d'autres destinations possibles rendez-vous sur notre site skipper4u .ch Prix: 900.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8685495": {
+   "id": "petitesannonces:8685495",
+   "source": "petitesannonces",
+   "source_listing_id": "8685495",
+   "url": "https://www.petitesannonces.ch/a/8685495",
+   "title": "Voilier Scand Yachts Malta",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1987,
+   "price_chf": 12000,
+   "price_label": "12'000.- CHF",
+   "length_m": 10.0,
+   "width_m": 3.2,
+   "engine_type": "N/A",
+   "engine_brand": "Yanmar",
+   "engine_model": "N/A",
+   "hp": 28.0,
+   "kw": 20.6,
+   "fuel": "N/A",
+   "hours": 730,
+   "sail_area_m2": 47.0,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1010",
+   "region": "N/A",
+   "lat": 46.538465,
+   "lon": 6.6528651,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 68,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-20",
+   "photo_url": "https://www.petitesannonces.ch/i/l/495/86856a8885051565b8.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/495/86856a8885051565b8.jpg",
+   "description_excerpt": "Très bien équipé - Unique en Suisse Voilier habitable du chantier Scand Yachts, modèle Mustang 31,bien entretenu et entièrement documenté (factures à l'appui). Bateau rare et unique en Suisse, belle timonerie, prêt à naviguer, vendu expertise (expertise le 5.10.2026). Caractéristiques générales Longueur : 10,00 m Largeur : 3,20 m Tirant d'eau : 1,60 m (quille courte) Poids : env. 5 tonnes Année : 1987 Hauteur sous barrot : 1,90 m Hélice : 3 pales Plateforme arrière rabattable Davits pour annexe ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 12000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:4242737": {
+   "id": "petitesannonces:4242737",
+   "source": "petitesannonces",
+   "source_listing_id": "4242737",
+   "url": "https://www.petitesannonces.ch/a/4242737",
+   "title": "Oxen block poulie auto blocante de nouveau livrable",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "St-Blaise",
+   "canton": "NE",
+   "postcode": "2072",
+   "region": "N/A",
+   "lat": 47.0130836,
+   "lon": 6.9879483,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 130,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-20",
+   "photo_url": "https://www.petitesannonces.ch/i/l/737/424262e7bfbc578892.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/737/424262e7bfbc578892.jpg",
+   "description_excerpt": "Description les poulie autoblocante oxens block sont de nouveau livrable . si vous ne connaissez pas leur fonctionnement vous allez etre epaté vous n'avez pas besoin d'un taquet éloignez-vous a n'importe quel endroit du bateau! Les cannelures de la poulie d'engrenage retiendront la corde. Une simple traction sur la corde libère la poulie, une seconde le bloque l,ecoute ou la drisse est une fois libre et une fois bloquée pas besoin de taper l'ecoute pour debloquet une petite impulsion suffit a la",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:751532": {
+   "id": "petitesannonces:751532",
+   "source": "petitesannonces",
+   "source_listing_id": "751532",
+   "url": "https://www.petitesannonces.ch/a/751532",
+   "title": "Voilerie Swiss Sails",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Auvernier",
+   "canton": "NE",
+   "postcode": "2012",
+   "region": "N/A",
+   "lat": 46.9748348,
+   "lon": 6.8785925,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 120,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-19",
+   "photo_url": "https://www.petitesannonces.ch/i/l/532/751532_2.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/532/751532_2.jpg",
+   "description_excerpt": "Voilerie SWISS SAILS * Voiles neuves Croisière et Régate * Réparation, modification toutes marques * Tous travaux de voileries * Vente et pose d'enrouleurs * Accastillage et corderie Devis gratuit sans engagement. Travail rapide et soigné. Prix et délais compétitifs. http://www.swiss-sails.com Prix: 0.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:2853409": {
+   "id": "petitesannonces:2853409",
+   "source": "petitesannonces",
+   "source_listing_id": "2853409",
+   "url": "https://www.petitesannonces.ch/a/2853409",
+   "title": "Réparations toutes voiles en Suisse",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Neuchâtel",
+   "canton": "NE",
+   "postcode": "2000",
+   "region": "N/A",
+   "lat": 46.9953093,
+   "lon": 6.9314074,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 125,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-10-19",
+   "photo_url": "https://www.petitesannonces.ch/i/l/409/2853409_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/409/2853409_1.jpg",
+   "description_excerpt": "Votre spécialiste en Suisse pour toutes les réparations ou modifications de voiles, housses, bâches et tous travaux textiles. Travail rapide et soigné par professionnel, prix compétitif. Devis gratuit. Contact: email Tél. [phone hidden] Prix: 0.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8487552": {
+   "id": "petitesannonces:8487552",
+   "source": "petitesannonces",
+   "source_listing_id": "8487552",
+   "url": "https://www.petitesannonces.ch/a/8487552",
+   "title": "A vendre ETAP 22i",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Etap",
+   "model": "22I",
+   "year": "N/A",
+   "price_chf": 10000,
+   "price_label": "10'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": 4,
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "Penthalaz",
+   "canton": "VD",
+   "postcode": "1305",
+   "region": "N/A",
+   "lat": 46.6085943,
+   "lon": 6.5247683,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 67,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-19",
+   "photo_url": "https://www.petitesannonces.ch/i/l/552/848769d383fc20b259.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/552/848769d383fc20b259.jpg",
+   "description_excerpt": "Cédé pour cause de décès, ce bateau insubmersible est en superbe état et très bien équipé Ce petit bateau très habitable dispose de voiles (GV, Génois et spi) en bon état d'un moteur en puits allumé électrictement de gilets et autre matériel de sécurité d'un pilot automatique d'un réchaud et d'un évier et de 4 couchettes. Il est à la fois maniable, réactif et sur grâce au bulbe au fond de sa quille. Insubmersibe grâce à une double coque emplie de mousse. Il y a la possibilité d'obtenir en plus u",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8509738": {
+   "id": "petitesannonces:8509738",
+   "source": "petitesannonces",
+   "source_listing_id": "8509738",
+   "url": "https://www.petitesannonces.ch/a/8509738",
+   "title": "Dériveur Finn Pata complet",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2009,
+   "price_chf": 7500,
+   "price_label": "7'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "St-George",
+   "canton": "VD",
+   "postcode": "1188",
+   "region": "N/A",
+   "lat": 46.5138321,
+   "lon": 6.2602719,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 44,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-18",
+   "photo_url": "https://www.petitesannonces.ch/i/l/738/850969e7e221722eb4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/738/850969e7e221722eb4.jpg",
+   "description_excerpt": "Coque de Finn Pata B4 de 2009 Mât Wilke 2009 Housses de protection 2 voiles en très bon état Équipé régate Chariot mise à l'eau Gouvernail Wilke 2020 Gouvernail Pata 2009 Prix: 7'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 7500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7494065": {
+   "id": "petitesannonces:7494065",
+   "source": "petitesannonces",
+   "source_listing_id": "7494065",
+   "url": "https://www.petitesannonces.ch/a/7494065",
+   "title": "Jeanneau Flirt Voilier Sans Permis",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "Jeanneau",
+   "model": "Flirt",
+   "year": "N/A",
+   "price_chf": 1900,
+   "price_label": "1'900.- CHF",
+   "length_m": 6.0,
+   "width_m": 2.54,
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 4.0,
+   "kw": 2.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Lausanne",
+   "canton": "VD",
+   "postcode": "1000",
+   "region": "N/A",
+   "lat": 46.5537715,
+   "lon": 6.6883953,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 72,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-18",
+   "photo_url": "https://www.petitesannonces.ch/i/l/65/74946a5dbb25570e04.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/65/74946a5dbb25570e04.jpg",
+   "description_excerpt": "Jeanneau Flirt 1981 - Idéal Débutant À vendre au port de Vidy (Lausanne), un voilier Jeanneau Flirt (monocoque de 6 m), parfait pour s'initier à la navigation sur les lacs en toute simplicité. Aucun permis requis ! Caractéristiques principales Dimensions : Longueur 6,00 m | Largeur 2,54 m | Tirant d'eau 0,50 m Gréement & Moteur : Sloop fractionné (3 voiles) | Moteur Yamaha 4 cv Équipement : Gilets de sauvetage, matériel de sécurité, etc. Les points forts & État Sécurité : Expertise validée en se",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1900
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5308688": {
+   "id": "petitesannonces:5308688",
+   "source": "petitesannonces",
+   "source_listing_id": "5308688",
+   "url": "https://www.petitesannonces.ch/a/5308688",
+   "title": "Bateau sans permis",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 800,
+   "price_label": "800.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "none",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 96.0,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "to restore",
+   "licence_leman": "yes (sail >15 m²)",
+   "town": "Promasens",
+   "canton": "FR",
+   "postcode": "1673",
+   "region": "N/A",
+   "lat": 46.6020899,
+   "lon": 6.8227,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 90,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-18",
+   "photo_url": "https://www.petitesannonces.ch/i/l/688/5308688_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/688/5308688_1.jpg",
+   "description_excerpt": "Je vend mon bateau à voile pour mer en fibre avec mat pour bricoleur, plexi et joint de vitre à refaire finir le ponçage et peinture, sans moteur et voile à voir l etat. Joli petit bateau pour 4 personnes avec 14,96m2 de voile donc pas besoin de permis. Prix: 800.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6372719": {
+   "id": "petitesannonces:6372719",
+   "source": "petitesannonces",
+   "source_listing_id": "6372719",
+   "url": "https://www.petitesannonces.ch/a/6372719",
+   "title": "Voilier sans permis!",
+   "category": "sail",
+   "category_label": "Sailboats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1979,
+   "price_chf": 2500,
+   "price_label": "2'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": 12.0,
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Corgémont",
+   "canton": "BE",
+   "postcode": "2606",
+   "region": "N/A",
+   "lat": 47.1938805,
+   "lon": 7.1410449,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 161,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-17",
+   "photo_url": "https://www.petitesannonces.ch/i/l/719/6372719_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/719/6372719_1.jpg",
+   "description_excerpt": "Après avoir navigué 2 années sur le Lac de Bienne, je me sépare de mon voilier par manque de temps. Le bateau est vendu avec : - sa remorque de mise à l'eau - sa bâche de protection, - 3 voiles ( la grande voile, le foc et le spinnaker), - 2 gilets de sauvetage, - un harnais - une combinaison comme neuve. - longueur : 4m82 / largeur : 1m78 - 12 m2 de surface vélique - 3 personnes max. - Marque/modèle : Steampfli Flibustier de 1979 Le bateau a été expertisé en 2018. De plus, l'emplacement a déjà ",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8803000": {
+   "id": "petitesannonces:8803000",
+   "source": "petitesannonces",
+   "source_listing_id": "8803000",
+   "url": "https://www.petitesannonces.ch/a/8803000",
+   "title": "Sergio Cellano Expertisé 5 place et demi + Remorque",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2023,
+   "price_chf": 3330,
+   "price_label": "3'330.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Genève",
+   "canton": "GE",
+   "postcode": "1200",
+   "region": "N/A",
+   "lat": 46.1868,
+   "lon": 6.12825,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 4,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-13",
+   "photo_url": "https://www.petitesannonces.ch/i/l/0/88036af7302b02d646.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/0/88036af7302b02d646.jpg",
+   "description_excerpt": "Vends Joli pneumatique Sergio Cellano de 5 places et demi en bon état, expertisé et remorque incluse. Dimensions pneumatique Sergio Cellano; Longueur 3.79 mètres Largeur 1.73 mètres Le pneumatique a été expertisé le 5 juin 2026 et à très peu été utilisé et a toujours été bien entretenu et stocké sur sa remorque gonflée. Remorque de 2023 en très bon état, pratique, réglable, légère et démontable. Charge Utile 210kg. Avantage; Plus besoin de passer le contrôle technique soit une économie. Un simpl",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3330
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:1735349": {
+   "id": "petitesannonces:1735349",
+   "source": "petitesannonces",
+   "source_listing_id": "1735349",
+   "url": "https://www.petitesannonces.ch/a/1735349",
+   "title": "Bateau pneumatique Honda 4 places",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 3450,
+   "price_label": "3'450.- CHF",
+   "length_m": 3.0,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Vessy",
+   "canton": "GE",
+   "postcode": "1234",
+   "region": "N/A",
+   "lat": 46.1722953,
+   "lon": 6.1585455,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/349/1735349_8.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/349/1735349_8.jpg",
+   "description_excerpt": "Modèle 2021, neuf, plancher en aluminium, dimensions : 3,00 m. x 1,60 m., divers accessoires, roues de mise à l'eau, jamais immatriculé, moteur Yamaha 6 cv, neuf, modèle 2021, Tél. [phone hidden] Prix: 3'450.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3450
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8438870": {
+   "id": "petitesannonces:8438870",
+   "source": "petitesannonces",
+   "source_listing_id": "8438870",
+   "url": "https://www.petitesannonces.ch/a/8438870",
+   "title": "Bateau pneumatique 3 places",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1650,
+   "price_label": "1'650.- CHF",
+   "length_m": 2.5,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Suzuki",
+   "engine_model": "N/A",
+   "hp": 2.5,
+   "kw": 1.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Vessy",
+   "canton": "GE",
+   "postcode": "1234",
+   "region": "N/A",
+   "lat": 46.1722953,
+   "lon": 6.1585455,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/870/843869a5df3d66ca21.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/870/843869a5df3d66ca21.jpg",
+   "description_excerpt": "Bateau pneumatique de marque Nautistar 250, modèle 2024, état de neuf, 3 places, dimensions : 2,50 m. x 1,52 m., plancher gonflable, nombreux accessoires, moteur Suzuki 2,5 CV neuf, réservoir incorporé, prêt pour l'immatriculation, visible à Genève, CHF 1650.- Tél. [phone hidden] Prix: 1'650.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1650
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7537722": {
+   "id": "petitesannonces:7537722",
+   "source": "petitesannonces",
+   "source_listing_id": "7537722",
+   "url": "https://www.petitesannonces.ch/a/7537722",
+   "title": "Bateau pneumatique Honda T32",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 3500,
+   "price_label": "3'500.- CHF",
+   "length_m": 3.2,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Vessy",
+   "canton": "GE",
+   "postcode": "1234",
+   "region": "N/A",
+   "lat": 46.1722953,
+   "lon": 6.1585455,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/722/7537667fc84e895718.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/722/7537667fc84e895718.jpg",
+   "description_excerpt": "Bateau pneumatique Honda, type T32, modèle 2024, neuf, jamais navigué, plancher gonflable, dimensions : 3,20 m. x 1,60 m., divers accessoires, moteur Yamaha 6 CV, réservoir incorporé, prêt pour l'immatriculation, visible à Genève, CHF 3'500.- Tél. [phone hidden] Prix: 3'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7537712": {
+   "id": "petitesannonces:7537712",
+   "source": "petitesannonces",
+   "source_listing_id": "7537712",
+   "url": "https://www.petitesannonces.ch/a/7537712",
+   "title": "Bateau pneumatique type annexe",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "Zodiac",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 550,
+   "price_label": "550.- CHF",
+   "length_m": 2.3,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vessy",
+   "canton": "GE",
+   "postcode": "1234",
+   "region": "N/A",
+   "lat": 46.1722953,
+   "lon": 6.1585455,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/712/7537667fc6a52efa30.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/712/7537667fc6a52efa30.jpg",
+   "description_excerpt": "Bateau pneumatique, type Zodiac, plancher à lattes, dimensions : 2,30 m. x 1,30 m., jamais servi, état de neuf, divers accessoires, visible à Genève, CHF 550.- Tél. [phone hidden] Prix: 550.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 550
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6781869": {
+   "id": "petitesannonces:6781869",
+   "source": "petitesannonces",
+   "source_listing_id": "6781869",
+   "url": "https://www.petitesannonces.ch/a/6781869",
+   "title": "Bateau pneumatique Honda Marine",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 3650,
+   "price_label": "3'650.- CHF",
+   "length_m": 3.0,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Vessy",
+   "canton": "GE",
+   "postcode": "1234",
+   "region": "N/A",
+   "lat": 46.1722953,
+   "lon": 6.1585455,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/869/678163efe890bcacd1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/869/678163efe890bcacd1.jpg",
+   "description_excerpt": "4 places, modèle 2021, plancher en aluminium, dimensions : 3,00 m. x 1,60 m., parfait état, nombreux accessoires, roues de mise à l'eau, servi trois fois, moteur Yamaha 8 CV 4 temps, peu d'heures de navigation, prêt pour l'immatriculation, CHF 3'650.-- Tél. [phone hidden] Prix: 3'650.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3650
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8590083"
+    }
+   ],
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8460138": {
+   "id": "petitesannonces:8460138",
+   "source": "petitesannonces",
+   "source_listing_id": "8460138",
+   "url": "https://www.petitesannonces.ch/a/8460138",
+   "title": "Bateau pneumatique avec moteur 6 CV",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2450,
+   "price_label": "2'450.- CHF",
+   "length_m": 2.5,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Vessy",
+   "canton": "GE",
+   "postcode": "1234",
+   "region": "N/A",
+   "lat": 46.1722953,
+   "lon": 6.1585455,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/138/846069b98d4b7e03a6.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/138/846069b98d4b7e03a6.jpg",
+   "description_excerpt": "Bateau pneumatique de marque Nautistar 250, 3 places, état de neuf, plancher gonflable, dimensions : 2,50 m. x 1,52 m., nombreux accessoires, moteur Honda 6 CV neuf, 4 temps, réservoir incorporé et séparé, service et contrôle antipollution à jour, prêt pour l'immatriculation, visible à Genève, CHF 2450.- à discuter. Tél. [phone hidden] Prix: 2'450.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2450
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8590101": {
+   "id": "petitesannonces:8590101",
+   "source": "petitesannonces",
+   "source_listing_id": "8590101",
+   "url": "https://www.petitesannonces.ch/a/8590101",
+   "title": "Bateau pneumatique 3 places",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2350,
+   "price_label": "2'350.- CHF",
+   "length_m": 2.5,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 2.5,
+   "kw": 1.8,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Vessy",
+   "canton": "GE",
+   "postcode": "1234",
+   "region": "N/A",
+   "lat": 46.1722953,
+   "lon": 6.1585455,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-12",
+   "photo_url": "https://www.petitesannonces.ch/i/l/101/85906a32e0317a2694.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/101/85906a32e0317a2694.jpg",
+   "description_excerpt": "Bateau pneumatique Honda T25, 3 places, neuf, plancher à lattes, dimensions : 2,50 m.x 1,50 m., divers accessoires, facilement transportable, moteur Suzuki 2,5 CV, 4 temps, réservoir incorporé, prêt pour l'immatriculation, visible Genève, CHF 2'350.- Pour plus de renseignements : Tél. [phone hidden] Prix: 2'350.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2350
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7430837": {
+   "id": "petitesannonces:7430837",
+   "source": "petitesannonces",
+   "source_listing_id": "7430837",
+   "url": "https://www.petitesannonces.ch/a/7430837",
+   "title": "Bateau pneumatique Honda 8cv + remorque + accessoires",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 4650,
+   "price_label": "4'650.- CHF",
+   "length_m": 2.97,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Bioley-Orjulaz",
+   "canton": "VD",
+   "postcode": "1042",
+   "region": "N/A",
+   "lat": 46.6211356,
+   "lon": 6.5984553,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 68,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-06",
+   "photo_url": "https://www.petitesannonces.ch/i/l/837/743066238047dfc799.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/837/743066238047dfc799.jpg",
+   "description_excerpt": "Bateau Honda Marine Modèle 2011, état neuf, plancher en aluminium, dimensions : 2,97 m. x 1,57 m., avec bâche, divers accessoires, roues de mise à l'eau, moteur Honda 8cv, Remorque Rocca R271 charge utile 315kg. email [phone hidden] Prix: 4'650.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4650
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7336567": {
+   "id": "petitesannonces:7336567",
+   "source": "petitesannonces",
+   "source_listing_id": "7336567",
+   "url": "https://www.petitesannonces.ch/a/7336567",
+   "title": "Bateau à réviser, pour bricoleur",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Zodiac",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2500,
+   "price_label": "2'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "to restore",
+   "licence_leman": "N/A",
+   "town": "Colombier",
+   "canton": "VD",
+   "postcode": "1114",
+   "region": "N/A",
+   "lat": 46.5553576,
+   "lon": 6.4710624,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 58,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-05",
+   "photo_url": "https://www.petitesannonces.ch/i/l/567/733665d349048f9355.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/567/733665d349048f9355.jpg",
+   "description_excerpt": "Zodiac MK2 pour bricoleur. Le bateau à une fuite sous le plancher. Possibilité avec remorque et moteur. 500.- le Zodiac 500.- la remorque 1500.- le moteur A discuter Prix: 2'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "description : « zodiac »"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:3888271": {
+   "id": "petitesannonces:3888271",
+   "source": "petitesannonces",
+   "source_listing_id": "3888271",
+   "url": "https://www.petitesannonces.ch/a/3888271",
+   "title": "Pneumatique Honda Marine + remorque",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2003,
+   "price_chf": 3000,
+   "price_label": "3'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Estavayer-le-Lac",
+   "canton": "FR",
+   "postcode": "1470",
+   "region": "N/A",
+   "lat": 46.8439087,
+   "lon": 6.8463873,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 108,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-03",
+   "photo_url": "https://www.petitesannonces.ch/i/l/271/3888271_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/271/3888271_1.jpg",
+   "description_excerpt": "A vendre: Pneumatique Honda Marine + remorque Année 2003, excellent état Place pour 5 personnes + console centrale amovible Remorque Rocca spéciale pneumatique Prix à discuter Prix: 3'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 3000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7655391": {
+   "id": "petitesannonces:7655391",
+   "source": "petitesannonces",
+   "source_listing_id": "7655391",
+   "url": "https://www.petitesannonces.ch/a/7655391",
+   "title": "Bateaux pneumatiques intex",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 180,
+   "price_label": "180.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Saubraz",
+   "canton": "VD",
+   "postcode": "1189",
+   "region": "N/A",
+   "lat": 46.5146059,
+   "lon": 6.3302251,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 51,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-02",
+   "photo_url": "https://www.petitesannonces.ch/i/l/391/765566e497f63cfbc4.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/391/765566e497f63cfbc4.jpg",
+   "description_excerpt": "Pneumatique excursion 4 Prix: 180.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 180
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7927596": {
+   "id": "petitesannonces:7927596",
+   "source": "petitesannonces",
+   "source_listing_id": "7927596",
+   "url": "https://www.petitesannonces.ch/a/7927596",
+   "title": "Bateau gonflable à voile Decathlon Tribord 5S peu servi",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1500,
+   "price_label": "1'500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Arzier-Le Muids",
+   "canton": "VD",
+   "postcode": "1273",
+   "region": "N/A",
+   "lat": 46.4564903,
+   "lon": 6.2089865,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 35,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/596/792767d6de0b0b8486.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/596/792767d6de0b0b8486.jpg",
+   "description_excerpt": "Vend bateau gonflable à voile Decathlon Tribord 5S, modèle 2021 Idéal navigation sur lacs Léman, Neuchâtel... Supporte deux personnes Démonté, il tient dans un coffre de voiture. https://www.decathlon.ch/fr/p/bateau-deriveur-gonflable-tribord-5s-v2/_/R-p-331585?mc=8640820&utm_source=feed&utm_medium=free&gQT=1 Dimensions: Lorsque le bateau est rangé dans ses 2 sacs : - Dimensions du 1er sac : longueur x largeur x hauteur (cm) : 165 x 58 x 33 - Dimensions du 2ème sac : longueur x largeur x hauteur",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5766623": {
+   "id": "petitesannonces:5766623",
+   "source": "petitesannonces",
+   "source_listing_id": "5766623",
+   "url": "https://www.petitesannonces.ch/a/5766623",
+   "title": "Jolie bateau pneumatique",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 600,
+   "price_label": "600.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Veysonnaz",
+   "canton": "VS",
+   "postcode": "1993",
+   "region": "N/A",
+   "lat": 46.1955082,
+   "lon": 7.3363267,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 170,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/623/5766623_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/623/5766623_1.jpg",
+   "description_excerpt": "Ancien bateau de l armée , super robuste . Prix: 600.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 600
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6341199": {
+   "id": "petitesannonces:6341199",
+   "source": "petitesannonces",
+   "source_listing_id": "6341199",
+   "url": "https://www.petitesannonces.ch/a/6341199",
+   "title": "A vendre Zodiac 2m40 x 1m40",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "Zodiac",
+   "model": "2M40",
+   "year": "N/A",
+   "price_chf": 500,
+   "price_label": "500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Nyon",
+   "canton": "VD",
+   "postcode": "1260",
+   "region": "N/A",
+   "lat": 46.3851472,
+   "lon": 6.2310845,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 27,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/199/6341199_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/199/6341199_1.jpg",
+   "description_excerpt": "A vendre Zodiac en parfait état. Prix: 500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6486848": {
+   "id": "petitesannonces:6486848",
+   "source": "petitesannonces",
+   "source_listing_id": "6486848",
+   "url": "https://www.petitesannonces.ch/a/6486848",
+   "title": "Pneumatique Mercury et moteur Yamaha 6CV",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2013,
+   "price_chf": 1600,
+   "price_label": "1'600.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mercury",
+   "engine_model": "N/A",
+   "hp": 6.0,
+   "kw": 4.4,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "Onex",
+   "canton": "GE",
+   "postcode": "1213",
+   "region": "N/A",
+   "lat": 46.1894866,
+   "lon": 6.1085085,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 4,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-28",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "Mercury AA350 Année 2013 Longueur 340 Largeur 176 Yamaha 6CV Prix: 1'600.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1600
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5932706": {
+   "id": "petitesannonces:5932706",
+   "source": "petitesannonces",
+   "source_listing_id": "5932706",
+   "url": "https://www.petitesannonces.ch/a/5932706",
+   "title": "Mercury Annexe pneumatique",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1400,
+   "price_label": "1'400.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "none",
+   "engine_brand": "Mercury",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Bovernier",
+   "canton": "VS",
+   "postcode": "1932",
+   "region": "N/A",
+   "lat": 46.0733748,
+   "lon": 7.0784547,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 145,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-27",
+   "photo_url": "https://www.petitesannonces.ch/i/l/706/5932706_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/706/5932706_1.jpg",
+   "description_excerpt": "Petit annexe, 3 personnes, en très bon état comme neuf, étanche à fond rigide. Tous est marqué sur la plaquette. Nettoyage complet avant la vente. Vendu sans moteur. Prix: 1'400.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5756979": {
+   "id": "petitesannonces:5756979",
+   "source": "petitesannonces",
+   "source_listing_id": "5756979",
+   "url": "https://www.petitesannonces.ch/a/5756979",
+   "title": "Bateau pneumatique avec moteur 15 CV",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 2010,
+   "price_chf": 1950,
+   "price_label": "1'950.- CHF",
+   "length_m": 4.95,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 15.0,
+   "kw": 11.0,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Renens",
+   "canton": "VD",
+   "postcode": "1020",
+   "region": "N/A",
+   "lat": 46.5348307,
+   "lon": 6.5908401,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 62,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/979/5756979_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/979/5756979_1.jpg",
+   "description_excerpt": "Bateau pneumatique avec moteur 15 CV et remorque. A vendre bateau pneumatique Honda 400, avec fond aluminium , 4,95m de long, de 2010, assez peu utilisé, a eu une réparation qui a été réparée dans les règles de l'art par l'importateur (coût CHF 500.-), super bateau pour les lacs suisses. Vendu avec un moteur Yamaha de 15 cv, 4 temps de 2010, le moteur est comme neuf, il a très peu été utilisé. Remorque Mecanorem Chariot de transport y compris. Prix: 1'950.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1950
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7418742": {
+   "id": "petitesannonces:7418742",
+   "source": "petitesannonces",
+   "source_listing_id": "7418742",
+   "url": "https://www.petitesannonces.ch/a/7418742",
+   "title": "Bateau pneumatique T40",
+   "category": "inflatable",
+   "category_label": "Inflatables & RIBs",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2200,
+   "price_label": "2'200.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 20.0,
+   "kw": 14.7,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Commugny",
+   "canton": "VD",
+   "postcode": "1291",
+   "region": "N/A",
+   "lat": 46.3231155,
+   "lon": 6.1776042,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 20,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-19",
+   "photo_url": "https://www.petitesannonces.ch/i/l/742/7418661942315e6d18.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/742/7418661942315e6d18.jpg",
+   "description_excerpt": "Bateau pneumatique de 4m/1m90 Capacité : 7 personnes max et Moteur max: 20cv Avec sa remorque et accesoires divers Prix: 2'200.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2200
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": 2,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "pneumatique",
+     "catégorie pneumatique / semi-rigide"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8806228": {
+   "id": "petitesannonces:8806228",
+   "source": "petitesannonces",
+   "source_listing_id": "8806228",
+   "url": "https://www.petitesannonces.ch/a/8806228",
+   "title": "Barque à Rames en alu RUDEBOAT",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 750,
+   "price_label": "750.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "aluminium",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "very good",
+   "licence_leman": "N/A",
+   "town": "Champex-Lac",
+   "canton": "VS",
+   "postcode": "1938",
+   "region": "N/A",
+   "lat": 46.0305776,
+   "lon": 7.1168165,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 155,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://www.petitesannonces.ch/i/l/228/88066af9fe8c371a16.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/228/88066af9fe8c371a16.jpg",
+   "description_excerpt": "Barque à rames en aluminium en excellent état avec équipement complet de rames neuves, dames de nage, bache et arceaux pour bâche A récupérer sur place Prix: 750.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 750
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8724951"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:5560901": {
+   "id": "petitesannonces:5560901",
+   "source": "petitesannonces",
+   "source_listing_id": "5560901",
+   "url": "https://www.petitesannonces.ch/a/5560901",
+   "title": "Staempfli a Super Vent Blanc",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "Staempfli",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 5000,
+   "price_label": "5'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Mariner",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Blonay",
+   "canton": "VD",
+   "postcode": "1807",
+   "region": "N/A",
+   "lat": 46.4719423,
+   "lon": 6.9017022,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 93,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-15",
+   "photo_url": "https://www.petitesannonces.ch/i/l/901/5560901_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/901/5560901_1.jpg",
+   "description_excerpt": "Bâteau à moteur Staempfli A Super Vent Blanc Moteur : Mariner 6 ML avec remorque de transport Prix: 5'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 5000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "implausible_unknown"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8426734": {
+   "id": "petitesannonces:8426734",
+   "source": "petitesannonces",
+   "source_listing_id": "8426734",
+   "url": "https://www.petitesannonces.ch/a/8426734",
+   "title": "Vends bateau rigide bleu neptea",
+   "category": "other",
+   "category_label": "Other",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 350,
+   "price_label": "350.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Bouveret",
+   "canton": "VS",
+   "postcode": "1897",
+   "region": "N/A",
+   "lat": 46.3855895,
+   "lon": 6.8521495,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 66,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-11",
+   "photo_url": "https://www.petitesannonces.ch/i/l/734/8426699abec949cd57.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/734/8426699abec949cd57.jpg",
+   "description_excerpt": "Vends bateau rigide 2m20 couleur bleu avec ses 2 rames pour belle balade sur le lac. Prix: 350.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 350
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8064542": {
+   "id": "petitesannonces:8064542",
+   "source": "petitesannonces",
+   "source_listing_id": "8064542",
+   "url": "https://www.petitesannonces.ch/a/8064542",
+   "title": "A vendre barque avec 2 rames très stable",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1400,
+   "price_label": "1'400.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Grône",
+   "canton": "VS",
+   "postcode": "3979",
+   "region": "N/A",
+   "lat": 46.2486161,
+   "lon": 7.4679001,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 173,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-10",
+   "photo_url": "https://www.petitesannonces.ch/i/l/542/8064685252d57196f5.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/542/8064685252d57196f5.jpg",
+   "description_excerpt": "Vend barque acheter il y a 2 ans En parfait état Valeur neuf 2000.- Céder à 1400.- Cause : plus d utilité Prix: 1'400.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8171951": {
+   "id": "petitesannonces:8171951",
+   "source": "petitesannonces",
+   "source_listing_id": "8171951",
+   "url": "https://www.petitesannonces.ch/a/8171951",
+   "title": "Staempfli Canot de pêche 511",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "Staempfli",
+   "model": "Canot",
+   "year": 1977,
+   "price_chf": 4000,
+   "price_label": "4'000.- CHF",
+   "length_m": 5.11,
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "Yamaha",
+   "engine_model": "N/A",
+   "hp": 8.0,
+   "kw": 5.9,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "no (≤10 CV)",
+   "town": "St-Aubin-Sauges",
+   "canton": "NE",
+   "postcode": "2024",
+   "region": "N/A",
+   "lat": 46.894585,
+   "lon": 6.7737479,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 107,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-09",
+   "photo_url": "https://www.petitesannonces.ch/i/l/951/817168b07070f1d548.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/951/817168b07070f1d548.jpg",
+   "description_excerpt": "Staempfli - Canot de pêche 511 Année : 1977 Dimension : 5.11 m. x 1.56 m. Nombre de personnes : 5 Moteur : Yamaha 8 CV de 2015 avec tous les services suivis A vendre avec tout le matériel de pêche ainsi qu'une place d'amarrage à Bevaix. Dernière expertise le 09.06.2023. Vente en l'état Prix: 4'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 4000
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/7129275"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8451235": {
+   "id": "petitesannonces:8451235",
+   "source": "petitesannonces",
+   "source_listing_id": "8451235",
+   "url": "https://www.petitesannonces.ch/a/8451235",
+   "title": "Barque à moteur électrique avec remorque",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 8000,
+   "price_label": "8'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "electric",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "electric",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "yes",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vallamand",
+   "canton": "VD",
+   "postcode": "1586",
+   "region": "N/A",
+   "lat": 46.9299746,
+   "lon": 7.0400809,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 129,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-06",
+   "photo_url": "https://www.petitesannonces.ch/i/l/235/845169b1918e022cd0.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/235/845169b1918e022cd0.jpg",
+   "description_excerpt": "Double coque auto videuse à l'arrêt en polyéthylène. Imputrescible et sans entretien. Barque très stable pour pratiquer la pêche. 1ère mise en circulation barque et remorque : 13 mai 2024 Très bien équipée, nombreux accessoires. Voir Descriptif complet avec images. Prix: 8'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 8000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8103078": {
+   "id": "petitesannonces:8103078",
+   "source": "petitesannonces",
+   "source_listing_id": "8103078",
+   "url": "https://www.petitesannonces.ch/a/8103078",
+   "title": "Lou jolie barque 6 places",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 400,
+   "price_label": "400.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Carouge",
+   "canton": "GE",
+   "postcode": "1227",
+   "region": "N/A",
+   "lat": 46.1870558,
+   "lon": 6.1370782,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 2,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-05",
+   "photo_url": "N/A",
+   "thumb_url": "N/A",
+   "description_excerpt": "Lou jolie barque 6 places Moteur 8 cheveaux sans permis Place d'ammarage Quai Wilson - Pâquis Prix 400.- jusqu'au 31 décembre 2025 Possibilitée de reprolonger année d'après Plus d'informations. Tél : [phone hidden] Prix: 400.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 400
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8096900": {
+   "id": "petitesannonces:8096900",
+   "source": "petitesannonces",
+   "source_listing_id": "8096900",
+   "url": "https://www.petitesannonces.ch/a/8096900",
+   "title": "Vendre mon barque",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 500,
+   "price_label": "500.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Le Lignon",
+   "canton": "GE",
+   "postcode": "1219",
+   "region": "N/A",
+   "lat": 46.2040435,
+   "lon": 6.0960319,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 5,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-11-01",
+   "photo_url": "https://www.petitesannonces.ch/i/l/900/8096686eac9b32a544.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/900/8096686eac9b32a544.jpg",
+   "description_excerpt": "Banque en plastique rigides, avec 4 places, possibilité de mettre un moteur. Semi neuf, mise à l'eau 4x seulement pour répondre le bateaux. Prix: 500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8745248": {
+   "id": "petitesannonces:8745248",
+   "source": "petitesannonces",
+   "source_listing_id": "8745248",
+   "url": "https://www.petitesannonces.ch/a/8745248",
+   "title": "A Donner Canot Ries",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 0,
+   "price_label": "0.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "no",
+   "mooring_included": "no",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vevey",
+   "canton": "VD",
+   "postcode": "1800",
+   "region": "N/A",
+   "lat": 46.4626429,
+   "lon": 6.8464644,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 90,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-30",
+   "photo_url": "https://www.petitesannonces.ch/i/l/248/87456ac88f02a1b5b9.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/248/87456ac88f02a1b5b9.jpg",
+   "description_excerpt": "A canot Ries à donner Long. 640 X 200 CM. 6 places. Avec bache et rames. Quelques travaux de remise en état à faire. A enlever sur place. Sans place de port, Sans remorque. Prix: 0.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 0
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8140552": {
+   "id": "petitesannonces:8140552",
+   "source": "petitesannonces",
+   "source_listing_id": "8140552",
+   "url": "https://www.petitesannonces.ch/a/8140552",
+   "title": "Joli canot en bois",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1000,
+   "price_label": "1'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "good",
+   "licence_leman": "N/A",
+   "town": "La Tour-de-Peilz",
+   "canton": "VD",
+   "postcode": "1814",
+   "region": "N/A",
+   "lat": 46.4557341,
+   "lon": 6.8657114,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 91,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-29",
+   "photo_url": "https://www.petitesannonces.ch/i/l/552/814068950461e37704.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/552/814068950461e37704.jpg",
+   "description_excerpt": "Canot tout en bois en bon état, avec bâche et chariot de transport Prix: 1'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7958921": {
+   "id": "petitesannonces:7958921",
+   "source": "petitesannonces",
+   "source_listing_id": "7958921",
+   "url": "https://www.petitesannonces.ch/a/7958921",
+   "title": "Bateau à rames VIRUS",
+   "category": "other",
+   "category_label": "Other",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 1950,
+   "price_label": "1'950.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-28",
+   "photo_url": "https://www.petitesannonces.ch/i/l/921/795867f2c6f3791d03.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/921/795867f2c6f3791d03.jpg",
+   "description_excerpt": "Bateau à rames marque VIRUS 1-2 rameurs Longueur 470 cm Rames en carbone Chariot de mise à l'eau Peut se transporter sur le toit de la voiture En parfait état 1950 CHF Tel [phone hidden] Vesenaz Genève Prix: 1'950.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 1950
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "category"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7971720": {
+   "id": "petitesannonces:7971720",
+   "source": "petitesannonces",
+   "source_listing_id": "7971720",
+   "url": "https://www.petitesannonces.ch/a/7971720",
+   "title": "Barque FunYak SECU 12",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2614,
+   "price_label": "2'614.- CHF",
+   "length_m": 3.6,
+   "width_m": 1.5,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/720/797167fe29a6da04c7.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/720/797167fe29a6da04c7.jpg",
+   "description_excerpt": "FunYak, modèle Sécu 12 Dimensions : 3.60 m x 1.50 m Poids : 100 kg Capacité : 5 personnes Couleur : rouge Neuf en stock Le prix est au départ de Vésenaz, et ne tiens pas compte de l'expertise de 180 chf Prix: 2'614.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2614
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7971730": {
+   "id": "petitesannonces:7971730",
+   "source": "petitesannonces",
+   "source_listing_id": "7971730",
+   "url": "https://www.petitesannonces.ch/a/7971730",
+   "title": "Annexe FunYak Telline",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 670,
+   "price_label": "670.- CHF",
+   "length_m": 2.15,
+   "width_m": 1.2,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/730/797167fe2b067ce781.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/730/797167fe2b067ce781.jpg",
+   "description_excerpt": "Annexe FunYak, modèle Telline Dimensions : 2.15 m x 1.20 m Poids : 35 kg Capacité : 3 personnes Non motorisable Couleur : gris Neuf en stock Le prix est au départ de Vésenaz Possibilité de livraison (cotation sur demande) Prix: 670.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 670
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7971726": {
+   "id": "petitesannonces:7971726",
+   "source": "petitesannonces",
+   "source_listing_id": "7971726",
+   "url": "https://www.petitesannonces.ch/a/7971726",
+   "title": "Rigiflex NewMatic 360",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 2617,
+   "price_label": "2'617.- CHF",
+   "length_m": 3.6,
+   "width_m": 1.68,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": 30.0,
+   "kw": 22.1,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Vésenaz",
+   "canton": "GE",
+   "postcode": "1222",
+   "region": "N/A",
+   "lat": 46.2399181,
+   "lon": 6.1982222,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 7,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-25",
+   "photo_url": "https://www.petitesannonces.ch/i/l/726/797167fe2a5a618dd8.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/726/797167fe2a5a618dd8.jpg",
+   "description_excerpt": "Rigiflex NewMatic 360 Dimensions : 3.60 m x 1.68 m Poids : 120 kg Capacité : 6 personnes Couleur : Orange Motorisation possible jusqu'à 30 cv Neuf en stock Le prix est au départ de Vésenaz, et ne tiens pas compte de l'expertise de 180 chf Possibilité de livraison (cotation sur demande) Prix: 2'617.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 2617
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7492736": {
+   "id": "petitesannonces:7492736",
+   "source": "petitesannonces",
+   "source_listing_id": "7492736",
+   "url": "https://www.petitesannonces.ch/a/7492736",
+   "title": "Canot de pêche Sartorio à vendre",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 6500,
+   "price_label": "6'500.- CHF",
+   "length_m": 5.82,
+   "width_m": 1.5,
+   "engine_type": "N/A",
+   "engine_brand": "Honda",
+   "engine_model": "N/A",
+   "hp": 20.0,
+   "kw": 14.7,
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "yes (>10 CV)",
+   "town": "Mies",
+   "canton": "VD",
+   "postcode": "1295",
+   "region": "N/A",
+   "lat": 46.3078203,
+   "lon": 6.1691121,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 22,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-23",
+   "photo_url": "https://www.petitesannonces.ch/i/l/736/74926658a9aa906468.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/736/74926658a9aa906468.jpg",
+   "description_excerpt": "Année de fabrication 1978, Dimension 5.82 m x 1.50 m , Matériau Bois, Moteur Honda BF20 D3 révisé parfait, Puissance moteur 1 x 20 cv / 15 kW, Mât et voile latine Visite passée, prix à négocier Prix: 6'500.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 6500
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8001890": {
+   "id": "petitesannonces:8001890",
+   "source": "petitesannonces",
+   "source_listing_id": "8001890",
+   "url": "https://www.petitesannonces.ch/a/8001890",
+   "title": "Annexe rigide \" Neptea\"",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 410,
+   "price_label": "410.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "La Tour-de-Peilz",
+   "canton": "VD",
+   "postcode": "1814",
+   "region": "N/A",
+   "lat": 46.4557341,
+   "lon": 6.8657114,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 91,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-21",
+   "photo_url": "https://www.petitesannonces.ch/i/l/890/80016818c01c8074a0.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/890/80016818c01c8074a0.jpg",
+   "description_excerpt": "Rouleaux de transport Avirons et dames de nage Passage antivol Caractéristiques Longueur : 2m10 Largeur : 1m13 Creux : 0m30 Poids : 25 kg Places : 1 à 2 Prix: 410.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 410
+    }
+   ],
+   "also_listed": [
+    {
+     "source": "petitesannonces",
+     "url": "https://www.petitesannonces.ch/a/8001901"
+    }
+   ],
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8001914": {
+   "id": "petitesannonces:8001914",
+   "source": "petitesannonces",
+   "source_listing_id": "8001914",
+   "url": "https://www.petitesannonces.ch/a/8001914",
+   "title": "Annexe rigide \"Bosco\"",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 550,
+   "price_label": "550.- CHF",
+   "length_m": 2.49,
+   "width_m": 1.45,
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "La Tour-de-Peilz",
+   "canton": "VD",
+   "postcode": "1814",
+   "region": "N/A",
+   "lat": 46.4557341,
+   "lon": 6.8657114,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 91,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-21",
+   "photo_url": "https://www.petitesannonces.ch/i/l/914/80016818c490b621d5.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/914/80016818c490b621d5.jpg",
+   "description_excerpt": "Annexe rigide Bosco. Dame de nage et rames Rouleau de transport Longueur 2,49m Largeur 1,45m Creux 0,45m Poids 44 Kg Places 3 à 4 Prix: 550.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 550
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:7986645": {
+   "id": "petitesannonces:7986645",
+   "source": "petitesannonces",
+   "source_listing_id": "7986645",
+   "url": "https://www.petitesannonces.ch/a/7986645",
+   "title": "Canot à rames Amiguet",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": 1953,
+   "price_chf": 15000,
+   "price_label": "15'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "La Tour-de-Peilz",
+   "canton": "VD",
+   "postcode": "1814",
+   "region": "N/A",
+   "lat": 46.4557341,
+   "lon": 6.8657114,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 91,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-10-21",
+   "photo_url": "https://www.petitesannonces.ch/i/l/645/7986680b81dfedf183.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/645/7986680b81dfedf183.jpg",
+   "description_excerpt": "Canot à rame Amiguet de 1953, restaurer par chantier Naval Casanova à la Pichette Prix: 15'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 15000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:6254294": {
+   "id": "petitesannonces:6254294",
+   "source": "petitesannonces",
+   "source_listing_id": "6254294",
+   "url": "https://www.petitesannonces.ch/a/6254294",
+   "title": "Canot classique en acajou",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 10000,
+   "price_label": "10'000.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "wood",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Versoix",
+   "canton": "GE",
+   "postcode": "1290",
+   "region": "N/A",
+   "lat": 46.2913825,
+   "lon": 6.1552376,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 12,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "2026-10-20",
+   "photo_url": "https://www.petitesannonces.ch/i/l/294/6254294_1.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/294/6254294_1.jpg",
+   "description_excerpt": "Canot en acajou et construit au chantier naval Sartorio. il est dans un super état et l'antifouling a été fait. Le bateau possède deux paires de rame et une bâche. visible à Port-Choiseul Prix: 10'000.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 10000
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "petitesannonces:8724947": {
+   "id": "petitesannonces:8724947",
+   "source": "petitesannonces",
+   "source_listing_id": "8724947",
+   "url": "https://www.petitesannonces.ch/a/8724947",
+   "title": "Barque idéale pour la peche",
+   "category": "small",
+   "category_label": "Dinghies, rowing & small boats",
+   "brand": "N/A",
+   "model": "N/A",
+   "year": "N/A",
+   "price_chf": 600,
+   "price_label": "600.- CHF",
+   "length_m": "N/A",
+   "width_m": "N/A",
+   "engine_type": "N/A",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "N/A",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "polyester/GRP",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "N/A",
+   "licence_leman": "N/A",
+   "town": "Orsières",
+   "canton": "VS",
+   "postcode": "1937",
+   "region": "N/A",
+   "lat": 46.0291854,
+   "lon": 7.1436359,
+   "geo_precision": "town",
+   "distance_km_from_geneva": 156,
+   "distance_method": "osrm",
+   "seller_type": "private",
+   "posted_date": "2026-10-19",
+   "photo_url": "https://www.petitesannonces.ch/i/l/947/87246aae1138010d04.jpg",
+   "thumb_url": "https://www.petitesannonces.ch/i/m/947/87246aae1138010d04.jpg",
+   "description_excerpt": "A vendre barque en fibre de verre idéale pour la pêche complète de rames et d'âmes de nage Stationnée sur le lac de champex-lac (VS) Prix: 600.- CHF",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 600
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "type"
+    ],
+    "score": 0
+   }
+  },
+  "aquaboat:x3-stock": {
+   "id": "aquaboat:x3-stock",
+   "source": "aquaboat",
+   "source_listing_id": "x3-stock",
+   "url": "https://aquaboat.ch/fr/boats/x3-stock",
+   "title": "VBOATS X3 - STOCK",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "VBOATS",
+   "model": "X3 - STOCK",
+   "year": "N/A",
+   "price_chf": 24800,
+   "price_label": "CHF 24'800.-",
+   "length_m": 5.1,
+   "width_m": 2.03,
+   "engine_type": "outboard",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "demonstration",
+   "licence_leman": "N/A",
+   "town": "Le Bouveret",
+   "canton": "VS",
+   "postcode": "1897",
+   "region": "N/A",
+   "lat": 46.3806,
+   "lon": 6.8623,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 109,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://aquaboat.ch/media/pages/boats/x3-stock/1b7c862c43-1757411633/20220530-164401-400x400.jpg",
+   "thumb_url": "https://aquaboat.ch/media/pages/boats/x3-stock/1b7c862c43-1757411633/20220530-164401-360x240.jpg",
+   "description_excerpt": "Option: Support de siège additionnel avant Support de siège additionnel arrière Echelle de bain Siège de pêche Springfield Filtre séparateur eau/essence 2x Support pêche 1pc Bâche complète Tapis spécial Marine partie avant Inclus: Transport usine Livraison et homologation",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 24800
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
+    ],
+    "score": 0
+   }
+  },
+  "aquaboat:x5-stock": {
+   "id": "aquaboat:x5-stock",
+   "source": "aquaboat",
+   "source_listing_id": "x5-stock",
+   "url": "https://aquaboat.ch/fr/boats/x5-stock",
+   "title": "VBOATS X3 - STOCK",
+   "category": "open",
+   "category_label": "Open boats & day-cruisers",
+   "brand": "VBOATS",
+   "model": "X3 - STOCK",
+   "year": "N/A",
+   "price_chf": 25031,
+   "price_label": "CHF 25'031.-",
+   "length_m": 5.1,
+   "width_m": 2.03,
+   "engine_type": "outboard",
+   "engine_brand": "N/A",
+   "engine_model": "N/A",
+   "hp": "N/A",
+   "kw": "N/A",
+   "fuel": "petrol",
+   "hours": "N/A",
+   "sail_area_m2": "N/A",
+   "berths": "N/A",
+   "material": "N/A",
+   "trailer": "N/A",
+   "mooring_included": "N/A",
+   "condition": "demonstration",
+   "licence_leman": "N/A",
+   "town": "Le Bouveret",
+   "canton": "VS",
+   "postcode": "1897",
+   "region": "N/A",
+   "lat": 46.3806,
+   "lon": 6.8623,
+   "geo_precision": "listing coordinates",
+   "distance_km_from_geneva": 109,
+   "distance_method": "osrm",
+   "seller_type": "dealer",
+   "posted_date": "N/A",
+   "photo_url": "https://aquaboat.ch/media/pages/boats/x5-stock/955993a5df-1757411632/20220223-113149-400x400.jpg",
+   "thumb_url": "https://aquaboat.ch/media/pages/boats/x5-stock/955993a5df-1757411632/20220223-113149-360x240.jpg",
+   "description_excerpt": "Option: Support de siège additionnel avant Support de siège additionnel arrière Echelle de bain Siège de pêche Springfield Filtre séparateur eau/essence 2x Support pêche 1pc Bâche complète Tapis spécial Marine partie avant Inclus: Transport usine Livraison et homologation Non inclus: Moteur",
+   "first_seen": "2026-11-15",
+   "last_seen": "2026-11-15",
+   "status": "active",
+   "removed_on": "N/A",
+   "sent_in_digest": "N/A",
+   "price_changed_on": "N/A",
+   "previous_price_chf": "N/A",
+   "price_history": [
+    {
+     "date": "2026-11-15",
+     "price_chf": 25031
+    }
+   ],
+   "also_listed": "N/A",
+   "_filtre": {
+    "version": null,
+    "bucket": "excluded",
+    "zone": null,
+    "lake": null,
+    "opportunite": false,
+    "reasons": [
+     "price_out_of_range"
     ],
     "score": 0
    }

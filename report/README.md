@@ -4,13 +4,14 @@ Les textes destinés à Gael (digest, site, ce chapitre sur le filtre) sont en *
 
 ## Filtre global (`../config/filtre_global.json`)
 
-Fichier versionné (aujourd’hui version 1). `build.py` s’en sert pour le score / la classification, le digest, et les valeurs par défaut du site.
+Fichier versionné (aujourd’hui version 2 : exclusion des pneumatiques et semi-rigides). `build.py` s’en sert pour le score / la classification, le digest, et les valeurs par défaut du site.
 
-- **Type :** hors-bord seulement (bateaux ouverts, à cabine ou semi-rigides avec hors-bord). Pas de voiliers, annexes, pédalos, aviron. Un RIB / semi-rigide hors-bord qui respecte le reste est conservé.
+- **Type :** hors-bord à coque rigide seulement (bateaux ouverts ou à cabine). Pas de voiliers, annexes, pédalos, aviron.
+- **Pneumatiques / semi-rigides (v2) :** exclus. `filtre.inflatable_reason()` regarde, dans l’ordre : catégorie `inflatable` du site ; mots-clés (`criteria.inflatables.keywords`) dans le titre ou le type du site, sauf « annexe / avec pneumatique / remorque pour… » ; matériau Hypalon / PVC (le « PVC/Hypalon » deviné dans le texte libre ne compte que si « hypalon » est écrit, sinon une « bâche PVC » ferait sauter un bateau rigide) ; marques 100 % pneumatiques (champ marque structuré de boat24 / lakeboat / aquaboat, ou marque écrite dans le titre ; jamais une marque devinée dans la description) ; marques mixtes seulement pour les gammes pneumatiques (`brands_mixed` : Ranieri Cayman, Capelli Tempest, Selva D…, Quicksilver Heavy-Duty…) ; enfin la description, si le mot décrit le bateau lui-même et qu’aucune coque polyester / alu / bois n’est mentionnée. La raison est visible dans `site/data/listings.json` → `_filtre.reasons`.
 - **Puissance :** 40 à 90 CV. **Largeur max. 2,30 m. Longueur max. 7,00 m. Prix max. CHF 15’000.**
 - **Zone 1 (prioritaire) :** sur ou près des lacs Léman, de Neuchâtel, de Morat et de Bienne (listes de communes et de codes postaux dans le JSON, plus distance à la rive ≤ 12 km si l’on a les coordonnées).
 - **Zone 2 :** reste de la Suisse, dans une section à part, avec un badge « Très bonne opportunité » si le prix est clairement sous des bateaux comparables (longueur / puissance / année), s’il y a une remorque ou un moteur récent.
-- **Valeurs manquantes :** une puissance, une largeur ou une longueur en N/A ne fait **pas** écarter le bateau en silence. Il va dans le seau **« À vérifier »** si le reste correspond, sauf s’il est clairement hors sujet (très petit pneumatique, « sans permis », à donner, moteur in-bord, etc.).
+- **Valeurs manquantes :** une puissance, une largeur ou une longueur en N/A ne fait **pas** écarter le bateau en silence. Il va dans le seau **« À vérifier »** si le reste correspond, sauf s’il est clairement hors sujet ( « sans permis », à donner, moteur in-bord, etc.).
 - **Déduplication :** les 912 bateaux de la première édition restent marqués `sent_in_digest = 2026-11-15`. Le digest quotidien suivant ne contient que les nouveaux bateaux encore en `N/A` qui passent le filtre. La sélection initiale (`digest/selection-initiale-YYYY-MM-DD.html`) liste *tous* les correspondants actuels, déjà envoyés ou non, et **n’est pas envoyée** automatiquement.
 
 Pour régénérer sans recollecter :
@@ -65,14 +66,30 @@ Needs Python 3 with `requests` (and Pillow for preview trimming) and Google Chro
 ## Sources (status 2026-11-15)
 | Source | Method | Status |
 |---|---|---|
+| lakeboat.ch | Yoast sitemap `job_listing-sitemap.xml` (FR URLs `/bateau-occasion-suisse/…`), each detail page: JSON-LD `LocalBusiness` (name, description, address, lat/lng, photos) + MyListing `item-attr`/`item-property` pairs (type, marque, modèle, prix, lac). Schools, rentals and accessories have no "Bateau moteur"/"Voilier" block and are skipped | works; the sitemap also lists old ads (posted 2025), they stay until they disappear |
+| petitesannonces.ch | rubric lists `/r/3503` (moteur), `/r/3504` (voiliers), `/r/3506` (pneumatiques), `/r/3502` (barques), `?p=N`; detail `/a/<id>` for text, postcode/town, date, photo. Foreign ads (France, Italie) skipped | works |
+| aquaboat.ch | dealer at Le Bouveret; public `https://aquaboat.ch/boats.json` (the site's own catalogue feed, no login), only offers *occasion / déstockage / démonstration*; detail page for length/width/description | works (few boats under CHF 30k) |
+| boot24.ch | same Boat24 database as bateau24.ch (German domain, same listing ids) | covered by the bateau24 scraper, not scraped twice |
+| trovas.ch | keyword search aggregator; republishes petitesannonces ads, no plain pagination | not scraped (duplicates petitesannonces) |
+| swissboat.ch | Anubis proof-of-work bot wall | not scraped |
 | tutti.ch | category "Bateaux & accessoires" search pages (`__NEXT_DATA__` JSON), ad pages for coordinates and full text | works |
 | anibis.ch | same platform as tutti, same method | works |
 | boat24 Swiss site (bateau24.ch) | server-rendered list `bateauxdoccasion/?whr=CHF&prs_max=30000&page=<offset>`, ad pages for specs and town | works (boat24.com itself sits behind a Cloudflare challenge) |
-| ricardo.ch | search page | blocked: captcha page / Cloudflare error 1015 from the box |
+| ricardo.ch | search page, category page, `/api/mfa/search`, mobile UA, headless Chrome | blocked (2026-11-15 retry): HTTP 403 "Ricardo Captcha" page, API answers 429 / Cloudflare error 1015, headless Chrome gets "Just a moment…". Not worked around (no captcha solving, no borrowed cookies) |
 | Facebook Marketplace | n/a | needs a logged-in session, not scraped |
 
 Accessories, engines, trailers, moorings, kayaks and SUPs are filtered by keyword rules in `collect.py` (`ACC_START`, `ACC_ANY`, `BOAT`). Fix a rule there and run
 `python3 build.py --no-collect` to re-apply it.
+
+## Cross-source duplicates
+`collect.merge_duplicates()` merges the same boat seen on several sites (or reposted on one site, except boat24 dealers): same price, title tokens overlap ≥ 60 % (brand/model words, without "bateau", "moteur"…), and within 30 km when both have coordinates (otherwise ≥ 80 % title overlap). The kept row is the one **already in the store** (so `sent_in_digest` and price history follow it), otherwise by source priority boat24 > tutti > anibis > lakeboat > petitesannonces > aquaboat. The others become `also_listed: [{source, url}]` (shown as "aussi sur …" in the site and the digest) and fill the kept row's empty fields. Two rows that are both already in the store are only cross-linked, never merged, so no stored boat is suddenly marked removed.
+
+## Lessons (2026-11-15)
+* `build.py` marks the digest's boats as sent **when it builds**, not when the mail leaves. Always use `--no-mark` for rebuilds that will not be sent; on the baseline day (2026-11-15) a marked boat would even be treated as "baseline" and never be sent.
+* `rich_fields()` must not call a boat electric because the text mentions an "électrique" pump or windlass; it now needs "moteur électrique", Torqeedo, ePropulsion, Minn Kota… and no thermal power ≥ 20 CV.
+* For free-text sites, run `rich_fields()` before `extract_specs()` (`apply_text_fields`): "9 m x 3.18 m" otherwise yields a 3.18 m length.
+* The store never replaces a known value by N/A, so a wrong value parsed once (e.g. an old "electric") sticks on existing records until a source gives a new non-N/A value.
+* Inflatable detection: never trust a brand guessed from the description (an ad can mention "notre ancien Zodiac"), and treat "annexe pneumatique / avec pneumatique" as an extra, not as the boat.
 
 ## Sending
 This folder only produces HTML; the email itself is sent by `../publish_and_send.sh` and the GitHub Actions workflow in the repo. Recipient addresses
@@ -85,7 +102,7 @@ Top level: `{schema_version, updated, sources{<source>: {ok, error, raw, kept}},
 
 | field | meaning |
 |---|---|
-| id | `<source>:<listing id>` (e.g. `tutti:84171824`, `bateau24:755798`), stable across runs |
+| id | `<source>:<listing id>` (e.g. `tutti:84171824`, `bateau24:755798`, `lakeboat:<slug>`, `petitesannonces:8250977`, `aquaboat:<slug>`), stable across runs |
 | source, source_listing_id, url | site key, the site's own id, **link to the advert** |
 | title, category, category_label | ad title; `sail` / `open` / `motor` / `inflatable` / `small` / `other` |
 | brand, model, year | maker, model, build year |
@@ -104,6 +121,7 @@ Top level: `{schema_version, updated, sources{<source>: {ok, error, raw, kept}},
 | first_seen, last_seen, status, removed_on | tracking (`active` / `removed`) |
 | sent_in_digest | date of the digest that included the boat, or N/A |
 | price_changed_on, previous_price_chf, price_history | price tracking (`[{date, price_chf}]`) |
+| also_listed | same boat on other sites: `[{source, url}]`, or N/A |
 
 ## Web table (../site)
 Static, no build step: `index.html` + `assets/app.js` + `assets/style.css`, Leaflet and fonts from CDNs. It fetches `data/listings.json`

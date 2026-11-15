@@ -2,7 +2,8 @@
 """Nico Boats collector: pulls real used-boat listings from Swiss marketplaces.
 
 Sources that work from the box (2026-11-15): tutti.ch, anibis.ch (Next.js __NEXT_DATA__ JSON),
-bateau24.ch = boat24.com Swiss site (server-rendered HTML). Blocked: ricardo.ch (Cloudflare captcha /
+bateau24.ch = boat24.com Swiss site (server-rendered HTML; boot24.ch is the same site in German),
+lakeboat.ch (sitemap + MyListing detail pages), petitesannonces.ch (rubric lists), aquaboat.ch (dealer, public boats.json). Blocked: ricardo.ch (Cloudflare captcha /
 error 1015), boat24.com international domain (Cloudflare challenge; bateau24.ch works).
 Every listing keeps its own URL. Nothing is invented: missing fields stay None.
 """
@@ -48,7 +49,7 @@ def norm(s):
 BOAT = r"(\bboat\b|bateau|bateaux|boot\b|boote\b|boots\b|barca|barche|barque|voilier|voiliers|segelboot|segelyacht|segeljacht|segler|motorboot|motorbot|sportboot|fischerboot|kajutboot|kabinenboot|schlauchboot|pneumatique|semi-rigide|semi rigide|gommone|festrumpf|canot|deriveur|jolle|optimist\b|laser\b|yacht|jacht|daysailer|day cruiser|catamaran|katamaran|ruderboot|pedalo|tretboot|weidling|zodiac|\brib\b|bowrider|sloop|motoscafo|cabin cruiser|lacustre|cruiser|vaurien|ponton|annexe|beiboot|dinghy|tender|jet ?ski|jetski|scooter des mers|wassertöff|surprise\b|corsaire\b|toucan\b|h-boot|yngling|grinde|first \d|kielboot|quillard|kahn\b|pinasse|launch)"
 BRANDS = r"\b(beneteau|jeanneau|bayliner|quicksilver|sea ?ray|mandli|boesch|dehler|dufour|bavaria|hanse|archambault|marine s\.?r\.?o|zar\b|williams|bombard|takacat|honwave|terhi|linder|buster|mercury inflatable|ranieri|cranchi|chaparral|four winns|glastron|campion|wellcraft|draco|fletcher|maxum|larson|regal|rio\b|sessa|saver|marinello|pioner|uttern|crescent|ryds|whaler|achilles|3d tender|lomac|joker|zodiac|avon\b|plastimo|parker|elan\b|etap|gib.?sea|kelt|neptun|catalina|hunter|varianta|sunbeam|hallberg|albin|nauticat|wirz|portofino|riva|lurssen|staempfli|stampfli)"
 ACC_START = r"^(grand[- ]?voile|chandelles?|location\b|balcon|chandeliers?|spi\b|ber\b|rc\b|place\b|places\b|emplacement|\W*nouveau(te)? (en magasin|dans la boutique)|\W*produit neuf|nouveau berceau|taud|traineau|unite de commande|pioneer|poulie|couverture|pieces?\b|vis\b|halle|table\b|instruments?|coussin|\d+ palettes|palettes?|berceau|collecteur|chariot|opel|deux sieges|sieges?|tres rare moteur|\d+ moteurs|de la collection|haut-parleurs?|aquain|gm mercruiser|mercruiser|passerelle|roues?|marine - |moteur|motor\b|motoren|outboard|hors[- ]?bord|aussenborder|aussenbordmotor|fuoribordo|remorque|anhanger|anhaenger|trailer|bootsanhanger|bootstrailer|gilet|gilets|rettungsweste|schwimmweste|ancre|anker|ancora|bache|persenning|plane|helice|propeller|elica|voile\b|voiles\b|segel\b|grossegel|spinnaker|genois|fock|mat\b|mast\b|bome|baum|pare[- ]?battage|fender|taquet|echolot|sondeur|fishfinder|batterie|pompe|pumpe|chaine|chaines|corde|seil|leine|winch|winsch|kit\b|housse|support|halterung|place d.amarrage|bootsplatz|liegeplatz|bojenplatz|anlegeplatz|wakeboard|ski nautique|wasserski|gps|sup\b|stand ?up|kayak|kajak|canoe|canoë|kanu|kanadier|paddle|paddel|pagaie|rame|rames|ruder\b|riemen|hublot|cockpit|siege|sitz|lampe|feu|navigationslicht|cable|kabel|tank|reservoir|bidon|klampe|bimini|sprayhood|capote|cover|eau douce|toilette|wc|chauffage|heizung|radio|vhf|compas|kompass|autopilot|pilote|telecommande|steuer|volant|lenkrad|hydrofoil|foil|bouee|boje|tube|ringo|schleppring|planche|surf|kite|antenne|pare|scie|outil|livre|buch|modell|model|maquette|lego|playmobil|poster|tableau|bild|figur|jouet|spielzeug|uhr|montre|t-shirt|pull|veste|jacke|bottes|stiefel|chaussures|schuhe)"
-ACC_ANY = r"(\brc\b|radiocommande|telecommande|ferngesteuert|(voiles?|mat|bome|spi|spinnaker|taud|bache) (de|pour|du) (bateau|voilier)|ber de stockage|bateau lit|lit bateau|lit enfant|lit pour enfant|\bcable\b|kabel|autos? ?- ?motos?|7j7|24h24|rachat|debarras|achete (tous|bateaux)|kaufe (boote|alle)|moteurs? de bateau|pieces de bateau|utilisation partagee|(taud|couverture|protection|vis|passerelle|coussin|sieges?|roues?|haut-parleurs?|instruments?|chariot|berceau|support|halle|table|radio|lautsprecher|traineau) (de|a|pour) (bateau|barca)|\bpour (bateau|bateaux|voilier|zodiac|pneumatique)|\bfur (boot|boote|segelboot|schlauchboot)|\bper (barca|barche|gommone)|\bfor (boat|boats)|maquette|modellbau|modellboot|model boat|bateau modele|rc boot|rc boat|ferngesteuert|teleguide|jouet|spielzeug|lego|playmobil|bootsplatz|liegeplatz|place d.amarrage|place de port|kayak|kajak|kanu|kanadier|canoe|\bsup\b|stand ?up paddle|paddleboard|luftmatratze|gonflable pour enfant|badeboot|schwimmring|pedalo de piscine)"
+ACC_ANY = r"(\brc\b|radiocommande|telecommande|ferngesteuert|(voiles?|mat|bome|spi|spinnaker|taud|bache) (de|pour|du) (bateau|voilier)|ber de stockage|bateau lit|lit bateau|lit enfant|lit pour enfant|\bcable\b|kabel|autos? ?- ?motos?|7j7|24h24|rachat|debarras|achete (tous|bateaux)|kaufe (boote|alle)|moteurs? de bateau|pieces de bateau|utilisation partagee|(taud|couverture|protection|vis|passerelle|coussin|sieges?|roues?|haut-parleurs?|instruments?|chariot|berceau|support|halle|table|radio|lautsprecher|traineau) (de|a|pour) (bateau|barca)|\bpour (bateau|bateaux|voilier|zodiac|pneumatique)|\bfur (boot|boote|segelboot|schlauchboot)|\bper (barca|barche|gommone)|\bfor (boat|boats)|maquette|modellbau|modellboot|model boat|bateau modele|rc boot|rc boat|ferngesteuert|teleguide|jouet|spielzeug|lego|playmobil|bootsplatz|liegeplatz|place d.amarrage|place de port|kayak|kajak|kanu|kanadier|canoe|\bsup\b|stand ?up paddle|paddleboard|luftmatratze|gonflable pour enfant|badeboot|schwimmring|pedalo de piscine|permis (de )?bateau|bateau[- ]ecole|cours de (navigation|permis|voile)|hivernage|gardiennage|chantier naval|part de bateau|bootsanteil|^(cherche|recherche|suche|achete|kaufe)\b|\ba louer\b|louer (un |le )?bateau|zu vermieten|\bvermiete|partager (un |le |mon )?bateau|partage de frais|co-?navigation)"
 
 def classify_text(title, body):
     t, b = norm(title), norm(body)
@@ -154,7 +155,8 @@ def rich_fields(title, text):
     if m and "width_m" not in o and 0.8 <= float(m.group(1)) <= 6: o["width_m"] = float(m.group(1))
     if re.search(r"(hors[- ]?bord|aussenbord|ausserbord|fuoribordo|outboard)", t): o["engine_type"] = "outboard"
     elif re.search(r"(in[- ]?bord|inbord|z[- ]?drive|z-antrieb|sterndrive|d-drive|saildrive|entrobordo)", t): o["engine_type"] = "inboard"
-    elif re.search(r"(electrique|elektro|electric|torqeedo|epropulsion|minn kota)", t): o["engine_type"] = "electric"
+    elif re.search(r"(moteur (a propulsion )?electrique|propulsion electrique|bateau electrique|elektromotor|elektro-?aussenborder|elektroboot|elektroantrieb|electric (motor|outboard|boat)|motore elettrico|torqeedo|epropulsion|minn ?kota|aquamot)", t) \
+            and not re.search(r"\b([2-9]\d|[1-9]\d\d)\s*(cv|ch|ps|hp)\b", t): o["engine_type"] = "electric"
     elif re.search(r"(sans moteur|ohne motor|senza motore)", t): o["engine_type"] = "none"
     for eb in ENGINE_BRANDS:
         if re.search(r"\b" + eb + r"\b", t): o["engine_brand"] = eb.title(); break
@@ -354,6 +356,311 @@ def collect_b24(max_pages=120):
     STATUS["bateau24"]["kept_before_geo"] = len(res)
     return res
 
+# ---------------------------------------------------------------- generic helpers for the smaller sites
+CANTON_NAMES = {"geneve": "GE", "vaud": "VD", "valais": "VS", "fribourg": "FR", "neuchatel": "NE", "jura": "JU", "berne": "BE", "bern": "BE",
+                "zurich": "ZH", "lucerne": "LU", "luzern": "LU", "tessin": "TI", "ticino": "TI", "argovie": "AG", "aargau": "AG",
+                "saint-gall": "SG", "st. gallen": "SG", "thurgovie": "TG", "thurgau": "TG", "schwyz": "SZ", "zoug": "ZG", "zug": "ZG",
+                "soleure": "SO", "solothurn": "SO", "grisons": "GR", "graubunden": "GR", "uri": "UR", "obwald": "OW", "nidwald": "NW",
+                "glaris": "GL", "glarus": "GL", "schaffhouse": "SH", "schaffhausen": "SH", "bale": "BS", "basel": "BS", "appenzell": "AR"}
+CH_CANTONS = set("AG AI AR BE BL BS FR GE GL GR JU LU NE NW OW SG SH SO SZ TG TI UR VD VS ZG ZH".split())
+
+def html_text(fragment):
+    t = re.sub(r"<br\s*/?>|</p>|</li>|</div>", "\n", fragment or "", flags=re.I)
+    t = H.unescape(re.sub(r"<[^>]+>", " ", t))
+    return re.sub(r"[ \t\xa0]+", " ", re.sub(r"\n\s*\n+", "\n", t)).strip()
+
+def classify_hint(title, body, hint=None):
+    """classify_text, plus a fallback for sites whose rubric already says 'motor boat' (titles like 'Rodman Ventura 790')."""
+    c = classify_text(title, body)
+    if c is not None or not hint: return c
+    t = norm(title)
+    if re.search(ACC_ANY, t) or re.search(ACC_START, t): return None
+    if hint == "sail": return "sail"
+    if hint == "inflatable": return "inflatable"
+    txt = t + " " + norm(body)
+    if re.search(r"(cabine|kajut|kabinen|cabin|cruiser|hardtop|flybridge|timonier|couchette|wc\b|toilette)", txt): return "motor"
+    return "open"
+
+def apply_text_fields(r):
+    """rich_fields first: its 'L x W m' pattern is more reliable than extract_specs' first 'N.NN m' (which can be the beam)."""
+    txt = r["title"] + " . " + (r.get("snippet") or "")
+    for k, v in rich_fields(r["title"], r.get("snippet") or "").items(): r.setdefault(k, v)
+    for k, v in extract_specs(txt).items(): r.setdefault(k, v)
+
+# ---------------------------------------------------------------- petitesannonces.ch (Suisse romande classifieds)
+PA_BASE = "https://www.petitesannonces.ch"
+PA_RUBRICS = {"3503": "open", "3504": "sail", "3506": "inflatable", "3502": "small"}   # bateaux à moteur, voiliers, canots pneumatiques, barques
+PA_ROW = re.compile(r'<div class="ele[^"]*">.*?<a href="/a/(\d+)"[^>]*>([^<]+)</a></div><div class="el[ap] elsp[^"]*">([^<]*)</div><div class="ela elsl[^"]*">([^<]*)</div><div class="ela elss[^"]*">([^<]*)</div>', re.S)
+
+def collect_petitesannonces(max_pages=30):
+    items, seen = [], set()
+    for tid, hint in PA_RUBRICS.items():
+        for p in range(1, max_pages + 1):
+            h = get(f"{PA_BASE}/r/{tid}" + (f"?p={p}" if p > 1 else ""), sleep=0.6)
+            rows = PA_ROW.findall(h); new = 0
+            for lid, title, price, loc, day in rows:
+                if lid in seen: continue
+                seen.add(lid); new += 1
+                items.append({"lid": lid, "title": H.unescape(title).strip(), "price_label": H.unescape(price).strip(),
+                              "loc": H.unescape(loc).replace("\xa0", " ").strip(), "hint": hint, "tid": tid})
+            log(f"petitesannonces {tid} page {p}: +{new}")
+            if new == 0 or f"?p={p + 1}" not in h: break
+    STATUS["petitesannonces"] = {"ok": True, "raw": len(items)}
+    res = []
+    for it in items:
+        town, _, cc = it["loc"].rpartition(",")
+        cc = cc.strip()
+        if cc not in CH_CANTONS: continue                     # France, Italie, ...
+        price = parse_price(it["price_label"]) if it["price_label"] not in ("-", "") else None
+        if price is None or price > PRICE_CAP or 0 < price < 150: continue
+        cat = classify_hint(it["title"], "", it["hint"])
+        if cat is None: continue
+        res.append({"id": f"petitesannonces:{it['lid']}", "source": "petitesannonces", "title": it["title"], "category": cat,
+                    "price_chf": price, "price_label": it["price_label"] + " CHF", "url": f"{PA_BASE}/a/{it['lid']}",
+                    "town": town.strip(), "canton": cc, "postcode": None, "lat": None, "lon": None, "snippet": "",
+                    "rubric_hint": it["hint"], "posted": None})
+    for r in res:
+        try:
+            h = get_cached(r["url"], r["id"], sleep=0.5)
+            d = re.search(r'<div class="cdk bls">(.*?)</div>', h, re.S)
+            if d: r["snippet"] = html_text(d.group(1))[:1500]
+            m = re.search(r'Ville:</td><td><a [^>]*>(\d{4})\s+([^<&]+?)(?:&nbsp;|\s)*\((\w\w)\)', h)
+            if m: r["postcode"], r["town"], r["canton"] = m.group(1), H.unescape(m.group(2)).strip(), m.group(3)
+            m = re.search(r'Publication:</td><td>(\d\d)\.(\d\d)\.(\d{4})', h)
+            if m: r["posted"] = f"{m.group(3)}-{m.group(2)}-{m.group(1)}"
+            m = re.search(r'id="img"[^>]*src="(/i/m/[^"]+)"', h)
+            if m:
+                r["photo"] = PA_BASE + m.group(1).replace("/i/m/", "/i/l/"); r["thumb"] = PA_BASE + m.group(1)
+            r["seller_type"] = "dealer" if re.search(r"(professionnel|chantier naval|garage|marine sa|nautique sa|sàrl|sarl\b|gmbh)", norm(r["snippet"])) else "private"
+        except Exception as e:
+            log("petitesannonces detail fail", r["url"], e)
+        c2 = classify_hint(r["title"], r["snippet"], r["rubric_hint"])
+        if c2: r["category"] = c2
+        apply_text_fields(r)
+    res = [r for r in res if classify_hint(r["title"], r["snippet"], r["rubric_hint"]) is not None]
+    STATUS["petitesannonces"]["kept_before_geo"] = len(res)
+    return res
+
+# ---------------------------------------------------------------- lakeboat.ch (MyListing WordPress, Swiss lakes)
+LAKE_SITEMAP = "https://lakeboat.ch/job_listing-sitemap.xml"
+
+def collect_lakeboat():
+    sm = get(LAKE_SITEMAP)
+    urls = [u for u in re.findall(r"<loc>([^<]+)</loc>", sm) if "/bateau-occasion-suisse/" in u]
+    STATUS["lakeboat"] = {"ok": True, "raw": len(urls)}
+    res = []
+    for u in urls:
+        slug = u.rstrip("/").rsplit("/", 1)[-1]
+        rid = f"lakeboat:{slug}"
+        try:
+            h = get_cached(u, rid, sleep=0.5)
+        except Exception as e:
+            log("lakeboat detail fail", u, e); continue
+        ld = None
+        for m in re.finditer(r'<script type="application/ld\+json"[^>]*>(.*?)</script>', h, re.S):
+            try:
+                j = json.loads(m.group(1))
+            except Exception:
+                continue
+            if isinstance(j, dict) and j.get("@type") == "LocalBusiness": ld = j
+        heads = [H.unescape(x).strip() for x in re.findall(r'<div class="title-style-1">\s*<i[^>]*></i>\s*<h5>([^<]+)</h5>', h)]
+        kv = {}
+        for k, v in re.findall(r'<div class="item-attr">([^<]+)</div>\s*<div class="item-property">(.*?)</div>', h, re.S):
+            kv[H.unescape(k).strip()] = html_text(v)
+        kind = "sail" if "Voilier" in heads else "open" if "Bateau moteur" in heads else None
+        if kind is None: continue                                   # schools, rentals, accessories, shipyards
+        title = H.unescape((ld or {}).get("name") or "").strip() or slug.replace("-", " ").title()
+        desc = re.search(r'<span class="wp-editor-content">(.*?)</span>', h, re.S)
+        body = html_text(desc.group(1)) if desc else html_text((ld or {}).get("description") or "")
+        price_label = kv.get("Prix de vente") or kv.get("Prix") or ""
+        price = parse_price(price_label.replace("CHF.", "").replace("CHF", ""))
+        if price is None or price > PRICE_CAP or 0 < price < 150: continue
+        typ = " ".join(v for k, v in kv.items() if k.lower().startswith("type"))
+        cat = classify_hint(title, body + " " + typ, kind)
+        if cat is None: continue
+        if kind == "sail" and cat in ("open", "motor", "other"): cat = "sail"
+        r = {"id": rid, "source": "lakeboat", "title": title, "category": cat, "price_chf": price, "price_label": price_label,
+             "url": u, "snippet": (typ + ". " if typ else "") + body[:1500], "type_label": typ, "rubric_hint": kind,
+             "lat": None, "lon": None, "postcode": None, "town": None, "canton": None, "posted": None}
+        a = (ld or {}).get("address") or {}
+        try:
+            if a.get("lat") and a.get("lng"): r["lat"], r["lon"] = float(a["lat"]), float(a["lng"])
+        except ValueError:
+            pass
+        if a.get("address"):
+            parts = [p.strip() for p in a["address"].split(",") if p.strip()]
+            r["region"] = a["address"]
+            street = r"(\d|^(chemin|ch\.|route|rte|rue|quai|place|avenue|av\.|jetee|impasse|allee|sentier|promenade|strasse|weg|gasse|platz)\b)"
+            while len(parts) > 1 and re.search(street, norm(parts[0])) and not re.match(r"^\d{4}\s+\D", parts[0]):
+                parts = parts[1:]
+            pc = re.match(r"^(\d{4})\s*(.*)$", parts[0])
+            if pc: r["postcode"], r["town"] = pc.group(1), (pc.group(2) or None)
+            elif not re.search(street, norm(parts[0])) and not norm(parts[0]).startswith("canton"): r["town"] = parts[0]
+            for p in parts[1:]:
+                cn = norm(p).replace("canton de ", "").replace("canton du ", "").replace("canton d'", "").strip()
+                if cn in CANTON_NAMES: r["canton"] = CANTON_NAMES[cn]
+            if "suisse" not in norm(a["address"]) and "schweiz" not in norm(a["address"]) and r["lat"] is None:
+                r["region"] = a["address"]
+        if kv.get("Lac"): r["lake"] = kv["Lac"]
+        if not r["town"] and kv.get("Lac"): r["region"] = kv["Lac"]
+        if kv.get("Marque"): r["brand"] = kv["Marque"]
+        if kv.get("Modèle"): r["model"] = kv["Modèle"]
+        for k, v in kv.items():
+            nk = norm(k)
+            if nk.startswith("annee") and re.search(r"\b(19|20)\d\d\b", v): r["year"] = int(re.search(r"\b((?:19|20)\d\d)\b", v).group(1))
+            elif nk.startswith("longueur"):
+                m = re.search(r"(\d+(?:[.,]\d+)?)", v)
+                if m:
+                    L = float(m.group(1).replace(",", ".")); r["length_m"] = L / 100 if L > 30 else L
+            elif nk.startswith("largeur"):
+                m = re.search(r"(\d+(?:[.,]\d+)?)", v)
+                if m:
+                    W = float(m.group(1).replace(",", ".")); r["width_m"] = W / 100 if W > 10 else W
+            elif nk.startswith("puissance") or nk == "cv" or nk.startswith("moteur"):
+                m = re.search(r"(\d+(?:[.,]\d+)?)\s*(cv|ch|ps|hp)?", norm(v))
+                if m and nk.startswith("puissance"): r["engine"] = f"{float(m.group(1).replace(',', '.')):g} CV"
+                if nk.startswith("moteur"): r["engine_model"] = v
+            elif nk.startswith("propulsion") or nk.startswith("type de moteur"):
+                z = norm(v); r["engine_type"] = "outboard" if "hors" in z else "inboard" if ("in" in z and "bord" in z) else r.get("engine_type")
+        m = re.search(r"longueur\D{0,12}(\d{3})\b.{0,30}?largeur\D{0,12}(\d{3})\b", norm(body))   # 'Longueur 645, largeur 250' (cm)
+        if m:
+            r.setdefault("length_m", int(m.group(1)) / 100); r.setdefault("width_m", int(m.group(2)) / 100)
+        ph = (ld or {}).get("image") or []
+        if ph: r["photo"] = r["thumb"] = ph[0]
+        if (ld or {}).get("datePublished"): r["posted"] = ld["datePublished"][:10]
+        dp = re.search(r'"datePublished":"([0-9-]{10})', h)
+        if dp: r["posted"] = dp.group(1)
+        r["seller_type"] = "dealer" if re.search(r"(chantier naval|marine s\.?a|nautic|sarl|sàrl|gmbh|\bag\b|professionnel|garage)", norm(title + " " + body[:400])) else "private"
+        apply_text_fields(r)
+        if r.get("engine_type") is None: r.pop("engine_type", None)
+        res.append(r)
+    STATUS["lakeboat"]["kept_before_geo"] = len(res)
+    return res
+
+# ---------------------------------------------------------------- aquaboat.ch (dealer, Le Bouveret / Port-Valais VS)
+AQUA_JSON = "https://aquaboat.ch/boats.json"
+AQUA_OFFER = {"offeroption1": "promotion", "offeroption2": "occasion", "offeroption3": "destockage", "offeroption4": "demonstration"}
+AQUA_TYPE = {"typeoption1": "motor", "typeoption2": "open", "typeoption3": "open", "typeoption4": "open", "typeoption7": "other"}
+
+def collect_aquaboat():
+    r0 = S.get(AQUA_JSON, headers={"Accept": "application/json", "X-Requested-With": "XMLHttpRequest", "X-Language": "fr"}, timeout=30)
+    r0.raise_for_status()
+    data = r0.json()["data"]
+    STATUS["aquaboat"] = {"ok": True, "raw": len(data)}
+    res = []
+    for x in data:
+        c = x.get("content") or {}
+        offer = AQUA_OFFER.get(c.get("offer") or "")
+        if offer not in ("occasion", "destockage", "demonstration"): continue      # new boats from the catalogue are not second-hand ads
+        price = parse_price(c.get("price") or "")
+        if price is None or price > PRICE_CAP or price < 150: continue
+        slug = x["url"].rstrip("/").rsplit("/", 1)[-1]
+        r = {"id": f"aquaboat:{slug}", "source": "aquaboat", "title": (c.get("title") or "") if norm(c.get("title") or "").startswith(norm(c.get("brand") or "-")) else f"{c.get('brand') or ''} {c.get('title') or ''}".strip(),
+             "category": AQUA_TYPE.get(c.get("type"), "open"), "price_chf": price, "price_label": f"CHF {price:,}".replace(",", "'") + ".-",
+             "url": x["url"], "brand": c.get("brand"), "model": c.get("title"),
+             "engine_type": "outboard" if c.get("engine") == "engineoption2" else "inboard",
+             "thumb": c.get("image"), "town": "Le Bouveret", "postcode": "1897", "canton": "VS", "seller_type": "dealer",
+             "lat": 46.3806, "lon": 6.8623, "condition": offer, "snippet": "", "posted": None}
+        try:
+            h = get_cached(x["url"], r["id"], sleep=0.5)
+            main = re.search(r'<main.*?</main>', h, re.S); main = main.group(0) if main else h
+            p = re.search(r'<p class="mrgt0">(.*?)</p>', main, re.S)
+            if p: r["snippet"] = html_text(p.group(1))[:1500]
+            items = [html_text(li) for li in re.findall(r"<li>(.*?)</li>", (re.search(r'<ul class="list-stacked[^"]*">(.*?)</ul>', main, re.S) or [None, ""])[1], re.S)]
+            for it in items:
+                m = re.match(r"([\d.]+)\s*Longueur", it); m2 = re.match(r"([\d.]+)\s*Largeur", it)
+                if m: r["length_m"] = float(m.group(1))
+                if m2: r["width_m"] = float(m2.group(1))
+            if len(items) > 2: r["type_label"] = items[2]
+            img = re.search(r'<img [^>]*src="(https://aquaboat\.ch/media/pages/boats/[^"]+)"', main)
+            if img: r["photo"] = img.group(1)
+        except Exception as e:
+            log("aquaboat detail fail", x["url"], e)
+        c2 = classify_hint(r["title"], r["snippet"] + " " + (r.get("type_label") or ""), r["category"])
+        if c2 and c2 != "other": r["category"] = c2
+        apply_text_fields(r)
+        res.append(r)
+    STATUS["aquaboat"]["kept_before_geo"] = len(res)
+    return res
+
+# ---------------------------------------------------------------- cross-source duplicates
+SOURCE_PRIORITY = ["bateau24", "tutti", "anibis", "lakeboat", "petitesannonces", "aquaboat"]
+STOP = set("bateau bateaux boat boot a de du la le les avec mit und et en au aux pour fur vends vendre verkaufe zu verkaufen moteur motor motorboot bateau-moteur occasion cv ps hp ch chf the of sur from sport sports peche plaisance".split())
+
+def title_tokens(t):
+    return {w for w in re.findall(r"[a-z0-9]+", norm(t)) if len(w) >= 2 and w not in STOP}
+
+def _hp(r):
+    if r.get("hp") is not None: return float(r["hp"])
+    m = re.match(r"([\d.]+)\s*(CV|PS|HP|kW)", r.get("engine") or "")
+    if not m: return None
+    return float(m.group(1)) / 0.7355 if m.group(2) == "kW" else float(m.group(1))
+
+def same_boat(a, b):
+    pa, pb = a.get("price_chf"), b.get("price_chf")
+    if not pa or not pb: return False
+    ta, tb = title_tokens(a["title"]), title_tokens(b["title"])
+    if pa != pb:
+        # same ad text at a different price on another site (seller updated one site only): same place, and either the
+        # same title or the same stated power, and prices within 40 %
+        if abs(pa - pb) > 0.4 * max(pa, pb) or a.get("lat") is None or b.get("lat") is None: return False
+        if haversine((a["lat"], a["lon"]), (b["lat"], b["lon"])) > 2: return False
+        if a["source"] == b["source"] and "private" not in (a.get("seller_type"), b.get("seller_type")):
+            return False                      # one dealer, several similar units (e.g. two "X3 - STOCK")
+        ha, hb = _hp(a), _hp(b)
+        same_title = len(ta) >= 2 and ta == tb and abs(pa - pb) <= 0.15 * max(pa, pb)
+        same_hp = (ha is not None and hb is not None and abs(ha - hb) <= 1.5 and ha >= 20
+                   and (ta & tb or not ta or not tb))          # dealers at one marina: different models, same power
+        return same_title or same_hp
+    near = False
+    if a.get("lat") is not None and b.get("lat") is not None:
+        near = haversine((a["lat"], a["lon"]), (b["lat"], b["lon"])) <= 3
+    elif a.get("town") and b.get("town"):
+        near = norm(a["town"]) == norm(b["town"])
+    if near and ta & tb:                      # short titles ("Ancien bateau") but same price, same place, a shared word
+        return True
+    if min(len(ta), len(tb)) < 2: return False
+    sim = len(ta & tb) / min(len(ta), len(tb))
+    if sim < 0.6: return False
+    if a.get("lat") is not None and b.get("lat") is not None:
+        return haversine((a["lat"], a["lon"]), (b["lat"], b["lon"])) <= 30
+    return sim >= 0.8
+
+def merge_duplicates(rows, known_ids=()):
+    """Same boat on several sites -> one row; the others become also_listed links. A row whose id is already in the
+    store stays primary (so sent marks and history follow it). Two rows that are both already in the store are only cross-linked."""
+    known = set(known_ids)
+    pri = {s: i for i, s in enumerate(SOURCE_PRIORITY)}
+    order = sorted(rows, key=lambda r: (r["id"] not in known, pri.get(r["source"], 99)))
+    kept = []
+    for r in order:
+        hit = None
+        for k in kept:
+            if k["source"] != r["source"] or k["source"] != "bateau24":
+                if same_boat(k, r): hit = k; break
+        if hit is None:
+            kept.append(r); continue
+        link = {"source": r["source"], "url": r["url"], "id": r["id"]}
+        def add(row, lk):
+            al = row.setdefault("also_listed", [])
+            if lk["id"] != row["id"] and all(x["id"] != lk["id"] for x in al): al.append(lk)
+        if r["id"] in known and hit["id"] in known:            # both already stored: keep both, cross-link
+            add(hit, link); add(r, {"source": hit["source"], "url": hit["url"], "id": hit["id"]})
+            kept.append(r); continue
+        add(hit, link)
+        for lk in r.get("also_listed") or []: add(hit, lk)
+        for k2, v in r.items():                                  # fill gaps from the duplicate
+            if k2 not in ("id", "source", "url", "also_listed") and hit.get(k2) in (None, "", []) and v not in (None, "", []):
+                hit[k2] = v
+        STATUS.setdefault("_duplicates", {"merged": 0})["merged"] += 1
+    return kept
+
+def known_ids():
+    try:
+        return set(json.loads((ROOT.parent / "data" / "listings.json").read_text())["records"].keys())
+    except Exception:
+        return set()
+
 # ---------------------------------------------------------------- geo
 def _load(p):
     return json.loads(p.read_text()) if p.exists() else {}
@@ -418,30 +725,37 @@ def add_geo(r):
 
 def main():
     all_rows = []
-    for name, fn in [("tutti", lambda: collect_smg("tutti")), ("anibis", lambda: collect_smg("anibis")), ("bateau24", collect_b24)]:
+    for name, fn in [("tutti", lambda: collect_smg("tutti")), ("anibis", lambda: collect_smg("anibis")), ("bateau24", collect_b24),
+                     ("lakeboat", collect_lakeboat), ("petitesannonces", collect_petitesannonces), ("aquaboat", collect_aquaboat)]:
         try:
             all_rows += fn()
         except Exception as e:
             STATUS[name] = {"ok": False, "error": str(e)[:200]}; log("SOURCE FAILED", name, e)
-    for name, why in [("ricardo", None), ("boat24.com", None)]:
-        pass
-    # Ricardo: try once; record status honestly
+    # Ricardo: try once; record status honestly (Cloudflare captcha from the box; no captcha solving, no borrowed cookies)
     try:
         r = S.get("https://www.ricardo.ch/fr/s/bateau", timeout=30)
         blocked = r.status_code != 200 or "Captcha" in r.text[:3000] or "Just a moment" in r.text[:3000]
-        STATUS["ricardo"] = {"ok": not blocked, "error": f"HTTP {r.status_code}, captcha/Cloudflare challenge page" if blocked else None, "kept": 0}
+        STATUS["ricardo"] = {"ok": False, "kept": 0, "probe_http": r.status_code,
+                             "error": f"HTTP {r.status_code}, page captcha / contrôle Cloudflare" if blocked else
+                                      "page joignable ce jour (HTTP 200), mais Ricardo est d’habitude derrière un captcha ; pas encore de lecteur"}
     except Exception as e:
         STATUS["ricardo"] = {"ok": False, "error": str(e)[:200], "kept": 0}
-    STATUS["facebook_marketplace"] = {"ok": False, "error": "requires a logged-in Facebook session; not scraped", "kept": 0}
-    # geo + dedupe (same title+price+town across sites)
-    rows, keys = [], set()
+    STATUS["facebook_marketplace"] = {"ok": False, "error": "nécessite une session Facebook connectée ; non collecté", "kept": 0}
+    STATUS["swissboat.ch"] = {"ok": False, "error": "mur anti-robot (Anubis) ; non collecté", "kept": 0}
+    # geo
+    rows = []
     for r in all_rows:
         add_geo(r)
-        if r.get("foreign") or r.get("lat") is None and r["source"] == "bateau24": continue
+        if r.get("foreign") or r.get("lat") is None and r["source"] in ("bateau24", "lakeboat"): continue
+        rows.append(r)
+    # exact repost on the same platform (tutti <-> anibis share one backend): title + price + town
+    out, keys = [], {}
+    for r in rows:
         k = (norm(r["title"])[:40], r["price_chf"], norm(r.get("town") or ""))
-        if k in keys: continue
-        keys.add(k); rows.append(r)
-    return rows, STATUS
+        if k in keys and keys[k]["source"] in ("tutti", "anibis") and r["source"] in ("tutti", "anibis"):
+            keys[k].setdefault("also_listed", []).append({"source": r["source"], "url": r["url"], "id": r["id"]}); continue
+        keys.setdefault(k, r); out.append(r)
+    return merge_duplicates(out, known_ids()), STATUS
 
 if __name__ == "__main__":
     rows, st = main()

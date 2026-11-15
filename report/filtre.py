@@ -143,12 +143,78 @@ def clearly_out_of_scope(record, cfg):
         return True
     return False
 
+def _inf_cfg(cfg):
+    return ((cfg or {}).get("criteria") or {}).get("inflatables") or {}
+
+def inflatable_reason(record, cfg=None):
+    """Why a record is a pneumatique / semi-rigide (RIB), or None. Careful with rigid boats sold *with* a dinghy."""
+    cfg = cfg or load_config()
+    ic = _inf_cfg(cfg)
+    if record.get("category") == "inflatable":
+        return "catégorie pneumatique / semi-rigide"
+    title = norm_text(str(record.get("title") or ""))
+    typ = norm_text(" ".join(str(record.get(k) or "") for k in ("type_label", "category_label") if record.get(k) not in (None, NA)))
+    brand = norm_text(str(record.get("brand") or "")) if record.get("brand") not in (None, NA) else ""
+    model = norm_text(str(record.get("model") or "")) if record.get("model") not in (None, NA) else ""
+    mat = norm_text(str(record.get("material") or "")) if record.get("material") not in (None, NA) else ""
+    desc = norm_text(" ".join(str(record.get(k) or "") for k in ("description_excerpt", "snippet") if record.get(k) not in (None, NA)))
+    kws = [norm_text(k) for k in ic.get("keywords") or []]
+    kw_re = r"\b(" + "|".join(re.escape(k) for k in sorted(kws, key=len, reverse=True)) + r")\b" if kws else None
+    tender = r"(annexe|beiboot|dinghy|tender|pour (un |une )?(bateau )?pneumatique|remorque|anhanger|trailer pour|moteur pour|fur schlauchboot|plus (un |une )?(petit )?(bateau )?pneumatique|avec (un |une |son )?(petit )?(canot |bateau )?pneumatique|\+ ?(un )?(canot |bateau )?pneumatique)"
+    # 1. title / site type
+    if kw_re:
+        m = re.search(kw_re, title)
+        if m and not re.search(tender + r".{0,25}" + re.escape(m.group(1)), title):
+            return f"titre : « {m.group(1)} »"
+        m = re.search(kw_re, typ)
+        if m:
+            return f"type : « {m.group(1)} »"
+    # 2. hull material
+    rigid_mat = re.search(r"(polyester|fibre|gfk|grp|alu|bois|holz|acier|stahl|composite|hdpe|polyethylene)", mat)
+    if mat == "pvc/hypalon" and "hypalon" not in desc + " " + title:
+        mat = ""          # rich_fields guess from free text (e.g. "bâche PVC" on a rigid boat): not a hull material
+    if mat and not rigid_mat:
+        for mm in ic.get("materials") or []:
+            if re.search(r"\b" + re.escape(norm_text(mm)) + r"\b", mat):
+                return f"matériau : {record.get('material')}"
+    # 3. brands that only build inflatables / RIBs
+    structured = record.get("source") in ("bateau24", "lakeboat", "aquaboat")      # brand from a form field, not guessed from text
+    for b in ic.get("brands_inflatable_only") or []:
+        nb = norm_text(b)
+        if brand and (structured or re.search(r"\b" + re.escape(nb) + r"\b", title)) and (brand == nb or brand.startswith(nb + " ") or brand.startswith(nb + "-")):
+            return f"marque : {record.get('brand')}"
+    for b in ic.get("brands_title_safe") or []:
+        if re.search(r"\b" + norm_text(b) + r"\b", title):
+            return f"marque (titre) : {b.split(chr(92))[0].strip()}"
+    for b, models in (ic.get("brands_mixed") or {}).items():
+        nb = norm_text(b)
+        if (brand.startswith(nb) or re.search(r"\b" + re.escape(nb) + r"\b", title)) and re.search(models, title + " " + model):
+            return f"gamme pneumatique : {b}"
+    # 4. description: an inflatable keyword describing the boat itself (not a dinghy sold with it), and no rigid hull mentioned
+    if kw_re and desc:
+        hits = [m for m in re.finditer(kw_re, desc)
+                if not re.search(tender + r".{0,30}$", desc[max(0, m.start() - 45):m.start() + len(m.group(1))])]
+        strong = [m for m in hits if m.group(1) not in ("zodiac", "rib", "hypalon", "boudin", "boudins") or m.start() < 40]
+        rigid_desc = re.search(r"(coque (en )?(polyester|alu|aluminium|bois|fibre)|polyesterrumpf|gfk[- ]rumpf|aluminiumrumpf|bateau (en )?(polyester|alu|aluminium)|coque rigide en (polyester|alu))", desc)
+        if not rigid_desc and (strong or len(hits) >= 2):
+            return f"description : « {(strong or hits)[0].group(1)} »"
+    return None
+
+def is_inflatable(record, cfg=None):
+    cfg = cfg or load_config()
+    if not ((cfg.get("criteria") or {}).get("exclude_inflatables")):
+        return False
+    return inflatable_reason(record, cfg) is not None
+
 def classify(record, cfg=None, peers=None):
     """Return a dict: bucket, zone, lake, opportunite, reasons, score."""
     cfg = cfg or load_config()
     cr = cfg["criteria"]
     reasons = []
     cat = record.get("category")
+    if cr.get("exclude_inflatables") and inflatable_reason(record, cfg):
+        return {"bucket": "excluded", "zone": None, "lake": None, "opportunite": False,
+                "reasons": ["pneumatique", inflatable_reason(record, cfg)], "score": 0, "config_version": cfg.get("version")}
     if clearly_excluded_type(record, cfg) or clearly_out_of_scope(record, cfg):
         return {"bucket": "excluded", "zone": None, "lake": None, "opportunite": False, "reasons": ["type"], "score": 0}
 
@@ -156,6 +222,8 @@ def classify(record, cfg=None, peers=None):
         return {"bucket": "excluded", "zone": None, "lake": None, "opportunite": False, "reasons": ["category"], "score": 0}
 
     engine = record.get("engine_type")
+    if engine in (None, "", NA) and re.search(r"\b(correct craft|mastercraft|malibu|moomba|centurion|tige|axis wake|supra (saltare|comp|launch|sa\b)|ski nautique|sport nautique)\b", norm_text(str(record.get("title") or ""))):
+        return {"bucket": "excluded", "zone": None, "lake": None, "opportunite": False, "reasons": ["engine_type", "ski-boat in-bord"], "score": 0}
     is_out = engine == "outboard" or infer_outboard(record)
     if engine in ("inboard", "electric", "none") and not is_out:
         return {"bucket": "excluded", "zone": None, "lake": None, "opportunite": False, "reasons": ["engine_type"], "score": 0}
@@ -391,7 +459,7 @@ def enrich_from_cache(record, fetch_if_missing=False, sleep=0.4):
 
 def needs_enrich(record, cfg=None):
     cfg = cfg or load_config()
-    if clearly_excluded_type(record, cfg):
+    if clearly_excluded_type(record, cfg) or is_inflatable(record, cfg):
         return False
     if record.get("category") not in (cfg["criteria"].get("include_categories") or []):
         return False
