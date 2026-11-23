@@ -25,7 +25,7 @@ Le dépôt conserve **toutes** les annonces dans `data/listings.json`. Le filtre
 ## Déroulement d’une matinée
 
 1. `python3 report/build.py` parcourt les sites, fusionne dans le magasin, écrit le digest du jour (uniquement les **nouveaux** bateaux qui passent le filtre), met à jour les données du site et, au besoin, les aperçus PNG.
-2. [`publish_and_send.sh`](publish_and_send.sh) copie le HTML vers `digest/latest.html` et `digest/YYYY-MM-DD.html`, pousse `main`, puis déclenche le workflow d’envoi.
+2. [`publish_and_send.sh`](publish_and_send.sh) copie le HTML vers `digest/latest.html` et `digest/YYYY-MM-DD.html`, commite aussi `data/`, `site/data/`, `config/` et `report/digest/`, pousse `main` avec [`scripts/git_push.sh`](scripts/git_push.sh) (jeton seulement dans l’URL du push, jamais enregistré ni affiché), puis déclenche le workflow d’envoi (sauf avec `--no-send`).
 3. [`.github/workflows/send-digest.yml`](.github/workflows/send-digest.yml) envoie le message via SMTP STARTTLS (Infomaniak).
 
 Il n’y a **pas de cron** sur l’envoi. Rien ne part sans le script (ou un déclenchement manuel). Un push sur `site/`, `data/` ou `config/` redéploie le site Pages.
@@ -41,14 +41,18 @@ python3 report/build.py
 # Recalcul sans retourner sur les sites (à partir du dernier scrape) :
 # python3 report/build.py --no-collect
 
-# 2. Commit, push, et envoi (destinataires = secret MAIL_RECIPIENTS)
-./publish_and_send.sh --html report/digest/latest.html --subject "Nico Boats – $(TZ=Europe/Zurich date +'%d %b %Y')"
+# 2. Commit (digest + data/ + site/data/ + config/), push, et envoi (destinataires = secret MAIL_RECIPIENTS)
+#    Sujet par défaut : « Nico Boats – 24 novembre 2026 » (date en français, sans dépendre de la locale)
+./publish_and_send.sh
+
+# Pousser les données et le site sans envoyer d’e-mail :
+# ./publish_and_send.sh --no-send
 ```
 
 Aperçu sans push ni envoi :
 
 ```bash
-./publish_and_send.sh --dry-run --html report/digest/latest.html --subject "Nico Boats – $(TZ=Europe/Zurich date +'%d %b %Y')"
+./publish_and_send.sh --dry-run
 ```
 
 **Attention au marquage.** Sans `--no-mark`, `build.py` marque immédiatement comme envoyés (`sent_in_digest = date du jour`) tous les bateaux du digest qu’il écrit. Toute reconstruction qui ne sera **pas** envoyée (test, correctif, ajout de sources) doit donc tourner avec `--no-mark`, sinon le digest suivant sauterait ces bateaux.
@@ -87,4 +91,4 @@ Gmail coupe le HTML au-delà d’environ 102 Ko. Les gros jours restent donc sou
 | `site/data/listings.json` | Copie du magasin **plus** les champs `_filtre` (zone, seau, opportunité) |
 | `report/digest/latest.html` | Corps de l’e-mail du jour |
 
-Sources (15.11.2026) : tutti.ch, anibis.ch, boat24 (bateau24.ch = boot24.ch), lakeboat.ch, petitesannonces.ch, aquaboat.ch. Bloqués : ricardo.ch (captcha Cloudflare), Facebook Marketplace (connexion), swissboat.ch (mur anti-robot). Un même bateau publié sur plusieurs sites n’apparaît qu’une fois, avec les liens « aussi sur ». Le détail des sources, du classement et du schéma est dans [`report/README.md`](report/README.md).
+Sources (23.11.2026) : boat24 (bateau24.ch = boot24.ch), lakeboat.ch, petitesannonces.ch, aquaboat.ch. Bloqués : tutti.ch et anibis.ch depuis le 21.11.2026 (captcha Cloudflare Turnstile, aussi depuis GitHub Actions), ricardo.ch (captcha Cloudflare), Facebook Marketplace (connexion), swissboat.ch (mur anti-robot). Un même bateau publié sur plusieurs sites n’apparaît qu’une fois, avec les liens « aussi sur ». Le détail des sources, du classement et du schéma est dans [`report/README.md`](report/README.md).

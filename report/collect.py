@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """Nico Boats collector: pulls real used-boat listings from Swiss marketplaces.
 
-Sources that work from the box (2026-11-15): tutti.ch, anibis.ch (Next.js __NEXT_DATA__ JSON),
+Sources that work from the box (2026-11-15): tutti.ch, anibis.ch (Next.js __NEXT_DATA__ JSON; since 2026-11-21 both
+answer the box with an interactive Cloudflare Turnstile page, see report/README.md, so they are reported as blocked),
 bateau24.ch = boat24.com Swiss site (server-rendered HTML; boot24.ch is the same site in German),
 lakeboat.ch (sitemap + MyListing detail pages), petitesannonces.ch (rubric lists), aquaboat.ch (dealer, public boats.json). Blocked: ricardo.ch (Cloudflare captcha /
 error 1015), boat24.com international domain (Cloudflare challenge; bateau24.ch works).
@@ -22,16 +23,40 @@ STATUS = {}
 
 def log(*a): print(*a, file=sys.stderr, flush=True)
 
+class Blocked(RuntimeError):
+    """The site answered with a bot wall (Cloudflare Turnstile / captcha). Retrying does not help."""
+
+def challenge_kind(r):
+    """Return a short description if the response is a bot-protection page, else None."""
+    head = r.text[:4000]
+    if r.headers.get("cf-mitigated") == "challenge":
+        return "Cloudflare challenge (cf-mitigated: challenge, page « Vous y êtes presque » / Turnstile « Vérifiez que vous êtes humain »)"
+    if r.status_code in (403, 503) and re.search(r"Just a moment|Un instant|Security check|CAPTCHA|cf_chl_opt", head):
+        return "page captcha / contrôle de sécurité"
+    return None
+
 def get(url, tries=3, sleep=0.8):
+    """Polite GET: pause after each request, exponential backoff on 429/5xx/network errors
+    (honours Retry-After), and no retries at all on a bot wall."""
+    last = None
     for i in range(tries):
         try:
             r = S.get(url, timeout=30)
             time.sleep(sleep)
             if r.status_code == 200: return r.text
+            kind = challenge_kind(r)
+            if kind:
+                raise Blocked(f"HTTP {r.status_code} {kind} on {url}")
             log("HTTP", r.status_code, url); last = r.status_code
+            if r.status_code in (404, 410): break
+            ra = r.headers.get("Retry-After")
+            if ra and ra.isdigit():
+                time.sleep(min(int(ra), 120)); continue
+        except Blocked:
+            raise
         except Exception as e:
             log("ERR", e, url); last = str(e)
-        time.sleep(2 * (i + 1))
+        time.sleep(3 * 2 ** i)
     raise RuntimeError(f"failed {url}: {last}")
 
 HTML_CACHE = CACHE / "html"; HTML_CACHE.mkdir(exist_ok=True)
@@ -729,6 +754,8 @@ def main():
                      ("lakeboat", collect_lakeboat), ("petitesannonces", collect_petitesannonces), ("aquaboat", collect_aquaboat)]:
         try:
             all_rows += fn()
+        except Blocked as e:
+            STATUS[name] = {"ok": False, "blocked": True, "error": str(e)[:300]}; log("SOURCE BLOCKED", name, e)
         except Exception as e:
             STATUS[name] = {"ok": False, "error": str(e)[:200]}; log("SOURCE FAILED", name, e)
     # Ricardo: try once; record status honestly (Cloudflare captcha from the box; no captcha solving, no borrowed cookies)

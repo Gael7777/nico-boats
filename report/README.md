@@ -72,8 +72,8 @@ Needs Python 3 with `requests` (and Pillow for preview trimming) and Google Chro
 | boot24.ch | same Boat24 database as bateau24.ch (German domain, same listing ids) | covered by the bateau24 scraper, not scraped twice |
 | trovas.ch | keyword search aggregator; republishes petitesannonces ads, no plain pagination | not scraped (duplicates petitesannonces) |
 | swissboat.ch | Anubis proof-of-work bot wall | not scraped |
-| tutti.ch | category "Bateaux & accessoires" search pages (`__NEXT_DATA__` JSON), ad pages for coordinates and full text | works |
-| anibis.ch | same platform as tutti, same method | works |
+| tutti.ch | category "Bateaux & accessoires" search pages (`__NEXT_DATA__` JSON), ad pages for coordinates and full text | **blocked since 2026-11-21** (worked 15-20 Nov): every URL on the domain, even `robots.txt` and `sitemap.xml`, answers HTTP 403 `cf-mitigated: challenge` with an interactive Cloudflare Turnstile page (« Vous y êtes presque ! … Vérifiez que vous êtes humain »). Same from headless and headful Chrome (Playwright), from a GitHub Actions runner, and on `api.tutti.ch` (403 error page). Not worked around (no captcha solving, no borrowed cookies). The collector stops at the first challenge (no retry storm), reports `blocked: true`, and existing tutti records stay `active` (a failed source never marks boats removed). It retries automatically every morning |
+| anibis.ch | same platform as tutti, same method | **blocked since 2026-11-21**, same Turnstile page (« anibis.ch -- Security check ») |
 | boat24 Swiss site (bateau24.ch) | server-rendered list `bateauxdoccasion/?whr=CHF&prs_max=30000&page=<offset>`, ad pages for specs and town | works (boat24.com itself sits behind a Cloudflare challenge) |
 | ricardo.ch | search page, category page, `/api/mfa/search`, mobile UA, headless Chrome | blocked (2026-11-15 retry): HTTP 403 "Ricardo Captcha" page, API answers 429 / Cloudflare error 1015, headless Chrome gets "Just a moment…". Not worked around (no captcha solving, no borrowed cookies) |
 | Facebook Marketplace | n/a | needs a logged-in session, not scraped |
@@ -90,6 +90,11 @@ Accessories, engines, trailers, moorings, kayaks and SUPs are filtered by keywor
 * For free-text sites, run `rich_fields()` before `extract_specs()` (`apply_text_fields`): "9 m x 3.18 m" otherwise yields a 3.18 m length.
 * The store never replaces a known value by N/A, so a wrong value parsed once (e.g. an old "electric") sticks on existing records until a source gives a new non-N/A value.
 * Inflatable detection: never trust a brand guessed from the description (an ad can mention "notre ancien Zodiac"), and treat "annexe pneumatique / avec pneumatique" as an extra, not as the boat.
+
+## Lessons (2026-11-23)
+* **Dates in French without locale.** `fr_FR` is not installed on the box, so `strftime("%B")` and `date +%B` give English. Use `report/frdate.py` (`fr_date`, `fr_date_long`, `subject`): hard-coded French month / day names, « 1er » for the first. `python3 report/frdate.py subject 2026-11-24` → `Nico Boats – 24 novembre 2026`. `publish_and_send.sh` builds this subject by default and translates any English month left in a `--subject`.
+* **Push.** `publish_and_send.sh` now commits `digest/`, `data/`, `site/data/`, `config/` and `report/digest/`, then calls `scripts/git_push.sh`: fetch + rebase on `origin/main`, push with `GITHUB_NICO_BOATS_TOKEN` in the URL of that one command (never in `.git/config`, output redacted). `--no-send` pushes without dispatching the e-mail. A push touching `data/` or `site/` redeploys Pages.
+* **Bot walls.** `collect.get()` raises `Blocked` on a Cloudflare challenge (`cf-mitigated: challenge` or captcha markers) instead of retrying, backs off exponentially on 429 / 5xx (honours `Retry-After`), and `main()` stores `blocked: true` so the digest says « captcha Cloudflare » rather than a raw error. Moving the scrape to GitHub Actions does not help: runner IPs get the same Turnstile (tested 2026-11-23).
 
 ## Sending
 This folder only produces HTML; the email itself is sent by `../publish_and_send.sh` and the GitHub Actions workflow in the repo. Recipient addresses
