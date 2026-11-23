@@ -9,18 +9,11 @@ CAT_LABEL_FR = {"sail": "Voiliers", "motor": "Bateaux à cabine", "open": "Batea
 SRC_LABEL_FR = {"tutti": "tutti.ch", "anibis": "anibis.ch", "bateau24": "boat24 (bateau24.ch)", "lakeboat": "lakeboat.ch",
                 "petitesannonces": "petitesannonces.ch", "aquaboat": "aquaboat.ch", "ricardo": "ricardo.ch",
                 "facebook_marketplace": "Facebook Marketplace", "swissboat.ch": "swissboat.ch"}
-MONTHS_FR = {"January": "janvier", "February": "février", "March": "mars", "April": "avril", "May": "mai", "June": "juin",
-             "July": "juillet", "August": "août", "September": "septembre", "October": "octobre", "November": "novembre", "December": "décembre"}
-DAYS_FR = {"Monday": "lundi", "Tuesday": "mardi", "Wednesday": "mercredi", "Thursday": "jeudi",
-           "Friday": "vendredi", "Saturday": "samedi", "Sunday": "dimanche"}
+from frdate import fr_date_long
 
 def date_fr(d):
-    s = d.strftime("%A %d %B %Y")
-    for en, fr in DAYS_FR.items():
-        s = s.replace(en, fr)
-    for en, fr in MONTHS_FR.items():
-        s = s.replace(en, fr)
-    return s[0].upper() + s[1:]
+    """'Lundi 23 novembre 2026', independent of the system locale."""
+    return fr_date_long(d)
 
 def badge_fr(text, bg, fg="#FFFFFF"):
     return (f'<span style="display:inline-block;background:{bg};color:{fg};font:700 10px/1 {SANS};'

@@ -1,27 +1,33 @@
 #!/usr/bin/env bash
-# Commit a local HTML digest and dispatch the Send digest workflow.
+# Commit the digest + data + site data, push main, and dispatch the Send digest workflow.
 # Usage:
-#   ./publish_and_send.sh --html PATH --subject "..." [--recipients "a,b"] [--date YYYY-MM-DD] [--dry-run]
+#   ./publish_and_send.sh [--html PATH] [--subject "..."] [--recipients "a,b"] [--date YYYY-MM-DD] [--no-send] [--dry-run]
+# Defaults: --html report/digest/latest.html, --subject "Nico Boats – <date en français>" (report/frdate.py).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
-html_path=""
+html_path="report/digest/latest.html"
 subject=""
 recipients=""
 digest_date=""
 dry_run=0
+no_send=0
 
 usage() {
   cat <<'USAGE'
-Usage: ./publish_and_send.sh --html PATH --subject "..." [options]
+Usage: ./publish_and_send.sh [options]
 
   --html PATH          Local HTML file to publish as the digest body
-  --subject TEXT       Email subject (required)
+                       (default: report/digest/latest.html)
+  --subject TEXT       Email subject (default: "Nico Boats – 24 novembre 2026",
+                       French date of --date). English month/day names in a
+                       given subject are translated to French.
   --recipients LIST    Optional comma-separated override; omit to use the
                        MAIL_RECIPIENTS repository secret
-  --date YYYY-MM-DD    Archive filename date (default: today in Europe/Zurich)
+  --date YYYY-MM-DD    Digest date (default: today in Europe/Zurich)
+  --no-send            Commit and push (data, site, digest) but do NOT dispatch the email
   --dry-run            Print the plan; do not commit, push, or dispatch
   -h, --help           Show this help
 USAGE
@@ -33,16 +39,13 @@ while [[ $# -gt 0 ]]; do
     --subject) subject="${2:-}"; shift 2 ;;
     --recipients) recipients="${2:-}"; shift 2 ;;
     --date) digest_date="${2:-}"; shift 2 ;;
+    --no-send) no_send=1; shift ;;
     --dry-run) dry_run=1; shift ;;
     -h|--help) usage; exit 0 ;;
     *) echo "Unknown argument: $1" >&2; usage >&2; exit 2 ;;
   esac
 done
 
-if [[ -z "$html_path" || -z "$subject" ]]; then
-  usage >&2
-  exit 2
-fi
 if [[ ! -f "$html_path" ]]; then
   echo "HTML file not found: $html_path" >&2
   exit 2
@@ -55,6 +58,11 @@ if [[ ! "$digest_date" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
   echo "Invalid --date (expected YYYY-MM-DD): $digest_date" >&2
   exit 2
 fi
+if [[ -z "$subject" ]]; then
+  subject="$(python3 report/frdate.py subject "$digest_date")"
+else
+  subject="$(python3 report/frdate.py fix "$subject")"
+fi
 
 archive_path="digest/${digest_date}.html"
 abs_html="$(cd "$(dirname "$html_path")" && pwd)/$(basename "$html_path")"
@@ -63,8 +71,11 @@ echo "Would publish:"
 echo "  source:     $abs_html"
 echo "  latest:     $ROOT/digest/latest.html"
 echo "  archive:    $ROOT/$archive_path"
+echo "  also:       data/ site/data/ config/ report/digest/ (if changed)"
 echo "  subject:    $subject"
-if [[ -n "$recipients" ]]; then
+if [[ "$no_send" -eq 1 ]]; then
+  echo "  send:       NO (--no-send)"
+elif [[ -n "$recipients" ]]; then
   echo "  recipients: $recipients"
 else
   echo "  recipients: (MAIL_RECIPIENTS secret)"
@@ -91,23 +102,26 @@ if [[ ! -d .git ]]; then
 fi
 
 git add digest/latest.html "$archive_path"
+for p in data site/data config report/digest; do
+  if [[ -e "$p" ]]; then git add -A -- "$p"; fi
+done
 if git diff --cached --quiet; then
-  echo "No digest changes to commit (files already match). Dispatching anyway."
+  echo "Nothing new to commit."
 else
-  git commit -m "Update boat digest for ${digest_date}"
-  askpass="$(mktemp)"
-  chmod 700 "$askpass"
-  cat > "$askpass" <<'ASK'
-#!/bin/sh
-case "$1" in
-  *Username*) printf '%s\n' "x-access-token" ;;
-  *) printf '%s\n' "$GITHUB_NICO_BOATS_TOKEN" ;;
-esac
-ASK
-  # Ensure the remote URL has no embedded token
-  git remote set-url origin "https://github.com/Gael7777/nico-boats.git"
-  GIT_ASKPASS="$askpass" GIT_TERMINAL_PROMPT=0 git push origin main
-  rm -f "$askpass"
+  git commit -q -m "Digest, data and site ${digest_date}"
+  echo "Committed $(git rev-parse --short HEAD)."
+fi
+# Push whatever is ahead of origin (also earlier commits that failed to push)
+git fetch -q origin main
+if [[ -n "$(git rev-list origin/main..HEAD)" ]]; then
+  "$ROOT/scripts/git_push.sh"
+else
+  echo "main already up to date on GitHub."
+fi
+
+if [[ "$no_send" -eq 1 ]]; then
+  echo "--no-send: email workflow NOT dispatched."
+  exit 0
 fi
 
 payload="$(python3 - "$subject" "$recipients" <<'PY'

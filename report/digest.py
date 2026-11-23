@@ -2,6 +2,7 @@
 """Email-safe HTML digest (table layout, inline CSS, no JS, no SVG since Gmail strips it,
 no web fonts required). Visual language of /workspace/tools/pdf-report-kit (navy/teal/orange,
 serif headings, KPI tiles with coloured top rule, takeaway boxes)."""
+from frdate import fr_date_long, fr_date_short
 import html, statistics
 from datetime import date
 
@@ -153,7 +154,7 @@ def render(rows, all_active, status, today, changes, removed_n, first_run):
     by_cat = {c: sorted([r for r in rows if r["category"] == c], key=lambda r: (r["price_chf"], dist(r))) for c in CAT_ORDER}
     P = []
     P.append(f'''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="x-apple-disable-message-reformatting">
-<meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"><title>Nico Boats · {d.strftime("%d %b %Y")}</title>
+<meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light"><title>Nico Boats · {fr_date_short(d)}</title>
 <style>body{{margin:0;padding:0;background:#E9EDF2;}} a{{color:{NAVY};}} img{{border:0;}}
 @media only screen and (max-width:620px){{ .wrap{{width:100%!important;}} .kpi{{display:inline-block!important;width:50%!important;box-sizing:border-box;padding:4px!important;}}
 .stack{{display:block!important;width:100%!important;box-sizing:border-box;}} .pad{{padding-left:14px!important;padding-right:14px!important;}} .hide-m{{display:none!important;}} }}</style></head>
@@ -165,7 +166,7 @@ def render(rows, all_active, status, today, changes, removed_n, first_run):
     P.append(f'''<tr><td style="background:{NAVY};padding:26px 24px 22px 24px;" class="pad">
 <div style="font:900 11px/1 {SANS};letter-spacing:.16em;color:{ORANGE};text-transform:uppercase;"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:{ORANGE};margin-right:6px;"></span>Nico Boats · Daily digest</div>
 <div style="font:400 32px/1.1 {SERIF};color:#FFFFFF;margin-top:10px;">Affordable used boats across Switzerland</div>
-<div style="font:400 14px/1.5 {SANS};color:#C8D3E0;margin-top:8px;">{d.strftime("%A %d %B %Y")} · {"First edition: every boat currently listed" if first_run else "Only boats not sent in a previous digest"} · sorted for a Léman mooring in Geneva</div></td></tr>
+<div style="font:400 14px/1.5 {SANS};color:#C8D3E0;margin-top:8px;">{fr_date_long(d)} · {"First edition: every boat currently listed" if first_run else "Only boats not sent in a previous digest"} · sorted for a Léman mooring in Geneva</div></td></tr>
 <tr><td style="background:{TEAL};height:4px;font-size:0;line-height:0;">&nbsp;</td></tr>''')
     if n == 0:
         P.append(h2("Today", "No new boats since the last digest", "Nothing new matched the filters today. The web table still lists every active boat."))
@@ -282,6 +283,6 @@ def render(rows, all_active, status, today, changes, removed_n, first_run):
     P.append(f'''<tr><td style="padding:26px 24px 24px 24px;" class="pad"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #D5DCE4;"><tr><td style="padding-top:12px;font:400 11px/1.55 {SANS};color:{MUTED};">
 <b style="color:{NAVY};">Sources & method.</b> {" · ".join(src_lines)}. Used boats asking up to CHF 30'000 (or free), located in Switzerland; accessories, engines, trailers, moorings, kayaks and SUPs are filtered out by keywords, so a few odd items can slip through. Categories come from the site's boat type (boat24) or from title keywords (tutti, anibis).
 Distance = driving distance by road from Geneva centre (46.2044 N, 6.1432 E) via the public OSRM router on OpenStreetMap data, to the listing's coordinates (tutti, anibis) or to the town geocoded with Nominatim (boat24; lake centre when only the lake is given). If OSRM is unreachable: straight line × 1.25.
-{removed_n} boats were marked removed since the last run. Licence hints use the stated engine power only; always check the ad. Prices and details are the sellers' own, copied {d.strftime("%d %b %Y")}.
+{removed_n} boats were marked removed since the last run. Licence hints use the stated engine power only; always check the ad. Prices and details are the sellers' own, copied {fr_date_short(d)}.
 </td></tr></table></td></tr></table></td></tr></table></body></html>''')
     return "".join(P)

@@ -1,0 +1,39 @@
+name: Collect tutti + anibis
+
+# Dispatched by report/collect.py when tutti.ch / anibis.ch block the box's network
+# with a Cloudflare challenge. Scrapes the public search + ad pages politely and
+# uploads the rows as an artifact (smg-rows). Sends nothing.
+on:
+  workflow_dispatch:
+    inputs:
+      run_tag:
+        description: Free tag so the caller can find its own run
+        required: false
+        type: string
+        default: ""
+
+run-name: Collect tutti + anibis ${{ inputs.run_tag }}
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe (status only)
+        run: |
+          for u in "https://www.tutti.ch/fr/q/bateaux-accessoires/Ak8ClYm9hdHOUwMDAwA?sorting=newest&page=1" \
+                   "https://www.anibis.ch/fr/q/bateaux-accessoires/Ak8ClYm9hdHOUwMDAwA?sorting=newest&page=1"; do
+            curl -s -o /dev/null -w "%{http_code} $u\n" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36" "$u" || true
+          done
+      - name: Install requests
+        run: python3 -m pip install --quiet requests
+      - name: Collect
+        run: python3 scripts/smg_collect.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: smg-rows
+          path: smg_rows.json
+          retention-days: 3
