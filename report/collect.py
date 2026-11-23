@@ -2,7 +2,8 @@
 """Nico Boats collector: pulls real used-boat listings from Swiss marketplaces.
 
 Sources that work from the box (2026-11-15): tutti.ch, anibis.ch (Next.js __NEXT_DATA__ JSON; since 2026-11-21 both
-answer the box with an interactive Cloudflare Turnstile page, see report/README.md, so they are reported as blocked),
+answer the box with an interactive Cloudflare Turnstile page, see report/README.md; when blocked, their ads are read once a day
+through scanmarket.ch, which republishes them: collect_smg_via_scanmarket()),
 bateau24.ch = boat24.com Swiss site (server-rendered HTML; boot24.ch is the same site in German),
 lakeboat.ch (sitemap + MyListing detail pages), petitesannonces.ch (rubric lists), aquaboat.ch (dealer, public boats.json). Blocked: ricardo.ch (Cloudflare captcha /
 error 1015), boat24.com international domain (Cloudflare challenge; bateau24.ch works).
@@ -72,13 +73,22 @@ def norm(s):
 
 # ---------------------------------------------------------------- classification
 BOAT = r"(\bboat\b|bateau|bateaux|boot\b|boote\b|boots\b|barca|barche|barque|voilier|voiliers|segelboot|segelyacht|segeljacht|segler|motorboot|motorbot|sportboot|fischerboot|kajutboot|kabinenboot|schlauchboot|pneumatique|semi-rigide|semi rigide|gommone|festrumpf|canot|deriveur|jolle|optimist\b|laser\b|yacht|jacht|daysailer|day cruiser|catamaran|katamaran|ruderboot|pedalo|tretboot|weidling|zodiac|\brib\b|bowrider|sloop|motoscafo|cabin cruiser|lacustre|cruiser|vaurien|ponton|annexe|beiboot|dinghy|tender|jet ?ski|jetski|scooter des mers|wassertöff|surprise\b|corsaire\b|toucan\b|h-boot|yngling|grinde|first \d|kielboot|quillard|kahn\b|pinasse|launch)"
-BRANDS = r"\b(beneteau|jeanneau|bayliner|quicksilver|sea ?ray|mandli|boesch|dehler|dufour|bavaria|hanse|archambault|marine s\.?r\.?o|zar\b|williams|bombard|takacat|honwave|terhi|linder|buster|mercury inflatable|ranieri|cranchi|chaparral|four winns|glastron|campion|wellcraft|draco|fletcher|maxum|larson|regal|rio\b|sessa|saver|marinello|pioner|uttern|crescent|ryds|whaler|achilles|3d tender|lomac|joker|zodiac|avon\b|plastimo|parker|elan\b|etap|gib.?sea|kelt|neptun|catalina|hunter|varianta|sunbeam|hallberg|albin|nauticat|wirz|portofino|riva|lurssen|staempfli|stampfli)"
+BRANDS = r"\b(beneteau|jeanneau|bayliner|quicksilver|sea ?ray|mandli|boesch|dehler|dufour|bavaria|hanse|archambault|marine s\.?r\.?o|zar\b|williams|bombard|takacat|honwave|terhi|linder|buster|mercury inflatable|ranieri|cranchi|chaparral|four winns|glastron|campion|wellcraft|draco|fletcher|maxum|larson|regal|rio\b|sessa|saver|marinello|pioner|uttern|crescent|ryds|whaler|achilles|3d tender|lomac|joker|zodiac|avon\b|plastimo|parker|elan\b|etap|gib.?sea|kelt|neptun|catalina|hunter|varianta|sunbeam|hallberg|albin|nauticat|wirz|portofino|riva|lurssen|staempfli|stampfli|ocqueteau)"
 ACC_START = r"^(grand[- ]?voile|chandelles?|location\b|balcon|chandeliers?|spi\b|ber\b|rc\b|place\b|places\b|emplacement|\W*nouveau(te)? (en magasin|dans la boutique)|\W*produit neuf|nouveau berceau|taud|traineau|unite de commande|pioneer|poulie|couverture|pieces?\b|vis\b|halle|table\b|instruments?|coussin|\d+ palettes|palettes?|berceau|collecteur|chariot|opel|deux sieges|sieges?|tres rare moteur|\d+ moteurs|de la collection|haut-parleurs?|aquain|gm mercruiser|mercruiser|passerelle|roues?|marine - |moteur|motor\b|motoren|outboard|hors[- ]?bord|aussenborder|aussenbordmotor|fuoribordo|remorque|anhanger|anhaenger|trailer|bootsanhanger|bootstrailer|gilet|gilets|rettungsweste|schwimmweste|ancre|anker|ancora|bache|persenning|plane|helice|propeller|elica|voile\b|voiles\b|segel\b|grossegel|spinnaker|genois|fock|mat\b|mast\b|bome|baum|pare[- ]?battage|fender|taquet|echolot|sondeur|fishfinder|batterie|pompe|pumpe|chaine|chaines|corde|seil|leine|winch|winsch|kit\b|housse|support|halterung|place d.amarrage|bootsplatz|liegeplatz|bojenplatz|anlegeplatz|wakeboard|ski nautique|wasserski|gps|sup\b|stand ?up|kayak|kajak|canoe|canoë|kanu|kanadier|paddle|paddel|pagaie|rame|rames|ruder\b|riemen|hublot|cockpit|siege|sitz|lampe|feu|navigationslicht|cable|kabel|tank|reservoir|bidon|klampe|bimini|sprayhood|capote|cover|eau douce|toilette|wc|chauffage|heizung|radio|vhf|compas|kompass|autopilot|pilote|telecommande|steuer|volant|lenkrad|hydrofoil|foil|bouee|boje|tube|ringo|schleppring|planche|surf|kite|antenne|pare|scie|outil|livre|buch|modell|model|maquette|lego|playmobil|poster|tableau|bild|figur|jouet|spielzeug|uhr|montre|t-shirt|pull|veste|jacke|bottes|stiefel|chaussures|schuhe)"
 ACC_ANY = r"(\brc\b|radiocommande|telecommande|ferngesteuert|(voiles?|mat|bome|spi|spinnaker|taud|bache) (de|pour|du) (bateau|voilier)|ber de stockage|bateau lit|lit bateau|lit enfant|lit pour enfant|\bcable\b|kabel|autos? ?- ?motos?|7j7|24h24|rachat|debarras|achete (tous|bateaux)|kaufe (boote|alle)|moteurs? de bateau|pieces de bateau|utilisation partagee|(taud|couverture|protection|vis|passerelle|coussin|sieges?|roues?|haut-parleurs?|instruments?|chariot|berceau|support|halle|table|radio|lautsprecher|traineau) (de|a|pour) (bateau|barca)|\bpour (bateau|bateaux|voilier|zodiac|pneumatique)|\bfur (boot|boote|segelboot|schlauchboot)|\bper (barca|barche|gommone)|\bfor (boat|boats)|maquette|modellbau|modellboot|model boat|bateau modele|rc boot|rc boat|ferngesteuert|teleguide|jouet|spielzeug|lego|playmobil|bootsplatz|liegeplatz|place d.amarrage|place de port|kayak|kajak|kanu|kanadier|canoe|\bsup\b|stand ?up paddle|paddleboard|luftmatratze|gonflable pour enfant|badeboot|schwimmring|pedalo de piscine|permis (de )?bateau|bateau[- ]ecole|cours de (navigation|permis|voile)|hivernage|gardiennage|chantier naval|part de bateau|bootsanteil|^(cherche|recherche|suche|achete|kaufe)\b|\ba louer\b|louer (un |le )?bateau|zu vermieten|\bvermiete|partager (un |le |mon )?bateau|partage de frais|co-?navigation)"
+
+# German accessory titles. tutti / anibis titles arrive in German through ScanMarket (SMG's own translation),
+# while the direct scrape read the French site; these catch "Lageranhänger Boot", "Ersatzsitz", "Plane für Bayliner"...
+# A trailer mentioned as an extra ("inkl. Anhänger", "+ Trailer", "mit Trailer") does not count.
+ACC_DE = (r"(anhanger|trailer|slipwagen|schlitten|lagerbock|lagerung|schaltung|\btisch\b|lichterbalken|schraube|propeller|pumpe|impeller|"
+          r"ersatz|\bsitze?\b|bootssitz|windschutz|bugspriet|reling|ballast|miete\b|vermiet|\bplane\b|persenning|ersatzteil|"
+          r"^boots?[-/ ]*(schiffs)?motor|^boot motor|\bfur (\w+ )?\w*(boot|boote|yacht|surprise|bayliner|jetski)\b|\bzu (\w+/)?\w*boot\b)")
+EXTRA_DE = r"(mit|avec|incl\.?|inkl\.?|inklusive|samt|und|plus|\+|&|\()\s*(\w+[- ]){0,2}?\w*(anhanger|trailer|slipwagen)\b!?\)?"
 
 def classify_text(title, body):
     t, b = norm(title), norm(body)
     if re.search(ACC_ANY, t): return None
+    if re.search(ACC_DE, re.sub(EXTRA_DE, " ", t)) and not re.match(r"^(motorboot|motorbot|fischerboot|sportboot|ruderboot|schlauchboot)\b(?!.*\bfur\b)", t): return None
     boatish = re.search(BOAT, t) or re.search(BRANDS, t)
     if not boatish: return None
     if re.search(ACC_START, t) and not re.match(r"^(motorboot|motorbot|motoscafo|moteur.*bateau complet)", t): return None
@@ -87,8 +97,8 @@ def classify_text(title, body):
     if re.search(r"(jet ?ski|jetski|scooter des mers|seadoo|sea-doo|wassertöff|waverunner)", t): return "other"
     if re.search(r"(deriveur|jolle|optimist|laser\b|vaurien|420\b|470\b|finn\b|ruderboot|barque|aviron|weidling|annexe|beiboot|dinghy|tender|pedalo|tretboot|kahn\b|canot|rudern|row)", t): return "small"
     if re.search(r"(voilier|\ba voile|segel|\bvela\b|sail|daysailer|quillard|kielboot|surprise\b|corsaire|toucan|h-boot|yngling|grinde|lacustre|first \d|catamaran|katamaran|sloop|dehler|dufour|bavaria|hanse|archambault|elan\b|etap|kelt|neptun|catalina|hunter|varianta|sunbeam|hallberg|albin|wirz|5\.5|dragon|drachen|star boot|j/\d|j\d\d)", t): return "sail"
-    if re.search(r"(cabine|kajut|kabinen|cabin|cruiser|hardtop|flybridge|timonier|wheelhouse|steuerhaus|couchette|kojen|wc\b|toilette)", txt) and not re.search(r"(bowrider|open\b)", t): return "motor"
-    if re.search(r"(bowrider|open\b|console|fischerboot|bateau de peche|peche|fisch|angel|sportboot|bateau de sport|ski|wake|ponton|pontoon|day ?boat|runabout|motoscafo|mandli|marine s\.?r\.?o|motorboot|bateau a moteur|motorbot|aluboot|alu\b|lomac|quicksilver|bayliner|sea ?ray|four winns|glastron|chaparral|draco|fletcher|maxum|larson|regal|campion|wellcraft|rio\b|sessa|saver|marinello|uttern|crescent|ryds|silver\b|whaler|terhi|linder|buster|pioner|riva|boesch|portofino|cranchi|selva|chris craft|draco|windy|campion)", txt): return "open"
+    if re.search(r"(cabine|kajut|kabinen?|cabin|cruiser|hardtop|flybridge|timonier|wheelhouse|steuerhaus|couchette|kojen|wc\b|toilette)", txt) and not re.search(r"(bowrider|open\b)", t): return "motor"
+    if re.search(r"(bowrider|open\b|console|fischerboot|bateau de peche|peche|fisch|angel|sportboot|bateau de sport|ski|wake|ponton|pontoon|day ?boat|runabout|motoscafo|mandli|marine s\.?r\.?o|motorboot|bateau a moteur|motorbot|aluboot|alu\b|lomac|quicksilver|bayliner|sea ?ray|four winns|glastron|chaparral|draco|fletcher|maxum|larson|regal|campion|wellcraft|rio\b|sessa|saver|marinello|uttern|crescent|ryds|silver\b|whaler|terhi|linder|buster|pioner|riva|boesch|portofino|cranchi|selva|chris craft|draco|windy|campion|ocqueteau)", txt): return "open"
     if re.search(r"(\d+\s*(cv|ch|ps|hp)\b|\bkw\b|moteur|motor|outboard|aussenborder)", txt): return "open"
     if re.search(r"(voil|segel|sail|mat\b|mast\b|gennaker|spi\b)", txt): return "sail"
     return "other"
@@ -143,7 +153,7 @@ def year_from(text):
     title, _, body = t.partition(" . ")
     m = re.search(r"\b(19[4-9]\d|20[0-2]\d)\b", title)
     if not m:
-        m = re.search(r"(?:annee|construction|construit|construite|baujahr|jahrgang|jg\.?|built|anno|immatricul\w*|mise en (?:circulation|service)|de|von|du|year)\s*:?\s*(?:en\s*)?(19[4-9]\d|20[0-2]\d)\b", body)
+        m = re.search(r"(?:annee|construction|construit|construite|baujahr|jahrgang|jg\.?|built|anno|immatricul\w*|mise en (?:circulation|service)|de|von|du|year)\s*:?\s*(?:en\s*|irgendwann\s*|ca\.?\s*|circa\s*|env\.?\s*|environ\s*|um\s*)?(19[4-9]\d|20[0-2]\d)\b", body)
     if m and int(m.group(1)) <= cur: return int(m.group(1))
     return None
 
@@ -160,6 +170,10 @@ def extract_specs(text):
     m = re.search(r"(?:longueur|lange|laenge|length|lunghezza|loa)\D{0,12}(\d{1,2}(?:\.\d{1,2})?)\s*m\b", t) or \
         re.search(r"\b(\d{1,2}\.\d{1,2})\s*m\b", t) or re.search(r"\b(\d{1,2}(?:\.\d{1,2})?)\s*(?:m|meter|metres|metre|mètres)\s*(?:x|lang|long)", t)
     if m and 1.8 <= float(m.group(1)) <= 16: out["length_m"] = float(m.group(1))
+    elif not m:
+        # "Länge 475, Breite 200" / "longueur 520 cm": centimetres without a unit or with "cm"
+        m = re.search(r"(?:longueur|lange|laenge|length|lunghezza|loa)\s*:?\s*(\d{3,4})\s*(?:cm\b)?(?!\d|\.\d)", t)
+        if m and 180 <= int(m.group(1)) <= 1600: out["length_m"] = int(m.group(1)) / 100
     return out
 
 ENGINE_BRANDS = ["volvo penta", "mercruiser", "mercury", "yamaha", "honda", "suzuki", "tohatsu", "evinrude", "johnson", "mariner", "torqeedo", "selva", "yanmar", "nanni", "vetus", "nissan", "parsun", "minn kota", "epropulsion", "bukh", "bmw", "pleasurecraft", "indmar", "ilmor", "craftsman"]
@@ -178,11 +192,13 @@ def rich_fields(title, text):
     if m and 1.8 <= float(m.group(1)) <= 16 and 0.8 <= float(m.group(2)) <= 6: o["length_m"] = float(m.group(1)); o["width_m"] = float(m.group(2))
     m = re.search(r"(?:largeur|breite|width|larghezza)\D{0,10}(\d(?:\.\d{1,2})?)\s*m\b", t)
     if m and "width_m" not in o and 0.8 <= float(m.group(1)) <= 6: o["width_m"] = float(m.group(1))
+    m = re.search(r"(?:largeur|breite|width|larghezza)\s*:?\s*(\d{2,3})\s*(?:cm\b)?(?!\d|\.\d)", t)
+    if m and "width_m" not in o and 80 <= int(m.group(1)) <= 600: o["width_m"] = int(m.group(1)) / 100
     if re.search(r"(hors[- ]?bord|aussenbord|ausserbord|fuoribordo|outboard)", t): o["engine_type"] = "outboard"
     elif re.search(r"(in[- ]?bord|inbord|z[- ]?drive|z-antrieb|sterndrive|d-drive|saildrive|entrobordo)", t): o["engine_type"] = "inboard"
     elif re.search(r"(moteur (a propulsion )?electrique|propulsion electrique|bateau electrique|elektromotor|elektro-?aussenborder|elektroboot|elektroantrieb|electric (motor|outboard|boat)|motore elettrico|torqeedo|epropulsion|minn ?kota|aquamot)", t) \
             and not re.search(r"\b([2-9]\d|[1-9]\d\d)\s*(cv|ch|ps|hp)\b", t): o["engine_type"] = "electric"
-    elif re.search(r"(sans moteur|ohne motor|senza motore)", t): o["engine_type"] = "none"
+    elif re.search(r"(sans moteur|ohne motor|senza motore)", re.sub(r"(gewicht|poids|weight|peso)\s*\(?\s*(sans moteur|ohne motor|senza motore)", " ", t)): o["engine_type"] = "none"
     for eb in ENGINE_BRANDS:
         if re.search(r"\b" + eb + r"\b", t): o["engine_brand"] = eb.title(); break
     if re.search(r"\b(diesel|gasoil)\b", t): o["fuel"] = "diesel"
@@ -280,6 +296,144 @@ def collect_smg(src, max_pages=60):
         for k, v in rich_fields(r["title"], r["snippet"]).items(): r.setdefault(k, v)
     STATUS[src]["kept"] = len(res)
     return res
+
+# ---------------------------------------------------------------- ScanMarket (republishes tutti / anibis)
+# Approved by Gael on 2026-11-23 as the fallback for tutti / anibis while both sit behind Cloudflare Turnstile.
+# ScanMarket is an independent meta-search; its robots.txt disallows /api/, so: ONE complete pass per day (pages
+# cached in cache/scanmarket/<date>.json and reused by any rerun that day), 1.5 s between pages, honest UA,
+# backoff on 429 / 5xx, clean stop on failure. Records keep the ORIGINAL source and id (tutti:<id>, anibis:<id>)
+# so they merge with what tutti / anibis gave us directly, and url points at the ad on tutti.ch / anibis.ch.
+SCANMARKET_API = "https://scanmarket.ch/api/search"
+SCANMARKET_UA = "nico-boats-digest/1.0 (+https://github.com/Gael7777/nico-boats; one read per day)"
+SCANMARKET_PAGE_SIZE = 50
+SCANMARKET_CACHE = CACHE / "scanmarket"
+
+def _scanmarket_page(sess, page, tries=4):
+    url = SCANMARKET_API + "?" + "&".join(f"{k}={v}" for k, v in
+                                          [("q", ""), ("category", "boats"), ("sources", "tutti,anibis"), ("page", page), ("page_size", SCANMARKET_PAGE_SIZE)])
+    last = None
+    for i in range(tries):
+        try:
+            r = sess.get(url, timeout=40)
+            if r.status_code == 200:
+                return r.json()
+            kind = challenge_kind(r)
+            if kind:
+                raise Blocked(f"ScanMarket HTTP {r.status_code} {kind}")
+            last = f"HTTP {r.status_code}"; log("scanmarket", last, url)
+            if r.status_code not in (429, 500, 502, 503, 504): break
+            ra = r.headers.get("Retry-After")
+            time.sleep(min(int(ra), 120) if ra and ra.isdigit() else 5 * 2 ** i)
+        except Blocked:
+            raise
+        except Exception as e:
+            last = str(e)[:160]; log("scanmarket ERR", last, url); time.sleep(5 * 2 ** i)
+    raise RuntimeError(f"ScanMarket page {page}: {last}")
+
+def fetch_scanmarket(today=None, max_pages=30, delay=1.5):
+    """One pass over ScanMarket's boats category (tutti + anibis). Returns (items, meta). Reuses today's cached pass."""
+    import datetime
+    today = today or datetime.date.today().isoformat()
+    SCANMARKET_CACHE.mkdir(exist_ok=True)
+    f = SCANMARKET_CACHE / f"{today}.json"
+    if f.exists():
+        d = json.loads(f.read_text())
+        if d.get("meta", {}).get("complete"):
+            log("scanmarket: reusing today's pass", f.name); d["meta"]["reused_cache"] = True
+            return d["items"], d["meta"]
+    sess = requests.Session(); sess.headers.update({"User-Agent": SCANMARKET_UA, "Accept": "application/json"})
+    items, seen, total, pages, err, has_more = [], set(), None, 0, None, True
+    for page in range(1, max_pages + 1):
+        try:
+            d = _scanmarket_page(sess, page)
+        except Exception as e:
+            err = str(e)[:200]; log("scanmarket stop:", err); break
+        pages += 1
+        total = d.get("total", total)
+        batch = d.get("listings") or d.get("items") or []
+        new = 0
+        for it in batch:
+            k = (str(it.get("source") or "").lower(), str(it.get("source_listing_id") or ""))
+            if k[0] not in ("tutti", "anibis") or not k[1] or k in seen: continue
+            seen.add(k); items.append(it); new += 1
+        has_more = bool(d.get("has_more"))
+        log(f"scanmarket page {page}: +{new} (total {total})")
+        if not has_more or not batch: break
+        time.sleep(delay)
+    complete = err is None and not has_more and total is not None and len(items) >= 0.97 * total
+    meta = {"fetched_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "pages": pages, "total_reported": total, "unique": len(items),
+            "complete": complete, "error": err,
+            "by_source": {s: sum(1 for it in items if str(it.get("source")).lower() == s) for s in ("tutti", "anibis")}}
+    f.write_text(json.dumps({"meta": meta, "items": items}, ensure_ascii=False))
+    return items, meta
+
+def scanmarket_rows(items, wanted=("tutti", "anibis")):
+    """ScanMarket items -> collector rows in the same shape as collect_smg(). Accessories / engines / trailers / parts
+    (classify_text None), unpriced ads and ads above PRICE_CAP are dropped like for the direct tutti / anibis scrape."""
+    try:
+        old = json.loads((ROOT.parent / "data" / "listings.json").read_text())["records"]
+    except Exception:
+        old = {}
+    res, dropped = [], {"not_boat": 0, "price": 0, "stale": 0}
+    for it in items:
+        src = str(it.get("source") or "").lower()
+        if src not in wanted: continue
+        lid = str(it.get("source_listing_id")).strip()
+        title = re.sub(r"\s+", " ", it.get("title") or "").strip()
+        body = (it.get("description") or "").strip()
+        o = old.get(f"{src}:{lid}")
+        if o and o.get("title") not in (None, "", "N/A"):
+            # known ad: keep the French title / text read on the French site; ScanMarket's German text is added for specs
+            fr = o.get("description_excerpt") if o.get("description_excerpt") not in (None, "", "N/A") else ""
+            title, body = o["title"], (fr + " . " + body).strip(" .")
+        cat = classify_text(title, body)
+        if cat is None: dropped["not_boat"] += 1; continue
+        p = it.get("price_chf")
+        price = int(round(float(p))) if isinstance(p, (int, float)) else None
+        # ScanMarket re-reads an ad only now and then (scraped_at from 24 Oct to today on 2026-11-23). Data older than
+        # what we already hold must not win: no price "change" back to an old price, no resurrection of an ad we saw go.
+        sm_day = str(it.get("scraped_at") or "")[:10]
+        if o:
+            if o.get("status") == "removed" and sm_day <= str(o.get("removed_on") or ""): dropped["stale"] += 1; continue
+            if sm_day < str(o.get("last_seen") or "") and isinstance(o.get("price_chf"), (int, float)):
+                price = int(o["price_chf"])
+        if price is None or price > PRICE_CAP or 0 < price < 150: dropped["price"] += 1; continue
+        rid = f"{src}:{lid}"
+        r = {"id": rid, "source": src, "title": title, "category": cat, "price_chf": price,
+             "price_label": f"CHF {price:,}".replace(",", "’") if price else "gratuit",
+             "postcode": it.get("postal_code"), "town": it.get("city"), "canton": (it.get("canton") or None),
+             "url": f"https://www.{src}.ch/fr/vi/{lid}", "thumb": it.get("image_url"), "photo": it.get("image_url"),
+             "posted": (it.get("posted_at") or "")[:10] or None, "snippet": body[:1500], "lat": None, "lon": None,
+             "via_scanmarket": True, "collecte": f"ScanMarket (republication de {src}.ch), lu par ScanMarket le {sm_day or 'N/A'}"}
+        if r["canton"] and r["canton"] not in CH_CANTONS: r["canton"] = None
+        if o and o.get("geo_precision") == "listing coordinates" and isinstance(o.get("lat"), (int, float)):
+            r["lat"], r["lon"] = o["lat"], o["lon"]          # keep the exact coordinates tutti / anibis gave us earlier
+        r.update(extract_specs(title + " . " + body))
+        for k, v in rich_fields(title, body).items(): r.setdefault(k, v)
+        res.append(r)
+    STATUS.setdefault("_scanmarket", {}).update({"dropped_not_boat": dropped["not_boat"], "dropped_price": dropped["price"], "skipped_stale": dropped["stale"]})
+    return res
+
+def collect_smg_via_scanmarket(sources):
+    """Fallback for blocked tutti / anibis. Sets STATUS[src] per source; ok=True only after a COMPLETE pass
+    (store.merge marks absent ads removed only for ok sources)."""
+    items, meta = fetch_scanmarket()
+    STATUS["_scanmarket"] = {k: meta.get(k) for k in ("fetched_at", "pages", "total_reported", "unique", "complete", "error", "by_source", "reused_cache")}
+    rows = scanmarket_rows(items, sources)
+    try:
+        stored = json.loads((ROOT.parent / "data" / "listings.json").read_text())["records"].values()
+    except Exception:
+        stored = []
+    for src in sources:
+        n_items = meta["by_source"].get(src, 0)
+        n_active = sum(1 for v in stored if v.get("source") == src and v.get("status") == "active")
+        complete = bool(meta["complete"]) and n_items > 0 and n_items >= 0.5 * n_active   # sanity guard against a mass "removed"
+        prev = STATUS.get(src) or {}
+        STATUS[src] = {"ok": complete, "via": "scanmarket", "partial": not complete and n_items > 0, "raw": n_items,
+                       "direct_error": prev.get("error"), "error": None if complete else
+                       ("passage ScanMarket incomplet" + (f" : {meta['error']}" if meta.get("error") else "") if n_items else
+                        (meta.get("error") or "ScanMarket sans annonce"))}
+    return rows
 
 # ---------------------------------------------------------------- bateau24.ch (boat24 Swiss site)
 B24_LIST = "https://www.bateau24.ch/chfr/bateauxdoccasion/?whr=CHF&prs_max={cap}&page={off}"
@@ -403,7 +557,7 @@ def classify_hint(title, body, hint=None):
     if hint == "sail": return "sail"
     if hint == "inflatable": return "inflatable"
     txt = t + " " + norm(body)
-    if re.search(r"(cabine|kajut|kabinen|cabin|cruiser|hardtop|flybridge|timonier|couchette|wc\b|toilette)", txt): return "motor"
+    if re.search(r"(cabine|kajut|kabinen?|cabin|cruiser|hardtop|flybridge|timonier|couchette|wc\b|toilette)", txt): return "motor"
     return "open"
 
 def apply_text_fields(r):
@@ -758,6 +912,16 @@ def main():
             STATUS[name] = {"ok": False, "blocked": True, "error": str(e)[:300]}; log("SOURCE BLOCKED", name, e)
         except Exception as e:
             STATUS[name] = {"ok": False, "error": str(e)[:200]}; log("SOURCE FAILED", name, e)
+    # tutti / anibis blocked or failing -> their ads through ScanMarket (one pass per day)
+    fallback = [s for s in ("tutti", "anibis") if not (STATUS.get(s) or {}).get("ok")]
+    if fallback:
+        try:
+            all_rows += collect_smg_via_scanmarket(fallback)
+        except Exception as e:
+            STATUS["_scanmarket"] = {"error": str(e)[:200]}; log("SCANMARKET FAILED", e)
+    for r in all_rows:
+        if r["source"] in ("tutti", "anibis") and not r.get("via_scanmarket"):
+            r["via_scanmarket"] = False; r["collecte"] = "direct (" + r["source"] + ".ch)"
     # Ricardo: try once; record status honestly (Cloudflare captcha from the box; no captcha solving, no borrowed cookies)
     try:
         r = S.get("https://www.ricardo.ch/fr/s/bateau", timeout=30)

@@ -168,10 +168,17 @@ def render_filtre(pairs, all_active, status, today, mode="daily"):
             continue
         nm = SRC_LABEL_FR.get(s, s)
         cnt = sum(1 for r, _ in pairs if r["source"] == s or any(a.get("source") == s for a in (r.get("also_listed") if isinstance(r.get("also_listed"), list) else [])))
+        if v.get("via") == "scanmarket":
+            nm += " (via ScanMarket)"
+            if v.get("partial"):
+                src_lines.append(f"{nm} : {cnt} dans cette sélection (passage incomplet)"); continue
         src_lines.append(f"{nm} : {cnt} dans cette sélection" if v.get("ok") else f"{nm} : non inclus (captcha Cloudflare, le site refuse la collecte automatique depuis le 21 nov.)" if v.get("blocked") else f"{nm} : non inclus ({e(v.get('error') or 'échec')})")
     P.append(
         f'<tr><td style="padding:26px 24px 24px 24px;" class="pad"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #D5DCE4;"><tr><td style="padding-top:12px;font:400 11px/1.55 {SANS};color:{MUTED};">'
         f"<b style=\"color:{NAVY};\">Sources et méthode.</b> {' · '.join(src_lines)}. "
+        + ("Tutti et Anibis via ScanMarket : ces deux sites bloquent la collecte automatique (captcha Cloudflare), leurs annonces sont lues une fois par jour sur scanmarket.ch, qui les republie ; chaque lien mène à l’annonce d’origine. "
+           if any(v.get("via") == "scanmarket" for v in (status or {}).values()) else "") +
+        f""
         "Filtre global (version enregistrée dans le dépôt) : hors-bord uniquement, 40 à 90 CV, largeur max. 2,30 m, longueur max. 7,00 m, prix max. CHF 15’000. "
         "Pas de voiliers, annexes, pédalos ni bateaux à rames. Pas de pneumatiques, gonflables ni semi-rigides (RIB) : ils sont repérés par la catégorie du site, le matériau (Hypalon, PVC), le titre, la description et les marques spécialisées (Zodiac, Bombard, Brig, Highfield, 3D Tender, Joker Boat…). "
         "Les valeurs manquantes (puissance, largeur, longueur) ne font pas écarter l’annonce : elle va dans « À vérifier », sauf si elle est clairement hors sujet. "

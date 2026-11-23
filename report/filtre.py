@@ -490,7 +490,8 @@ def enrich_records(records, fetch_missing=True, limit_fetches=40, cfg=None):
         import collect
         key = r.get("id") or ""
         cache_f = collect.HTML_CACHE / (re.sub(r"[^\w.-]", "_", key) + ".html")
-        do_fetch = fetch_missing and (not cache_f.exists()) and fetches < limit_fetches
+        do_fetch = fetch_missing and (not cache_f.exists()) and fetches < limit_fetches \
+            and r.get("via_scanmarket") is not True      # tutti/anibis pages are behind Turnstile; ScanMarket gave the full text
         if do_fetch:
             fetches += 1
         found = enrich_from_cache(r, fetch_if_missing=do_fetch)

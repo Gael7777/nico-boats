@@ -217,7 +217,7 @@
     $("#csv").onclick = csv;
     const h = (location.hash.match(/v=(\w+)/) || [])[1]; if (["table", "cards", "cats", "map"].includes(h)) $(`#tabs > button[data-view="${h}"]`).click();
     const s = data.sources || {};
-    $("#foot").innerHTML = "<b>Sources.</b> " + Object.entries(s).filter(([k]) => k !== "_duplicates").map(([k, v]) => `${esc(SRC[k] || k)} : ${v.ok ? "ok" + (typeof v.kept === "number" ? " (" + v.kept + " annonces)" : "") : "non inclus (" + esc(v.error || "échec") + ")"}`).join(" · ")
+    $("#foot").innerHTML = "<b>Sources.</b> " + Object.entries(s).filter(([k]) => !k.startsWith("_")).map(([k, v]) => `${esc(SRC[k] || k)}${v.via === "scanmarket" ? " (via ScanMarket)" : ""} : ${v.ok ? "ok" + (typeof v.kept === "number" ? " (" + v.kept + " annonces)" : "") : "non inclus (" + esc(v.error || "échec") + ")"}`).join(" · ")
       + ". Distance = distance routière depuis le centre de Genève via OSRM (OpenStreetMap), ligne droite × 1,25 en secours. "
       + "Le filtre global (version " + esc(String((data.filtre_global || {}).version || "")) + " : hors-bord à coque rigide 40–90 CV, sans pneumatiques ni semi-rigides, 2,30 × 7,00 m, CHF 15’000, priorité aux lacs Léman, de Neuchâtel, de Morat et de Bienne) est actif par défaut ; le bouton permet de voir toutes les annonces. "
       + "Les valeurs manquantes s’affichent en N/A et, si le reste correspond, le bateau reste visible sous « À vérifier ». Prix et détails sont ceux des vendeurs ; toujours vérifier l’annonce.";

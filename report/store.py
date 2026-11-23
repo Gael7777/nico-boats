@@ -18,7 +18,7 @@ FIELDS = ["id", "source", "source_listing_id", "url", "title", "category", "cate
           "licence_leman", "town", "canton", "postcode", "region", "lat", "lon", "geo_precision",
           "distance_km_from_geneva", "distance_method", "seller_type", "posted_date", "photo_url", "thumb_url",
           "description_excerpt", "first_seen", "last_seen", "status", "removed_on", "sent_in_digest",
-          "price_changed_on", "previous_price_chf", "price_history", "also_listed"]
+          "price_changed_on", "previous_price_chf", "price_history", "also_listed", "via_scanmarket", "collecte"]
 
 def _num(v):
     try:
@@ -34,7 +34,7 @@ def normalise(r):
               "price_chf": r.get("price_chf"), "price_label": r.get("price_label")})
     for k in ["brand", "model", "year", "length_m", "width_m", "engine_type", "engine_brand", "engine_model", "fuel", "hours",
               "sail_area_m2", "berths", "material", "trailer", "mooring_included", "condition", "town", "canton", "postcode",
-              "region", "lat", "lon", "geo_precision", "distance_method", "seller_type"]:
+              "region", "lat", "lon", "geo_precision", "distance_method", "seller_type", "via_scanmarket", "collecte"]:
         if r.get(k) not in (None, "", []): o[k] = r[k]
     if r.get("distance_km") is not None: o["distance_km_from_geneva"] = r["distance_km"]
     o["posted_date"] = r.get("posted") or NA
@@ -97,9 +97,13 @@ def merge(store, rows, status, today):
             n.update(keep); n.update({"last_seen": today, "status": "active", "removed_on": NA})
             recs[n["id"]] = n
     ok_sources = {s for s, v in status.items() if v.get("ok")}
+    # Through ScanMarket (tutti / anibis fallback) a complete pass only covers what ScanMarket indexes (~550 of the
+    # ~1060 tutti ads on 2026-11-23), so an ad is marked removed only if an earlier ScanMarket pass had it.
+    via_sm = {s for s, v in status.items() if v.get("via") == "scanmarket"}
     removed = []
     for k, v in recs.items():
         if k not in seen and v["status"] == "active" and v["source"] in ok_sources:
+            if v["source"] in via_sm and v.get("via_scanmarket") is not True: continue
             v["status"], v["removed_on"] = "removed", today; removed.append(k)
     store["updated"] = today; store["sources"] = status
     return changes, removed
