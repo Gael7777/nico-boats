@@ -4,12 +4,14 @@
  "sources": {
   "tutti": {
    "ok": false,
-   "error": "failed https://www.tutti.ch/fr/q/bateaux-accessoires/Ak8ClYm9hdHOUwMDAwA?sorting=newest&page=1: 403",
+   "blocked": true,
+   "error": "HTTP 403 Cloudflare challenge (cf-mitigated: challenge, Turnstile)",
    "kept": 0
   },
   "anibis": {
    "ok": false,
-   "error": "failed https://www.anibis.ch/fr/q/bateaux-accessoires/Ak8ClYm9hdHOUwMDAwA?sorting=newest&page=1: 403",
+   "blocked": true,
+   "error": "HTTP 403 Cloudflare challenge (cf-mitigated: challenge, Turnstile)",
    "kept": 0
   },
   "bateau24": {
