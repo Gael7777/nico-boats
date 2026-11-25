@@ -22,10 +22,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  # Upload in its own job so deploy-pages looks up the artifact a few
+  # seconds later. In a single job the listing can return 0 artifacts
+  # immediately after a successful upload (actions/deploy-pages#451).
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -44,6 +44,13 @@ jobs:
         with:
           path: ./site
 
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
